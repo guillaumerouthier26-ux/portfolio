@@ -215,6 +215,7 @@ body.cn-page .navbar::before {
   transform: translateX(-50%);
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 .nav-logo img {
@@ -329,6 +330,10 @@ body.cn-page .navbar::before {
   letter-spacing: -0.02em;
   color: #000;
 }
+
+/* Saut de ligne mobile uniquement (ignoré par l'animation car <br> a un attribut) */
+br.br-mobile { display: none; }
+@media (max-width: 1023px) { br.br-mobile { display: inline; } }
 
 /* ─── HERO ────────────────────────────────────── */
 
