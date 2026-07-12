@@ -1,0 +1,39 @@
+# Dépendances
+node_modules/
+
+# Dossiers sources (design brut, RAW, mockups — non nécessaires au site déployé)
+00 index/
+01 - Objectif Québec/
+02 - Aki Sushi/
+03 - Conifère/
+04 - L'Heure Mauve/
+05 - Ciao Totes/
+06 - Phoenix/
+07 - Lore & Legends/
+08 - projet photo/
+09 - services/
+
+# Fichiers de travail / système
+*.psd
+*.ai
+*.zip
+.DS_Store
+Thumbs.db
+desktop.ini
+photos/_compress.sh
+photos/.__ctmp/
+
+# Médias non référencés par le site (gardés sur disque, exclus du déploiement)
+photos/hero-bg.mp4
+photos/à propos/
+
+# Fichiers temporaires parasites
+*.tmp
+~ai-*
+
+# Mockups projets (sources brutes PNG/RAW — non nécessaires au site)
+000 - mockup projets/
+
+# Documents personnels — NE PAS publier (dépôt public)
+envois-cv/
+.claude/

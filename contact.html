@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Contact — Réservé(c)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=45">
+  <link rel="stylesheet" href="css/contact.css?v=45">
+</head>
+
+<body>
+
+  <div id="page-transition"></div>
+
+  <div class="nav-menu" id="nav-menu" aria-hidden="true">
+    <nav class="nav-menu-inner">
+      <a class="t-titre nav-menu-titre" href="index.html#projets">Nos Projets</a>
+      <a class="t-titre nav-menu-titre" href="contact.html">Contact</a>
+      <a class="t-titre nav-menu-titre" href="apropos.html">À&nbsp;Propos</a>
+    </nav>
+  </div>
+
+  <header class="navbar">
+    <div class="nav-filet"></div>
+    <div class="nav-top">
+      <a class="nav-logo" href="index.html">
+        <span class="logo-text">Guillaume</span>
+      </a>
+      <nav class="nav-desktop">
+        <a class="nav-desktop-link" href="index.html#projets">Projets</a>
+        <a class="nav-desktop-link" href="contact.html" aria-current="page">Contact</a>
+        <a class="nav-desktop-link" href="apropos.html">À&nbsp;Propos</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="contact-layout">
+
+    <!-- Image -->
+    <div class="contact-img-col">
+      <img src="photos/placeholder.png" alt="">
+    </div>
+
+    <!-- Formulaire -->
+    <div class="contact-form-col">
+      <div class="contact-intro">
+        <span class="t-courant contact-eyebrow"><span class="footer-dot" aria-hidden="true"></span>Disponible pour un poste en agence &mdash; Qu&eacute;bec</span>
+        <h1 class="t-titre contact-titre">Parlons-en.</h1>
+      </div>
+
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+        <!-- Web3Forms : clé d'accès + nom d'expéditeur -->
+        <input type="hidden" name="access_key" value="0dc57b20-53d9-4f18-b0cf-69677f6055b7">
+        <input type="hidden" name="from_name" value="Site — Guillaume Routhier">
+        <!-- Anti-spam (honeypot) : rempli seulement par les robots -->
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+
+        <div class="contact-field">
+          <label class="t-courant" for="email">Courriel</label>
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="ton@courriel.com" required>
+        </div>
+
+        <div class="contact-field">
+          <label class="t-courant" for="sujet">Sujet</label>
+          <input type="text" id="sujet" name="subject" placeholder="De quoi on jase&nbsp;?" required>
+        </div>
+
+        <div class="contact-field">
+          <label class="t-courant" for="message">Message</label>
+          <textarea id="message" name="message" rows="2" required></textarea>
+        </div>
+
+        <p class="t-courant contact-status" role="status" aria-live="polite"></p>
+
+        <div class="contact-actions">
+          <button class="btn-contact contact-submit" type="submit">envoyer</button>
+          <a class="t-courant contact-direct" href="mailto:guillaumerouthier26@gmail.com">ou guillaumerouthier26@gmail.com</a>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+  <script src="js/smooth-scroll.js?v=45"></script>
+  <script src="js/menu.js?v=45"></script>
+  <script src="js/page-animations.js?v=45"></script>
+  <script src="js/cursor.js?v=45"></script>
+  <script src="js/transitions.js?v=45"></script>
+  <script>
+    // Envoi du formulaire avec retour visuel (succès / erreur), sans quitter la page.
+    (function () {
+      var form = document.querySelector('.contact-form');
+      if (!form) return;
+      var status = form.querySelector('.contact-status');
+      var btn = form.querySelector('.contact-submit');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        btn.disabled = true;
+        status.textContent = 'Envoi…';
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        }).then(function (r) {
+          if (r.ok) { form.reset(); status.textContent = 'Merci, ton message est parti.'; }
+          else { status.textContent = 'Une erreur est survenue. Réessaie ou écris-moi directement.'; }
+        }).catch(function () {
+          status.textContent = 'Une erreur est survenue. Réessaie ou écris-moi directement.';
+        }).finally(function () { btn.disabled = false; });
+      });
+    })();
+  </script>
+</body>
+</html>

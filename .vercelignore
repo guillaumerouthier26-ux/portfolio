@@ -1,0 +1,25 @@
+# Dépendances
+node_modules
+
+# Dossiers sources (fichiers de design bruts, RAW, mockups — non nécessaires au site)
+00 index
+01 - Objectif Québec
+02 - Aki Sushi
+03 - Conifère
+04 - L'Heure Mauve
+05 - Ciao Totes
+06 - Phoenix
+07 - Lore & Legends
+08 - projet photo
+09 - services
+
+# Fichiers de travail
+*.psd
+*.ai
+*.zip
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Mockups projets (sources brutes)
+000 - mockup projets
