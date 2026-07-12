@@ -7,9 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=45">
-  <link rel="stylesheet" href="css/projet.css?v=45">
-  <link rel="stylesheet" href="css/projet-blocks.css?v=45">
+  <link rel="stylesheet" href="css/style.css?v=47">
+  <link rel="stylesheet" href="css/projet.css?v=47">
+  <link rel="stylesheet" href="css/projet-blocks.css?v=47">
 </head>
 
 <body class="cn-page">
@@ -47,7 +47,7 @@
   <section class="pj-hero cn-hero">
     <picture>
       <source media="(min-width: 1024px)" srcset="photos/conifere-hero-desktop.jpg">
-      <img class="pj-hero-img" src="photos/conifere-hero-mobile.jpg" alt="Conifère">
+      <img class="pj-hero-img" src="photos/conifere-hero-mobile.jpg" alt="Conifère" fetchpriority="high" decoding="async">
     </picture>
   </section>
 
@@ -78,17 +78,17 @@
 
   <!-- ─── MOBILE : mockup desktop + chaise empilés ─── -->
   <section class="pj-mobile-only pj-stack pj-stack--natural">
-    <img class="pj-stack-img" src="photos/conifere-desktop.png" alt="">
-    <img class="pj-stack-img" src="photos/conifere-chaise.jpg" alt="">
+    <img class="pj-stack-img" src="photos/conifere-desktop.png" alt="" loading="lazy" decoding="async">
+    <img class="pj-stack-img" src="photos/conifere-chaise.jpg" alt="" loading="lazy" decoding="async">
   </section>
 
   <!-- ─── DESKTOP : Section 1 — mockup gauche + pictos droite ─── -->
   <section class="pj-desktop-only cn-section1">
     <div class="cn-s1-left">
-      <img class="cn-s1-mockup" src="photos/conifere-desktop.png" alt="Site web Conifère">
+      <img class="cn-s1-mockup" src="photos/conifere-desktop.png" alt="Site web Conifère" loading="lazy" decoding="async">
     </div>
     <div class="cn-s1-right">
-      <img class="cn-s1-pictos" src="photos/conifere-pictos.png" alt="Pictogrammes Conifère">
+      <img class="cn-s1-pictos" src="photos/conifere-pictos.png" alt="Pictogrammes Conifère" loading="lazy" decoding="async">
     </div>
   </section>
 
@@ -99,7 +99,7 @@
 
   <!-- ─── MOBILE : pictos, texte, vidéo, mockups ─── -->
   <section class="pj-mobile-only pj-stack pj-stack--natural cn-m-pictos">
-    <img class="pj-stack-img" src="photos/conifere-pictos.png" alt="Pictogrammes Conifère">
+    <img class="pj-stack-img" src="photos/conifere-pictos.png" alt="Pictogrammes Conifère" loading="lazy" decoding="async">
   </section>
 
   <div class="pj-mobile-only pj-desc-body-wrap cn-m-desc">
@@ -111,10 +111,10 @@
     <video class="cn-m-alt-media" autoplay muted loop playsinline>
       <source src="photos/conifere-enseigne.mp4" type="video/mp4">
     </video>
-    <img class="cn-m-alt-media" src="photos/conifere-truck.png" alt="">
-    <img class="cn-m-alt-media" src="photos/conifere-cuisine.jpg" alt="">
-    <img class="cn-m-alt-media" src="photos/conifere-boite.png" alt="">
-    <img class="cn-m-alt-media" src="photos/conifere-cuisine2.jpg" alt="">
+    <img class="cn-m-alt-media" src="photos/conifere-truck.png" alt="" loading="lazy" decoding="async">
+    <img class="cn-m-alt-media" src="photos/conifere-cuisine.jpg" alt="" loading="lazy" decoding="async">
+    <img class="cn-m-alt-media" src="photos/conifere-boite.png" alt="" loading="lazy" decoding="async">
+    <img class="cn-m-alt-media" src="photos/conifere-cuisine2.jpg" alt="" loading="lazy" decoding="async">
   </section>
 
   <!-- ─── DESKTOP : Mission — titre gauche + paragraphe droite ─── -->
@@ -128,8 +128,8 @@
 
   <!-- ─── DESKTOP : Deux images pleine largeur, gouttière ─── -->
   <section class="pj-desktop-only cn-mission-imgs">
-    <img src="photos/conifere-cuisine.jpg" alt="">
-    <img src="photos/conifere-cuisine2.jpg" alt="">
+    <img src="photos/conifere-cuisine.jpg" alt="" loading="lazy" decoding="async">
+    <img src="photos/conifere-cuisine2.jpg" alt="" loading="lazy" decoding="async">
   </section>
 
   <!-- ─── DESKTOP : Trio — titre/paragraphe + 2 images ─── -->
@@ -142,8 +142,8 @@
         <p class="t-courant cn-trio-body">L'entreprise fait du sur mesure pour le résidentiel, le commercial et le détail, avec une approche humaine et une finition soignée.</p>
       </div>
     </div>
-    <img class="cn-trio-img" src="photos/conifere-truck.png" alt="">
-    <img class="cn-trio-img" src="photos/conifere-boite.png" alt="">
+    <img class="cn-trio-img" src="photos/conifere-truck.png" alt="" loading="lazy" decoding="async">
+    <img class="cn-trio-img" src="photos/conifere-boite.png" alt="" loading="lazy" decoding="async">
   </section>
 
   <!-- ─── DESKTOP : Vidéo — 100vh marge à marge ─── -->
@@ -205,10 +205,10 @@
     </div>
   </footer>
 
-  <script src="js/smooth-scroll.js?v=45"></script>
-  <script src="js/menu.js?v=45"></script>
-  <script src="js/page-animations.js?v=45"></script>
-  <script src="js/cursor.js?v=45"></script>
-  <script src="js/transitions.js?v=45"></script>
+  <script src="js/smooth-scroll.js?v=47"></script>
+  <script src="js/menu.js?v=47"></script>
+  <script src="js/page-animations.js?v=47"></script>
+  <script src="js/cursor.js?v=47"></script>
+  <script src="js/transitions.js?v=47"></script>
 </body>
 </html>

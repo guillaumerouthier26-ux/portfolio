@@ -37,3 +37,6 @@ photos/à propos/
 # Documents personnels — NE PAS publier (dépôt public)
 envois-cv/
 .claude/
+
+# Vidéos non référencées par le site (gardées sur disque, exclues du déploiement)
+videos/

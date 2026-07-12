@@ -181,14 +181,10 @@ Array.prototype.slice.call(document.querySelectorAll('.t-courant, .t-courant-gra
   var inline = s.display.indexOf('inline') !== -1;
   if (!inline && /<br/i.test(el.innerHTML)) {
     wrapLinesBR(el);
-  } else if (!inline && el.children.length === 0
-             && !el.classList.contains('ap-texte-body')
-             && !el.classList.contains('ap-lede-p')
-             && !el.classList.contains('ap-skills-v')) {
-    // Corps de la page À propos : révélé en bloc (retour à la ligne natif,
-    // reflow correct — surtout en 2 colonnes). Pas de découpe en lignes rigides.
-    wrapLines(el);
   } else {
+    // Tout corps de texte mono : révélé EN BLOC avec retour à la ligne NATIF.
+    // (reflow correct à n'importe quelle largeur — plus de lignes rigides mal
+    // coupées, ni en 1 colonne ni en 2 colonnes, ni au chargement de la police.)
     wrapRise(el, inline, s.marginTop, s.marginBottom);
   }
   allText.push(el);

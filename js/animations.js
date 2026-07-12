@@ -127,11 +127,8 @@ const allText = [];
   if (el._wrapper) return;
   const s      = getComputedStyle(el);
   const inline = s.display.includes('inline');
-  if (!inline && el.children.length === 0) {
-    wrapLines(el);
-  } else {
-    wrapRise(el, inline, s.marginTop, s.marginBottom);
-  }
+  // Corps mono : révélé en bloc, retour à la ligne natif (pas de lignes rigides).
+  wrapRise(el, inline, s.marginTop, s.marginBottom);
   allText.push(el);
 });
 
