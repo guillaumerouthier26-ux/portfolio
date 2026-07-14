@@ -658,8 +658,7 @@ textarea:focus-visible {
 .projet-img-wrap {
   position: relative;
   overflow: hidden;
-  height: 100vh;
-  height: 100svh;
+  aspect-ratio: 1 / 1;
 }
 
 .projet-img {
@@ -1048,6 +1047,7 @@ textarea:focus-visible {
   }
 
   .projet-img-wrap {
+    aspect-ratio: auto;
     height: 70vh;
     height: 70svh;
   }
