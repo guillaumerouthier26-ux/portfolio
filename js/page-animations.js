@@ -296,12 +296,16 @@ function onScroll() {
   triggerText(allText, trigger);
 }
 
-// Avec le smooth-scroll (desktop), le contenu bouge via un transform et émet
-// un événement 'virtualscroll' ; on écoute celui-là pour que les reveals soient
-// synchronisés avec le mouvement réel (sinon ils sautent/manquent).
-var _scrollEv = window._smoothScrollActive ? 'virtualscroll' : 'scroll';
-window.addEventListener(_scrollEv, onScroll, { passive: true });
+// Révélations : on écoute les DEUX événements (scroll natif + virtualscroll du
+// smooth-scroll) + resize, pour ne jamais rater un déclenchement.
+window.addEventListener('scroll', onScroll, { passive: true });
+window.addEventListener('virtualscroll', onScroll, { passive: true });
+window.addEventListener('resize', onScroll, { passive: true });
 
-window.addEventListener('load', function() { setTimeout(onLoadVisible, 150); });
-setTimeout(onLoadVisible, 150);
+// Filet de sécurité : plusieurs passages après le chargement (police, images,
+// mise en page tardive) + relance quand l'onglet redevient visible. Le texte
+// ne peut plus rester bloqué invisible en attendant un refresh.
+[80, 250, 600, 1200, 2500].forEach(function(t) { setTimeout(onLoadVisible, t); });
+window.addEventListener('load', function() { setTimeout(onLoadVisible, 60); });
+document.addEventListener('visibilitychange', function() { if (!document.hidden) onLoadVisible(); });
 })();

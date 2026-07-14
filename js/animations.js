@@ -255,12 +255,17 @@ function onLoadVisible() {
   checkImgs(inView);
 }
 
-// Smooth-scroll (desktop) : le contenu bouge via transform + événement
-// 'virtualscroll'. On écoute celui-là quand il est actif, 'scroll' sinon.
-var _scrollEv = window._smoothScrollActive ? 'virtualscroll' : 'scroll';
-window.addEventListener(_scrollEv, check, { passive: true });
-window.addEventListener('load', () => setTimeout(onLoadVisible, 150));
-setTimeout(onLoadVisible, 150);
+// Révélations : on écoute les DEUX événements (scroll natif + virtualscroll du
+// smooth-scroll) + resize, pour ne jamais rater un déclenchement.
+window.addEventListener('scroll', check, { passive: true });
+window.addEventListener('virtualscroll', check, { passive: true });
+window.addEventListener('resize', check, { passive: true });
+// Filet de sécurité : on repasse plusieurs fois après le chargement (police,
+// images, mise en page tardive) pour révéler ce qui est déjà à l'écran, et on
+// relance si l'onglet redevient visible. Le texte ne peut plus rester bloqué.
+[80, 250, 600, 1200, 2500].forEach(function (t) { setTimeout(onLoadVisible, t); });
+window.addEventListener('load', function () { setTimeout(onLoadVisible, 60); });
+document.addEventListener('visibilitychange', function () { if (!document.hidden) onLoadVisible(); });
 
 // ─── HERO ANIMATIONS ─────────────────────────────────────────────────────────
 
