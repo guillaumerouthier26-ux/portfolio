@@ -1053,12 +1053,21 @@ textarea:focus-visible {
     height: 70svh;
   }
 
-  .projets-row:has(.projet-item:hover) .projet-item {
-    flex-grow: 5.75;
-  }
+  /* Redimensionnement au survol — réservé aux vrais pointeurs.
+     Sur écran tactile, :hover se déclenche au toucher et y reste collé :
+     la tuile s'élargissait et poussait sa voisine jusqu'au tap suivant.
+     L'ordre des règles est celui d'origine : la règle de repos doit rester
+     ENTRE les deux blocs, sa spécificité étant identique (0,4,0) à celle
+     de la règle générique de survol — c'est l'ordre qui les départage. */
+  @media (hover: hover) and (pointer: fine) {
 
-  .projets-row:has(.projet-item:hover) .projet-item:hover {
-    flex-grow: 6.25;
+    .projets-row:has(.projet-item:hover) .projet-item {
+      flex-grow: 5.75;
+    }
+
+    .projets-row:has(.projet-item:hover) .projet-item:hover {
+      flex-grow: 6.25;
+    }
   }
 
   /* Rangée à un seul projet gardée sur la moitié (place pour un projet à côté) */
@@ -1071,19 +1080,22 @@ textarea:focus-visible {
     transition: flex-basis 0.55s cubic-bezier(0.76, 0, 0.24, 1);
   }
 
-  /* Neutralise le flex-grow des règles de survol génériques.
-     Spécificité volontairement élevée pour passer devant elles. */
-  .projets-row--half:has(.projet-item:hover) .projet-item,
-  .projets-row--half:has(.projet-item:hover) .projet-item:hover,
-  .projets-row:not(:has(.projet-item + .projet-item)):has(.projet-item:hover) .projet-item,
-  .projets-row:not(:has(.projet-item + .projet-item)):has(.projet-item:hover) .projet-item:hover {
-    flex-grow: 0;
-  }
+  @media (hover: hover) and (pointer: fine) {
 
-  /* Survol : +24px, exactement comme les paires, sans s'étirer sur la rangée. */
-  .projets-row--half:has(.projet-item:hover) .projet-item:hover,
-  .projets-row:not(:has(.projet-item + .projet-item)):has(.projet-item:hover) .projet-item:hover {
-    flex-basis: calc((100% - var(--grid-gutter)) / 2 + 24px);
+    /* Neutralise le flex-grow des règles de survol génériques.
+       Spécificité volontairement élevée pour passer devant elles. */
+    .projets-row--half:has(.projet-item:hover) .projet-item,
+    .projets-row--half:has(.projet-item:hover) .projet-item:hover,
+    .projets-row:not(:has(.projet-item + .projet-item)):has(.projet-item:hover) .projet-item,
+    .projets-row:not(:has(.projet-item + .projet-item)):has(.projet-item:hover) .projet-item:hover {
+      flex-grow: 0;
+    }
+
+    /* Survol : +24px, exactement comme les paires, sans s'étirer sur la rangée. */
+    .projets-row--half:has(.projet-item:hover) .projet-item:hover,
+    .projets-row:not(:has(.projet-item + .projet-item)):has(.projet-item:hover) .projet-item:hover {
+      flex-basis: calc((100% - var(--grid-gutter)) / 2 + 24px);
+    }
   }
 
   /* ─── BAS DE PAGE ────────────────────────── */
@@ -1290,4 +1302,22 @@ textarea:focus-visible {
 /* Animations réduites : pas de montée, le lien est visible d'emblée. */
 @media (prefers-reduced-motion: reduce) {
   .hero-switch { transform: none; }
+}
+
+/* ══════════════════════════════════════════════
+   TABLETTE — 768 à 1023px
+   Cette plage n'avait aucun point de rupture : elle recevait la mise en
+   page mobile, conçue pour 375px. Les paragraphes s'étiraient à 103
+   caractères par ligne, loin des 60–75 lisibles.
+   ══════════════════════════════════════════════ */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .ap-lede-p,
+  .ap-texte-body,
+  .pjb-desc p,
+  .pj-intro-text p,
+  .tf-lede {
+    max-width: 68ch;
+  }
 }

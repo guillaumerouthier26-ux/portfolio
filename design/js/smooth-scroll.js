@@ -1,6 +1,18 @@
 (function () {
   if (window.innerWidth < 1024) return;
 
+  // Tablettes : pas de smooth-scroll. La largeur seule ne suffit pas à les
+  // écarter (iPad Pro = 1024 en portrait, 1366 en paysage), et le défilement
+  // inertiel du système entre en conflit avec l'interpolation.
+  // iPadOS se déclare « MacIntel » : on le reconnaît à ses points tactiles.
+  var ua = navigator.userAgent;
+  var estIOS = /iP(hone|ad|od)/.test(ua) ||
+               (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var estAndroid = /Android/.test(ua);
+  var pointeurGrossier = window.matchMedia &&
+                         window.matchMedia('(pointer: coarse)').matches;
+  if (estIOS || estAndroid || pointeurGrossier) return;
+
   window._smoothScrollActive = true;
 
   var wrapper = document.createElement('div');

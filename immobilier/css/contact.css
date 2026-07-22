@@ -181,3 +181,28 @@
   }
 
 }
+
+/* ─── ÉCRANS TACTILES ─────────────────────────
+   Les champs mesuraient 13px de haut et le bouton d'envoi 36px, sous le
+   minimum de 44px (Apple HIG / 48dp Material). Comme .contact-layout est
+   verrouillé à 100svh avec overflow:hidden, agrandir les cibles sans
+   libérer la hauteur découperait le bouton d'envoi en paysage. */
+@media (pointer: coarse) {
+
+  .contact-layout {
+    height: auto;
+    min-height: 100svh;
+    overflow: visible;
+  }
+
+  .contact-field input,
+  .contact-field textarea {
+    min-height: 44px;
+  }
+
+  .contact-submit {
+    min-height: 44px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
