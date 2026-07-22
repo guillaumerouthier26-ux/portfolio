@@ -1239,6 +1239,15 @@ textarea:focus-visible {
     gap: 28px;
   }
   .it-arrow { align-self: flex-end; }
+
+  /* « À partir de 180 $, » doit tenir sur une seule ligne.
+     scaleX(0.8) ne réduit pas la boîte de mise en page : le texte se
+     répartit sur sa largeur pleine, donc il cassait une ligne trop tôt.
+     On réduit la taille juste assez pour que la boîte entre dans
+     100vw - 48px (marge de 24px de chaque côté). */
+  .it-line {
+    font-size: min(37pt, calc(12.4vw - 6.5px));
+  }
 }
 
 @media (min-width: 1024px) {
