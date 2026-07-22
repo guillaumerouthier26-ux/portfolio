@@ -1,0 +1,168 @@
+/* ─── PAGE TARIFS ────────────────────────────── */
+
+.tf-body {
+  padding: 0 24px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* ─── SECTIONS ─── */
+
+.tf-sec-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.tf-sec-num { opacity: 0.65; }
+
+.tf-sec-titre {
+  display: block;
+  line-height: 0.95;
+  margin: 0;
+}
+
+/* ─── RANGÉES (forfaits, compléments, conditions) ─── */
+
+.tf-rows {
+  border-top: 2px solid #000;
+}
+
+.tf-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.tf-row-main {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.tf-meta {
+  color: #6b6b6b;
+  line-height: 1.5;
+  max-width: 52ch;
+}
+
+.tf-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tf-from {
+  color: #6b6b6b;
+}
+
+.tf-price-num {
+  font-size: 15pt;
+  letter-spacing: -0.02em;
+}
+
+.tf-note {
+  color: #6b6b6b;
+  margin-top: 18px;
+}
+
+/* ══════════════════════════════════════════════
+   TARIFS — DESKTOP
+   ══════════════════════════════════════════════ */
+
+@media (min-width: 1024px) {
+
+  .tf-body {
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 130px;
+    gap: 130px;
+  }
+
+  .tf-sec {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--grid-gutter, 24px);
+    align-items: start;
+  }
+
+  .tf-sec-head { grid-column: 1 / 4; margin-bottom: 0; }
+  .tf-rows     { grid-column: 4 / 13; }
+  .tf-note     { grid-column: 4 / 13; }
+
+  .tf-price-num { font-size: 17pt; }
+
+
+}
+
+
+/* ─── HERO + TITRE (calqués sur les pages projets) ─── */
+/* Styles autonomes : cette page ne charge pas projet.css */
+
+.tf-hero {
+  height: 75vh;
+  height: 75svh;
+  overflow: hidden;
+}
+
+.tf-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tf-intro {
+  height: 25vh;
+  height: 25svh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 24px 24px;
+}
+
+.tf-titre {
+  display: block;
+  line-height: 0.9;
+  margin-bottom: 18px;
+}
+
+.tf-lede {
+  max-width: 44ch;
+  line-height: 1.6;
+}
+
+@media (min-width: 1024px) {
+  .tf-intro {
+    height: auto;
+    min-height: 18vh;
+    min-height: 18svh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--grid-gutter, 24px);
+    padding: 28px var(--grid-margin, 40px) 32px;
+    align-items: end;
+  }
+  .tf-titre {
+    grid-column: 1 / 4;
+    grid-row: 1;
+    margin-bottom: 0;
+  }
+
+  /* Le lede s'aligne sur la colonne du tableau des forfaits (col. 4),
+     sur la MÊME rangée que le titre, calé sur sa ligne de base du bas */
+  .tf-lede {
+    grid-column: 4 / 9;
+    grid-row: 1;
+    align-self: end;
+    max-width: none;
+  }
+}

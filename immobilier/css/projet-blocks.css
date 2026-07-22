@@ -1,0 +1,143 @@
+/* ══════════════════════════════════════════════════════════════
+   BLOCS PROJET PARTAGÉS — Le projet / Crédits / Projet suivant
+   À charger APRÈS style.css et projet.css sur chaque page projet.
+   Réutilise la grille (--grid-margin / --grid-gutter) et la typo
+   (.t-titre / .t-courant). Repris de la refonte Objectif Québec.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ─── Label de section : (01) / Le projet ─── */
+.pjb-label {
+  display: block;
+  margin-bottom: 22px;
+}
+
+/* ─── (01) LE PROJET ─── */
+.pjb-projet {
+  padding: 70px var(--grid-margin, 24px) 0;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.pjb-projet-lede { margin: 0; line-height: 0.98; }
+.pjb-projet-lede.t-titre { transform: scaleX(0.8); transform-origin: left center; }
+
+/* Mobile : accroche en "titre 2" = 75% de la taille du titre (37pt → 27.75pt) */
+@media (max-width: 1023px) {
+  .pjb-projet-lede { font-size: 27.75pt; line-height: 1.12; }
+}
+.pjb-projet-body p {
+  margin: 0 0 34px;
+  line-height: 1.6;
+  max-width: 52ch;
+}
+.pjb-projet-body p.pjb-projet-body-text { margin: 34px 0 0; }
+.pjb-meta {
+  display: flex;
+  flex-direction: column;
+  border-top: 1.5px solid #000;
+}
+.pjb-meta-row {
+  display: flex;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid #d8d8d8;
+}
+.pjb-meta-row .pjb-meta-k { flex: 0 0 90px; color: #6b6b6b; }
+
+/* ─── CRÉDITS ─── */
+.pjb-credits {
+  padding: 80px var(--grid-margin, 24px) 56px;
+}
+.pjb-credits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.pjb-credit {
+  flex: 1 1 200px;
+  min-width: 170px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1.5px solid #000;
+  padding-top: 13px;
+}
+.pjb-credit-k { color: #6b6b6b; }
+
+/* ─── PROJET SUIVANT ─── */
+.pjb-next {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  background: #000;
+  padding: 48px var(--grid-margin, 24px);
+}
+.pjb-next + .footer { margin-top: 0; }
+.pjb-next-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.pjb-next-eyebrow {
+  display: block;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 14px;
+}
+.pjb-next-titre { margin: 0; color: #fff; line-height: 0.9; }
+.pjb-next-arrow {
+  color: #fff;
+  white-space: nowrap;
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (hover: hover) {
+  .pjb-next:hover .pjb-next-arrow { transform: translateX(8px); }
+}
+
+/* Mobile : empiler pour que la flèche ne saute jamais / ne disparaisse
+   quand le nom du projet est long */
+@media (max-width: 1023px) {
+  .pjb-next-inner {
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 28px;
+  }
+  .pjb-next-arrow { align-self: flex-end; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   DESKTOP ≥ 1024px — grille 12 colonnes
+   ══════════════════════════════════════════════════════════════ */
+@media (min-width: 1024px) {
+
+  .pjb-projet {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--grid-gutter, 24px);
+    padding-top: 150px;
+    align-items: start;
+  }
+  .pjb-projet-lede-wrap { grid-column: 1 / 6; }
+  .pjb-projet-body      { grid-column: 7 / 10; }
+
+  .pjb-credits { padding-top: 180px; }
+  .pjb-next    { padding-top: 96px; padding-bottom: 96px; }
+}
+
+/* Description sous l'accroche (colonne de gauche), méta seule à droite */
+.pjb-projet-lede-wrap p.t-courant {
+  margin: 34px 0 0;
+  line-height: 1.6;
+  max-width: 52ch;
+}
+
+/* Sans accroche : le premier paragraphe colle en haut */
+.pjb-projet-lede-wrap p.t-courant:first-child { margin-top: 0; }
+
+/* Respiration avant le bloc « projet suivant » */
+.pjb-next { margin-top: 100px; }
+@media (min-width: 1024px) { .pjb-next { margin-top: 160px; } }

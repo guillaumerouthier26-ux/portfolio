@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>À Propos — Guillaume Routhier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=116">
+  <link rel="stylesheet" href="css/apropos.css?v=116">
+</head>
+
+<body>
+
+  <div id="page-transition"></div>
+
+  <div class="nav-menu" id="nav-menu" aria-hidden="true">
+    <nav class="nav-menu-inner">
+      <a class="t-titre nav-menu-titre" href="index.html#projets">Mes Projets</a>
+      <a class="t-titre nav-menu-titre" href="tarifs.html">Tarifs</a>
+      <a class="t-titre nav-menu-titre" href="contact.html">Contact</a>
+      <a class="t-titre nav-menu-titre" href="apropos.html">À&nbsp;Propos</a>
+    </nav>
+  </div>
+
+  <header class="navbar">
+    <div class="nav-filet"></div>
+    <div class="nav-top">
+      <a class="nav-logo" href="index.html">
+        <span class="logo-text">Guillaume</span>
+      </a>
+      <nav class="nav-desktop">
+        <a class="nav-desktop-link" href="index.html#projets">Projets</a>
+        <a class="nav-desktop-link" href="tarifs.html">Tarifs</a>
+        <a class="nav-desktop-link" href="contact.html">Contact</a>
+        <a class="nav-desktop-link" href="apropos.html" aria-current="page">À&nbsp;Propos</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero — image 2/3 hauteur + intro dessous -->
+  <section class="ap-hero">
+    <div class="ap-hero-img-wrap">
+      <picture>
+        <source media="(max-width: 1023px)" srcset="photos/contact.jpg">
+        <img class="ap-hero-img" src="photos/apropos-hero.jpg" alt="Guillaume Routhier, photographe immobilier" fetchpriority="high" decoding="async">
+      </picture>
+    </div>
+    <div class="ap-intro">
+      <span class="ap-logo-titre">Guillaume</span>
+      <p class="t-courant">Photographe immobilier</p>
+    </div>
+  </section>
+
+  <!-- Corps : flux éditorial — texte d'abord, images là où elles servent -->
+  <div class="ap-body">
+
+    <!-- Proposition de valeur + lede -->
+    <div class="ap-vp">
+      <h1 class="t-titre ap-statement ap-vp-line">Photographie immobilière pour courtiers, livrée vite et prête à mettre en ligne.</h1>
+    </div>
+
+    <div class="ap-lede">
+      <p class="t-courant ap-lede-p">Je m'appelle Guillaume, photographe immobilier dans la région de Québec. Je travaille surtout avec des courtiers. Je fonctionne de façon structurée, et je livre vite, parce qu'une inscription n'attend pas.</p>
+      <p class="t-courant ap-lede-p">Je livre les photos retouchées en 24 heures. Une propriété photographiée aujourd'hui peut être en ligne demain.</p>
+    </div>
+
+    <!-- Compétences : strip scannable, tôt dans la page -->
+    <div class="ap-creds">
+      <dl class="ap-skills">
+        <div class="ap-skills-row">
+          <dt class="t-courant ap-skills-k">Expertise</dt>
+          <dd class="t-courant ap-skills-v">Photographie intérieure · Extérieure · Drone · Vidéo</dd>
+        </div>
+        <div class="ap-skills-row">
+          <dt class="t-courant ap-skills-k">Outils</dt>
+          <dd class="t-courant ap-skills-v">Lightroom · Photoshop · Premiere Pro · DJI</dd>
+        </div>
+      </dl>
+    </div>
+
+    <!-- Image d'ouverture : mise en situation / atelier (paysage pleine largeur) -->
+    <figure class="ap-media ap-media--single">
+      <img src="photos/apropos-2.jpg" alt="Guillaume Routhier" loading="lazy" decoding="async">
+    </figure>
+
+    <!-- (01) Mon approche -->
+    <section class="ap-sec ap-sec--2col">
+      <div class="ap-sec-head">
+        <span class="t-courant ap-sec-num">(01)</span>
+        <h2 class="t-titre ap-sec-titre">Mon<br>approche</h2>
+      </div>
+      <div class="ap-sec-accent-cell"><p class="t-titre ap-statement ap-sec-accent">Faire voir l'espace avant de faire joli.</p></div>
+      <div class="ap-sec-body">
+        <p class="t-courant ap-texte-body">Je commence par la lumière et le volume. Ce qu'un acheteur veut comprendre, c'est comment l'espace est fait et où il donne. Le reste vient après.</p>
+        <p class="t-courant ap-texte-body">Je penche vers le naturel. Pas de couleurs poussées, pas de grand-angle qui étire les murs. Une pièce doit avoir l'air de ce qu'elle est quand on entre.</p>
+      </div>
+    </section>
+
+    <!-- Preuves : deux travaux -->
+    <div class="ap-media ap-media--duo">
+      <figure class="ap-media-item">
+        <img src="photos/apropos-3.jpg" alt="Projet d'identité de marque" loading="lazy" decoding="async">
+      </figure>
+      <figure class="ap-media-item">
+        <img src="photos/apropos-4.jpg" alt="Projet d'identité de marque" loading="lazy" decoding="async">
+      </figure>
+    </div>
+
+    <!-- (02) Ce que j'apporte + compétences -->
+    <section class="ap-sec">
+      <div class="ap-sec-head">
+        <span class="t-courant ap-sec-num">(02)</span>
+        <h2 class="t-titre ap-sec-titre">Ce que<br>j'apporte</h2>
+      </div>
+      <div class="ap-sec-accent-cell"><p class="t-titre ap-statement ap-sec-accent">Je m'ajuste à ce que la propriété demande.</p></div>
+      <div class="ap-sec-body">
+        <p class="t-courant ap-texte-body">Chaque propriété a ses contraintes. Un plex encore occupé, une fenêtre de deux heures entre deux rendez-vous. Je m'organise en conséquence.</p>
+        <p class="t-courant ap-texte-body">Quand un mandat demande du drone ou de la vidéo, je le livre. Je cherche des courtiers avec qui travailler sur la durée, pas juste un contrat à la fois.</p>
+      </div>
+    </section>
+
+    <!-- Respiration : atelier / process (indentée sur l'axe de lecture) -->
+    <figure class="ap-media ap-media--inset">
+      <img src="photos/apropos-inset.jpg" alt="Guillaume Routhier" loading="lazy" decoding="async">
+    </figure>
+
+    <!-- (03) À jour avec la technologie -->
+    <section class="ap-sec">
+      <div class="ap-sec-head">
+        <span class="t-courant ap-sec-num">(03)</span>
+        <h2 class="t-titre ap-sec-titre">À jour avec<br>la technologie</h2>
+      </div>
+      <div class="ap-sec-accent-cell"><p class="t-titre ap-statement ap-sec-accent">L'IA va vite sur la retouche. Les choix, c'est moi.</p></div>
+      <div class="ap-sec-body">
+        <p class="t-courant ap-texte-body">L'IA fait partie de mon flux de retouche. Elle me sert à nettoyer et à abattre le répétitif, sans décider à ma place. Le rendu final reste mon choix.</p>
+        <p class="t-courant ap-texte-body">Je m'en tiens à ce qui est honnête. Je nettoie, je corrige la lumière, je n'ajoute pas de meubles ni de vues qui n'existent pas. Un acheteur déçu en visite, ça retombe sur le courtier.</p>
+      </div>
+    </section>
+
+    <!-- (04) En dehors de l'écran -->
+    <section class="ap-sec">
+      <div class="ap-sec-head">
+        <span class="t-courant ap-sec-num">(04)</span>
+        <h2 class="t-titre ap-sec-titre">En dehors<br>de l'écran</h2>
+      </div>
+      <div class="ap-sec-accent-cell"><p class="t-titre ap-statement ap-sec-accent">La nature et le sport, c'est là que je vais chercher ma discipline.</p></div>
+      <div class="ap-sec-body">
+        <p class="t-courant ap-texte-body">En dehors des mandats, je fais surtout de la photo de nature. C'est ma façon de ralentir et de recharger.</p>
+        <p class="t-courant ap-texte-body">J'ai aussi un passé sportif. J'ai fait partie de l'équipe du Québec en snowboardcross, puis j'ai entraîné des athlètes provinciaux. J'en garde de la rigueur et de la constance. Ça sert quand une journée s'étire ou qu'une propriété ne coopère pas.</p>
+      </div>
+    </section>
+
+    <!-- Image de respiration : nature -->
+    <figure class="ap-media ap-media--wide">
+      <img src="photos/apropos-last.jpg" alt="Photographie de nature — chutes" loading="lazy" decoding="async">
+    </figure>
+
+    <!-- Clôture + CTA -->
+
+  </div><!-- /ap-body -->
+
+  <a class="ap-cta" href="contact.html">
+    <div class="ap-cta-inner">
+      <div>
+        <span class="t-courant ap-cta-eyebrow">Disponible</span>
+        <span class="t-titre ap-cta-line">Disponible pour vos inscriptions.</span>
+      </div>
+      <span class="t-courant ap-cta-arrow">Me&nbsp;contacter&nbsp;&rarr;</span>
+    </div>
+  </a>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <a class="footer-cta" href="mailto:guillaumerouthier26@gmail.com">
+        <span class="t-courant footer-eyebrow"><span class="footer-dot" aria-hidden="true"></span>Disponible pour vos mandats &mdash; r&eacute;gion de Qu&eacute;bec</span>
+        <span class="t-titre footer-cta-titre">Parlons-en.</span>
+        <span class="t-courant footer-cta-mail">guillaumerouthier26@gmail.com<span class="footer-cta-arrow" aria-hidden="true">&#8594;</span></span>
+      </a>
+      <div class="footer-cols">
+        <nav class="footer-col" aria-label="Menu">
+          <span class="t-courant footer-col-k">Menu</span>
+          <a class="t-courant" href="index.html#projets">Projets</a>
+          <a class="t-courant" href="apropos.html">&Agrave;&nbsp;propos</a>
+          <a class="t-courant" href="contact.html">Contact</a>
+        </nav>
+        <nav class="footer-col" aria-label="R&eacute;seaux">
+          <span class="t-courant footer-col-k">R&eacute;seaux</span>
+          <a class="t-courant" href="https://instagram.com/peluredekiwi.reguliere" target="_blank" rel="noopener">Instagram</a>
+            <a class="t-courant" href="https://www.linkedin.com/in/guillaume-routhier-2bb03b248/" target="_blank" rel="noopener">LinkedIn</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span class="t-courant footer-copy">&copy; 2026 Guillaume Routhier</span>
+      <div class="footer-meta-legal">
+        <a class="t-courant" href="#">Retour en&nbsp;haut &#8593;</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Pas de smooth-scroll ici : scroll natif pour que le rail sticky fonctionne -->
+  <script src="js/menu.js?v=116"></script>
+  <script src="js/page-animations.js?v=116"></script>
+  <script src="js/cursor.js?v=116"></script>
+  <script src="js/transitions.js?v=116"></script>
+</body>
+</html>

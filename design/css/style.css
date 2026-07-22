@@ -1,0 +1,1199 @@
+@font-face {
+  font-family: 'Maison Neue Mono';
+  src: url('../fonts/maison-neue-mono.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+:root {
+  --font-titre:    'Lora', serif;
+  --font-mono:     'Maison Neue Mono', 'Courier New', monospace;
+}
+
+body {
+  font-family: var(--font-mono);
+  background: #fff;
+}
+
+body.intro-active {
+  overflow: hidden;
+}
+
+/* ─── TRANSITION DE PAGE ─────────────────────── */
+
+#page-transition {
+  display: none;
+}
+
+/* ─── SPA : masquer l'intro immédiatement lors d'une navigation interne ── */
+html.js-spa-nav #intro-bg,
+html.js-spa-nav #intro-video-wrap {
+  display: none !important;
+}
+
+/* ─── INTRO ───────────────────────────────────── */
+
+#intro-bg {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 998;
+  pointer-events: none;
+  clip-path: inset(0 0 0% 0);
+}
+
+#intro-video-wrap {
+  position: fixed;
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 210px;
+  z-index: 999;
+  pointer-events: none;
+}
+
+#intro-video-wrap video {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: transparent;
+  /* Masquée jusqu'à la 1re frame décodée → évite le flash noir du <video> */
+  opacity: 0;
+}
+
+/* ─── MENU ────────────────────────────────────── */
+
+.nav-menu {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 24px 48px;
+  transform: translateY(-100%);
+  transition: transform 0.65s cubic-bezier(0.76, 0, 0.24, 1);
+  overflow: hidden;
+}
+
+.nav-menu.is-open {
+  transform: translateY(0);
+}
+
+.nav-menu-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-menu-titre {
+  font-size: 37pt;
+  display: block;
+  text-decoration: none;
+  color: #000;
+  line-height: 1;
+}
+
+.nav-menu-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-menu-sub {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 16px;
+}
+
+.nav-menu-sub-link {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Hamburger → X quand menu ouvert */
+body.menu-open .nav-toggle span {
+  background: #000;
+}
+
+body.menu-open .nav-toggle span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+body.menu-open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+body.menu-open .nav-toggle span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+body.menu-open .nav-logo {
+  filter: none;
+  mix-blend-mode: normal;
+}
+
+body.menu-open .nav-filet {
+  background: #000;
+}
+
+/* ─── NAVBAR ─────────────────────────────────── */
+
+.nav-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 55px;
+  overflow: hidden;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+  z-index: 100;
+  background: transparent;
+  pointer-events: none;
+}
+
+/* Dégradé noir → transparent derrière le menu, étendu bien au-delà du menu
+   et fondu en douceur pour rester subtil sur les heros clairs */
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 280px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.30) 0%,
+    rgba(0, 0, 0, 0.18) 30%,
+    rgba(0, 0, 0, 0.07) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  pointer-events: none;
+}
+
+.navbar > * {
+  pointer-events: auto;
+}
+
+/* Conifère : hero déjà sombre → pas de dégradé de navbar */
+body.cn-page .navbar::before {
+  display: none;
+}
+
+.nav-filet {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+}
+
+.nav-logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 55px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-logo img {
+  height: 35px;
+  width: auto;
+  display: block;
+}
+
+/* Logo texte « Guillaume » — Lora, s'adapte au fond via difference */
+.logo-text {
+  font-family: var(--font-titre);
+  font-weight: 500;
+  font-size: 23pt;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  transform: scaleX(0.85);
+  transform-origin: center;
+  mix-blend-mode: difference;
+}
+
+.nav-desktop {
+  display: none;
+}
+
+.nav-toggle {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  height: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 26px;
+  height: 1.5px;
+  background: #fff;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* ─── STYLES DE TEXTE ─────────────────────────── */
+
+/* Titre — Lora Medium 80% largeur */
+.t-titre {
+  font-family: var(--font-titre);
+  font-weight: 500;
+  font-size: 37pt;
+  letter-spacing: -0.02em;
+  display: inline-block;
+  transform: scaleX(0.8);
+  transform-origin: left center;
+}
+
+/* Accent parenthèses — Lora Bold, style "(c)" du logo */
+.t-accent {
+  font-family: var(--font-titre);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 0.42em;
+  vertical-align: text-top;
+  position: relative;
+  top: 0.1em;
+  line-height: 1;
+}
+
+/* Parenthèse — Lora Bold 9pt, top aligné avec x-height du titre */
+.t-parenthese {
+  font-family: var(--font-titre);
+  font-weight: 700;
+  font-size: 9pt;
+  letter-spacing: -0.02em;
+  vertical-align: 1.37em;
+  line-height: 1;
+}
+
+/* Sous-titre — Maison Neue Mono Regular uppercase 12pt */
+.t-sous-titre {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 15pt;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+/* Courant — Maison Neue Mono Regular uppercase 9pt noir */
+.t-courant {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: #000;
+}
+
+/* Courant Gras — même chose mais bold */
+.t-courant-gras {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: #000;
+}
+
+/* Saut de ligne mobile uniquement (ignoré par l'animation car <br> a un attribut) */
+br.br-mobile { display: none; }
+@media (max-width: 1023px) { br.br-mobile { display: inline; } }
+
+/* ─── HERO ────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  height: calc(100vh + 100px);
+  height: calc(100svh + 100px);
+  overflow: hidden;
+}
+
+.hero-bg {
+  width: 100%;
+  height: 120%;
+  top: -10%;
+  position: absolute;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+}
+
+.hero-wordmark {
+  text-align: center;
+  position: absolute;
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  z-index: 2;
+}
+
+.hero-wordmark img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+/* Logo hero « Guillaume Routhier » — texte Lora animé ligne par ligne */
+.hero-wordmark-text {
+  font-family: var(--font-titre);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  font-size: clamp(30px, 7vw, 56px);
+  line-height: 0.92;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  transform: scaleX(0.85);
+  transform-origin: center;
+}
+
+.hw-line {
+  display: block;
+  overflow: hidden;
+}
+
+.hw-in {
+  display: block;
+  transform: translateY(110%);
+}
+
+.hero-clients-area {
+  position: absolute;
+  bottom: 25%;
+  left: 0;
+  width: 100%;
+}
+
+.hero-ticker-wrap {
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.hero-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 30s linear infinite;
+}
+
+.hero-ticker span {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0 56px;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.333%); }
+}
+
+/* Accessibilité : animations réduites → ticker figé */
+@media (prefers-reduced-motion: reduce) {
+  .hero-ticker { animation: none; }
+}
+
+.hero-filet {
+  border: none;
+  border-top: 2px solid #fff;
+  margin: 0;
+}
+
+.hero-more {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 9pt;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+/* Bouton contact — carré noir, réutilisable */
+.btn-contact {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 9pt;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: #000;
+  text-decoration: none;
+  border: 1.5px solid #000;
+  padding: 11px 16px;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Bouton contact — survol : inversion (remplissage), pression : léger enfoncement */
+.btn-contact {
+  transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.12s ease-out;
+}
+
+@media (hover: hover) {
+  .btn-contact:hover {
+    background: #000;
+    color: #fff;
+  }
+  /* Variante hero/blanc : s'inverse en blanc plein sur texte noir */
+  .hero .btn-contact:hover {
+    background: #fff;
+    color: #000;
+  }
+}
+
+.btn-contact:active {
+  transform: scale(0.97);
+}
+
+/* Focus visible global (accessibilité clavier) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Bouton contact dans le hero — positionné bas droite */
+.hero .btn-contact {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  color: #fff;
+  border-color: #fff;
+  z-index: 3;
+}
+
+/* ─── ZONE BAS DE PAGE ────────────────────────── */
+
+.index-bas {
+  position: relative;
+  height: 80px;
+}
+
+.index-bas .btn-contact {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+}
+
+/* ─── PAGE CONTACT ────────────────────────────── */
+
+.contact-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.contact-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── SERVICES ────────────────────────────────── */
+
+.services {
+  padding-top: 230px;
+  background: #fff;
+}
+
+.services-header {
+  padding: 0 24px;
+  margin-bottom: 90px;
+  line-height: 1;
+}
+
+.services-header .t-titre {
+  font-size: 37pt;
+}
+
+.services-header .t-parenthese {
+  display: inline-block;
+  transform: scaleX(1.25);
+  transform-origin: left center;
+  vertical-align: 1.6em;
+  margin-left: 0.3em;
+  position: relative;
+  top: 2.5px;
+}
+
+.service-item {
+  padding: 0 24px;
+  margin-bottom: 40px;
+}
+
+.service-item--link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.service-item .t-sous-titre {
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* ─── PROJETS ─────────────────────────────────── */
+
+.projets {
+  padding-top: 230px;
+}
+
+.projets-header {
+  padding: 0 24px;
+  margin-bottom: 140px;
+  line-height: 1;
+}
+
+.projets-header .t-titre {
+  font-size: 37pt;
+  display: block;
+  line-height: 0.9;
+  margin-bottom: 0;
+}
+
+.projets-header .t-parenthese {
+  display: inline-block;
+  transform: scaleX(1.25);
+  transform-origin: left center;
+  vertical-align: 1.6em;
+  margin-left: 0.3em;
+  position: relative;
+  top: 2.5px;
+}
+
+.projets-header .t-titre + .t-titre {
+  font-size: 37pt;
+  margin-top: 4px;
+}
+
+.projets-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.projets-row {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.projet-item {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 0 24px;
+}
+
+.projet-item .projet-img-wrap {
+  margin-top: 12px;
+}
+
+.projet-titre {
+  display: flex;
+  align-items: baseline;
+  gap: 4ch;
+}
+
+/* Discipline du projet — repère de triage pour un DA pressé */
+.projet-tag {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: #6b6b6b;
+}
+
+.projet-img-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.projet-img {
+  position: absolute;
+  width: 100%;
+  height: 130%;
+  top: -15%;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+}
+
+/* Survol carte : l'image respire → l'agrandissement de la grille a un sujet */
+@media (hover: hover) and (min-width: 1024px) {
+  .projet-img-wrap { transition: none; }
+  .projet-item .projet-img {
+    transition: scale 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .projet-item:hover .projet-img {
+    scale: 1.04;
+  }
+}
+
+/* ─── FOOTER — clôture éditoriale ─────────────── */
+
+.footer {
+  border-top: 2px solid #000;
+  margin-top: 200px;
+  padding: 56px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+/* Après un bloc « projet suivant » noir : pas de marge (déjà géré ailleurs) */
+
+.footer-main {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* ── Bloc CTA : e-mail en grand, l'invitation à écrire ── */
+.footer-cta {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+
+.footer-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  color: #6b6b6b;
+}
+
+.footer-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #000;
+  flex: none;
+}
+
+.footer-cta-titre {
+  display: block;
+  font-size: 40pt;
+  line-height: 0.9;
+}
+
+.footer-cta-mail {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 20px;
+  color: #000;
+  transition: opacity 0.2s ease-out;
+}
+
+.footer-cta-arrow {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (hover: hover) {
+  .footer-cta:hover .footer-cta-mail { opacity: 0.55; }
+  .footer-cta:hover .footer-cta-arrow { transform: translateX(6px); }
+}
+
+/* ── Colonnes : menu + réseaux ── */
+.footer-cols {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.footer-col-k {
+  color: #6b6b6b;
+  margin-bottom: 5px;
+}
+
+.footer-col a {
+  text-decoration: none;
+  color: #000;
+  width: max-content;
+  transition: opacity 0.2s ease-out;
+}
+
+@media (hover: hover) {
+  .footer-col a:hover { opacity: 0.55; }
+}
+
+/* ── Barre méta ── */
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px 24px;
+  border-top: 1px solid #d8d8d8;
+  padding-top: 20px;
+}
+
+.footer-copy { color: #6b6b6b; }
+
+.footer-meta-legal {
+  display: flex;
+  gap: 24px;
+  align-items: baseline;
+}
+
+.footer-meta-legal a {
+  text-decoration: none;
+  color: #6b6b6b;
+  transition: color 0.2s ease-out;
+}
+
+@media (hover: hover) {
+  .footer-meta-legal a:hover { color: #000; }
+}
+
+/* Logo footer « Guillaume » — texte Lora noir (conservé, réutilisé ailleurs) */
+.footer-logo-text {
+  font-family: var(--font-titre);
+  font-weight: 500;
+  font-size: 30pt;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: #000;
+  display: block;
+  transform: scaleX(0.85);
+  transform-origin: left center;
+}
+
+/* Courant vertical — Mono, 460 tracking, texte vers le haut */
+.t-courant-vert {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 0.46em;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: #000;
+  white-space: nowrap;
+}
+
+/* Courant numéro — Mono 30pt entre parenthèses */
+.t-courant-num {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 30pt;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: #000;
+  line-height: 1;
+}
+
+
+/* ─── SERVICE IMAGES ──────────────────────────── */
+
+.service-img-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  margin-top: 12px;
+}
+
+.service-img {
+  position: absolute;
+  width: 100%;
+  height: 130%;
+  top: -15%;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+}
+
+/* ══════════════════════════════════════════════
+   DESKTOP — 12 COLONNES
+   Breakpoint : 1024px+
+   Gouttières : 24px  |  Marges : 80px
+   ══════════════════════════════════════════════ */
+
+@media (min-width: 1024px) {
+
+  :root {
+    --grid-gutter: 24px;
+    --grid-margin: 40px;
+  }
+
+  /* ─── TYPOGRAPHIE ───────────────────────── */
+
+  .t-titre,
+  .services-header .t-titre,
+  .projets-header .t-titre,
+  .projets-header .t-titre + .t-titre,
+  .nav-menu-titre {
+    font-size: 47pt;
+  }
+
+  .t-parenthese,
+  .services-header .t-parenthese,
+  .projets-header .t-parenthese {
+    font-size: 11.5pt;
+  }
+
+  .t-sous-titre {
+    font-size: 19pt;
+  }
+
+  .t-courant,
+  .t-courant-gras,
+  .t-courant-vert {
+    font-size: 10pt;
+  }
+
+  /* ─── NAVBAR ─────────────────────────────── */
+
+  /* navbar garde sa hauteur originale (110px) pour ne pas clipper le filet */
+  .nav-top {
+    height: 68px;
+  }
+
+  .nav-filet {
+    top: 68px;
+  }
+
+  .nav-logo {
+    height: 68px;
+    left: var(--grid-margin);
+    transform: none;
+  }
+
+  .nav-logo img {
+    height: 42px;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-desktop {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: var(--grid-margin);
+    height: 68px;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .nav-desktop-link {
+    font-family: var(--font-mono);
+    font-size: 9pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: #fff;
+    text-decoration: none;
+    mix-blend-mode: difference;
+    position: relative;
+  }
+
+  /* Soulignement animé au survol (croît depuis la gauche) */
+  .nav-desktop-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-desktop-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Page courante : soulignement permanent */
+  .nav-desktop-link[aria-current="page"]::after {
+    transform: scaleX(1);
+  }
+
+  /* ─── HERO ───────────────────────────────── */
+
+  .hero .btn-contact {
+    right: var(--grid-margin);
+  }
+
+  /* ─── SERVICES ───────────────────────────── */
+
+  .services {
+    padding-left: var(--grid-margin);
+    padding-right: var(--grid-margin);
+    padding-bottom: 100px;
+  }
+
+  .services-header {
+    padding: 0;
+    margin-bottom: 80px;
+  }
+
+  .services-grid {
+    display: flex;
+    gap: var(--grid-gutter);
+  }
+
+  .service-item {
+    flex: 2 1 0;
+    min-width: 0;
+    padding: 0;
+    margin-bottom: 0;
+    transition: flex-grow 0.55s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .service-item:hover {
+    flex-grow: 3;
+  }
+
+  .service-img-wrap {
+    width: 100%;
+    margin-left: 0;
+    height: 660px;
+    aspect-ratio: unset;
+  }
+
+  /* ─── PROJETS ────────────────────────────── */
+
+  .projets {
+    padding-left: var(--grid-margin);
+    padding-right: var(--grid-margin);
+  }
+
+  .projets-header {
+    padding: 0;
+  }
+
+  .projets-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  .projets-row {
+    display: flex;
+    flex-direction: row;
+    gap: var(--grid-gutter);
+  }
+
+  .projet-item {
+    flex: 6 1 0;
+    min-width: 0;
+    padding: 0;
+    transition: flex-grow 0.55s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .projet-img-wrap {
+    aspect-ratio: auto;
+    height: 70vh;
+    height: 70svh;
+  }
+
+  .projets-row:has(.projet-item:hover) .projet-item {
+    flex-grow: 5.75;
+  }
+
+  .projets-row:has(.projet-item:hover) .projet-item:hover {
+    flex-grow: 6.25;
+  }
+
+  /* Rangée à un seul projet gardée sur la moitié (place pour un projet à côté) */
+  .projets-row--half .projet-item {
+    flex: 0 0 calc((100% - var(--grid-gutter)) / 2);
+  }
+
+  /* ─── BAS DE PAGE ────────────────────────── */
+
+  .index-bas .btn-contact {
+    right: var(--grid-margin);
+  }
+
+  /* ─── FOOTER ─────────────────────────────── */
+
+  .footer {
+    padding: 72px var(--grid-margin) 26px;
+    gap: 72px;
+  }
+
+  .footer-main {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--grid-gutter);
+    align-items: start;
+    gap: 0;
+  }
+
+  .footer-cta { grid-column: 1 / 8; }
+
+  .footer-cta-titre { font-size: 64pt; }
+
+  .footer-cols {
+    grid-column: 9 / 13;
+    justify-content: space-between;
+    gap: var(--grid-gutter);
+    padding-top: 6px;
+  }
+
+  /* ─── CURSEUR PERSONNALISÉ ───────────────── */
+
+  /* Curseur natif masqué UNIQUEMENT si le curseur perso est actif (posé par cursor.js) */
+  .has-custom-cursor body,
+  .has-custom-cursor a,
+  .has-custom-cursor button,
+  .has-custom-cursor [role="button"],
+  .has-custom-cursor input,
+  .has-custom-cursor label,
+  .has-custom-cursor select,
+  .has-custom-cursor textarea {
+    cursor: none;
+  }
+
+  /* Disque de taille fixe (64px) mis à l'échelle via transform → animation GPU,
+     lisse. La position vient de left/top (posés par cursor.js), le centrage +
+     l'échelle vivent dans transform. */
+  .custom-cursor {
+    position: fixed;
+    width: 64px;
+    height: 64px;
+    background: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    mix-blend-mode: difference;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%) scale(0.16);
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    will-change: transform;
+  }
+
+  .custom-cursor-label {
+    font-family: var(--font-mono);
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: #000;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.22s ease-out;
+  }
+
+  /* Survol d'un projet : le disque s'ouvre en grand, « Voir → » apparaît */
+  .custom-cursor.is-project {
+    mix-blend-mode: normal;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .custom-cursor.is-project .custom-cursor-label {
+    opacity: 1;
+    transition: opacity 0.28s ease-out 0.08s;
+  }
+
+  /* Survol lien/bouton standard : léger grossissement */
+  .custom-cursor.is-link {
+    transform: translate(-50%, -50%) scale(0.42);
+  }
+
+}
+
+
+/* ─── Bascule entre les deux volets du site (sous le nom, dans le hero) ─── */
+
+/* Ligne clippée : le lien monte depuis le bas, comme le nom. */
+.hero-switch-line {
+  display: block;
+  overflow: hidden;
+  margin-top: 22px;
+  text-align: center;
+}
+
+.hero-switch {
+  display: inline-block;
+  transform: translateY(110%);
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  padding-bottom: 4px;
+  transition: border-color 0.25s ease-out;
+}
+
+@media (hover: hover) {
+  .hero-switch:hover { border-bottom-color: #fff; }
+}
+
+/* Animations réduites : pas de montée, le lien est visible d'emblée. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-switch { transform: none; }
+}

@@ -1,0 +1,395 @@
+/* ─── PAGE À PROPOS ────────────────────────────── */
+
+/* Hero — image 2/3 + intro 1/3 */
+.ap-hero {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100svh;
+}
+
+.ap-hero-img-wrap {
+  height: 66.666vh;
+  height: 66.666svh;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.ap-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  display: block;
+}
+
+.ap-intro {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 24px 28px;
+  gap: 6px;
+}
+
+.ap-logo-titre {
+  font-family: var(--font-titre);
+  font-weight: 500;
+  font-size: 60pt;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: #000;
+  display: block;
+  align-self: flex-start;
+  transform: scaleX(0.85);
+  transform-origin: left center;
+  margin-left: -2px;
+  margin-bottom: -6px;
+}
+
+/* ─── CORPS À PROPOS : flux éditorial ─── */
+.ap-body {
+  padding: 28px 24px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Énoncés en Lora (valeur, accroches, clôture) */
+.ap-statement {
+  text-transform: none;
+  line-height: 1.08;
+  letter-spacing: 0;
+  font-size: 20pt;
+}
+
+.ap-vp-line {
+  font-size: 23pt;
+  max-width: 18ch;
+}
+
+/* Lede */
+.ap-lede {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ap-lede-p {
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+  text-wrap: pretty;
+}
+
+/* Sections */
+.ap-sec {
+  border-top: 1px solid #000;
+  padding-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ap-sec-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.ap-sec-num { flex-shrink: 0; letter-spacing: 0.02em; }
+
+.ap-sec-titre {
+  display: block;
+  line-height: 0.95;
+}
+
+.ap-sec-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ap-sec-body .ap-texte-body {
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+  text-wrap: pretty;
+}
+
+.ap-sec-accent { font-size: 17pt; margin-bottom: 12px; }
+
+/* Compétences */
+.ap-skills {
+  margin-top: 6px;
+  border-top: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.ap-skills-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid #000;
+}
+
+/* Médias */
+.ap-media {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ap-media img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.ap-media--single img { aspect-ratio: 3 / 2; }
+.ap-media--wide img   { aspect-ratio: 3 / 2; object-position: 50% 70%; }
+
+.ap-media--duo .ap-media-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ap-media--duo img { aspect-ratio: 3 / 4; }
+
+.ap-media-cap { display: block; letter-spacing: 0.02em; }
+.ap-skills-k, .ap-skills-v { letter-spacing: 0.02em; }
+
+/* Clôture — case noire, comme sur l'accueil */
+.ap-cta {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  background: #000;
+  padding: 48px var(--grid-margin, 24px);
+  margin-top: 120px;
+}
+
+.ap-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.ap-cta-eyebrow {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 14px;
+}
+
+.ap-cta-line {
+  display: block;
+  margin: 0;
+  color: #fff;
+  line-height: 0.9;
+}
+
+.ap-cta-arrow {
+  color: #fff;
+  white-space: nowrap;
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (hover: hover) {
+  .ap-cta:hover .ap-cta-arrow { transform: translateX(8px); }
+}
+
+@media (max-width: 1023px) {
+  .ap-cta-inner {
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 28px;
+  }
+  .ap-cta-arrow { align-self: flex-end; }
+}
+
+.ap-cta + .footer { margin-top: 0; }
+
+/* Image indentée (respiration au fil du texte) */
+.ap-media--inset img { aspect-ratio: 4 / 3; }
+
+/* ══════════════════════════════════════════════
+   À PROPOS — DESKTOP
+   ══════════════════════════════════════════════ */
+
+@media (min-width: 1024px) {
+
+  /* ─── INTRO : titre aligné en haut comme pages services ─── */
+  .ap-intro {
+    justify-content: flex-start;
+    padding: 28px var(--grid-margin, 40px) 32px;
+  }
+
+  .ap-logo-titre {
+    font-size: 76pt;
+    margin-left: -3px;
+  }
+
+  /* ─── CORPS À PROPOS : flux éditorial (desktop) ─── */
+
+  .ap-body {
+    padding: 48px var(--grid-margin, 40px) 72px;
+    gap: 48px;
+  }
+
+  /* Proposition de valeur : grande ligne Lora, pleine mesure honnête */
+  .ap-vp {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--grid-gutter, 24px);
+  }
+  /* Bloc d'ouverture confiné aux 2/3 (col 1-8), tailles réduites en proportion */
+  .ap-vp-line { grid-column: 1 / 9; font-size: 44pt; max-width: none; text-wrap: balance; }
+
+  /* Lede : deux colonnes dans les 2/3 */
+  .ap-lede {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--grid-gutter, 24px);
+  }
+
+  .ap-lede-p:nth-child(1) { grid-column: 1 / 5; }
+  .ap-lede-p:nth-child(2) { grid-column: 5 / 9; }
+
+  /* Sections : rail numéro+titre (cols 1-3) + corps resserré (cols 4-8) */
+  .ap-sec {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--grid-gutter, 24px);
+    row-gap: 28px;
+    padding-top: 32px;
+  }
+
+  .ap-sec-head {
+    grid-column: 1 / 4;
+    grid-row: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: start;
+  }
+
+  .ap-sec-num { display: block; line-height: 0.9; }
+
+  /* Accroche : cellule dans la rangée du titre, alignée sur le BAS du titre.
+     La cellule (non animée) porte le placement ; l'accroche animée est dedans. */
+  .ap-sec-accent-cell {
+    grid-column: 4 / 9;
+    grid-row: 1;
+    align-self: end;
+  }
+
+  .ap-sec-accent {
+    margin-bottom: 0;
+    font-size: 27pt;
+    text-wrap: balance;
+  }
+
+  .ap-sec-body {
+    grid-column: 4 / 9;
+    grid-row: 2;
+  }
+
+  /* Section en deux colonnes égales : le corps remplit cols 4-12, 2 colonnes */
+  .ap-sec--2col .ap-sec-body {
+    grid-column: 4 / 13;
+    column-count: 2;
+    column-gap: var(--grid-gutter, 24px);
+    display: block;
+  }
+
+  .ap-sec--2col .ap-sec-body .ap-texte-body {
+    break-inside: avoid;
+    margin: 0 0 16px;
+  }
+
+  /* Compétences : strip scannable aligné sur l'axe de lecture */
+  .ap-creds {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--grid-gutter, 24px);
+  }
+
+  /* Strip compétences : largeur du contenu → les filets s'arrêtent à la
+     fin du texte le plus long (pas de trait qui court jusqu'au bord). */
+  .ap-creds .ap-skills {
+    grid-column: 1 / 13;
+    width: max-content;
+    max-width: 100%;
+  }
+
+  .ap-skills-row {
+    display: grid;
+    grid-template-columns: 12rem max-content;
+    column-gap: var(--grid-gutter, 24px);
+    align-items: baseline;
+    padding-right: 7rem;
+  }
+
+  .ap-skills-k { grid-column: 1; }
+  .ap-skills-v { grid-column: 2; white-space: nowrap; }
+
+  /* Médias : placements dictés par le contenu */
+  .ap-media {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--grid-gutter, 24px);
+    row-gap: 8px;
+    margin: 0;
+  }
+
+  /* Rail droit unifié (col 9) : légendes et bouton s'y alignent */
+
+  /* Image d'ouverture : pleine largeur, format paysage ; légende dans le rail */
+  .ap-media--single img { grid-column: 1 / 13; aspect-ratio: 3 / 2; }
+  .ap-media--single .ap-media-cap { grid-column: 9 / 13; justify-self: start; }
+
+  /* Bande nature : pleine largeur, panoramique ; légende dans le rail */
+  .ap-media--wide img { grid-column: 1 / 13; aspect-ratio: 16 / 7; }
+  .ap-media--wide .ap-media-cap { grid-column: 9 / 13; justify-self: start; }
+
+  /* Image respiration : indentée, format plus carré (contraste avec le 16/7) */
+  .ap-media--inset img { grid-column: 4 / 13; aspect-ratio: 4 / 3; }
+  .ap-media--inset .ap-media-cap { grid-column: 9 / 13; justify-self: start; }
+
+  /* Duo travaux : deux 3:4 côte à côte */
+  .ap-media--duo .ap-media-item:nth-child(1) { grid-column: 1 / 7; }
+  .ap-media--duo .ap-media-item:nth-child(2) { grid-column: 7 / 13; }
+
+  /* Clôture : case noire pleine largeur */
+  .ap-cta {
+    margin-top: 160px;
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+
+}
+
+/* Logo nav : pas de soulignement de lien (l'underline de l'ancre survivait) */
+.nav-logo { text-decoration: none; }
+
+/* ─── A11Y : focus visible sur la case de clôture ─── */
+.ap-cta:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: -6px;
+}
+
+/* A11y : si animations réduites, on rétablit le curseur natif (style.css met
+   cursor:none en desktop pour le curseur personnalisé, qui est alors désactivé). */
+@media (prefers-reduced-motion: reduce) {
+  body, a, button, [role="button"], input, label, select, textarea {
+    cursor: auto !important;
+  }
+  .custom-cursor { display: none !important; }
+}

@@ -3,174 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Guillaume Routhier — Designer graphique</title>
+  <title>Guillaume Routhier — Photographe immobilier &amp; designer graphique</title>
+  <meta name="description" content="Guillaume Routhier, région de Québec. Photographie immobilière pour courtiers et design graphique : identité de marque et direction artistique.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=75">
+  <link rel="stylesheet" href="css/landing.css?v=7">
 </head>
 
-<body>
+<body class="lp">
 
-  <div id="page-transition"></div>
+  <div class="lp-cover" id="lp-cover"></div>
 
-  <div id="intro-bg"></div>
-  <div id="intro-video-wrap">
-    <video id="intro-video" autoplay muted playsinline preload="auto">
-      <source src="photos/logo-animation.webm" type="video/webm">
-    </video>
-  </div>
-
-  <div class="nav-menu" id="nav-menu" aria-hidden="true">
-    <nav class="nav-menu-inner">
-      <a class="t-titre nav-menu-titre" href="#projets">Nos Projets</a>
-      <a class="t-titre nav-menu-titre" href="contact.html">Contact</a>
-      <a class="t-titre nav-menu-titre" href="apropos.html">À&nbsp;Propos</a>
-    </nav>
-  </div>
-
-  <header class="navbar">
-    <div class="nav-filet"></div>
-
-    <div class="nav-top">
-      <div class="nav-logo">
-        <span class="logo-text">Guillaume</span>
-      </div>
-
-      <nav class="nav-desktop">
-        <a class="nav-desktop-link" href="#projets">Projets</a>
-        <a class="nav-desktop-link" href="contact.html">Contact</a>
-        <a class="nav-desktop-link" href="apropos.html">À&nbsp;Propos</a>
-      </nav>
-
-      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
+  <header class="lp-head">
+    <span class="lp-logo">Guillaume<br>Routhier</span>
   </header>
 
-  <section class="hero">
-    <img class="hero-bg" src="photos/hero-bg.jpg" alt="" fetchpriority="high" decoding="async">
+  <main class="lp-grid">
 
-    <div class="hero-wordmark">
-      <h1 class="hero-wordmark-text">
-        <span class="hw-line"><span class="hw-in">Guillaume</span></span>
-        <span class="hw-line"><span class="hw-in">Routhier</span></span>
-      </h1>
-    </div>
+    <a class="lp-panel" href="immobilier/">
+      <img class="lp-img" src="photos/landing-immobilier.jpg" alt="" fetchpriority="high" decoding="async">
+      <span class="lp-veil"></span>
+      <span class="lp-inner">
+        <span class="lp-eyebrow">01</span>
+        <span class="lp-titre">Immobilier</span>
+        <span class="lp-sub">Photographie pour courtiers</span>
+        <span class="lp-arrow">Voir &rarr;</span>
+      </span>
+    </a>
 
-    <div class="hero-clients-area">
-      <div class="hero-ticker-wrap">
-        <div class="hero-ticker">
-          <span>Ciao Totes</span>
-          <span>Objectif Québec</span>
-          <span>Aki Sushi</span>
-          <span>Studios 45</span>
-          <span>Ascent</span>
-          <span>Ciao Totes</span>
-          <span>Objectif Québec</span>
-          <span>Aki Sushi</span>
-          <span>Studios 45</span>
-          <span>Ascent</span>
-          <span>Ciao Totes</span>
-          <span>Objectif Québec</span>
-          <span>Aki Sushi</span>
-          <span>Studios 45</span>
-          <span>Ascent</span>
-        </div>
-      </div>
-      <hr class="hero-filet">
-    </div>
+    <a class="lp-panel" href="design/">
+      <img class="lp-img" src="photos/landing-design.jpg" alt="" fetchpriority="high" decoding="async">
+      <span class="lp-veil"></span>
+      <span class="lp-inner">
+        <span class="lp-eyebrow">02</span>
+        <span class="lp-titre">Design</span>
+        <span class="lp-sub">Identit&eacute; de marque<br>et direction artistique</span>
+        <span class="lp-arrow">Voir &rarr;</span>
+      </span>
+    </a>
 
-<a class="btn-contact" href="contact.html">me&nbsp;contacter</a>
-  </section>
+  </main>
 
-  <section class="projets" id="projets">
-    <div class="projets-header">
-      <h2 class="t-titre">Nos Projets<span class="t-parenthese">(6)</span></h2>
-      <p class="t-titre">Sélectionnés</p>
-    </div>
+  <script>
+    // Transition vers un volet : le panneau blanc + l'animation glissent
+    // par-dessus CETTE page. On ne navigue qu'une fois l'écran couvert,
+    // pour ne jamais laisser voir le hero de destination.
+    (function () {
+      var SLIDE_IN = 700;
+      var EASE = 'cubic-bezier(0.76, 0, 0.24, 1)';
 
-    <div class="projets-grid">
-      <div class="projets-row">
-        <a class="projet-item" href="lheure-mauve.html">
-          <h3 class="t-courant projet-titre"><span>(1)</span><span>/</span><span>L'Heure Mauve</span></h3>
-          <span class="projet-tag">Direction artistique · Photographie</span>
-          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-lhm.jpg" alt="L'Heure Mauve" loading="lazy" decoding="async"></div>
-        </a>
-        <a class="projet-item" href="aki-bobba.html">
-          <h3 class="t-courant projet-titre"><span>(2)</span><span>/</span><span>Aki Bobba</span></h3>
-          <span class="projet-tag">Publicité · 3D</span>
-          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-aki.jpg" alt="Aki Bobba" loading="lazy" decoding="async"></div>
-        </a>
-      </div>
-      <div class="projets-row">
-        <a class="projet-item" href="ciao-totes.html">
-          <h3 class="t-courant projet-titre"><span>(3)</span><span>/</span><span>Ciao Totes</span></h3>
-          <span class="projet-tag">Photographie · Image de marque</span>
-          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-ciaototes.jpg" alt="Ciao Totes" loading="lazy" decoding="async"></div>
-        </a>
-        <a class="projet-item" href="objectif-quebec.html">
-          <h3 class="t-courant projet-titre"><span>(4)</span><span>/</span><span>Objectif Québec</span></h3>
-          <span class="projet-tag">Identité · Design web</span>
-          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-oq.jpg" alt="Objectif Québec" loading="lazy" decoding="async"></div>
-        </a>
-      </div>
-      <div class="projets-row">
-        <a class="projet-item" href="conifere.html">
-          <h3 class="t-courant projet-titre"><span>(5)</span><span>/</span><span>Conifère</span></h3>
-          <span class="projet-tag">Identité · Direction artistique</span>
-          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-conifere.jpg" alt="Conifère" loading="lazy" decoding="async"></div>
-        </a>
-        <a class="projet-item" href="aki-sushi.html">
-          <h3 class="t-courant projet-titre"><span>(6)</span><span>/</span><span>Aki Sushi</span></h3>
-          <span class="projet-tag">Photographie · Image de marque</span>
-          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-akisushi.jpg" alt="Aki Sushi" loading="lazy" decoding="async"></div>
-        </a>
-      </div>
-    </div>
-  </section>
+      // WebKit ne lit pas l'alpha du WebM : on y va sans animation.
+      var ua = navigator.userAgent;
+      var isIOS = /iP(hone|ad|od)/.test(ua) ||
+                  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      var isSafari = /^((?!chrome|android|crios|fxios|edg).)*safari/i.test(ua);
+      var reduced = window.matchMedia &&
+                    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  <section class="index-bas">
-    <a class="btn-contact" href="contact.html">me&nbsp;contacter</a>
-  </section>
+      var SLIDE_OFF = 900;
 
-  <footer class="footer">
-    <div class="footer-main">
-      <a class="footer-cta" href="mailto:guillaumerouthier26@gmail.com">
-        <span class="t-courant footer-eyebrow"><span class="footer-dot" aria-hidden="true"></span>Disponible pour un poste en agence &mdash; Qu&eacute;bec</span>
-        <span class="t-titre footer-cta-titre">Parlons-en.</span>
-        <span class="t-courant footer-cta-mail">guillaumerouthier26@gmail.com<span class="footer-cta-arrow" aria-hidden="true">&#8594;</span></span>
-      </a>
-      <div class="footer-cols">
-        <nav class="footer-col" aria-label="Menu">
-          <span class="t-courant footer-col-k">Menu</span>
-          <a class="t-courant" href="#projets">Projets</a>
-          <a class="t-courant" href="apropos.html">&Agrave;&nbsp;propos</a>
-          <a class="t-courant" href="contact.html">Contact</a>
-        </nav>
-        <nav class="footer-col" aria-label="R&eacute;seaux">
-          <span class="t-courant footer-col-k">R&eacute;seaux</span>
-          <a class="t-courant" href="https://instagram.com/peluredekiwi.reguliere" target="_blank" rel="noopener">Instagram</a>
-            <a class="t-courant" href="https://www.linkedin.com/in/guillaume-routhier-2bb03b248/" target="_blank" rel="noopener">LinkedIn</a>
-        </nav>
-      </div>
-    </div>
-    <div class="footer-meta">
-      <span class="t-courant footer-copy">&copy; 2026 Guillaume Routhier</span>
-      <div class="footer-meta-legal">
-        <a class="t-courant" href="#">Retour en&nbsp;haut &#8593;</a>
-      </div>
-    </div>
-  </footer>
+      // Fait glisser un panneau blanc hors de l'écran, vers le haut.
+      function glisserHors(el, apres) {
+        if (!el) return;
+        if (reduced) { el.remove(); if (apres) apres(); return; }
+        requestAnimationFrame(function () {
+          el.style.transition = 'transform ' + (SLIDE_OFF / 1000) + 's ' + EASE;
+          el.style.transform  = 'translateY(-100%)';
+        });
+        setTimeout(function () { el.remove(); if (apres) apres(); }, SLIDE_OFF + 60);
+      }
 
-  <script src="js/smooth-scroll.js?v=75"></script>
-  <script src="js/parallax.js?v=75"></script>
-  <script src="js/animations.js?v=75"></script>
-  <script src="js/menu.js?v=75"></script>
-  <script src="js/cursor.js?v=75"></script>
-  <script src="js/transitions.js?v=75"></script>
+      // Arrivée sur la page : le panneau blanc se retire vers le haut.
+      var cover = document.getElementById('lp-cover');
+      setTimeout(function () { glisserHors(cover); }, 120);
+
+      // Retour arrière : la page est restaurée depuis le cache de navigation
+      // avec le panneau de la transition encore en place. On le fait glisser
+      // au lieu de le retirer sec, sinon on revient sur un écran blanc.
+      window.addEventListener('pageshow', function () {
+        var wrap = document.querySelector('.lp-intro-video');
+        if (wrap) wrap.remove();
+        glisserHors(document.querySelector('.lp-intro-bg'));
+      });
+
+      document.querySelectorAll('.lp-panel').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var href = a.getAttribute('href');
+          if (isIOS || isSafari || reduced) return;   // navigation normale
+          e.preventDefault();
+
+          var bg = document.createElement('div');
+          bg.className = 'lp-intro-bg';
+          var wrap = document.createElement('div');
+          wrap.className = 'lp-intro-video';
+          var v = document.createElement('video');
+          v.muted = true; v.playsInline = true; v.autoplay = true; v.preload = 'auto';
+          v.src = href + 'photos/logo-animation.webm' + (href.indexOf('immobilier') === 0 ? '?v=3' : '');
+          wrap.appendChild(v);
+          document.body.append(bg, wrap);
+
+          // Position de départ : sous l'écran
+          bg.style.transform   = 'translateY(100%)';
+          wrap.style.transform = 'translate(-50%, calc(-50% + 100vh))';
+          void bg.offsetHeight;
+
+          v.play().catch(function () {});
+
+          requestAnimationFrame(function () {
+            bg.style.transition   = 'transform ' + (SLIDE_IN / 1000) + 's ' + EASE;
+            wrap.style.transition = 'transform ' + (SLIDE_IN / 1000) + 's ' + EASE;
+            bg.style.transform    = 'translateY(0)';
+            wrap.style.transform  = 'translate(-50%, -50%)';
+          });
+
+          // L'écran est couvert : on bascule sur le volet, qui reprend
+          // l'animation là où elle est rendue.
+          setTimeout(function () {
+            try { sessionStorage.setItem('introContinue', '1'); } catch (err) {}
+            location.href = href;
+          }, SLIDE_IN);
+        });
+      });
+    })();
+  </script>
+
 </body>
 </html>

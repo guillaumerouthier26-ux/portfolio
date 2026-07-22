@@ -1,0 +1,198 @@
+@font-face {
+  font-family: 'Maison Neue Mono';
+  src: url('../fonts/maison-neue-mono.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --font-titre: 'Lora', serif;
+  --font-mono: 'Maison Neue Mono', 'Courier New', monospace;
+}
+
+.lp {
+  font-family: var(--font-mono);
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── En-tête ─── */
+
+/* Gouttière de la grille du site */
+:root { --grid-gutter: 24px; }
+
+.lp-head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding: 30px 24px 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.lp-logo {
+  font-family: var(--font-titre);
+  font-weight: 500;
+  font-size: 20pt;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: #fff;
+  transform: scaleX(0.85);
+  transform-origin: left center;
+  white-space: nowrap;
+}
+
+/* ─── Les deux cases ─── */
+
+.lp-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--grid-gutter, 24px);
+  background: #fff;
+}
+
+.lp-panel {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  min-height: 50svh;
+}
+
+.lp-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: scale 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lp-veil {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  transition: background 0.4s ease-out;
+}
+
+.lp-inner {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 28px 24px;
+}
+
+.lp-eyebrow,
+.lp-sub,
+.lp-arrow {
+  font-family: var(--font-mono);
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.lp-eyebrow { color: rgba(255,255,255,0.55); }
+.lp-sub { color: rgba(255,255,255,0.75); max-width: 34ch; }
+
+.lp-titre {
+  font-family: var(--font-titre);
+  font-weight: 500;
+  font-size: 44pt;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  display: block;
+  transform: scaleX(0.8);
+  transform-origin: left center;
+  margin-bottom: 14px;
+}
+
+.lp-arrow {
+  margin-top: 6px;
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (hover: hover) {
+  .lp-panel:hover .lp-img { scale: 1.04; }
+  .lp-panel:hover .lp-veil { background: rgba(0, 0, 0, 0.25); }
+  .lp-panel:hover .lp-arrow { transform: translateX(8px); }
+}
+
+.lp-panel:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -8px;
+}
+
+/* ─── Desktop : côte à côte ─── */
+
+@media (min-width: 1024px) {
+  .lp-head { padding: 40px 40px 0; }
+  .lp-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  .lp-panel { min-height: 100svh; }
+  .lp-inner { padding: 40px; gap: 12px; }
+  .lp-titre { font-size: 64pt; }
+}
+
+/* ─── Transition vers un volet (panneau + animation qui glissent) ─── */
+
+.lp-intro-bg {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 998;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.lp-intro-video {
+  position: fixed;
+  top: 50vh;
+  left: 50%;
+  width: 210px;
+  z-index: 999;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.lp-intro-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: transparent;
+}
+
+/* Panneau d'arrivée : couvre la page au chargement, puis glisse vers le haut */
+.lp-cover {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 1000;
+  pointer-events: none;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-cover { display: none; }
+}

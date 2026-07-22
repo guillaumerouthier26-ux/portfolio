@@ -1,0 +1,1657 @@
+/* ─── PAGE PROJET ─────────────────────────────── */
+
+.pj-hero {
+  height: 75vh;
+  height: 75svh;
+  overflow: hidden;
+}
+
+.pj-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pj-intro {
+  height: 25vh;
+  height: 25svh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 24px 24px;
+}
+
+.pj-titre {
+  display: block;
+  line-height: 0.9;
+  margin-bottom: 18px;
+}
+
+/* Desktop seulement : titre projet sur une ligne (évite l'overflow mobile) */
+@media (min-width: 1024px) {
+  .pj-titre { white-space: nowrap; }
+}
+
+.oq-intro .pj-titre {
+  margin-bottom: 18px;
+}
+
+.pj-titre-count {
+  display: inline-block;
+  transform: scaleX(1.25);
+  transform-origin: left center;
+  vertical-align: 1.6em;
+  margin-left: 0.3em;
+  position: relative;
+  top: -3px;
+  left: 5px;
+}
+
+/* Images empilées pleine largeur */
+.pj-stack {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pj-stack-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── Phoenix mobile : hiérarchie pleine largeur / inset ─── */
+/* Stack vertical mobile (4 images plus petites, centrées, espace prononcé) */
+.ph-m-grid2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 64px;
+  padding: 0 24px;
+  margin-top: 24px;
+}
+
+.ph-m-grid2-item {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.ph-m-grid2-item .pj-label {
+  margin-bottom: 8px;
+}
+
+.ph-mobile-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.ph-m-full {
+  padding: 0 24px;
+}
+
+.ph-m-inset {
+  padding: 0 24px;
+}
+
+.ph-m-img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+}
+
+.pj-stack--portrait .pj-stack-img {
+  aspect-ratio: 3 / 4;
+}
+
+.pj-stack--natural .pj-stack-img {
+  aspect-ratio: auto;
+  object-fit: unset;
+}
+
+/* Statement centré */
+.pj-statement {
+  margin-top: 100px;
+  padding: 0 24px 70px;
+  text-align: center;
+}
+
+.pj-statement-titre {
+  line-height: 0.92;
+  transform-origin: center center;
+}
+
+.pj-statement--flush {
+  padding-bottom: 0;
+}
+
+/* Galerie colonne centrée */
+.pj-gallery {
+  margin-top: 80px;
+  padding: 0 48px;
+}
+
+.pj-gallery-item {
+  margin-bottom: 48px;
+}
+
+.pj-gallery-item:last-child {
+  margin-bottom: 0;
+}
+
+.pj-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.pj-gallery-img {
+  width: 100%;
+  display: block;
+}
+
+/* Placeholder portrait 3:4 pleine largeur */
+.pj-mockup {
+  margin-top: 100px;
+}
+
+.pj-portrait-wrap {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.pj-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Vidéo pleine largeur */
+.pj-video-wrap {
+  margin-top: 80px;
+}
+
+.pj-video {
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 1023px) {
+  /* Forcer le masquage des éléments desktop sur mobile
+     (sinon .pj-meta { display:flex } écrase .pj-desktop-only { display:none }) */
+  .pj-desktop-only { display: none !important; }
+
+  /* Aki Sushi — meta + description côte à côte sur mobile */
+  .ak-m-introrow {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 24px;
+    margin-top: 20px;
+    align-items: flex-start;
+  }
+  .ak-m-introrow .pj-meta {
+    padding: 0;
+    margin: 0;
+  }
+  .ak-m-introrow .ak-m-desc {
+    padding: 0;
+    margin: 0;
+    max-width: 60%;
+  }
+  /* 75px sous le paragraphe avant la vidéo */
+  .ak-m-video {
+    margin-top: 75px;
+  }
+  .ak-m-desc .pj-desc-body {
+    text-align: left;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Aki Sushi — vidéo mobile : cellulaire bien gros + 75px sous la vidéo */
+  .ak-m-video {
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    margin-bottom: 75px;
+  }
+  .ak-m-video .pj-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transform: scale(1.0);
+    transform-origin: center center;
+  }
+
+  /* Toutes les images dans les marges sauf le hero */
+  .pj-stack,
+  .pj-top-portrait,
+  .pj-mockup-bottom,
+  .pj-gallery-inset,
+  .pj-row {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* Objectif Québec hero mobile : montrer panel gauche (personnes) */
+  .oq-hero .pj-hero-img {
+    object-position: 15% center;
+  }
+
+  /* Video : dans les marges, sans crop */
+  .pj-video-wrap {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  .pj-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+.oq-tight { margin-top: 24px !important; }
+.oq-desc-wrap { margin-top: 32px !important; }
+
+.oq-screen-wrap { overflow: hidden; }
+.oq-screen-video { transform: scale(1.28); transform-origin: center center; }
+
+.oq-cellmu-crop {
+  width: 100%;
+  height: 110vw;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block;
+}
+
+.pj-meta {
+  padding: 0 24px;
+  margin-top: 20px;
+}
+
+.pj-meta .pj-caption-row {
+  padding: 12px 0 0;
+}
+
+.pj-meta-text {
+  margin-top: 50px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Portrait plein largeur juste sous l'intro */
+.pj-top-portrait {
+  margin-top: 60px;
+}
+
+/* Stack inset 25% marges, 50px gaps */
+.pj-gallery-inset {
+  padding: 100px 25% 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Deux images côte à côte pleine largeur */
+.pj-row {
+  display: flex;
+  gap: 24px;
+  margin-top: 80px;
+}
+
+.pj-row-img {
+  flex: 1;
+  width: 0;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mockup 1 et 2 empilés en bas de page */
+.pj-mockup-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 0;
+}
+
+.pj-mockup-bottom .pj-stack-img {
+  aspect-ratio: auto;
+  object-fit: unset;
+}
+
+.pj-caption-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px 24px 0;
+}
+
+/* Bloc descriptif */
+.pj-desc {
+  margin-top: 150px;
+  text-align: center;
+  padding: 0 24px 120px;
+}
+
+.pj-desc-et {
+  margin-top: 50px;
+}
+
+.pj-ampersand {
+  font-family: var(--font-titre);
+  font-weight: 700;
+  font-size: 28pt;
+  letter-spacing: -0.02em;
+}
+
+.pj-desc-subtitle-wrap {
+  margin-top: 50px;
+}
+
+.pj-desc-subtitle {
+  line-height: 0.95;
+  transform-origin: center center;
+}
+
+.pj-desc-body-wrap {
+  margin-top: 150px;
+}
+
+.pj-desc-body {
+  margin: 0 12.5%;
+  line-height: 1.6;
+}
+
+/* Visibilité mobile / desktop */
+.pj-mobile-only  {}
+.pj-desktop-only { display: none; }
+
+.cn-full-photo {
+  height: 60vw;
+  padding: 0 24px;
+  margin-top: 60px;
+  overflow: hidden;
+}
+
+.cn-full-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cn-duo-photo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 0 24px;
+  height: 60vw;
+  margin-top: 60px;
+}
+
+.cn-duo-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ══════════════════════════════════════════════
+   PROJET — DESKTOP 12 COLONNES
+   ══════════════════════════════════════════════ */
+
+@media (min-width: 1024px) {
+
+  /* ─── Variables grille ─── */
+  :root {
+    --grid-margin:  40px;
+    --grid-gutter:  24px;
+  }
+
+  /* ─── Visibilité ─── */
+  .pj-mobile-only  { display: none !important; }
+  .pj-desktop-only { display: block; }
+  span.pj-desktop-only { display: inline; }
+
+  /* ─── Hero ─── */
+  .pj-hero { height: 75vh; }
+  .pj-hero .pj-hero-img { object-position: 50% 50%; }
+
+  /* ─── Intro ─── */
+  .pj-intro {
+    height: auto;
+    min-height: 18vh;
+    min-height: 18svh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--grid-gutter, 24px);
+    padding: 28px var(--grid-margin, 40px) 32px;
+    align-items: end;
+  }
+  .pj-intro-text { grid-column: 1 / 8; }
+
+  /* ─── Statement commun ─── */
+  .pj-statement {
+    margin-top: 200px;
+    padding: 0 var(--grid-margin, 40px) 80px !important;
+  }
+  /* Espacement symétrique au-dessus et en dessous (ex. Ciao Totes) */
+  .pj-statement--even {
+    margin-top: 150px;
+    padding: 0 var(--grid-margin, 40px) 150px !important;
+  }
+  .pj-statement--left {
+    text-align: left;
+    padding-left: var(--grid-margin, 40px) !important;
+  }
+  /* titres condensés (scaleX) alignés à gauche : compresser depuis la gauche */
+  .pj-statement--left .pj-statement-titre {
+    transform-origin: left center;
+  }
+  .pj-statement--flush {
+    padding-bottom: 0;
+  }
+
+  /* ─── 4-photo grid row ─── */
+  .pj-grid4 {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 0;
+  }
+  .pj-grid4-img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  /* ─── Paire asymétrique ─── */
+  .pj-asym {
+    display: grid !important;
+    grid-template-columns: 7fr 5fr;
+    gap: var(--grid-gutter, 24px);
+    margin-top: 80px;
+    margin-bottom: 250px;
+    padding: 0 var(--grid-margin, 40px);
+    align-items: start;
+  }
+  .pj-asym-large {
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    display: block;
+    object-fit: cover;
+  }
+  .pj-asym-small {
+    width: 100%;
+    height: 66vh;
+    height: 66svh;
+    display: block;
+    object-fit: cover;
+  }
+
+  /* ─── Section bas : grille 2 col × 3 rangées ─── */
+  /*
+    Row 1 : [Titre          ] [img-sauce — span rows 1+2]
+    Row 2 : [img-groupe      ] [                        ]
+    Row 3 : [img-chef        ] [img-catalogue           ]
+  */
+  .pj-grid-bottom {
+    display: grid !important;
+    grid-template-columns: 5fr 7fr;
+    grid-template-rows: auto auto;
+    column-gap: var(--grid-gutter, 24px);
+    row-gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 120px;
+  }
+
+  /* Colonne gauche complète — col 1, span rows 1+2, flex colonne */
+  .pj-gb-left-col {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+  }
+
+  .pj-gb-titre {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    transform-origin: left center !important;
+  }
+
+  .pj-gb-left-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--grid-gutter, 24px);
+    margin-top: auto;
+  }
+
+  .pj-gb-left-mid,
+  .pj-gb-left-bot {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  /* Sauce — col 2, row 1 */
+  .pj-gb-right-top {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  /* Catalogue — col 2, row 2 */
+  .pj-gb-right-bot {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    align-self: start;
+  }
+
+  /* ─── Conifère — Section 1 : mockup + pictos ─── */
+  .cn-section1 {
+    display: grid !important;
+    grid-template-columns: 8fr 3fr;
+    column-gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 0;
+    align-items: start;
+  }
+
+  .cn-s1-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .cn-label {
+    font-size: 0.75em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.65;
+  }
+
+  .cn-s1-mockup {
+    width: 100%;
+    display: block;
+  }
+
+  .cn-s1-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    padding-top: 40px;
+  }
+
+  .cn-s1-pictos {
+    width: 100%;
+    display: block;
+  }
+
+  .cn-s1-symb {
+    width: 60px;
+    display: block;
+  }
+
+  /* ─── Conifère — Duo photos ─── */
+  .cn-duo-photo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80vh;
+    gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 60px;
+    overflow: hidden;
+  }
+
+  .cn-duo-photo img {
+    width: 100%;
+    height: 80vh;
+    height: 80svh;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ─── Conifère — Photo pleine largeur ─── */
+  .cn-full-photo {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    height: 80vh;
+    height: 80svh;
+    margin-top: 60px;
+  }
+
+  .cn-full-photo img {
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+  }
+
+  /* ─── Conifère — Section 2 : contexte + stack + truck ─── */
+  .cn-section2 {
+    display: grid !important;
+    grid-template-columns: 1fr 2fr;
+    column-gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 0 !important;
+    align-items: start;
+    height: 80vh;
+    height: 80svh;
+  }
+
+  .cn-s2-text {
+    grid-column: 1;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 0;
+    height: 80vh;
+    height: 80svh;
+  }
+
+  .cn-s2-statement {
+    margin-top: 0;
+  }
+
+  .cn-s2-contexte {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-self: center;
+  }
+
+  .cn-s2-body {
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .cn-s2-stack {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    gap: var(--grid-gutter, 24px);
+    height: 100vh;
+    height: 100svh;
+  }
+
+  .cn-s2-stack-img {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .cn-s2-imgs {
+    grid-column: 2;
+    display: flex;
+    gap: 0;
+  }
+
+  .cn-s2-enseigne,
+  .cn-s2-boite {
+    flex: 1;
+    height: 80vh;
+    height: 80svh;
+    width: 50%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+  }
+
+  /* ─── Conifère — Catalogue ─── */
+  .cn-catalogue {
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 200px;
+    margin-bottom: 120px;
+  }
+
+  .cn-cat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 60%;
+    margin: 0 auto 16px;
+  }
+
+  .cn-cat-img {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+  }
+
+  /* ─── Aki Sushi — Le projet : accroche | vidéo | description ─── */
+  .ak-projet .pjb-projet-lede-wrap { grid-column: 1 / 6; }
+  .ak-projet .ak-projet-media      { grid-column: 6 / 9; }
+  .ak-projet .pjb-projet-body      { grid-column: 9 / 13; }
+
+  .ak-img {
+    width: 100%;
+    height: 70vh;
+    height: 70svh;
+    display: block;
+    object-fit: cover;
+    transform: translateZ(0);
+  }
+
+  /* ─── Objectif Québec — Hero : logo centré dans le cadre ─── */
+  .oq-hero .pj-hero-img {
+    object-position: center 25%;
+  }
+
+  /* ─── Objectif Québec — Section 1 : mockup + boîte + texte ─── */
+  .oq-section1 {
+    display: grid !important;
+    grid-template-columns: 9fr 3fr;
+    column-gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 0;
+    align-items: start;
+  }
+
+  .oq-s1-mockup {
+    width: 100%;
+    display: block;
+  }
+
+  .oq-s1-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 0;
+    align-self: start;
+  }
+
+  .oq-label {
+    font-size: 0.75em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.65;
+  }
+
+  .oq-s1-box {
+    width: 100%;
+    display: block;
+  }
+
+  .oq-s1-body {
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* ─── Objectif Québec — Photos 100vh avec marges ─── */
+  .oq-event-full {
+    margin-top: 200px;
+    padding: 0 var(--grid-margin, 40px);
+  }
+  .oq-panneaux-full {
+    margin-top: 200px;
+    padding: 0 var(--grid-margin, 40px);
+  }
+  .oq-event-img {
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    display: block;
+    object-fit: cover;
+  }
+
+  /* ─── Objectif Québec — Section 2 : contexte + photo événement ─── */
+  .oq-section2 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 60vh 60vh;
+    column-gap: var(--grid-gutter, 24px);
+    row-gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 80px;
+  }
+
+  .oq-s2-left {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 50%;
+    padding-bottom: 100px;
+  }
+
+  .oq-s2-body {
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .oq-s2-anim {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .oq-s2-flou {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .oq-s2-panel {
+    grid-column: 1;
+    grid-row: 3;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .oq-s2-event {
+    grid-column: 2;
+    grid-row: 3;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  /* ─── Objectif Québec — Section 3 : panneaux + téléphone + texte ─── */
+  .oq-section3 {
+    display: grid !important;
+    grid-template-columns: 4fr 4fr 4fr;
+    column-gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 80px;
+    margin-bottom: 120px;
+    align-items: center;
+  }
+
+  .oq-s3-img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    height: 60vh;
+    height: 60svh;
+  }
+
+  .oq-s3-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 24px;
+  }
+
+  .oq-s3-titre {
+    line-height: 0.92;
+    margin: 0;
+  }
+
+  .oq-s3-body {
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .oq-panneaux-full {
+    margin-top: 80px;
+    padding: 0 var(--grid-margin, 40px);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--grid-gutter, 24px);
+  }
+  .oq-panneaux-img {
+    grid-column: 4 / 10;
+    width: 100%;
+    display: block;
+  }
+
+  /* ─── OQ cellmu crop — desktop override (hidden on desktop) ─── */
+
+  /* ─── Conifère — Hero desktop ─── */
+  .cn-hero .pj-hero-img {
+    object-position: center center;
+  }
+
+  /* ─── Aki — Hero desktop ─── */
+  .ak-hero .pj-hero-img {
+    object-position: center center;
+  }
+
+  /* ─── L'Heure Mauve — Hero ─── */
+  .lm-hero .pj-hero-img { object-position: center calc(60% + 25px); }
+
+  /* ─── L'Heure Mauve — Photos fruits pleine largeur ─── */
+  .lm-fruit {
+    display: flex !important;
+    flex-direction: column;
+    gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 0;
+  }
+
+  .lm-fruit-img {
+    width: 100%;
+    height: 80vh;
+    height: 80svh;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ─── L'Heure Mauve — Coloré par nature ─── */
+  .lm-colore {
+    display: grid !important;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 120px;
+    align-items: start;
+  }
+
+  .lm-colore-titre {
+    grid-column: 1 / 4;
+    line-height: 0.92;
+    margin: 0;
+    transform-origin: left center;
+  }
+
+  .lm-colore-body {
+    grid-column: 4 / 7;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ─── L'Heure Mauve — Pattern boîtes ─── */
+  .lm-boxes {
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 120px;
+    height: 80vh;
+    height: 80svh;
+    overflow: hidden;
+  }
+
+  .lm-boxes-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ─── L'Heure Mauve — Vidéo ─── */
+  .lm-video {
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: var(--grid-gutter, 24px);
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+  }
+
+  .lm-video-el {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ─── L'Heure Mauve — L'emballage texte ─── */
+  .lm-emballage {
+    display: grid !important;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 120px;
+    align-items: start;
+  }
+
+  .lm-emb-titre {
+    grid-column: 1 / 4;
+    line-height: 0.92;
+    margin: 0;
+    transform-origin: left center;
+  }
+
+  .lm-emb-text1 {
+    grid-column: 4 / 6;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .lm-emb-text2 {
+    grid-column: 7 / 11;
+    line-height: 1.6;
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  /* ─── L'Heure Mauve — Conçu pour partager ─── */
+  .lm-partager {
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 120px;
+    text-align: center;
+  }
+
+  .lm-partager-titre {
+    line-height: 0.92;
+    margin: 0 0 100px 0;
+    text-align: center;
+    width: 100%;
+    transform-origin: center center;
+  }
+
+  .lm-partager-phones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--grid-gutter, 24px);
+    align-items: end;
+    text-align: left;
+  }
+
+  .lm-partager-phone {
+    width: 100%;
+    display: block;
+  }
+
+  /* ─── L'Heure Mauve — Conçu pour déguster ─── */
+  .lm-deguster {
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 120px;
+  }
+
+  .lm-deguster-titre {
+    line-height: 0.92;
+    margin: 0 0 100px 0;
+    transform-origin: left center;
+  }
+
+  .lm-deguster-photos {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: var(--grid-gutter, 24px);
+    align-items: start;
+  }
+
+  .lm-deguster-big {
+    width: 100%;
+    height: 65vh;
+    height: 65svh;
+    object-fit: cover;
+    display: block;
+  }
+
+  .lm-deguster-small {
+    width: 100%;
+    height: 45vh;
+    height: 45svh;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ─── L'Heure Mauve — Mains box ─── */
+  .lm-mains {
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 80px;
+    height: 80vh;
+    height: 80svh;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, black 100px, black calc(100% - 100px), transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, black 100px, black calc(100% - 100px), transparent 100%);
+  }
+  .lm-mains-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ─── L'Heure Mauve — Photos produit ─── */
+  .lm-produit {
+    display: grid !important;
+    grid-template-columns: 3fr 9fr;
+    grid-template-rows: auto 1fr;
+    column-gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 80px;
+    align-items: start;
+  }
+
+  .lm-produit-small {
+    grid-column: 1;
+    grid-row: 1;
+    height: 50vh;
+    height: 50svh;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .lm-produit-titre {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
+    margin: 40px 0 0;
+    line-height: 0.92;
+    transform-origin: left center;
+  }
+
+  .lm-produit-large {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    height: 80vh;
+    height: 80svh;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+}
+
+/* ─── Phoenix ─── */
+@media (min-width: 1024px) {
+  .ph-hero .pj-hero-img { object-position: center 55%; }
+
+  /* ph-grid4 : 4 photos plus petites, centrées, avec espace */
+  .ph-grid4 {
+    display: flex !important;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 200px;
+  }
+  .ph-grid4-item {
+    display: flex;
+    flex-direction: column;
+    width: 312px;
+    flex: 0 0 auto;
+  }
+  .ph-grid4-item .pj-label {
+    margin-bottom: 10px;
+  }
+
+  /* ph-grid-top : grand gauche (6) + 2 petites droite côte à côte (3+3) */
+  .ph-grid-top {
+    display: grid !important;
+    grid-template-columns: 3fr 3fr 6fr;
+    grid-template-rows: auto 1fr;
+    gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 80px;
+    align-items: start;
+  }
+  .ph-gt-big,
+  .ph-gt-sm {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+  }
+  .ph-gt-sm { grid-row: 1; }
+  .ph-gt-big {
+    aspect-ratio: auto;
+    height: 100vh;
+    height: 100svh;
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+  /* Titre "Promotion du nouveau menu" dans la section, aligné bas-gauche */
+  .ph-gt-titre {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    align-self: end;
+    margin: 0;
+    transform-origin: left center;
+  }
+
+  /* ph-grid-bottom : titre+2petites gauche (6) + grande droite (6) */
+  .ph-grid-bottom {
+    display: grid !important;
+    grid-template-columns: 6fr 6fr;
+    gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 200px;
+    align-items: stretch;
+  }
+  .ph-gb-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .ph-gb-titre {
+    text-align: left;
+    margin: 0;
+    transform-origin: left center;
+  }
+  .ph-gb-imgs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--grid-gutter, 24px);
+  }
+  .ph-gb-sm {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+  }
+  .ph-gb-big {
+    width: 100%;
+    aspect-ratio: auto;
+    height: 100vh;
+    height: 100svh;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+/* Pictos row */
+.pj-pictos {
+  margin-top: 80px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.pj-picto {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Logo mark centré */
+.pj-logo-mark {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.pj-logo-mark img {
+  width: 64px;
+  display: block;
+}
+
+/* ─── SECTION META (PROJET / CLIENT / ANNÉE) ─── */
+
+.pj-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 16px 24px 0;
+  margin: 0 0 10px;
+}
+
+.pj-meta-label {
+  display: block;
+  font-size: 0.75em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin-bottom: 6px;
+}
+
+.pj-meta-value {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .pj-meta {
+    display: grid;
+    grid-template-columns: 4fr 2fr 2fr 4fr;
+    column-gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    margin: 150px 0 20px;
+  }
+
+  .pj-meta + .pj-stack {
+    margin-top: 0;
+  }
+
+  .pj-meta-annee {
+    grid-column: 3;
+  }
+}
+
+/* ─── L'Heure Mauve — Mobile : tout en colonne, images marge à marge, titres à gauche ─── */
+@media (max-width: 1023px) {
+  .lm-fruit,
+  .lm-colore,
+  .lm-boxes,
+  .lm-video,
+  .lm-emballage,
+  .lm-mains,
+  .lm-produit,
+  .lm-deguster,
+  .lm-partager {
+    display: block;
+    padding: 0 24px;
+    margin-top: 60px;
+    height: auto;
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  /* Conteneurs internes en colonne */
+  .lm-deguster-photos,
+  .lm-partager-phones {
+    display: block;
+  }
+
+  /* Toutes les images / vidéos pleine largeur, empilées */
+  .lm-fruit-img,
+  .lm-boxes-img,
+  .lm-video-el,
+  .lm-mains-img,
+  .lm-produit-small,
+  .lm-produit-large,
+  .lm-deguster-big,
+  .lm-deguster-small,
+  .lm-partager-phone {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .lm-produit-large:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Masquer le dernier téléphone sur mobile */
+  .lm-partager-phone:last-child {
+    display: none;
+  }
+  .lm-partager-phone:nth-last-child(2) {
+    margin-bottom: 0;
+  }
+
+  /* Titres alignés à gauche */
+  .lm-colore-titre,
+  .lm-emb-titre,
+  .lm-deguster-titre,
+  .lm-partager-titre {
+    text-align: left;
+    width: auto;
+    line-height: 0.92;
+    margin: 0 0 75px 0;
+    transform-origin: left center;
+  }
+
+  /* Textes empilés : 35px entre les paragraphes */
+  .lm-colore-body,
+  .lm-emb-text1,
+  .lm-emb-text2 {
+    line-height: 1.6;
+    margin: 0 0 35px 0;
+  }
+
+  /* 75px sous le dernier paragraphe du bloc texte */
+  .lm-colore-body:last-child,
+  .lm-emb-text2:last-child {
+    margin-bottom: 75px;
+  }
+}
+
+/* ─── Pages projet — Mobile : rythme vertical commun (75px titres, 35px paragraphes) ─── */
+@media (max-width: 1023px) {
+  /* 75px au-dessus et en dessous des titres (sauf le titre principal h1) */
+  .pj-statement {
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .pj-statement-titre,
+  .pj-desc-subtitle {
+    margin-top: 75px;
+    margin-bottom: 75px;
+  }
+
+  .pj-desc-body {
+    margin-bottom: 35px;
+  }
+
+  .pj-desc-body:last-child {
+    margin-bottom: 75px;
+  }
+}
+
+/* ─── Conifère — Desktop : Mission (titre + paragraphe) + deux images ─── */
+@media (min-width: 1024px) {
+  .cn-mission {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 120px;
+    align-items: start;
+  }
+  .cn-mission-head {
+    grid-column: 1 / 4;
+  }
+  .cn-mission-titre {
+    line-height: 0.92;
+    margin: 0;
+  }
+
+  /* Numéro de section (02 / 03) — mono discret au-dessus du titre */
+  .cn-sec-num {
+    display: block;
+    margin-bottom: 16px;
+    opacity: 0.65;
+  }
+  .cn-mission-body {
+    grid-column: 4 / 8;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .cn-mission-imgs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 120px;
+    align-items: start;
+  }
+  .cn-mission-imgs img {
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Trio : 3 colonnes égales (texte + 2 images) */
+  .cn-trio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--grid-gutter, 24px);
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 120px;
+    align-items: start;
+  }
+  .cn-trio-titre {
+    line-height: 0.92;
+    margin: 0 0 60px 0;
+  }
+  .cn-trio-contexte .cn-label {
+    display: block;
+    margin-bottom: 16px;
+    opacity: 0.65;
+  }
+  .cn-trio-body {
+    line-height: 1.6;
+    margin: 0;
+  }
+  .cn-trio-img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Vidéos 80vh marge à marge */
+  .cn-mission-video {
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 120px;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+  }
+  .cn-mission-video + .cn-mission-video {
+    margin-top: var(--grid-gutter, 24px);
+  }
+  .cn-mission-video-el {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+/* ─── Conifère — Mobile : médias en alternance, pleine largeur marge à marge ─── */
+@media (max-width: 1023px) {
+  .cn-m-alt {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 24px;
+    margin-top: 60px;
+  }
+  .cn-m-alt-media {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* 75px entre le titre statement et les pictos */
+  .cn-m-statement {
+    padding-bottom: 0;
+  }
+  .cn-m-statement .pj-statement-titre {
+    margin-bottom: 0;
+  }
+  .cn-m-pictos {
+    margin-top: 75px;
+  }
+
+  /* 75px entre les pictos et la description */
+  .cn-m-desc.pj-desc-body-wrap {
+    margin-top: 75px;
+  }
+}
+
+/* Phoenix — paragraphe sous le titre "Culinaire (&) portraits" */
+.ph-statement-body {
+  margin: 20px 0 0;
+  max-width: 46ch;
+  line-height: 1.6;
+}
+@media (min-width: 1024px) {
+  .ph-gb-left .ph-statement-body { margin: 22px 0 32px; }
+}
+
+/* ═══ L'Heure Mauve — bloc "L'emballage" façon signature (fond orange) ═══ */
+.lm-sig {
+  margin-top: 90px;
+  background: #e98c3d;
+  color: #fff;
+  padding: 60px var(--grid-margin, 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.lm-sig-label { display: block; color: rgba(255,255,255,.7); margin: 0 0 20px; }
+.lm-sig-titre { margin: 0 0 20px; color: #fff; line-height: 0.98; }
+.lm-sig-body {
+  margin: 0;
+  line-height: 1.6;
+  color: #fff;
+  max-width: 46ch;
+  text-wrap: pretty;
+}
+.lm-sig-cols { display: flex; flex-direction: column; gap: 24px; }
+.lm-sig-img {
+  width: 100%;
+  max-width: 860px;
+  aspect-ratio: 2.5 / 1;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .lm-sig {
+    margin-top: 160px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--grid-gutter, 24px);
+    align-items: center;
+  }
+  .lm-sig-text  { grid-column: 1 / 7; }
+  .lm-sig-titre { margin-bottom: 18px; }
+  .lm-sig-cols  { flex-direction: row; gap: var(--grid-gutter, 24px); }
+  .lm-sig-cols .lm-sig-body { flex: 1; }
+  .lm-sig-media { grid-column: 7 / 13; justify-self: end; }
+}
+
+/* L'Heure Mauve — mobile : image de la section emballage plein bord (touche la fenêtre) */
+@media (max-width: 1023px) {
+  .lm-sig-media {
+    margin-left: calc(-1 * var(--grid-margin, 24px));
+    margin-right: calc(-1 * var(--grid-margin, 24px));
+  }
+  .lm-sig-img { max-width: none; }
+}
+
+/* ══════════════════════════════════════════════
+   GALERIE IMMOBILIER — 2 colonnes
+   ══════════════════════════════════════════════ */
+
+.pj-grid2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--grid-gutter, 24px);
+  padding: 0 24px;
+  margin-top: 80px;
+}
+
+.pj-grid2-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .pj-grid2 {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 var(--grid-margin, 40px);
+    margin-top: 140px;
+  }
+}

@@ -1,0 +1,183 @@
+/* ─── PAGE CONTACT — plein écran (100vh), sans cases ─── */
+
+.contact-layout {
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ─── IMAGE ─── */
+
+/* Mobile : pas d'image, le formulaire occupe tout l'écran */
+.contact-img-col {
+  display: none;
+  flex: none;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .contact-img-col { display: block; }
+}
+
+.contact-img-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  display: block;
+}
+
+/* ─── COLONNE FORMULAIRE ─── */
+
+.contact-form-col {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  padding: 24px 24px 32px;
+}
+
+.contact-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #6b6b6b;
+}
+
+.contact-titre {
+  display: block;
+  line-height: 0.9;
+  margin: 0;
+}
+
+/* ─── FORMULAIRE ─── */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Champs SANS case : filet du bas seulement */
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  border-bottom: 1.5px solid #000;
+  padding-bottom: 9px;
+  transition: border-color 0.2s ease-out;
+}
+
+.contact-field label {
+  opacity: 0.55;
+}
+
+.contact-field input,
+.contact-field textarea {
+  font-family: var(--font-mono);
+  font-size: 10pt;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: #000;
+  background: transparent;
+  border: none;
+  width: 100%;
+  resize: none;
+  padding: 0;
+}
+
+.contact-field textarea {
+  min-height: 48px;
+  line-height: 1.5;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: #b5b5b5;
+  text-transform: none;
+}
+
+/* Focus : filet plein ; anneau clavier uniquement (accessibilité) */
+.contact-field:focus-within {
+  border-bottom-width: 2px;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  outline: none;
+}
+
+.contact-field input:focus-visible,
+.contact-field textarea:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 4px;
+}
+
+.contact-status {
+  min-height: 1.3em;
+  margin: 0;
+}
+
+.contact-actions {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-direct {
+  color: #6b6b6b;
+  text-decoration: none;
+  transition: color 0.2s ease-out;
+}
+
+@media (hover: hover) {
+  .contact-direct:hover { color: #000; }
+}
+
+/* ══════════════════════════════════════════════
+   CONTACT — DESKTOP : split image / formulaire
+   ══════════════════════════════════════════════ */
+
+@media (min-width: 1024px) {
+
+  .contact-layout {
+    flex-direction: row;
+  }
+
+  .contact-img-col {
+    width: 42%;
+    height: 100%;
+  }
+
+  .contact-form-col {
+    flex: 1;
+    padding: 0 var(--grid-margin, 40px) 0 96px;
+    gap: 40px;
+  }
+
+  .contact-intro {
+    gap: 18px;
+  }
+
+  .contact-form {
+    max-width: 560px;
+    gap: 26px;
+  }
+
+  .contact-field textarea {
+    min-height: 76px;
+  }
+
+}
