@@ -27,9 +27,16 @@
   margin-bottom: 18px;
 }
 
-/* Desktop seulement : titre projet sur une ligne (évite l'overflow mobile) */
+/* Desktop seulement : titre projet sur une ligne (évite l'overflow mobile).
+   Les titres « type — secteur » sont plus longs que les anciennes adresses :
+   avec nowrap seul, ils débordaient la colonne (jusqu'à 95px à 1024px).
+   La taille suit donc la largeur de la colonne, plafonnée à la taille
+   d'origine (47pt) au-delà d'environ 1190px. */
 @media (min-width: 1024px) {
-  .pj-titre { white-space: nowrap; }
+  .pj-titre {
+    white-space: nowrap;
+    font-size: min(47pt, calc(5.7vw - 7px));
+  }
 }
 
 .oq-intro .pj-titre {
