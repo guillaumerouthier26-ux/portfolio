@@ -1,6 +1,6 @@
 /* ─── PAGE À PROPOS ────────────────────────────── */
 
-/* Hero — image 2/3 + intro 1/3 */
+/* Hero - image 2/3 + intro 1/3 */
 .ap-hero {
   display: flex;
   flex-direction: column;
@@ -162,7 +162,7 @@
 .ap-media-cap { display: block; letter-spacing: 0.02em; }
 .ap-skills-k, .ap-skills-v { letter-spacing: 0.02em; }
 
-/* Clôture — case noire, comme sur l'accueil */
+/* Clôture - case noire, comme sur l'accueil */
 .ap-cta {
   display: block;
   text-decoration: none;
@@ -220,7 +220,7 @@
 .ap-media--inset img { aspect-ratio: 4 / 3; }
 
 /* ══════════════════════════════════════════════
-   À PROPOS — DESKTOP
+   À PROPOS - DESKTOP
    ══════════════════════════════════════════════ */
 
 @media (min-width: 1024px) {

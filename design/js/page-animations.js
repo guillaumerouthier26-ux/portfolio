@@ -1,6 +1,6 @@
 (function () {
 // Accessibilité : si l'utilisateur a désactivé les animations, on ne cache/anime
-// rien — le texte et les images restent visibles à leur position naturelle.
+// rien - le texte et les images restent visibles à leur position naturelle.
 if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   return;
 }
@@ -24,7 +24,7 @@ var TITLE_SEL = [
 ].join(',');
 
 // Images/vidéos de contenu : sélection générique. On prend toutes les <img> et
-// <video> SAUF celles de la navigation, du menu, du footer et du curseur — pour
+// <video> SAUF celles de la navigation, du menu, du footer et du curseur - pour
 // que chaque page (et toute nouvelle) soit couverte automatiquement, sans liste
 // de classes à maintenir.
 function isContentMedia(el) {
@@ -183,7 +183,7 @@ Array.prototype.slice.call(document.querySelectorAll('.t-courant, .t-courant-gra
     wrapLinesBR(el);
   } else {
     // Tout corps de texte mono : révélé EN BLOC avec retour à la ligne NATIF.
-    // (reflow correct à n'importe quelle largeur — plus de lignes rigides mal
+    // (reflow correct à n'importe quelle largeur - plus de lignes rigides mal
     // coupées, ni en 1 colonne ni en 2 colonnes, ni au chargement de la police.)
     wrapRise(el, inline, s.marginTop, s.marginBottom);
   }

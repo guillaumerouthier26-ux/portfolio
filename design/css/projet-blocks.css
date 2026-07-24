@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   BLOCS PROJET PARTAGÉS — Le projet / Crédits / Projet suivant
+   BLOCS PROJET PARTAGÉS - Le projet / Crédits / Projet suivant
    À charger APRÈS style.css et projet.css sur chaque page projet.
    Réutilise la grille (--grid-margin / --grid-gutter) et la typo
    (.t-titre / .t-courant). Repris de la refonte Objectif Québec.
@@ -110,7 +110,7 @@
 }
 
 /* ══════════════════════════════════════════════════════════════
-   DESKTOP ≥ 1024px — grille 12 colonnes
+   DESKTOP ≥ 1024px - grille 12 colonnes
    ══════════════════════════════════════════════════════════════ */
 @media (min-width: 1024px) {
 

@@ -1,4 +1,4 @@
-/* ─── PAGE CONTACT — plein écran (100vh), sans cases ─── */
+/* ─── PAGE CONTACT - plein écran (100vh), sans cases ─── */
 
 .contact-layout {
   height: 100vh;
@@ -147,7 +147,7 @@
 }
 
 /* ══════════════════════════════════════════════
-   CONTACT — DESKTOP : split image / formulaire
+   CONTACT - DESKTOP : split image / formulaire
    ══════════════════════════════════════════════ */
 
 @media (min-width: 1024px) {

@@ -54,7 +54,7 @@
     requestAnimationFrame(tick);
   })();
 
-  // Positionnement INSTANTANÉ (sans easing) — utilisé lors d'une navigation
+  // Positionnement INSTANTANÉ (sans easing) - utilisé lors d'une navigation
   // vers une section (#services / #projets) pour éviter le glissé depuis le haut.
   window._smoothScrollSnap = function (y) {
     current = y;

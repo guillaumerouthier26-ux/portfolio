@@ -1,7 +1,7 @@
 (function () {
   if (window.innerWidth < 1024) return;
   // A11y : pas de curseur personnalisé si pointeur non fin (tactile) ou
-  // animations réduites — l'utilisateur garde son curseur natif.
+  // animations réduites - l'utilisateur garde son curseur natif.
   if (window.matchMedia && !window.matchMedia('(pointer: fine)').matches) return;
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 

@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   OBJECTIF QUÉBEC — Refonte page projet
+   OBJECTIF QUÉBEC - Refonte page projet
    À charger APRÈS style.css et projet.css :
    <link rel="stylesheet" href="css/objectif-quebec.css">
    Utilise la grille du site (--grid-margin / --grid-gutter),
@@ -227,7 +227,7 @@
 }
 
 /* ══════════════════════════════════════════════════════════════
-   DESKTOP ≥ 1024px — grille 12 colonnes
+   DESKTOP ≥ 1024px - grille 12 colonnes
    ══════════════════════════════════════════════════════════════ */
 @media (min-width: 1024px) {
 

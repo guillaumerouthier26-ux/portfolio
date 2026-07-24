@@ -42,7 +42,7 @@
     try { targetId = new URL(href, location.href).hash.slice(1); } catch (e) {}
 
     // 1) Rideau blanc OPAQUE (sans contenu) qui monte immédiatement pour couvrir
-    //    l'écran. On part donc sur du blanc — jamais de flash de la page cible.
+    //    l'écran. On part donc sur du blanc - jamais de flash de la page cible.
     var cover = document.createElement('div');
     cover.style.cssText =
       'position:fixed;inset:0;z-index:998;background:#fff;' +
@@ -64,7 +64,7 @@
       .then(function (newDoc) {
         syncCSS(newDoc);
 
-        // Flag CSS sur <html> — masque l'intro-bg de la page cible avant rendu.
+        // Flag CSS sur <html> - masque l'intro-bg de la page cible avant rendu.
         window._spaNavigation = true;
         document.documentElement.classList.add('js-spa-nav');
 

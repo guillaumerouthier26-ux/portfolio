@@ -224,7 +224,7 @@ body.cn-page .navbar::before {
   display: block;
 }
 
-/* Logo texte « Guillaume » — Lora, s'adapte au fond via difference */
+/* Logo texte « Guillaume » - Lora, s'adapte au fond via difference */
 .logo-text {
   font-family: var(--font-titre);
   font-weight: 500;
@@ -269,7 +269,7 @@ body.cn-page .navbar::before {
 
 /* ─── STYLES DE TEXTE ─────────────────────────── */
 
-/* Titre — Lora Medium 80% largeur */
+/* Titre - Lora Medium 80% largeur */
 .t-titre {
   font-family: var(--font-titre);
   font-weight: 500;
@@ -280,7 +280,7 @@ body.cn-page .navbar::before {
   transform-origin: left center;
 }
 
-/* Accent parenthèses — Lora Bold, style "(c)" du logo */
+/* Accent parenthèses - Lora Bold, style "(c)" du logo */
 .t-accent {
   font-family: var(--font-titre);
   font-weight: 700;
@@ -292,7 +292,7 @@ body.cn-page .navbar::before {
   line-height: 1;
 }
 
-/* Parenthèse — Lora Bold 9pt, top aligné avec x-height du titre */
+/* Parenthèse - Lora Bold 9pt, top aligné avec x-height du titre */
 .t-parenthese {
   font-family: var(--font-titre);
   font-weight: 700;
@@ -302,7 +302,7 @@ body.cn-page .navbar::before {
   line-height: 1;
 }
 
-/* Sous-titre — Maison Neue Mono Regular uppercase 12pt */
+/* Sous-titre - Maison Neue Mono Regular uppercase 12pt */
 .t-sous-titre {
   font-family: var(--font-mono);
   font-weight: 400;
@@ -311,7 +311,7 @@ body.cn-page .navbar::before {
   letter-spacing: -0.02em;
 }
 
-/* Courant — Maison Neue Mono Regular uppercase 9pt noir */
+/* Courant - Maison Neue Mono Regular uppercase 9pt noir */
 .t-courant {
   font-family: var(--font-mono);
   font-weight: 400;
@@ -321,7 +321,7 @@ body.cn-page .navbar::before {
   color: #000;
 }
 
-/* Courant Gras — même chose mais bold */
+/* Courant Gras - même chose mais bold */
 .t-courant-gras {
   font-family: var(--font-mono);
   font-weight: 700;
@@ -371,7 +371,7 @@ br.br-mobile { display: none; }
   filter: brightness(0) invert(1);
 }
 
-/* Logo hero « Guillaume Routhier » — texte Lora animé ligne par ligne */
+/* Logo hero « Guillaume Routhier » - texte Lora animé ligne par ligne */
 .hero-wordmark-text {
   font-family: var(--font-titre);
   font-weight: 500;
@@ -452,7 +452,7 @@ br.br-mobile { display: none; }
   letter-spacing: -0.02em;
 }
 
-/* Bouton contact — carré noir, réutilisable */
+/* Bouton contact - carré noir, réutilisable */
 .btn-contact {
   display: inline-block;
   font-family: var(--font-mono);
@@ -468,7 +468,7 @@ br.br-mobile { display: none; }
   cursor: pointer;
 }
 
-/* Bouton contact — survol : inversion (remplissage), pression : léger enfoncement */
+/* Bouton contact - survol : inversion (remplissage), pression : léger enfoncement */
 .btn-contact {
   transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
               color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
@@ -500,7 +500,7 @@ textarea:focus-visible {
   outline-offset: 3px;
 }
 
-/* Bouton contact dans le hero — positionné bas droite */
+/* Bouton contact dans le hero - positionné bas droite */
 .hero .btn-contact {
   position: absolute;
   bottom: 25px;
@@ -644,7 +644,7 @@ textarea:focus-visible {
   gap: 4ch;
 }
 
-/* Discipline du projet — repère de triage pour un DA pressé */
+/* Discipline du projet - repère de triage pour un DA pressé */
 .projet-tag {
   display: block;
   margin-top: 4px;
@@ -683,7 +683,7 @@ textarea:focus-visible {
   }
 }
 
-/* ─── FOOTER — clôture éditoriale ─────────────── */
+/* ─── FOOTER - clôture éditoriale ─────────────── */
 
 .footer {
   border-top: 2px solid #000;
@@ -808,7 +808,7 @@ textarea:focus-visible {
   .footer-meta-legal a:hover { color: #000; }
 }
 
-/* Logo footer « Guillaume » — texte Lora noir (conservé, réutilisé ailleurs) */
+/* Logo footer « Guillaume » - texte Lora noir (conservé, réutilisé ailleurs) */
 .footer-logo-text {
   font-family: var(--font-titre);
   font-weight: 500;
@@ -821,7 +821,7 @@ textarea:focus-visible {
   transform-origin: left center;
 }
 
-/* Courant vertical — Mono, 460 tracking, texte vers le haut */
+/* Courant vertical - Mono, 460 tracking, texte vers le haut */
 .t-courant-vert {
   font-family: var(--font-mono);
   font-weight: 400;
@@ -834,7 +834,7 @@ textarea:focus-visible {
   white-space: nowrap;
 }
 
-/* Courant numéro — Mono 30pt entre parenthèses */
+/* Courant numéro - Mono 30pt entre parenthèses */
 .t-courant-num {
   font-family: var(--font-mono);
   font-weight: 400;
@@ -866,7 +866,7 @@ textarea:focus-visible {
 }
 
 /* ══════════════════════════════════════════════
-   DESKTOP — 12 COLONNES
+   DESKTOP - 12 COLONNES
    Breakpoint : 1024px+
    Gouttières : 24px  |  Marges : 80px
    ══════════════════════════════════════════════ */
@@ -1053,12 +1053,12 @@ textarea:focus-visible {
     height: 70svh;
   }
 
-  /* Redimensionnement au survol — réservé aux vrais pointeurs.
+  /* Redimensionnement au survol - réservé aux vrais pointeurs.
      Sur écran tactile, :hover se déclenche au toucher et y reste collé :
      la tuile s'élargissait et poussait sa voisine jusqu'au tap suivant.
      L'ordre des règles est celui d'origine : la règle de repos doit rester
      ENTRE les deux blocs, sa spécificité étant identique (0,4,0) à celle
-     de la règle générique de survol — c'est l'ordre qui les départage. */
+     de la règle générique de survol - c'est l'ordre qui les départage. */
   @media (hover: hover) and (pointer: fine) {
 
     .projets-row:has(.projet-item:hover) .projet-item {
@@ -1305,7 +1305,7 @@ textarea:focus-visible {
 }
 
 /* ══════════════════════════════════════════════
-   TABLETTE — 768 à 1023px
+   TABLETTE - 768 à 1023px
    Cette plage n'avait aucun point de rupture : elle recevait la mise en
    page mobile, conçue pour 375px. Les paragraphes s'étiraient à 103
    caractères par ligne, loin des 60–75 lisibles.

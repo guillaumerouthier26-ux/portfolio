@@ -14,7 +14,7 @@ if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').m
 }
 
 // Positionnement initial : soit une section ciblée (navigation vers #services /
-// #projets — posée par transitions.js, ou hash direct dans l'URL), soit le haut.
+// #projets - posée par transitions.js, ou hash direct dans l'URL), soit le haut.
 // Le smooth-scroll a déjà été initialisé (scripts en ordre), donc on peut placer
 // directement, sans glissé ni animation du hero.
 (function () {

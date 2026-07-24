@@ -1,6 +1,6 @@
 /* ─── PAGE À PROPOS ────────────────────────────── */
 
-/* Hero — image 2/3 + intro 1/3 */
+/* Hero - image 2/3 + intro 1/3 */
 .ap-hero {
   display: flex;
   flex-direction: column;
@@ -185,7 +185,7 @@
 .ap-media--inset img { aspect-ratio: 4 / 3; }
 
 /* ══════════════════════════════════════════════
-   À PROPOS — DESKTOP
+   À PROPOS - DESKTOP
    ══════════════════════════════════════════════ */
 
 @media (min-width: 1024px) {

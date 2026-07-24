@@ -186,7 +186,7 @@
      (sinon .pj-meta { display:flex } écrase .pj-desktop-only { display:none }) */
   .pj-desktop-only { display: none !important; }
 
-  /* Aki Sushi — meta + description côte à côte sur mobile */
+  /* Aki Sushi - meta + description côte à côte sur mobile */
   .ak-m-introrow {
     display: flex;
     flex-direction: column;
@@ -214,7 +214,7 @@
     margin: 0;
   }
 
-  /* Aki Sushi — vidéo mobile : cellulaire bien gros + 75px sous la vidéo */
+  /* Aki Sushi - vidéo mobile : cellulaire bien gros + 75px sous la vidéo */
   .ak-m-video {
     aspect-ratio: 9 / 16;
     overflow: hidden;
@@ -403,7 +403,7 @@
 }
 
 /* ══════════════════════════════════════════════
-   PROJET — DESKTOP 12 COLONNES
+   PROJET - DESKTOP 12 COLONNES
    ══════════════════════════════════════════════ */
 
 @media (min-width: 1024px) {
@@ -501,7 +501,7 @@
 
   /* ─── Section bas : grille 2 col × 3 rangées ─── */
   /*
-    Row 1 : [Titre          ] [img-sauce — span rows 1+2]
+    Row 1 : [Titre          ] [img-sauce - span rows 1+2]
     Row 2 : [img-groupe      ] [                        ]
     Row 3 : [img-chef        ] [img-catalogue           ]
   */
@@ -515,7 +515,7 @@
     margin-top: 120px;
   }
 
-  /* Colonne gauche complète — col 1, span rows 1+2, flex colonne */
+  /* Colonne gauche complète - col 1, span rows 1+2, flex colonne */
   .pj-gb-left-col {
     grid-column: 1;
     grid-row: 1 / 3;
@@ -545,7 +545,7 @@
     object-fit: cover;
   }
 
-  /* Sauce — col 2, row 1 */
+  /* Sauce - col 2, row 1 */
   .pj-gb-right-top {
     grid-column: 2;
     grid-row: 1;
@@ -554,7 +554,7 @@
     object-fit: cover;
   }
 
-  /* Catalogue — col 2, row 2 */
+  /* Catalogue - col 2, row 2 */
   .pj-gb-right-bot {
     grid-column: 2;
     grid-row: 2;
@@ -564,7 +564,7 @@
     align-self: start;
   }
 
-  /* ─── Conifère — Section 1 : mockup + pictos ─── */
+  /* ─── Conifère - Section 1 : mockup + pictos ─── */
   .cn-section1 {
     display: grid !important;
     grid-template-columns: 8fr 3fr;
@@ -610,7 +610,7 @@
     display: block;
   }
 
-  /* ─── Conifère — Duo photos ─── */
+  /* ─── Conifère - Duo photos ─── */
   .cn-duo-photo {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -629,7 +629,7 @@
     display: block;
   }
 
-  /* ─── Conifère — Photo pleine largeur ─── */
+  /* ─── Conifère - Photo pleine largeur ─── */
   .cn-full-photo {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -649,7 +649,7 @@
     display: block;
   }
 
-  /* ─── Conifère — Section 2 : contexte + stack + truck ─── */
+  /* ─── Conifère - Section 2 : contexte + stack + truck ─── */
   .cn-section2 {
     display: grid !important;
     grid-template-columns: 1fr 2fr;
@@ -722,7 +722,7 @@
     display: block;
   }
 
-  /* ─── Conifère — Catalogue ─── */
+  /* ─── Conifère - Catalogue ─── */
   .cn-catalogue {
     padding: 0 var(--grid-margin, 40px);
     margin-top: 200px;
@@ -744,7 +744,7 @@
     object-fit: cover;
   }
 
-  /* ─── Aki Sushi — Le projet : accroche | vidéo | description ─── */
+  /* ─── Aki Sushi - Le projet : accroche | vidéo | description ─── */
   .ak-projet .pjb-projet-lede-wrap { grid-column: 1 / 6; }
   .ak-projet .ak-projet-media      { grid-column: 6 / 9; }
   .ak-projet .pjb-projet-body      { grid-column: 9 / 13; }
@@ -758,12 +758,12 @@
     transform: translateZ(0);
   }
 
-  /* ─── Objectif Québec — Hero : logo centré dans le cadre ─── */
+  /* ─── Objectif Québec - Hero : logo centré dans le cadre ─── */
   .oq-hero .pj-hero-img {
     object-position: center 25%;
   }
 
-  /* ─── Objectif Québec — Section 1 : mockup + boîte + texte ─── */
+  /* ─── Objectif Québec - Section 1 : mockup + boîte + texte ─── */
   .oq-section1 {
     display: grid !important;
     grid-template-columns: 9fr 3fr;
@@ -803,7 +803,7 @@
     margin: 0;
   }
 
-  /* ─── Objectif Québec — Photos 100vh avec marges ─── */
+  /* ─── Objectif Québec - Photos 100vh avec marges ─── */
   .oq-event-full {
     margin-top: 200px;
     padding: 0 var(--grid-margin, 40px);
@@ -820,7 +820,7 @@
     object-fit: cover;
   }
 
-  /* ─── Objectif Québec — Section 2 : contexte + photo événement ─── */
+  /* ─── Objectif Québec - Section 2 : contexte + photo événement ─── */
   .oq-section2 {
     display: grid !important;
     grid-template-columns: 1fr 1fr;
@@ -879,7 +879,7 @@
     object-fit: cover;
   }
 
-  /* ─── Objectif Québec — Section 3 : panneaux + téléphone + texte ─── */
+  /* ─── Objectif Québec - Section 3 : panneaux + téléphone + texte ─── */
   .oq-section3 {
     display: grid !important;
     grid-template-columns: 4fr 4fr 4fr;
@@ -928,22 +928,22 @@
     display: block;
   }
 
-  /* ─── OQ cellmu crop — desktop override (hidden on desktop) ─── */
+  /* ─── OQ cellmu crop - desktop override (hidden on desktop) ─── */
 
-  /* ─── Conifère — Hero desktop ─── */
+  /* ─── Conifère - Hero desktop ─── */
   .cn-hero .pj-hero-img {
     object-position: center center;
   }
 
-  /* ─── Aki — Hero desktop ─── */
+  /* ─── Aki - Hero desktop ─── */
   .ak-hero .pj-hero-img {
     object-position: center center;
   }
 
-  /* ─── L'Heure Mauve — Hero ─── */
+  /* ─── L'Heure Mauve - Hero ─── */
   .lm-hero .pj-hero-img { object-position: center calc(60% + 25px); }
 
-  /* ─── L'Heure Mauve — Photos fruits pleine largeur ─── */
+  /* ─── L'Heure Mauve - Photos fruits pleine largeur ─── */
   .lm-fruit {
     display: flex !important;
     flex-direction: column;
@@ -960,7 +960,7 @@
     display: block;
   }
 
-  /* ─── L'Heure Mauve — Coloré par nature ─── */
+  /* ─── L'Heure Mauve - Coloré par nature ─── */
   .lm-colore {
     display: grid !important;
     grid-template-columns: repeat(12, 1fr);
@@ -983,7 +983,7 @@
     margin: 0;
   }
 
-  /* ─── L'Heure Mauve — Pattern boîtes ─── */
+  /* ─── L'Heure Mauve - Pattern boîtes ─── */
   .lm-boxes {
     padding: 0 var(--grid-margin, 40px);
     margin-top: 120px;
@@ -999,7 +999,7 @@
     display: block;
   }
 
-  /* ─── L'Heure Mauve — Vidéo ─── */
+  /* ─── L'Heure Mauve - Vidéo ─── */
   .lm-video {
     padding: 0 var(--grid-margin, 40px);
     margin-top: var(--grid-gutter, 24px);
@@ -1015,7 +1015,7 @@
     display: block;
   }
 
-  /* ─── L'Heure Mauve — L'emballage texte ─── */
+  /* ─── L'Heure Mauve - L'emballage texte ─── */
   .lm-emballage {
     display: grid !important;
     grid-template-columns: repeat(12, 1fr);
@@ -1045,7 +1045,7 @@
     text-wrap: pretty;
   }
 
-  /* ─── L'Heure Mauve — Conçu pour partager ─── */
+  /* ─── L'Heure Mauve - Conçu pour partager ─── */
   .lm-partager {
     padding: 0 var(--grid-margin, 40px);
     margin-top: 120px;
@@ -1073,7 +1073,7 @@
     display: block;
   }
 
-  /* ─── L'Heure Mauve — Conçu pour déguster ─── */
+  /* ─── L'Heure Mauve - Conçu pour déguster ─── */
   .lm-deguster {
     padding: 0 var(--grid-margin, 40px);
     margin-top: 120px;
@@ -1108,7 +1108,7 @@
     display: block;
   }
 
-  /* ─── L'Heure Mauve — Mains box ─── */
+  /* ─── L'Heure Mauve - Mains box ─── */
   .lm-mains {
     padding: 0 var(--grid-margin, 40px);
     margin-top: 80px;
@@ -1125,7 +1125,7 @@
     display: block;
   }
 
-  /* ─── L'Heure Mauve — Photos produit ─── */
+  /* ─── L'Heure Mauve - Photos produit ─── */
   .lm-produit {
     display: grid !important;
     grid-template-columns: 3fr 9fr;
@@ -1334,7 +1334,7 @@
   }
 }
 
-/* ─── L'Heure Mauve — Mobile : tout en colonne, images marge à marge, titres à gauche ─── */
+/* ─── L'Heure Mauve - Mobile : tout en colonne, images marge à marge, titres à gauche ─── */
 @media (max-width: 1023px) {
   .lm-fruit,
   .lm-colore,
@@ -1416,7 +1416,7 @@
   }
 }
 
-/* ─── Pages projet — Mobile : rythme vertical commun (75px titres, 35px paragraphes) ─── */
+/* ─── Pages projet - Mobile : rythme vertical commun (75px titres, 35px paragraphes) ─── */
 @media (max-width: 1023px) {
   /* 75px au-dessus et en dessous des titres (sauf le titre principal h1) */
   .pj-statement {
@@ -1439,7 +1439,7 @@
   }
 }
 
-/* ─── Conifère — Desktop : Mission (titre + paragraphe) + deux images ─── */
+/* ─── Conifère - Desktop : Mission (titre + paragraphe) + deux images ─── */
 @media (min-width: 1024px) {
   .cn-mission {
     display: grid;
@@ -1457,7 +1457,7 @@
     margin: 0;
   }
 
-  /* Numéro de section (02 / 03) — mono discret au-dessus du titre */
+  /* Numéro de section (02 / 03) - mono discret au-dessus du titre */
   .cn-sec-num {
     display: block;
     margin-bottom: 16px;
@@ -1533,7 +1533,7 @@
   }
 }
 
-/* ─── Conifère — Mobile : médias en alternance, pleine largeur marge à marge ─── */
+/* ─── Conifère - Mobile : médias en alternance, pleine largeur marge à marge ─── */
 @media (max-width: 1023px) {
   .cn-m-alt {
     display: flex;
@@ -1565,7 +1565,7 @@
   }
 }
 
-/* Phoenix — paragraphe sous le titre "Culinaire (&) portraits" */
+/* Phoenix - paragraphe sous le titre "Culinaire (&) portraits" */
 .ph-statement-body {
   margin: 20px 0 0;
   max-width: 46ch;
@@ -1575,7 +1575,7 @@
   .ph-gb-left .ph-statement-body { margin: 22px 0 32px; }
 }
 
-/* ═══ L'Heure Mauve — bloc "L'emballage" façon signature (fond orange) ═══ */
+/* ═══ L'Heure Mauve - bloc "L'emballage" façon signature (fond orange) ═══ */
 .lm-sig {
   margin-top: 90px;
   background: #e98c3d;
@@ -1621,7 +1621,7 @@
   .lm-sig-media { grid-column: 7 / 13; justify-self: end; }
 }
 
-/* L'Heure Mauve — mobile : image de la section emballage plein bord (touche la fenêtre) */
+/* L'Heure Mauve - mobile : image de la section emballage plein bord (touche la fenêtre) */
 @media (max-width: 1023px) {
   .lm-sig-media {
     margin-left: calc(-1 * var(--grid-margin, 24px));
