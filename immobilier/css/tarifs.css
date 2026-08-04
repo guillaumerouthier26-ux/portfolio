@@ -76,6 +76,99 @@
   margin-top: 18px;
 }
 
+/* ─── PALIERS (section Forfaits) ─── */
+
+.tf-tiers {
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid #000;
+}
+
+.tf-tier {
+  padding: 26px 0 30px;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.tf-tier-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+}
+
+.tf-tier-id {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tf-tier-name {
+  font-size: 12.5pt;
+  letter-spacing: -0.02em;
+}
+
+.tf-tier-tag { color: #6b6b6b; }
+
+.tf-tier-desc {
+  margin-top: 14px;
+  color: #6b6b6b;
+  line-height: 1.6;
+  max-width: 46ch;
+}
+
+.tf-tier-prix {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  text-align: right;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Essentiel : sous-prix par superficie */
+.tf-sizes {
+  margin-top: 20px;
+  border-top: 1px solid #d8d8d8;
+}
+
+.tf-size {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 11px 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.tf-size:last-child { border-bottom: none; }
+.tf-size-nom  { flex: 0 0 auto; }
+.tf-size-meta { flex: 1; color: #6b6b6b; }
+.tf-size-prix { flex: 0 0 auto; white-space: nowrap; }
+.tf-size-prix .tf-from { color: #6b6b6b; }
+
+/* Signature : offre d'ancrage, bloc noir (même motif que les autres blocs noirs du site) */
+.tf-tier--signature {
+  background: #000;
+  color: #fff;
+  padding: 28px 24px 30px;
+  margin: 10px 0;
+  border-bottom: none;
+}
+
+.tf-tier--signature .t-courant { color: #fff; }
+
+.tf-tier--signature .tf-tier-tag,
+.tf-tier--signature .tf-from {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.tf-tier-badge {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
 /* ══════════════════════════════════════════════
    TARIFS - DESKTOP
    ══════════════════════════════════════════════ */
@@ -97,9 +190,11 @@
 
   .tf-sec-head { grid-column: 1 / 4; margin-bottom: 0; }
   .tf-rows     { grid-column: 4 / 13; }
+  .tf-tiers    { grid-column: 4 / 13; }
   .tf-note     { grid-column: 4 / 13; }
 
   .tf-price-num { font-size: 17pt; }
+  .tf-tier-name { font-size: 14pt; }
 
 
 }
