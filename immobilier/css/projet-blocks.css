@@ -122,7 +122,8 @@
     align-items: start;
   }
   .pjb-projet-lede-wrap { grid-column: 1 / 6; }
-  .pjb-projet-body      { grid-column: 7 / 10; }
+  /* Description retirée : les métadonnées seules, alignées à gauche. */
+  .pjb-projet-body      { grid-column: 1 / 4; }
 
   .pjb-credits { padding-top: 180px; }
   .pjb-next    { padding-top: 96px; padding-bottom: 96px; }
