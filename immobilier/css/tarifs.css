@@ -67,7 +67,6 @@
 }
 
 .tf-price-num {
-  font-size: 15pt;
   letter-spacing: -0.02em;
 }
 
@@ -193,7 +192,6 @@
   .tf-tiers    { grid-column: 4 / 13; }
   .tf-note     { grid-column: 4 / 13; }
 
-  .tf-price-num { font-size: 17pt; }
   .tf-tier-name { font-size: 14pt; }
 
 
