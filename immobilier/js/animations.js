@@ -326,20 +326,13 @@ function revealHeroWordmark(delay) {
       delay + i * 150);
   });
 
-  // L'accroche monte juste après la dernière ligne du nom.
-  const tag = document.querySelector('.hero-tagline');
-  if (tag) {
-    tag.style.transition = 'transform 0.8s cubic-bezier(0.76, 0, 0.24, 1)';
-    setTimeout(function () { tag.style.transform = 'translateY(0)'; },
-      delay + lines.length * 150);
-  }
-
-  // La bascule vers l'autre volet monte ensuite, avec la même animation.
+  // La bascule vers l'autre volet monte juste après la dernière ligne du titre,
+  // avec la même animation que le reste des textes.
   const sw = document.querySelector('.hero-switch');
   if (sw) {
     sw.style.transition = 'transform 0.8s cubic-bezier(0.76, 0, 0.24, 1)';
     setTimeout(function () { sw.style.transform = 'translateY(0)'; },
-      delay + (lines.length + 1) * 150);
+      delay + lines.length * 150);
   }
 }
 
