@@ -598,6 +598,12 @@ textarea:focus-visible {
   padding-top: 230px;
 }
 
+/* Mobile : moins d'espace au-dessus de « Mes Projets »
+   (la section 360 s'intercale déjà entre le hero et les projets) */
+@media (max-width: 1023px) {
+  .projets { padding-top: 72px; }
+}
+
 .projets-header {
   padding: 0 24px;
   margin-bottom: 140px;
