@@ -1343,6 +1343,8 @@ textarea:focus-visible {
    NOUVEAU SERVICE — VISITES 360 (section vidéo sous le hero)
    ══════════════════════════════════════════════ */
 
+/* Mobile : titre au-dessus de la vidéo, puis le reste en dessous.
+   L'ordre du DOM (head, media, body) donne déjà cet empilement. */
 .nsv {
   display: flex;
   flex-direction: column;
@@ -1350,12 +1352,18 @@ textarea:focus-visible {
   margin-top: 72px;
 }
 
-/* Vidéo (portrait) : en tête sur mobile */
+.nsv-head {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0 24px;
+}
+
 .nsv-media {
-  order: -1;
   height: 62vh;
   height: 62svh;
   overflow: hidden;
+  margin-top: 28px;
 }
 
 .nsv-video {
@@ -1365,12 +1373,11 @@ textarea:focus-visible {
   display: block;
 }
 
-/* Colonne texte */
-.nsv-copy {
+.nsv-body {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  padding: 44px 24px 52px;
+  padding: 32px 24px 0;
 }
 
 .nsv-eyebrow { color: #6b6b6b; }
@@ -1417,32 +1424,39 @@ textarea:focus-visible {
   background: #000;
 }
 
-/* Desktop : texte à gauche, vidéo 80vh à droite */
+/* Desktop : vidéo à gauche (pleine hauteur), titre en haut à droite,
+   corps en bas à droite. Grille 2 colonnes / 2 rangées. */
 @media (min-width: 1024px) {
   .nsv {
-    flex-direction: row;
-    align-items: stretch;      /* la colonne texte occupe toute la hauteur de la vidéo */
-    justify-content: center;   /* les deux blocs collés, centrés dans la section */
-    gap: 0;
+    display: grid;
+    grid-template-columns: auto minmax(0, 48ch);
+    grid-template-rows: auto 1fr;
+    justify-content: center;
+    column-gap: 0;
     padding: 0 var(--grid-margin, 40px);
     margin-top: 130px;
   }
   .nsv-media {
-    order: -1;                 /* vidéo à gauche */
-    flex: 0 0 auto;
+    grid-column: 1;
+    grid-row: 1 / 3;           /* la vidéo occupe toute la hauteur */
     height: 80vh;
     height: 80svh;
     aspect-ratio: 720 / 1078;
+    margin-top: 0;
   }
-  .nsv-copy {
-    order: 0;                  /* texte à droite */
-    flex: 0 1 auto;
-    max-width: 48ch;
-    padding: 0 0 0 48px;       /* respiration interne, sans écarter les blocs */
+  .nsv-head {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 0 0 0 48px;       /* respiration interne, collé à la vidéo */
+  }
+  .nsv-body {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 24px 0 0 48px;
   }
   /* Le bouton descend au bas de la colonne, aligné avec le bas de la vidéo.
      Spécificité renforcée pour passer devant la règle de base (margin-top: 16px). */
-  .nsv-copy .nsv-cta { margin-top: auto; }
+  .nsv-body .nsv-cta { margin-top: auto; }
 }
 
 /* CTA « Voir les tarifs » sous les stats de la section 360 */
