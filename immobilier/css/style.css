@@ -1415,21 +1415,23 @@ textarea:focus-visible {
 @media (min-width: 1024px) {
   .nsv {
     flex-direction: row;
-    align-items: center;
-    gap: var(--grid-gutter, 24px);
+    align-items: flex-start;   /* dessus du texte aligné avec le dessus de la vidéo */
+    justify-content: center;   /* les deux blocs collés, centrés dans la section */
+    gap: 0;
     padding: 0 var(--grid-margin, 40px);
     margin-top: 130px;
   }
-  .nsv-copy {
-    order: 0;
-    flex: 1 1 auto;
-    padding: 0;
-  }
   .nsv-media {
-    order: 0;
+    order: -1;                 /* vidéo à gauche */
     flex: 0 0 auto;
     height: 80vh;
     height: 80svh;
     aspect-ratio: 720 / 1078;
+  }
+  .nsv-copy {
+    order: 0;                  /* texte à droite */
+    flex: 0 1 auto;
+    max-width: 48ch;
+    padding: 0 0 0 48px;       /* respiration interne, sans écarter les blocs */
   }
 }
