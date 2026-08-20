@@ -194,7 +194,28 @@
 
   .tf-tier-name { font-size: 14pt; }
 
+  /* Rangées calées sur les 9 colonnes de la zone de contenu (col. 4 à 12).
+     Description sur 4 colonnes, prix au début de la 4e colonne depuis la
+     droite (col. 9 de la grille), pour ne jamais se chevaucher. */
+  .tf-row,
+  .tf-size {
+    display: grid;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    column-gap: var(--grid-gutter, 24px);
+    align-items: baseline;
+  }
 
+  /* Compléments */
+  .tf-row-main { grid-column: 1 / 5; }
+  .tf-price {
+    grid-column: 6 / 10;
+    align-items: flex-start;
+  }
+
+  /* Forfaits (Essentiel) : mêmes colonnes, prix bien évidents */
+  .tf-size-nom  { grid-column: 1 / 3; }
+  .tf-size-meta { grid-column: 3 / 5; }
+  .tf-size-prix { grid-column: 6 / 10; text-align: left; }
 }
 
 
