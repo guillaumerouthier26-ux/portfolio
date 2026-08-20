@@ -1273,6 +1273,29 @@ textarea:focus-visible {
 /* ─── Bascule entre les deux volets du site (sous le nom, dans le hero) ─── */
 
 /* Ligne clippée : le lien monte depuis le bas, comme le nom. */
+.hero-tagline-line {
+  display: block;
+  overflow: hidden;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.hero-tagline {
+  display: inline-block;
+  transform: translateY(110%);
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 10pt;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+/* Animations réduites : accroche visible d'emblée. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-tagline { transform: none; }
+}
+
 .hero-switch-line {
   display: block;
   overflow: hidden;
