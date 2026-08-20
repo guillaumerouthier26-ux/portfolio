@@ -354,6 +354,16 @@ br.br-mobile { display: none; }
   will-change: transform;
 }
 
+/* Voile noir 10 % pour faire ressortir le titre du hero */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  pointer-events: none;
+}
+
 .hero-wordmark {
   text-align: center;
   position: absolute;
