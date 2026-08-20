@@ -1341,6 +1341,7 @@ textarea:focus-visible {
   display: flex;
   flex-direction: column;
   background: #fff;
+  margin-top: 72px;
 }
 
 /* Vidéo (portrait) : en tête sur mobile */
@@ -1417,6 +1418,7 @@ textarea:focus-visible {
     align-items: center;
     gap: var(--grid-gutter, 24px);
     padding: 0 var(--grid-margin, 40px);
+    margin-top: 130px;
   }
   .nsv-copy {
     order: 0;
