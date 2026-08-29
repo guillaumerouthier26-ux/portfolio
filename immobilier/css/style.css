@@ -1485,10 +1485,7 @@ textarea:focus-visible {
 
 .tmk {
   overflow: hidden;
-  border-top: 1px solid #e3e3e3;
-  border-bottom: 1px solid #e3e3e3;
-  padding: 30px 0;
-  margin: 96px 0;
+  padding: 100px 0;
 }
 
 .tmk-track {
@@ -1503,26 +1500,33 @@ textarea:focus-visible {
   .tmk:hover .tmk-track { animation-play-state: paused; }
 }
 
+/* Chaque commentaire : bloc étroit, texte sur plusieurs lignes au besoin */
 .tmk-item {
-  display: inline-flex;
-  align-items: baseline;
+  flex: 0 0 auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 12px;
-  white-space: nowrap;
-  padding: 0 30px;
+  padding: 0 24px;
+  white-space: normal;
   font-family: var(--font-mono);
-  font-size: 11pt;
+  font-size: 10pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
+  line-height: 1.55;
 }
 
 .tmk-quote { color: #000; }
 .tmk-author { color: #6b6b6b; }
 
 .tmk-sep {
+  flex: 0 0 auto;
   color: #000;
-  font-size: 8pt;
+  font-size: 9pt;
   letter-spacing: 3px;
-  flex-shrink: 0;
+  padding: 0 10px;
 }
 
 @keyframes tmk-scroll {
@@ -1532,10 +1536,10 @@ textarea:focus-visible {
 
 /* Accessibilité : pas de défilement si l'utilisateur réduit les animations */
 @media (prefers-reduced-motion: reduce) {
-  .tmk-track { animation: none; flex-wrap: wrap; width: 100%; justify-content: center; }
+  .tmk-track { animation: none; flex-wrap: wrap; width: 100%; justify-content: center; row-gap: 48px; }
 }
 
 @media (min-width: 1024px) {
-  .tmk { margin: 150px 0; }
-  .tmk-item { font-size: 12pt; padding: 0 40px; }
+  .tmk { padding: 140px 0; }
+  .tmk-item { width: 340px; font-size: 11pt; }
 }
