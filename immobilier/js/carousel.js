@@ -19,7 +19,7 @@
   });
   var cards = Array.prototype.slice.call(track.children);
 
-  var GAP = 24;
+  var GAP = 40;
   var index = 0;
   var step = 0;
   var animating = false;
