@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=146">
+  <link rel="stylesheet" href="css/style.css?v=147">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
   <div id="intro-bg"></div>
   <div id="intro-video-wrap">
     <video id="intro-video" autoplay muted playsinline preload="auto">
-      <source src="photos/logo-animation.webm?v=146" type="video/webm">
+      <source src="photos/logo-animation.webm?v=147" type="video/webm">
     </video>
   </div>
 
@@ -66,35 +66,6 @@
 
 <a class="btn-contact" href="contact.html">me&nbsp;contacter</a>
   </section>
-
-  <!-- Nouveau service : visites 360 -->
-  <section class="nsv">
-    <div class="nsv-head">
-      <span class="t-courant nsv-eyebrow">Nouveau service</span>
-      <h2 class="t-titre nsv-titre">Visites 360&deg;</h2>
-    </div>
-    <div class="nsv-media">
-      <video class="nsv-video" autoplay muted loop playsinline preload="metadata" poster="photos/visite360-poster.jpg">
-        <source src="photos/visite360.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="nsv-body">
-      <p class="t-courant nsv-sous">Statistiques cl&eacute;s de conversion et d'engagement</p>
-      <ul class="nsv-stats">
-        <li class="t-courant nsv-stat"><strong>Augmentation du taux d'int&eacute;r&ecirc;t.</strong> Les annonces incluant une visite virtuelle 360&deg; g&eacute;n&egrave;rent en moyenne 87 % de vues en plus que celles proposant uniquement des photos statiques.</li>
-        <li class="t-courant nsv-stat"><strong>Acheteurs plus qualifi&eacute;s.</strong> Une visite 360&deg; pr&eacute;alable fait grimper de 40 &agrave; 49 % les demandes de visite et les offres s&eacute;rieuses : l'acheteur se projette d&eacute;j&agrave; dans l'espace.</li>
-        <li class="t-courant nsv-stat"><strong>Vente plus rapide.</strong> Les propri&eacute;t&eacute;s dot&eacute;es d'une visite 360&deg; se vendent jusqu'&agrave; 31 % plus vite, en r&eacute;duisant les visites physiques inutiles.</li>
-      </ul>
-      <a class="nsv-cta" href="tarifs.html">Voir les tarifs&nbsp;&rarr;</a>
-    </div>
-  </section>
-
-  <!-- Témoignage courtier (1/3) -->
-  <aside class="tm">
-    <span class="tm-stars" aria-hidden="true">&#9733;&#9733;&#9733;</span>
-    <blockquote class="tm-quote">Un grand merci, les photos sont magnifiques&nbsp;! Il y aura assur&eacute;ment d'autres collaborations &agrave; venir.</blockquote>
-    <p class="tm-attr"><span class="tm-name">V&eacute;ronique Gagn&eacute;</span><span class="tm-role">Courti&egrave;re Re/max</span></p>
-  </aside>
 
   <section class="projets" id="projets">
     <div class="projets-header">
@@ -162,12 +133,23 @@
   </section>
 
 
-  <!-- Témoignage courtier (2/3) -->
-  <aside class="tm">
-    <span class="tm-stars" aria-hidden="true">&#9733;&#9733;&#9733;</span>
-    <blockquote class="tm-quote">Les photos sont d'une tr&egrave;s belle qualit&eacute;&nbsp;!!! Je te reviens pour d'autres sous peu&nbsp;!</blockquote>
-    <p class="tm-attr"><span class="tm-name">Simon B&eacute;gin</span><span class="tm-role">Courtier Re/max &agrave; L&eacute;vis</span></p>
-  </aside>
+  <!-- Témoignages courtiers : bande défilante horizontale -->
+  <section class="tmk" aria-label="T&eacute;moignages de courtiers">
+    <div class="tmk-track">
+      <span class="tmk-item"><span class="tmk-quote">&laquo; Les photos sont d'une tr&egrave;s belle qualit&eacute; !!! Je te reviens pour d'autres sous peu ! &raquo;</span><span class="tmk-author">Simon B&eacute;gin, Courtier Re/max &agrave; L&eacute;vis</span></span>
+      <span class="tmk-sep" aria-hidden="true">&#9733;&#9733;&#9733;</span>
+      <span class="tmk-item"><span class="tmk-quote">&laquo; Un grand merci, les photos sont magnifiques ! Il y aura assur&eacute;ment d'autres collaborations &agrave; venir. &raquo;</span><span class="tmk-author">V&eacute;ronique Gagn&eacute;, Courti&egrave;re Re/max</span></span>
+      <span class="tmk-sep" aria-hidden="true">&#9733;&#9733;&#9733;</span>
+      <span class="tmk-item"><span class="tmk-quote">&laquo; Merci beaucoup, je suis tr&egrave;s satisfaite. &raquo;</span><span class="tmk-author">Marie-Jo&euml;lle Boivin, Courti&egrave;re dans Charlevoix</span></span>
+      <span class="tmk-sep" aria-hidden="true">&#9733;&#9733;&#9733;</span>
+      <span class="tmk-item" aria-hidden="true"><span class="tmk-quote">&laquo; Les photos sont d'une tr&egrave;s belle qualit&eacute; !!! Je te reviens pour d'autres sous peu ! &raquo;</span><span class="tmk-author">Simon B&eacute;gin, Courtier Re/max &agrave; L&eacute;vis</span></span>
+      <span class="tmk-sep" aria-hidden="true">&#9733;&#9733;&#9733;</span>
+      <span class="tmk-item" aria-hidden="true"><span class="tmk-quote">&laquo; Un grand merci, les photos sont magnifiques ! Il y aura assur&eacute;ment d'autres collaborations &agrave; venir. &raquo;</span><span class="tmk-author">V&eacute;ronique Gagn&eacute;, Courti&egrave;re Re/max</span></span>
+      <span class="tmk-sep" aria-hidden="true">&#9733;&#9733;&#9733;</span>
+      <span class="tmk-item" aria-hidden="true"><span class="tmk-quote">&laquo; Merci beaucoup, je suis tr&egrave;s satisfaite. &raquo;</span><span class="tmk-author">Marie-Jo&euml;lle Boivin, Courti&egrave;re dans Charlevoix</span></span>
+      <span class="tmk-sep" aria-hidden="true">&#9733;&#9733;&#9733;</span>
+    </div>
+  </section>
 
 
   <a class="index-tarifs" href="tarifs.html">
@@ -180,13 +162,6 @@
     </div>
   </a>
 
-
-  <!-- Témoignage courtier (3/3) -->
-  <aside class="tm">
-    <span class="tm-stars" aria-hidden="true">&#9733;&#9733;&#9733;</span>
-    <blockquote class="tm-quote">Merci beaucoup, je suis tr&egrave;s satisfaite.</blockquote>
-    <p class="tm-attr"><span class="tm-name">Marie-Jo&euml;lle Boivin</span><span class="tm-role">Courti&egrave;re dans Charlevoix</span></p>
-  </aside>
 
   <footer class="footer">
     <div class="footer-main">
@@ -217,11 +192,11 @@
     </div>
   </footer>
 
-  <script src="js/smooth-scroll.js?v=146"></script>
-  <script src="js/parallax.js?v=146"></script>
-  <script src="js/animations.js?v=146"></script>
-  <script src="js/menu.js?v=146"></script>
-  <script src="js/cursor.js?v=146"></script>
-  <script src="js/transitions.js?v=146"></script>
+  <script src="js/smooth-scroll.js?v=147"></script>
+  <script src="js/parallax.js?v=147"></script>
+  <script src="js/animations.js?v=147"></script>
+  <script src="js/menu.js?v=147"></script>
+  <script src="js/cursor.js?v=147"></script>
+  <script src="js/transitions.js?v=147"></script>
 </body>
 </html>
