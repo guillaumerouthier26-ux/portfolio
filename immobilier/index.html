@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=150">
+  <link rel="stylesheet" href="css/style.css?v=151">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
   <div id="intro-bg"></div>
   <div id="intro-video-wrap">
     <video id="intro-video" autoplay muted playsinline preload="auto">
-      <source src="photos/logo-animation.webm?v=150" type="video/webm">
+      <source src="photos/logo-animation.webm?v=151" type="video/webm">
     </video>
   </div>
 
@@ -67,17 +67,39 @@
 <a class="btn-contact" href="contact.html">me&nbsp;contacter</a>
   </section>
 
-  <!-- Témoignages courtiers : carrousel horizontal -->
-  <section class="tmk" aria-label="T&eacute;moignages de courtiers">
-    <div class="tmk-track">
-      <span class="tmk-item"><span class="tmk-quote">&laquo; Les photos sont d'une tr&egrave;s belle qualit&eacute; !!! Je te reviens pour d'autres sous peu ! &raquo;</span><span class="tmk-author">Simon B&eacute;gin, Courtier Re/max &agrave; L&eacute;vis</span></span>
-      <span class="tmk-item"><span class="tmk-quote">&laquo; Un grand merci, les photos sont magnifiques ! Il y aura assur&eacute;ment d'autres collaborations &agrave; venir. &raquo;</span><span class="tmk-author">V&eacute;ronique Gagn&eacute;, Courti&egrave;re Re/max</span></span>
-      <span class="tmk-item"><span class="tmk-quote">&laquo; Merci beaucoup, je suis tr&egrave;s satisfaite. &raquo;</span><span class="tmk-author">Marie-Jo&euml;lle Boivin, Courti&egrave;re dans Charlevoix</span></span>
-      <span class="tmk-sep" aria-hidden="true">&#9733;&#9733;&#9733;</span>
-      <span class="tmk-item" aria-hidden="true"><span class="tmk-quote">&laquo; Les photos sont d'une tr&egrave;s belle qualit&eacute; !!! Je te reviens pour d'autres sous peu ! &raquo;</span><span class="tmk-author">Simon B&eacute;gin, Courtier Re/max &agrave; L&eacute;vis</span></span>
-      <span class="tmk-item" aria-hidden="true"><span class="tmk-quote">&laquo; Un grand merci, les photos sont magnifiques ! Il y aura assur&eacute;ment d'autres collaborations &agrave; venir. &raquo;</span><span class="tmk-author">V&eacute;ronique Gagn&eacute;, Courti&egrave;re Re/max</span></span>
-      <span class="tmk-item" aria-hidden="true"><span class="tmk-quote">&laquo; Merci beaucoup, je suis tr&egrave;s satisfaite. &raquo;</span><span class="tmk-author">Marie-Jo&euml;lle Boivin, Courti&egrave;re dans Charlevoix</span></span>
-      <span class="tmk-sep" aria-hidden="true">&#9733;&#9733;&#9733;</span>
+  <!-- Témoignages clients : carrousel -->
+  <section class="tmc" aria-label="T&eacute;moignages clients">
+    <div class="tmc-head">
+      <h2 class="t-titre tmc-title">T&eacute;moignages<br>clients</h2>
+      <div class="tmc-nav">
+        <button class="tmc-arrow" type="button" data-dir="-1" aria-label="T&eacute;moignage pr&eacute;c&eacute;dent">&#8592;</button>
+        <button class="tmc-arrow" type="button" data-dir="1" aria-label="T&eacute;moignage suivant">&#8594;</button>
+      </div>
+    </div>
+    <div class="tmc-viewport">
+      <div class="tmc-track">
+      <article class="tmc-card">
+        <p class="tmc-quote">&laquo;&nbsp;Les photos sont d'une tr&egrave;s belle qualit&eacute; !!! Je te reviens pour d'autres sous peu !&nbsp;&raquo;</p>
+        <div class="tmc-attr">
+          <p class="tmc-name">Simon B&eacute;gin</p>
+          <p class="tmc-role">Courtier Re/max &agrave; L&eacute;vis</p>
+        </div>
+      </article>
+      <article class="tmc-card">
+        <p class="tmc-quote">&laquo;&nbsp;Un grand merci, les photos sont magnifiques ! Il y aura assur&eacute;ment d'autres collaborations &agrave; venir.&nbsp;&raquo;</p>
+        <div class="tmc-attr">
+          <p class="tmc-name">V&eacute;ronique Gagn&eacute;</p>
+          <p class="tmc-role">Courti&egrave;re Re/max</p>
+        </div>
+      </article>
+      <article class="tmc-card">
+        <p class="tmc-quote">&laquo;&nbsp;Merci beaucoup, je suis tr&egrave;s satisfaite.&nbsp;&raquo;</p>
+        <div class="tmc-attr">
+          <p class="tmc-name">Marie-Jo&euml;lle Boivin</p>
+          <p class="tmc-role">Courti&egrave;re dans Charlevoix</p>
+        </div>
+      </article>
+      </div>
     </div>
   </section>
 
@@ -189,11 +211,12 @@
     </div>
   </footer>
 
-  <script src="js/smooth-scroll.js?v=150"></script>
-  <script src="js/parallax.js?v=150"></script>
-  <script src="js/animations.js?v=150"></script>
-  <script src="js/menu.js?v=150"></script>
-  <script src="js/cursor.js?v=150"></script>
-  <script src="js/transitions.js?v=150"></script>
+  <script src="js/smooth-scroll.js?v=151"></script>
+  <script src="js/parallax.js?v=151"></script>
+  <script src="js/animations.js?v=151"></script>
+  <script src="js/menu.js?v=151"></script>
+  <script src="js/cursor.js?v=151"></script>
+  <script src="js/transitions.js?v=151"></script>
+  <script src="js/carousel.js?v=151"></script>
 </body>
 </html>
