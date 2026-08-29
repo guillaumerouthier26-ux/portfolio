@@ -1500,33 +1500,34 @@ textarea:focus-visible {
   .tmk:hover .tmk-track { animation-play-state: paused; }
 }
 
-/* Chaque commentaire : bloc étroit, texte sur plusieurs lignes au besoin */
+/* Chaque commentaire : bloc, texte sur plusieurs lignes au besoin */
 .tmk-item {
   flex: 0 0 auto;
-  width: 300px;
+  width: 380px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 12px;
-  padding: 0 24px;
+  gap: 14px;
+  padding: 0 40px;
   white-space: normal;
   font-family: var(--font-mono);
   font-size: 10pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .tmk-quote { color: #000; }
 .tmk-author { color: #6b6b6b; }
 
+/* ★★★ : marque la fin du cycle, avant la répétition */
 .tmk-sep {
   flex: 0 0 auto;
   color: #000;
   font-size: 9pt;
-  letter-spacing: 3px;
-  padding: 0 10px;
+  letter-spacing: 4px;
+  padding: 0 60px;
 }
 
 @keyframes tmk-scroll {
@@ -1541,5 +1542,5 @@ textarea:focus-visible {
 
 @media (min-width: 1024px) {
   .tmk { padding: 140px 0; }
-  .tmk-item { width: 340px; font-size: 11pt; }
+  .tmk-item { width: 460px; font-size: 11pt; }
 }
