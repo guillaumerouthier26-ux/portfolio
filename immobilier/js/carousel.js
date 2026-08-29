@@ -19,14 +19,13 @@
   });
   var cards = Array.prototype.slice.call(track.children);
 
-  var GAP = 40;
+  var GAP = 56;
   var index = 0;
   var step = 0;
   var animating = false;
 
   function visibleCount() {
-    if (window.matchMedia('(min-width: 1024px)').matches) return Math.min(3, n);
-    if (window.matchMedia('(min-width: 640px)').matches) return Math.min(2, n);
+    if (window.matchMedia('(min-width: 768px)').matches) return Math.min(2, n);
     return 1;
   }
 
