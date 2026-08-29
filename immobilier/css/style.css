@@ -1533,33 +1533,44 @@ textarea:focus-visible {
 .tmc-track {
   display: flex;
   gap: 40px;
-  align-items: stretch;
+  align-items: flex-start;   /* laisse l'aspect-ratio 3:2 fixer la hauteur */
   will-change: transform;
 }
 
+/* Carte : image de fond 3:2, texte blanc, nom en haut / citation en bas */
 .tmc-card {
-  flex: 0 0 auto;          /* largeur posée par carousel.js */
-  border: 1px solid #e0e0e0;
-  padding: 34px 30px;
+  flex: 0 0 auto;            /* largeur posée par carousel.js */
+  aspect-ratio: 3 / 2;
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  justify-content: space-between;
+  padding: 30px;
+  color: #fff;
 }
 
+.tmc-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 0;
+}
+
+.tmc-veil {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.tmc-attr,
 .tmc-quote {
-  flex: 1;                 /* pousse l'attribution en bas */
-  margin: 0;
-  font-family: var(--font-titre);
-  font-weight: 500;
-  font-size: 16pt;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
-  color: #000;
-  /* Lora condensé comme partout ailleurs sur le site (scaleX 0.8),
-     largeur compensée à 125 % pour remplir la case malgré la condensation. */
-  transform: scaleX(0.8);
-  transform-origin: left top;
-  width: 125%;
+  position: relative;
+  z-index: 2;
 }
 
 .tmc-attr { margin: 0; }
@@ -1570,7 +1581,7 @@ textarea:focus-visible {
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #000;
+  color: #fff;
 }
 
 .tmc-role {
@@ -1579,7 +1590,21 @@ textarea:focus-visible {
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #6b6b6b;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.tmc-quote {
+  margin: 0;
+  font-family: var(--font-titre);
+  font-weight: 500;
+  font-size: 15pt;
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+  color: #fff;
+  /* Lora condensé comme le reste du site, largeur compensée */
+  transform: scaleX(0.8);
+  transform-origin: left bottom;
+  width: 125%;
 }
 
 @media (min-width: 1024px) {
