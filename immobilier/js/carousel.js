@@ -25,6 +25,7 @@
   var animating = false;
 
   function visibleCount() {
+    if (window.matchMedia('(min-width: 1024px)').matches) return Math.min(3, n);
     if (window.matchMedia('(min-width: 768px)').matches) return Math.min(2, n);
     return 1;
   }
