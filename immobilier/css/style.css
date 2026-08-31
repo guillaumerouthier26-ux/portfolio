@@ -228,7 +228,7 @@ body.cn-page .navbar::before {
 .logo-text {
   font-family: var(--font-mono);
   font-weight: 400;
-  font-size: 13pt;
+  font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 1;
