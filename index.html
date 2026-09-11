@@ -3,130 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Guillaume Routhier, Photographe immobilier &amp; designer graphique</title>
-  <meta name="description" content="Guillaume Routhier, région de Québec. Photographie immobilière pour courtiers et design graphique : identité de marque et direction artistique.">
+  <title>Guillaume Routhier</title>
+  <meta name="description" content="Guillaume Routhier, région de Québec. Design graphique, photographie immobilière et photographie sur mesure.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/landing.css?v=7">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/landing.css?v=10">
+  <script>(function(){try{if(!sessionStorage.getItem('curtainIn'))return;sessionStorage.removeItem('curtainIn');var d=document.createElement('div');d.style.cssText='position:fixed;inset:0;background:#fff;z-index:99999;pointer-events:none;will-change:transform';document.documentElement.appendChild(d);requestAnimationFrame(function(){requestAnimationFrame(function(){d.style.transition='transform .6s cubic-bezier(.76,0,.24,1)';d.style.transform='translateY(-100%)'})});setTimeout(function(){if(d.parentNode)d.parentNode.removeChild(d)},700)}catch(e){}})();</script>
 </head>
 
 <body class="lp">
 
-  <div class="lp-cover" id="lp-cover"></div>
+  <div id="page-transition"></div>
 
   <header class="lp-head">
-    <span class="lp-logo">Guillaume<br>Routhier</span>
+    <span class="lp-name">Guillaume Routhier</span>
   </header>
 
-  <main class="lp-grid">
+  <main class="lp-cards">
 
-    <a class="lp-panel" href="immobilier/">
-      <img class="lp-img" src="photos/landing-immobilier.jpg" alt="" fetchpriority="high" decoding="async">
-      <span class="lp-veil"></span>
-      <span class="lp-inner">
-        <span class="lp-eyebrow">01</span>
-        <span class="lp-titre">Immobilier</span>
-        <span class="lp-sub">Photographie pour courtiers</span>
-        <span class="lp-arrow">Voir &rarr;</span>
-      </span>
+    <a class="vt-card vt-card--design" href="design/">
+      <span class="vt-name">Design</span>
+      <p class="vt-desc">Identit&eacute; de marque et direction artistique.</p>
+      <span class="vt-go">Voir&nbsp;&rarr;</span>
     </a>
 
-    <a class="lp-panel" href="design/">
-      <img class="lp-img" src="photos/landing-design.jpg" alt="" fetchpriority="high" decoding="async">
-      <span class="lp-veil"></span>
-      <span class="lp-inner">
-        <span class="lp-eyebrow">02</span>
-        <span class="lp-titre">Design</span>
-        <span class="lp-sub">Identit&eacute; de marque<br>et direction artistique</span>
-        <span class="lp-arrow">Voir &rarr;</span>
-      </span>
+    <a class="vt-card vt-card--immobilier" href="immobilier/">
+      <span class="vt-name">Immobilier</span>
+      <p class="vt-desc">Photographie immobili&egrave;re pour courtiers, livr&eacute;e en moins de 24&nbsp;h.</p>
+      <span class="vt-go">Voir&nbsp;&rarr;</span>
+    </a>
+
+    <a class="vt-card vt-card--photo" href="photographie/">
+      <span class="vt-name">Photographie</span>
+      <p class="vt-desc">Portraits, &eacute;v&eacute;nements et projets sur mesure.</p>
+      <span class="vt-go">Voir&nbsp;&rarr;</span>
     </a>
 
   </main>
 
-  <script>
-    // Transition vers un volet : le panneau blanc + l'animation glissent
-    // par-dessus CETTE page. On ne navigue qu'une fois l'écran couvert,
-    // pour ne jamais laisser voir le hero de destination.
-    (function () {
-      var SLIDE_IN = 700;
-      var EASE = 'cubic-bezier(0.76, 0, 0.24, 1)';
-
-      // WebKit ne lit pas l'alpha du WebM : on y va sans animation.
-      var ua = navigator.userAgent;
-      var isIOS = /iP(hone|ad|od)/.test(ua) ||
-                  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-      var isSafari = /^((?!chrome|android|crios|fxios|edg).)*safari/i.test(ua);
-      var reduced = window.matchMedia &&
-                    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      var SLIDE_OFF = 900;
-
-      // Fait glisser un panneau blanc hors de l'écran, vers le haut.
-      function glisserHors(el, apres) {
-        if (!el) return;
-        if (reduced) { el.remove(); if (apres) apres(); return; }
-        requestAnimationFrame(function () {
-          el.style.transition = 'transform ' + (SLIDE_OFF / 1000) + 's ' + EASE;
-          el.style.transform  = 'translateY(-100%)';
-        });
-        setTimeout(function () { el.remove(); if (apres) apres(); }, SLIDE_OFF + 60);
-      }
-
-      // Arrivée sur la page : le panneau blanc se retire vers le haut.
-      var cover = document.getElementById('lp-cover');
-      setTimeout(function () { glisserHors(cover); }, 120);
-
-      // Retour arrière : la page est restaurée depuis le cache de navigation
-      // avec le panneau de la transition encore en place. On le fait glisser
-      // au lieu de le retirer sec, sinon on revient sur un écran blanc.
-      window.addEventListener('pageshow', function () {
-        var wrap = document.querySelector('.lp-intro-video');
-        if (wrap) wrap.remove();
-        glisserHors(document.querySelector('.lp-intro-bg'));
-      });
-
-      document.querySelectorAll('.lp-panel').forEach(function (a) {
-        a.addEventListener('click', function (e) {
-          var href = a.getAttribute('href');
-          if (isIOS || isSafari || reduced) return;   // navigation normale
-          e.preventDefault();
-
-          var bg = document.createElement('div');
-          bg.className = 'lp-intro-bg';
-          var wrap = document.createElement('div');
-          wrap.className = 'lp-intro-video';
-          var v = document.createElement('video');
-          v.muted = true; v.playsInline = true; v.autoplay = true; v.preload = 'auto';
-          v.src = href + 'photos/logo-animation.webm' + (href.indexOf('immobilier') === 0 ? '?v=3' : '');
-          wrap.appendChild(v);
-          document.body.append(bg, wrap);
-
-          // Position de départ : sous l'écran
-          bg.style.transform   = 'translateY(100%)';
-          wrap.style.transform = 'translate(-50%, calc(-50% + 100vh))';
-          void bg.offsetHeight;
-
-          v.play().catch(function () {});
-
-          requestAnimationFrame(function () {
-            bg.style.transition   = 'transform ' + (SLIDE_IN / 1000) + 's ' + EASE;
-            wrap.style.transition = 'transform ' + (SLIDE_IN / 1000) + 's ' + EASE;
-            bg.style.transform    = 'translateY(0)';
-            wrap.style.transform  = 'translate(-50%, -50%)';
-          });
-
-          // L'écran est couvert : on bascule sur le volet, qui reprend
-          // l'animation là où elle est rendue.
-          setTimeout(function () {
-            try { sessionStorage.setItem('introContinue', '1'); } catch (err) {}
-            location.href = href;
-          }, SLIDE_IN);
-        });
-      });
-    })();
-  </script>
+  <script src="js/transitions.js?v=164"></script>
 
 </body>
 </html>

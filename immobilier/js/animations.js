@@ -343,48 +343,21 @@ function revealHeroWordmark(delay) {
 (function () {
   const introBg   = document.getElementById('intro-bg');
   const introWrap = document.getElementById('intro-video-wrap');
-  const video     = document.getElementById('intro-video');
+  if (introWrap) introWrap.remove();   // plus d'animation de logo
 
-  // Arrivée depuis la page d'accueil : le glissement d'entrée a DÉJÀ eu lieu
-  // là-bas, l'écran est couvert. On reprend l'animation où elle en est,
-  // sans rejouer d'entrée et sans jamais laisser voir le hero.
-  const flagContinue = sessionStorage.getItem('introContinue') === '1';
-  if (flagContinue) sessionStorage.removeItem('introContinue');
-
-  // Filet de secours : même si le drapeau se perd (cache, onglet restauré),
-  // on rejoue l'intro dès qu'on arrive de la page d'accueil.
-  const refIsLanding = (function () {
-    try {
-      const u = new URL(document.referrer);
-      return u.origin === location.origin &&
-             /\/$/.test(u.pathname) &&
-             u.pathname !== location.pathname &&
-             location.pathname.indexOf(u.pathname) === 0;
-    } catch (e) { return false; }
-  })();
-
-  const fromLanding = flagContinue || refIsLanding;
-
-  // Timings de l'intro
-  const SLIDE_IN = 700;  // glissement d'entrée du panneau + de l'animation
-  const CUT  = 1850;   // on coupe l'intro AVANT que le logo se forme
+  const HOLD = 220;    // court temps d'attente avant que le panneau se lève
   const WIPE = 1100;   // durée du balayage du panneau blanc vers le haut
 
   function skip(delay) {
-    if (introBg)   introBg.remove();
-    if (introWrap) introWrap.remove();
+    if (introBg) introBg.remove();
     startHeroAnimations(delay);
     revealHeroWordmark(delay + 300);
   }
 
-  if (!introBg || !introWrap || !video) { skip(200); return; }
+  if (!introBg) { skip(200); return; }
 
-  // WebKit (iOS/Safari) ne lit pas l'alpha WebM → fond noir : on saute l'intro.
-  const ua = navigator.userAgent;
-  const isIOS = /iP(hone|ad|od)/.test(ua) ||
-                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-  const isSafari = /^((?!chrome|android|crios|fxios|edg).)*safari/i.test(ua);
-  if (isIOS || isSafari) { skip(200); return; }
+  const reduced = window.matchMedia &&
+                  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Détection navigation interne / déjà vue → pas d'intro
   const alreadySeen = sessionStorage.getItem('introShown');
@@ -398,11 +371,10 @@ function revealHeroWordmark(delay) {
     } catch (e) { return false; }
   })();
 
-  if (location.hash && !fromLanding) { skip(200); return; }
-
   if (isReload) {
     sessionStorage.removeItem('introShown');
-  } else if (!fromLanding && (isInternalNav || window._spaNavigation || alreadySeen)) {
+  }
+  if (reduced || (!isReload && (isInternalNav || window._spaNavigation || alreadySeen))) {
     window._spaNavigation = false;
     skip(200);
     return;
@@ -410,48 +382,26 @@ function revealHeroWordmark(delay) {
 
   sessionStorage.setItem('introShown', '1');
 
-  // Révèle la vidéo pile à la 1re frame décodée (pas de flash noir) : on voit
-  // le DÉBUT de l'animation par-dessus le panneau blanc.
-  const revealVideo = function () { video.style.opacity = '1'; };
-  try { video.currentTime = 0; } catch (e) {}
-  if ('requestVideoFrameCallback' in video) {
-    video.requestVideoFrameCallback(function () { revealVideo(); });
-  } else {
-    video.addEventListener('loadeddata', revealVideo, { once: true });
-  }
-  video.play().catch(function () {});
-
   // On verrouille le scroll pendant l'intro
   document.body.classList.add('intro-active');
   document.documentElement.style.overflow = 'hidden';
 
-  // Le panneau est déjà en place (arrivée depuis l'accueil) : on avance la
-  // vidéo du temps déjà écoulé pour que l'animation soit continue.
-  const cutDelay = flagContinue ? (CUT - SLIDE_IN) : CUT;
-  if (flagContinue) {
-    try { video.currentTime = SLIDE_IN / 1000; } catch (e) {}
-  }
-
-  // À la coupe : PAS de fondu. Le panneau blanc ET la vidéo se soulèvent
-  // ensemble hors du cadre (les éléments sortent par le haut), révélant le hero.
+  // Le panneau blanc se lève graduellement, révélant le hero.
   setTimeout(function () {
-    const ease = 'cubic-bezier(0.76, 0, 0.24, 1)';
-    introBg.style.transition   = 'transform ' + (WIPE / 1000) + 's ' + ease;
-    introBg.style.transform    = 'translateY(-100%)';
-    introWrap.style.transition = 'transform ' + (WIPE / 1000) + 's ' + ease;
-    introWrap.style.transform  = 'translate(-50%, calc(-50% - 100vh))';
-  }, cutDelay);
+    introBg.style.transition = 'transform ' + (WIPE / 1000) + 's cubic-bezier(0.76, 0, 0.24, 1)';
+    introBg.style.transform  = 'translateY(-100%)';
+  }, HOLD);
 
-  // Le mobilier du hero (filet, logo, ticker) monte pendant le balayage…
-  startHeroAnimations(cutDelay);
-  // …et le texte central s'anime une fois l'image de fond révélée.
-  revealHeroWordmark(cutDelay + WIPE - 250);
+  // Le mobilier du hero monte pendant le balayage…
+  startHeroAnimations(HOLD);
+  // …et le texte du hero s'anime une fois l'image révélée.
+  revealHeroWordmark(HOLD + WIPE - 250);
 
   // Déverrouillage + nettoyage
   setTimeout(function () {
     document.body.classList.remove('intro-active');
     document.documentElement.style.overflow = '';
-  }, cutDelay + WIPE);
-  setTimeout(function () { introBg.remove(); introWrap.remove(); }, CUT + WIPE + 100);
+  }, HOLD + WIPE);
+  setTimeout(function () { introBg.remove(); }, HOLD + WIPE + 100);
 })();
 })();

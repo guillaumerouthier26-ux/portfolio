@@ -206,3 +206,8 @@
     padding-bottom: 12px;
   }
 }
+
+/* Bouton « envoyer » arrondi comme les autres cases du site */
+.contact-submit {
+  border-radius: 20pt;
+}

@@ -7,9 +7,10 @@
   <meta name="description" content="Tarifs de photographie immobilière dans la région de Québec. Forfaits à partir de 180 $, photos retouchées et livrées en 24 heures. Drone, séance rush et déplacement inclus dans un rayon de 25 km.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=163">
-  <link rel="stylesheet" href="css/tarifs.css?v=163">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=164">
+  <link rel="stylesheet" href="css/tarifs.css?v=164">
+  <script>(function(){try{if(!sessionStorage.getItem('curtainIn'))return;sessionStorage.removeItem('curtainIn');var d=document.createElement('div');d.style.cssText='position:fixed;inset:0;background:#fff;z-index:99999;pointer-events:none;will-change:transform';document.documentElement.appendChild(d);requestAnimationFrame(function(){requestAnimationFrame(function(){d.style.transition='transform .6s cubic-bezier(.76,0,.24,1)';d.style.transform='translateY(-100%)'})});setTimeout(function(){if(d.parentNode)d.parentNode.removeChild(d)},700)}catch(e){}})();</script>
 </head>
 
 <body>
@@ -21,21 +22,22 @@
       <a class="t-titre nav-menu-titre" href="index.html#projets">Mes Projets</a>
       <a class="t-titre nav-menu-titre" href="tarifs.html">Tarifs</a>
       <a class="t-titre nav-menu-titre" href="contact.html">Contact</a>
-      <a class="t-titre nav-menu-titre" href="apropos.html">À&nbsp;Propos</a>
+      <a class="t-titre nav-menu-titre" href="../">Voir les volets</a>
     </nav>
   </div>
 
   <header class="navbar">
     <div class="nav-filet"></div>
     <div class="nav-top">
-      <a class="nav-logo" href="index.html">
-        <span class="logo-text">Guillaume</span>
-      </a>
+      <div class="nav-logo">
+        <a class="nav-logo-arrow" href="../" aria-label="Voir les volets">&#8249;</a>
+        <a class="logo-text" href="index.html">Guillaume Routhier</a>
+      </div>
       <nav class="nav-desktop">
         <a class="nav-desktop-link" href="index.html#projets">Projets</a>
         <a class="nav-desktop-link" href="tarifs.html" aria-current="page">Tarifs</a>
         <a class="nav-desktop-link" href="contact.html">Contact</a>
-        <a class="nav-desktop-link" href="apropos.html">À&nbsp;Propos</a>
+        <a class="nav-desktop-link" href="../">Voir les volets</a>
       </nav>
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span>
@@ -47,226 +49,124 @@
 
   <!-- Hero, même image que l'accueil -->
   <section class="tf-hero">
-    <img class="tf-hero-img" src="photos/hero-bg.jpg" alt="" fetchpriority="high" decoding="async">
+    <img class="tf-hero-img" src="photos/tarifs-hero.jpg" alt="" fetchpriority="high" decoding="async">
   </section>
 
   <!-- Titre, même position que sur les pages projets -->
   <section class="tf-intro">
-    <h1 class="t-titre tf-titre">Tarifs</h1>
-    <p class="t-courant tf-lede">Photos retouch&eacute;es, pr&ecirc;tes pour Centris, <strong>livr&eacute;es en 24&nbsp;heures</strong>.<br>Je couvre Qu&eacute;bec, L&eacute;vis et les environs.</p>
+    <h1 class="tf-titre">Services<br>&amp; Tarifs</h1>
   </section>
 
   <div class="tf-body">
 
-    <section class="tf-sec">
-      <div class="tf-sec-head">
-        <span class="t-courant tf-sec-num">(01)</span>
-        <h2 class="t-titre tf-sec-titre">Forfaits</h2>
-      </div>
-      <div class="tf-tiers">
+    <section class="tf-forfaits">
 
-        <!-- ── Palier 1 : Essentiel ── -->
-        <div class="tf-tier">
-          <div class="tf-tier-top">
-            <div class="tf-tier-id">
-              <span class="t-courant tf-tier-name">Essentiel</span>
-              <span class="t-courant tf-tier-tag">Photographie</span>
-            </div>
-          </div>
-          <p class="t-courant tf-tier-desc">Couverture compl&egrave;te de la propri&eacute;t&eacute;, retouch&eacute;e et pr&ecirc;te pour Centris d&egrave;s le lendemain.</p>
-          <div class="tf-sizes">
-            <div class="tf-size"><span class="t-courant tf-size-nom">Condo</span><span class="t-courant tf-size-meta">Moins de 1&nbsp;500&nbsp;pi&sup2;</span><span class="t-courant tf-size-prix">180&nbsp;$</span></div>
-            <div class="tf-size"><span class="t-courant tf-size-nom">Maison</span><span class="t-courant tf-size-meta">Moins de 2&nbsp;500&nbsp;pi&sup2;</span><span class="t-courant tf-size-prix">225&nbsp;$</span></div>
-            <div class="tf-size"><span class="t-courant tf-size-nom">Grande maison</span><span class="t-courant tf-size-meta">2&nbsp;500 &agrave; 3&nbsp;500&nbsp;pi&sup2;</span><span class="t-courant tf-size-prix">285&nbsp;$</span></div>
-            <div class="tf-size"><span class="t-courant tf-size-nom">Propri&eacute;t&eacute; d'exception</span><span class="t-courant tf-size-meta">3&nbsp;500&nbsp;pi&sup2; et plus</span><span class="t-courant tf-size-prix"><span class="tf-from">&Agrave; partir de</span>&nbsp;375&nbsp;$</span></div>
-          </div>
+      <div class="tf-service">
+        <div class="tf-service-left">
+          <h3 class="tf-service-name">Photo HDR</h3>
+          <p class="tf-service-desc">Rendu naturel et fid&egrave;le, retouch&eacute; et pr&ecirc;t pour Centris d&egrave;s le lendemain.</p>
+          <a class="tf-service-btn" href="#">Voir un exemple</a>
         </div>
-
+        <div class="tf-service-prices">
+          <div class="tf-price"><span class="tf-price-cat">Condo</span><span class="tf-price-size">Moins de 1 500 pi&sup2;</span><span class="tf-price-num">180$</span></div>
+          <div class="tf-price"><span class="tf-price-cat">Maison</span><span class="tf-price-size">Moins de 2 500 pi&sup2;</span><span class="tf-price-num">225$</span></div>
+          <div class="tf-price"><span class="tf-price-cat">Grande maison</span><span class="tf-price-size">2 500 &agrave; 3 500 pi&sup2;</span><span class="tf-price-num">285$</span></div>
+        </div>
       </div>
+
+      <div class="tf-service tf-service--flash">
+        <div class="tf-service-left">
+          <h3 class="tf-service-name">Photo<br>Style Flash</h3>
+          <p class="tf-service-desc">S&eacute;ance photographi&eacute;e au flash pour des couleurs plus naturelles et un rendu plus luxueux.</p>
+          <a class="tf-service-btn" href="#">Voir un exemple</a>
+        </div>
+        <div class="tf-service-prices">
+          <div class="tf-price"><span class="tf-price-cat">Condo</span><span class="tf-price-size">Moins de 1 500 pi&sup2;</span><span class="tf-price-num">280$</span></div>
+          <div class="tf-price"><span class="tf-price-cat">Maison</span><span class="tf-price-size">Moins de 2 500 pi&sup2;</span><span class="tf-price-num">325$</span></div>
+          <div class="tf-price"><span class="tf-price-cat">Grande maison</span><span class="tf-price-size">2 500 &agrave; 3 500 pi&sup2;</span><span class="tf-price-num">385$</span></div>
+        </div>
+      </div>
+
     </section>
 
-    <section class="tf-sec tf-sec--comp">
-      <div class="tf-sec-head">
-        <span class="t-courant tf-sec-num">(02)</span>
-        <h2 class="t-titre tf-sec-titre">Compl&eacute;ments</h2>
+    <section class="tf-comp">
+
+      <div class="tf-cta">
+        <p class="tf-cta-text">contactez-moi pour<br>des contrats sur-mesure</p>
+        <a class="tf-service-btn" href="contact.html">Me contacter</a>
       </div>
 
-      <div class="cp-grid">
+      <div class="tf-comp-grid">
 
-        <!-- Drone -->
-        <article class="cp-card">
-          <div class="cp-media">
-            <img src="photos/complement-drone.jpg" alt="Vue a&eacute;rienne par drone d'une propri&eacute;t&eacute;" loading="lazy" decoding="async">
-          </div>
-          <div class="cp-body">
-            <div class="cp-line"><span class="t-courant cp-name">Photos a&eacute;riennes par drone</span><span class="t-courant cp-price">+&nbsp;90&nbsp;$</span></div>
-            <p class="t-courant cp-meta">Vues a&eacute;riennes qui situent la propri&eacute;t&eacute; dans son quartier et donnent de l'ampleur au terrain.</p>
-          </div>
+        <article class="tf-comp-card">
+          <span class="tf-comp-name">Photos par drone</span>
+          <p class="tf-comp-desc">Vues a&eacute;riennes qui situent la propri&eacute;t&eacute; dans son quartier et donnent de l'ampleur au terrain.</p>
+          <span class="tf-comp-price">90$</span>
         </article>
 
-        <!-- Visite 360 -->
-        <article class="cp-card">
-          <div class="cp-media">
-            <video class="cp-video" src="photos/complement-360.mp4" poster="photos/complement-360-poster.jpg" muted loop autoplay playsinline></video>
-          </div>
-          <div class="cp-body">
-            <div class="cp-line"><span class="t-courant cp-name">Visite 360&deg;</span><span class="t-courant cp-price">+&nbsp;100&nbsp;$</span></div>
-            <p class="t-courant cp-meta">Visite virtuelle interactive : l'acheteur explore la propri&eacute;t&eacute; pi&egrave;ce par pi&egrave;ce en ligne.</p>
-          </div>
+        <article class="tf-comp-card">
+          <span class="tf-comp-name">Visite virtuelle</span>
+          <p class="tf-comp-desc">Visite virtuelle interactive : l'acheteur explore la propri&eacute;t&eacute; pi&egrave;ce par pi&egrave;ce en ligne.</p>
+          <span class="tf-comp-price">100$</span>
         </article>
 
-        <!-- Suppression d'objet : glissière horizontale avant/après -->
-        <article class="cp-card">
-          <div class="cp-media cp-ba" style="--x:50%">
-            <img class="cp-ba-after" src="photos/complement-remove-apres.jpg" alt="Pi&egrave;ce apr&egrave;s suppression des objets" loading="lazy" decoding="async">
-            <img class="cp-ba-before" src="photos/complement-remove-avant.jpg" alt="Pi&egrave;ce avant, avec objets encombrants" loading="lazy" decoding="async">
-            <span class="cp-ba-tag cp-ba-tag-before">Avant</span>
-            <span class="cp-ba-tag cp-ba-tag-after">Apr&egrave;s</span>
-            <div class="cp-ba-divider"><span class="cp-ba-handle">&#8596;</span></div>
-          </div>
-          <div class="cp-body">
-            <div class="cp-line"><span class="t-courant cp-name">Suppression d'objet</span><span class="t-courant cp-price">+&nbsp;10&nbsp;$<span class="cp-unit">par photo</span></span></div>
-            <p class="t-courant cp-meta">Retrait d'un &eacute;l&eacute;ment ind&eacute;sirable : fil, poubelle, objet personnel.</p>
-          </div>
+        <div class="tf-comp-head">
+          <h2 class="tf-comp-title">Compl&eacute;ments<br>du forfait</h2>
+          <a class="tf-service-btn" href="contact.html">Me contacter</a>
+        </div>
+
+        <article class="tf-comp-card">
+          <span class="tf-comp-name">Suppresion d'objet</span>
+          <p class="tf-comp-desc">Retrait d'un &eacute;l&eacute;ment ind&eacute;sirable : fil, poubelle, objet personnel.</p>
+          <span class="tf-comp-price">10$<span class="tf-comp-unit">par photo</span></span>
         </article>
 
-        <!-- Home staging : glissière horizontale avant/après -->
-        <article class="cp-card">
-          <div class="cp-media cp-ba" style="--x:50%">
-            <img class="cp-ba-after" src="photos/complement-staging-apres.jpg" alt="Cour am&eacute;nag&eacute;e, projection" loading="lazy" decoding="async">
-            <img class="cp-ba-before" src="photos/complement-staging-avant.jpg" alt="Cour avant am&eacute;nagement" loading="lazy" decoding="async">
-            <span class="cp-ba-tag cp-ba-tag-before">Avant</span>
-            <span class="cp-ba-tag cp-ba-tag-after">Apr&egrave;s</span>
-            <div class="cp-ba-divider"><span class="cp-ba-handle">&#8596;</span></div>
-          </div>
-          <div class="cp-body">
-            <div class="cp-line"><span class="t-courant cp-name">Home staging virtuel</span><span class="t-courant cp-price">+&nbsp;25&nbsp;$<span class="cp-unit">par photo</span></span></div>
-            <p class="t-courant cp-meta">Mobilier et d&eacute;cor ajout&eacute;s &agrave; l'image pour projeter le potentiel d'une pi&egrave;ce. Visualisation &agrave; titre indicatif.</p>
-          </div>
+        <article class="tf-comp-card">
+          <span class="tf-comp-name">Home staging virtuel</span>
+          <p class="tf-comp-desc">Mobilier et d&eacute;cor ajout&eacute;s &agrave; l'image pour projeter le potentiel d'une pi&egrave;ce. Visualisation &agrave; titre indicatif.</p>
+          <span class="tf-comp-price">25$<span class="tf-comp-unit">par photo</span></span>
         </article>
 
-        <!-- Twilight : glissière avant/après -->
-        <article class="cp-card">
-          <div class="cp-media cp-ba" style="--x:50%">
-            <img class="cp-ba-after" src="photos/complement-twilight-apres.jpg" alt="Fa&ccedil;ade au coucher de soleil, projection" loading="lazy" decoding="async">
-            <img class="cp-ba-before" src="photos/complement-twilight-avant.jpg" alt="Fa&ccedil;ade en plein jour" loading="lazy" decoding="async">
-            <span class="cp-ba-tag cp-ba-tag-before">Avant</span>
-            <span class="cp-ba-tag cp-ba-tag-after">Apr&egrave;s</span>
-            <div class="cp-ba-divider"><span class="cp-ba-handle">&#8596;</span></div>
-          </div>
-          <div class="cp-body">
-            <div class="cp-line"><span class="t-courant cp-name">Coucher de soleil « twilight »</span><span class="t-courant cp-price">+&nbsp;25&nbsp;$<span class="cp-unit">par photo</span></span></div>
-            <p class="t-courant cp-meta">Ciel de fin de journ&eacute;e recr&eacute;&eacute; sur une photo ext&eacute;rieure pour une ambiance chaleureuse. Visualisation &agrave; titre indicatif.</p>
-          </div>
-        </article>
-
-        <!-- Flash : glissière avant/après -->
-        <article class="cp-card">
-          <div class="cp-media cp-ba" style="--x:50%">
-            <img class="cp-ba-after" src="photos/complement-flash-avant.jpg" alt="Pi&egrave;ce en lumi&egrave;re ambiante (HDR)" loading="lazy" decoding="async">
-            <img class="cp-ba-before" src="photos/complement-flash-apres.jpg" alt="Pi&egrave;ce photographi&eacute;e au flash" loading="lazy" decoding="async">
-            <span class="cp-ba-tag cp-ba-tag-before">Flash</span>
-            <span class="cp-ba-tag cp-ba-tag-after">Ambiant HDR</span>
-            <div class="cp-ba-divider"><span class="cp-ba-handle">&#8596;</span></div>
-          </div>
-          <div class="cp-body">
-            <div class="cp-line"><span class="t-courant cp-name">&Eacute;clairage au flash</span><span class="t-courant cp-price">+&nbsp;100&nbsp;$</span></div>
-            <p class="t-courant cp-meta">S&eacute;ance photographi&eacute;e au flash pour des couleurs riches et une lumi&egrave;re constante, pi&egrave;ce par pi&egrave;ce.</p>
-          </div>
+        <article class="tf-comp-card">
+          <span class="tf-comp-name">Cr&eacute;puscule</span>
+          <p class="tf-comp-desc">Ciel de fin de journ&eacute;e recr&eacute;&eacute; sur une photo ext&eacute;rieure pour une ambiance chaleureuse. Visualisation &agrave; titre indicatif.</p>
+          <span class="tf-comp-price">25$<span class="tf-comp-unit">par photo</span></span>
         </article>
 
       </div>
 
-      <div class="tf-rows cp-rows">
-        <div class="tf-row">
-          <div class="tf-row-main">
-            <span class="t-courant tf-name">S&eacute;ance rush</span>
-            <span class="t-courant tf-meta">Photos livr&eacute;es en 5&nbsp;h.</span>
-          </div>
-          <span class="tf-price"><span class="t-courant tf-price-num">+&nbsp;85&nbsp;$</span></span>
-        </div>
-        <div class="tf-row">
-          <div class="tf-row-main">
-            <span class="t-courant tf-name">D&eacute;placement</span>
-            <span class="t-courant tf-meta">Rayon de 25&nbsp;km inclus, puis 0,60&nbsp;$ du kilom&egrave;tre aller-retour.</span>
-          </div>
-          <span class="tf-price"><span class="t-courant tf-price-num">Inclus &lt;&nbsp;25&nbsp;km</span></span>
-        </div>
+      <div class="tf-deplacement">
+        <p class="tf-depl-main">25 km de d&eacute;placement<br>inclus avec tous les forfaits</p>
+        <p class="tf-depl-sub">0,60 $ par kilom&egrave;tre ensuite aller-retour</p>
       </div>
-    </section>
 
-    <section class="tf-sec">
-      <div class="tf-sec-head">
-        <span class="t-courant tf-sec-num">(03)</span>
-        <h2 class="t-titre tf-sec-titre">Conditions</h2>
-      </div>
-      <div class="tf-rows">
-        <div class="tf-row">
-          <div class="tf-row-main">
-            <span class="t-courant tf-name">Livraison en 24&nbsp;h</span>
-            <span class="t-courant tf-meta">Incluse dans tous les forfaits.</span>
-          </div>
-        </div>
-        <div class="tf-row">
-          <div class="tf-row-main">
-            <span class="t-courant tf-name">Licence MLS et marketing</span>
-            <span class="t-courant tf-meta">Incluse. La revente des images n'est pas permise.</span>
-          </div>
-        </div>
-        <div class="tf-row">
-          <div class="tf-row-main">
-            <span class="t-courant tf-name">Annulation le jour m&ecirc;me</span>
-            <span class="t-courant tf-meta">50&nbsp;% du forfait.</span>
-          </div>
-        </div>
-        <div class="tf-row">
-          <div class="tf-row-main">
-            <span class="t-courant tf-name">Paiement</span>
-            <span class="t-courant tf-meta">&Agrave; la livraison des photos.</span>
-          </div>
-        </div>
-      </div>
-      <p class="t-courant tf-note">Tarifs en dollars canadiens, taxes en sus.</p>
     </section>
 
 
   </div>
 
-  <footer class="footer">
-    <div class="footer-main">
-      <a class="footer-cta" href="mailto:guillaumerouthier26@gmail.com">
-        <span class="t-courant footer-eyebrow"><span class="footer-dot" aria-hidden="true"></span>Disponible pour vos mandats, r&eacute;gion de Qu&eacute;bec</span>
-        <span class="t-titre footer-cta-titre">Parlons-en.</span>
-        <span class="t-courant footer-cta-mail">guillaumerouthier26@gmail.com<span class="footer-cta-arrow" aria-hidden="true">&#8594;</span></span>
-      </a>
-      <div class="footer-cols">
-        <nav class="footer-col" aria-label="Menu">
-          <span class="t-courant footer-col-k">Menu</span>
-          <a class="t-courant" href="#projets">Projets</a>
-          <a class="t-courant" href="apropos.html">&Agrave;&nbsp;propos</a>
-          <a class="t-courant" href="contact.html">Contact</a>
-        </nav>
-        <nav class="footer-col" aria-label="R&eacute;seaux">
-          <span class="t-courant footer-col-k">R&eacute;seaux</span>
-          <a class="t-courant" href="https://instagram.com/peluredekiwi.reguliere" target="_blank" rel="noopener">Instagram</a>
-            <a class="t-courant" href="https://www.linkedin.com/in/guillaume-routhier-2bb03b248/" target="_blank" rel="noopener">LinkedIn</a>
-        </nav>
+  <footer class="ft">
+    <div class="ft-inner">
+      <h2 class="ft-big">Livr&eacute;es en<br>moins de 24h</h2>
+      <div class="ft-navcol ft-navcol--a">
+        <span class="ft-name">Guillaume Routhier</span>
+        <a href="#">Retour en&nbsp;haut</a>
+        <a href="index.html#projets">Projets</a>
       </div>
-    </div>
-    <div class="footer-meta">
-      <span class="t-courant footer-copy">&copy; 2026 Guillaume Routhier</span>
-      <div class="footer-meta-legal">
-        <a class="t-courant" href="#">Retour en&nbsp;haut &#8593;</a>
-      </div>
+      <nav class="ft-navcol ft-navcol--b" aria-label="Navigation secondaire">
+        <a href="tarifs.html">Tarifs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <span class="ft-r" aria-label="R&eacute;serv&eacute;">R</span>
     </div>
   </footer>
 
-  <script src="js/smooth-scroll.js?v=163"></script>
-  <script src="js/parallax.js?v=163"></script>
-  <script src="js/animations.js?v=163"></script>
-  <script src="js/menu.js?v=163"></script>
-  <script src="js/cursor.js?v=163"></script>
-  <script src="js/transitions.js?v=163"></script>
-  <script src="js/ba-slider.js?v=163"></script>
+  <script src="js/smooth-scroll.js?v=164"></script>
+  <script src="js/parallax.js?v=164"></script>
+  <script src="js/animations.js?v=164"></script>
+  <script src="js/menu.js?v=164"></script>
+  <script src="js/cursor.js?v=164"></script>
+  <script src="js/transitions.js?v=164"></script>
+  <script src="js/ba-slider.js?v=164"></script>
 </body>
 </html>

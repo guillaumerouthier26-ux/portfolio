@@ -20,7 +20,7 @@
   gap: 40px;
 }
 .pjb-projet-lede { margin: 0; line-height: 0.98; }
-.pjb-projet-lede.t-titre { transform: scaleX(0.8); transform-origin: left center; }
+.pjb-projet-lede.t-titre { transform: scaleX(1); transform-origin: left center; }
 
 /* Mobile : accroche en "titre 2" = 75% de la taille du titre (37pt → 27.75pt) */
 @media (max-width: 1023px) {

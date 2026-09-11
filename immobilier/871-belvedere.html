@@ -6,10 +6,11 @@
   <title>Condo à Montcalm, Guillaume Routhier</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=127">
-  <link rel="stylesheet" href="css/projet.css?v=127">
-  <link rel="stylesheet" href="css/projet-blocks.css?v=127">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=164">
+  <link rel="stylesheet" href="css/projet.css?v=164">
+  <link rel="stylesheet" href="css/projet-blocks.css?v=164">
+  <script>(function(){try{if(!sessionStorage.getItem('curtainIn'))return;sessionStorage.removeItem('curtainIn');var d=document.createElement('div');d.style.cssText='position:fixed;inset:0;background:#fff;z-index:99999;pointer-events:none;will-change:transform';document.documentElement.appendChild(d);requestAnimationFrame(function(){requestAnimationFrame(function(){d.style.transition='transform .6s cubic-bezier(.76,0,.24,1)';d.style.transform='translateY(-100%)'})});setTimeout(function(){if(d.parentNode)d.parentNode.removeChild(d)},700)}catch(e){}})();</script>
 </head>
 
 <body>
@@ -21,21 +22,22 @@
       <a class="t-titre nav-menu-titre" href="index.html#projets">Mes Projets</a>
       <a class="t-titre nav-menu-titre" href="tarifs.html">Tarifs</a>
       <a class="t-titre nav-menu-titre" href="contact.html">Contact</a>
-      <a class="t-titre nav-menu-titre" href="apropos.html">À&nbsp;Propos</a>
+      <a class="t-titre nav-menu-titre" href="../">Voir les volets</a>
     </nav>
   </div>
 
   <header class="navbar">
     <div class="nav-filet"></div>
     <div class="nav-top">
-      <a class="nav-logo" href="index.html">
-        <span class="logo-text">Guillaume</span>
-      </a>
+      <div class="nav-logo">
+        <a class="nav-logo-arrow" href="../" aria-label="Voir les volets">&#8249;</a>
+        <a class="logo-text" href="index.html">Guillaume Routhier</a>
+      </div>
       <nav class="nav-desktop">
         <a class="nav-desktop-link" href="index.html#projets">Projets</a>
         <a class="nav-desktop-link" href="tarifs.html">Tarifs</a>
         <a class="nav-desktop-link" href="contact.html">Contact</a>
-        <a class="nav-desktop-link" href="apropos.html">À&nbsp;Propos</a>
+        <a class="nav-desktop-link" href="../">Voir les volets</a>
       </nav>
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span>
@@ -97,39 +99,26 @@
     </div>
   </a>
 
-  <footer class="footer">
-    <div class="footer-main">
-      <a class="footer-cta" href="mailto:guillaumerouthier26@gmail.com">
-        <span class="t-courant footer-eyebrow"><span class="footer-dot" aria-hidden="true"></span>Disponible pour vos mandats, r&eacute;gion de Qu&eacute;bec</span>
-        <span class="t-titre footer-cta-titre">Parlons-en.</span>
-        <span class="t-courant footer-cta-mail">guillaumerouthier26@gmail.com<span class="footer-cta-arrow" aria-hidden="true">&#8594;</span></span>
-      </a>
-      <div class="footer-cols">
-        <nav class="footer-col" aria-label="Menu">
-          <span class="t-courant footer-col-k">Menu</span>
-          <a class="t-courant" href="index.html#projets">Projets</a>
-          <a class="t-courant" href="apropos.html">&Agrave;&nbsp;propos</a>
-          <a class="t-courant" href="contact.html">Contact</a>
-        </nav>
-        <nav class="footer-col" aria-label="R&eacute;seaux">
-          <span class="t-courant footer-col-k">R&eacute;seaux</span>
-          <a class="t-courant" href="https://instagram.com/peluredekiwi.reguliere" target="_blank" rel="noopener">Instagram</a>
-            <a class="t-courant" href="https://www.linkedin.com/in/guillaume-routhier-2bb03b248/" target="_blank" rel="noopener">LinkedIn</a>
-        </nav>
+  <footer class="ft">
+    <div class="ft-inner">
+      <h2 class="ft-big">Livr&eacute;es en<br>moins de 24h</h2>
+      <div class="ft-navcol ft-navcol--a">
+        <span class="ft-name">Guillaume Routhier</span>
+        <a href="#">Retour en&nbsp;haut</a>
+        <a href="index.html#projets">Projets</a>
       </div>
-    </div>
-    <div class="footer-meta">
-      <span class="t-courant footer-copy">&copy; 2026 Guillaume Routhier</span>
-      <div class="footer-meta-legal">
-        <a class="t-courant" href="#">Retour en&nbsp;haut &#8593;</a>
-      </div>
+      <nav class="ft-navcol ft-navcol--b" aria-label="Navigation secondaire">
+        <a href="tarifs.html">Tarifs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <span class="ft-r" aria-label="R&eacute;serv&eacute;">R</span>
     </div>
   </footer>
 
-  <script src="js/smooth-scroll.js?v=127"></script>
-  <script src="js/menu.js?v=127"></script>
-  <script src="js/page-animations.js?v=127"></script>
-  <script src="js/cursor.js?v=127"></script>
-  <script src="js/transitions.js?v=127"></script>
+  <script src="js/smooth-scroll.js?v=164"></script>
+  <script src="js/menu.js?v=164"></script>
+  <script src="js/page-animations.js?v=164"></script>
+  <script src="js/cursor.js?v=164"></script>
+  <script src="js/transitions.js?v=164"></script>
 </body>
 </html>

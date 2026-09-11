@@ -58,7 +58,7 @@
 
     var t0 = Date.now();
 
-    fetch(href)
+    fetch(href, { cache: 'no-store' })
       .then(function (r) { return r.text(); })
       .then(function (html) { return new DOMParser().parseFromString(html, 'text/html'); })
       .then(function (newDoc) {
@@ -90,6 +90,9 @@
           });
 
           document.title = newDoc.title;
+          // Reprend la classe du <body> cible (ex. « lp » pour l'accueil,
+          // « dg » pour le volet design) → la bonne CSS s'applique.
+          document.body.className = newDoc.body.className;
           history.pushState({}, newDoc.title, href);
           document.body.style.height = '';
           window.scrollTo(0, 0);
@@ -148,11 +151,37 @@
   document.addEventListener('click', function (e) {
     var link = e.target.closest('a[href]');
     if (!link) return;
+    var url;
     try {
-      var url = new URL(link.href);
+      url = new URL(link.href);
       if (url.origin !== location.origin) return;
       if (url.pathname === location.pathname) return;
     } catch (err) { return; }
+
+    // Navigation inter-contexte (accueil ↔ volet, volet ↔ volet) : les chemins
+    // relatifs et la CSS diffèrent → rideau blanc puis chargement natif.
+    var base = location.pathname.split('/')[1];
+    var target = url.pathname.split('/')[1];
+    if (target !== base) {
+      e.preventDefault();
+      if (busy) return;
+      busy = true;
+      try { sessionStorage.setItem('curtainIn', '1'); } catch (er) {}
+      var c = document.createElement('div');
+      c.style.cssText =
+        'position:fixed;inset:0;z-index:3000;background:#fff;' +
+        'transform:translateY(100%);pointer-events:none;will-change:transform;';
+      document.body.appendChild(c);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          c.style.transition = 'transform ' + (IN_MS / 1000) + 's ' + EASE;
+          c.style.transform = 'translateY(0)';
+        });
+      });
+      setTimeout(function () { window.location.href = link.href; }, IN_MS + 40);
+      return;
+    }
+
     e.preventDefault();
     navigate(link.href);
   });

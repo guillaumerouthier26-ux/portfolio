@@ -368,9 +368,10 @@
 /* ─── HERO + TITRE (calqués sur les pages projets) ─── */
 /* Styles autonomes : cette page ne charge pas projet.css */
 
+/* Image : seulement dans la partie du haut, au-dessus du texte (pas de superposition) */
 .tf-hero {
-  height: 75vh;
-  height: 75svh;
+  height: 50vh;
+  height: 50svh;
   overflow: hidden;
 }
 
@@ -381,48 +382,263 @@
   display: block;
 }
 
+/* Titre 1 « Services & Tarifs » aligné bas-gauche, comme le hero de l'index */
 .tf-intro {
-  height: 25vh;
-  height: 25svh;
   display: flex;
-  align-items: flex-end;
-  padding: 0 24px 24px;
+  align-items: center;
+  padding: 48px 24px;
 }
 
 .tf-titre {
   display: block;
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: clamp(46px, 12.5vw, var(--t1));
   line-height: 0.9;
-  margin-bottom: 18px;
-}
-
-.tf-lede {
-  max-width: 44ch;
-  line-height: 1.6;
+  letter-spacing: -0.03em;
+  color: var(--brun);
+  margin: 0;
 }
 
 @media (min-width: 1024px) {
   .tf-intro {
-    height: auto;
-    min-height: 18vh;
-    min-height: 18svh;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    column-gap: var(--grid-gutter, 24px);
-    padding: 28px var(--grid-margin, 40px) 32px;
-    align-items: end;
+    min-height: 50vh;
+    min-height: 50svh;
+    padding: 60px var(--grid-margin, 40px);
   }
-  .tf-titre {
-    grid-column: 1 / 4;
-    grid-row: 1;
-    margin-bottom: 0;
-  }
+}
 
-  /* Le lede s'aligne sur la colonne du tableau des forfaits (col. 4),
-     sur la MÊME rangée que le titre, calé sur sa ligne de base du bas */
-  .tf-lede {
-    grid-column: 4 / 9;
-    grid-row: 1;
-    align-self: end;
-    max-width: none;
+/* ══════════════════════════════════════════════
+   FORFAITS v2 — service (nom + desc + bouton) | 3 colonnes de prix
+   ══════════════════════════════════════════════ */
+.tf-forfaits {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+.tf-service-name {
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: var(--t3);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--brun);
+  margin: 0 0 18px;
+}
+
+.tf-service-desc {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: var(--tx);
+  line-height: 1.4;
+  color: var(--brun);
+  max-width: 32ch;
+  margin: 0 0 26px;
+}
+
+.tf-service-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: var(--tx);
+  letter-spacing: -0.01em;
+  color: var(--brun);
+  text-decoration: none;
+  border: 1px solid var(--brun);
+  border-radius: 999px;
+  padding: 11px 26px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+@media (hover: hover) {
+  .tf-service-btn:hover { background: var(--brun); color: #fff; }
+}
+
+.tf-service-prices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px 40px;
+  margin-top: 36px;
+}
+
+.tf-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.tf-price-cat {
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: var(--st);
+  letter-spacing: -0.01em;
+  color: var(--sable);
+  margin-bottom: 10px;
+}
+
+.tf-price-size {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: var(--tx);
+  color: var(--brun);
+  margin-bottom: 6px;
+}
+
+.tf-price-num {
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: var(--t3);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--brun);
+}
+
+/* Le bloc « Style Flash » : catégories en sable */
+.tf-service--flash .tf-price-cat { color: var(--sable); }
+
+@media (min-width: 1024px) {
+  .tf-forfaits { gap: 90px; }
+  .tf-service {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--grid-gutter, 24px);
+    align-items: start;
   }
+  .tf-service-left   { grid-column: 1 / 5; }
+  .tf-service-prices {
+    grid-column: 5 / 13;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 0;
+  }
+}
+
+/* Neutralise l'ancienne règle .tf-price (grid-column 6/10) pour les prix v2 */
+@media (min-width: 1024px) {
+  .tf-service-prices .tf-price { grid-column: auto; align-items: flex-start; }
+}
+
+/* ══════════════════════════════════════════════
+   COMPLÉMENTS v2 — CTA + cartes beige + note déplacement
+   ══════════════════════════════════════════════ */
+.tf-comp {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* CTA du haut, centré */
+.tf-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+  padding: 56px 0 150px;
+}
+.tf-cta-text {
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: var(--st);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--brun);
+  margin: 0;
+}
+
+/* Grille */
+.tf-comp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 1024px) {
+  /* Section compléments sur ~9 colonnes centrées (grosses marges) */
+  .tf-comp { width: 75%; margin-left: auto; margin-right: auto; }
+  .tf-comp-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+}
+
+/* Carte beige */
+.tf-comp-card {
+  background: var(--sable);
+  border-radius: 20pt;
+  padding: 28px 26px 26px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 240px;
+}
+.tf-comp-name {
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: var(--st);
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.tf-comp-desc {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: var(--tx);
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  max-width: 34ch;
+}
+.tf-comp-price {
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: var(--t3);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-top: auto;
+  padding-top: 40px;
+}
+.tf-comp-unit {
+  font-weight: 400;
+  font-size: var(--tx);
+  letter-spacing: 0;
+  margin-left: 8px;
+}
+
+/* Bloc titre « Compléments du forfait » (dans la grille, pas une carte) */
+.tf-comp-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  padding: 4px 0;
+}
+.tf-comp-title {
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: var(--st);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--brun);
+  margin: 0;
+}
+
+/* Note déplacement, centrée - même respiration que le CTA sur-mesure */
+.tf-deplacement {
+  text-align: center;
+  padding: 96px 0;
+}
+.tf-depl-main {
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: var(--st);
+  line-height: 1.2;
+  color: var(--brun);
+  margin: 0 0 8px;
+}
+.tf-depl-sub {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: var(--tx);
+  color: rgba(104, 79, 58, 0.6);
+  margin: 0;
 }

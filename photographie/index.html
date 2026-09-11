@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Guillaume Routhier, Designer graphique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=164">
+  <script>(function(){try{if(!sessionStorage.getItem('curtainIn'))return;sessionStorage.removeItem('curtainIn');var d=document.createElement('div');d.style.cssText='position:fixed;inset:0;background:#fff;z-index:99999;pointer-events:none;will-change:transform';document.documentElement.appendChild(d);requestAnimationFrame(function(){requestAnimationFrame(function(){d.style.transition='transform .6s cubic-bezier(.76,0,.24,1)';d.style.transform='translateY(-100%)'})});setTimeout(function(){if(d.parentNode)d.parentNode.removeChild(d)},700)}catch(e){}})();</script>
+</head>
+
+<body class="dg">
+
+  <div id="page-transition"></div>
+
+  <div id="intro-bg"></div>
+
+  <div class="nav-menu" id="nav-menu" aria-hidden="true">
+    <nav class="nav-menu-inner">
+      <a class="t-titre nav-menu-titre" href="#projets">Nos Projets</a>
+      <a class="t-titre nav-menu-titre" href="contact.html">Contact</a>
+      <a class="t-titre nav-menu-titre" href="../">Voir les volets</a>
+    </nav>
+  </div>
+
+  <header class="navbar">
+    <div class="nav-filet"></div>
+
+    <div class="nav-top">
+      <div class="nav-logo">
+        <a class="nav-logo-arrow" href="../" aria-label="Voir les volets">&#8249;</a>
+        <a class="logo-text" href="index.html">Guillaume Routhier</a>
+      </div>
+
+      <nav class="nav-desktop">
+        <a class="nav-desktop-link" href="#projets">Projets</a>
+        <a class="nav-desktop-link" href="contact.html">Contact</a>
+        <a class="nav-desktop-link" href="../">Voir les volets</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <img class="hero-bg" src="photos/hero-bg.jpg" alt="" fetchpriority="high" decoding="async">
+
+    <div class="hero-wordmark">
+      <a class="hero-cta hero-cta--fill" href="contact.html">Me contacter</a>
+      <h1 class="hero-wordmark-text">
+        <span class="hw-line"><span class="hw-in">Donnez-vous</span></span>
+        <span class="hw-line"><span class="hw-in">un look humain</span></span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- Services offerts -->
+  <section class="tem" aria-label="Services offerts">
+    <div class="tem-head">
+      <h2 class="tem-title">Services<br>offerts</h2>
+      <p class="tem-sub">Trois fa&ccedil;ons de faire<br>rayonner votre marque.</p>
+      <a class="projets-services tem-cta" href="contact.html">Me contacter</a>
+    </div>
+    <div class="tem-cards">
+      <article class="tem-card tem-card-1">
+        <span class="tem-num">01</span>
+        <p class="tem-name">Culinaire</p>
+        <p class="tem-quote">Plats et boissons mis en valeur avec une lumi&egrave;re qui donne envie.</p>
+      </article>
+      <article class="tem-card tem-card-2">
+        <span class="tem-num">02</span>
+        <p class="tem-name">&Eacute;v&egrave;nement</p>
+        <p class="tem-quote">Moments captur&eacute;s sur le vif, du d&eacute;but &agrave; la fin de la journ&eacute;e.</p>
+      </article>
+      <article class="tem-card tem-card-3">
+        <span class="tem-num">03</span>
+        <p class="tem-name">Produit</p>
+        <p class="tem-quote">Images nettes et soign&eacute;es qui font ressortir chaque d&eacute;tail.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="projets" id="projets">
+    <div class="projets-header">
+      <h2 class="projets-title">Projets<br>S&eacute;lectionn&eacute;s</h2>
+      <a class="projets-services" href="contact.html">Me contacter</a>
+    </div>
+
+    <div class="projets-grid">
+      <div class="projets-row">
+        <a class="projet-item" href="le-101-restaurant.html">
+          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-101.jpg" alt="Le 101 Restaurant" loading="lazy" decoding="async"></div>
+          <div class="projet-overlay">
+            <div class="projet-top">
+              <span class="projet-num">01</span>
+              <h3 class="projet-name">Le 101 Restaurant</h3>
+            </div>
+            <dl class="projet-meta">
+              <div class="pm-row"><dt>Discipline</dt><dd>Photographie culinaire</dd></div>
+              <div class="pm-row"><dt>Ann&eacute;e</dt><dd>2026</dd></div>
+            </dl>
+          </div>
+        </a>
+        <a class="projet-item" href="ciao-totes.html">
+          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-ciaototes.jpg" alt="Ciao Totes" loading="lazy" decoding="async"></div>
+          <div class="projet-overlay">
+            <div class="projet-top">
+              <span class="projet-num">02</span>
+              <h3 class="projet-name">Ciao Totes</h3>
+            </div>
+            <dl class="projet-meta">
+              <div class="pm-row"><dt>Discipline</dt><dd>Photographie, direction artistique</dd></div>
+              <div class="pm-row"><dt>Ann&eacute;e</dt><dd>2026</dd></div>
+            </dl>
+          </div>
+        </a>
+      </div>
+      <div class="projets-row">
+        <a class="projet-item" href="aki-sushi.html">
+          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-akisushi.jpg" alt="Aki Sushi" loading="lazy" decoding="async"></div>
+          <div class="projet-overlay">
+            <div class="projet-top">
+              <span class="projet-num">03</span>
+              <h3 class="projet-name">Aki Sushi</h3>
+            </div>
+            <dl class="projet-meta">
+              <div class="pm-row"><dt>Discipline</dt><dd>Photographie culinaire, produit</dd></div>
+              <div class="pm-row"><dt>Ann&eacute;e</dt><dd>2026</dd></div>
+            </dl>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ft">
+    <div class="ft-inner">
+      <h2 class="ft-big">Donnez-vous<br>un look humain</h2>
+      <div class="ft-navcol ft-navcol--a">
+        <span class="ft-name">Guillaume Routhier</span>
+        <a href="#">Retour en&nbsp;haut</a>
+        <a href="#projets">Projets</a>
+      </div>
+      <nav class="ft-navcol ft-navcol--b" aria-label="Navigation secondaire">
+        <a href="contact.html">Contact</a>
+        <a href="../">Voir les volets</a>
+      </nav>
+      <span class="ft-r" aria-label="R&eacute;serv&eacute;">R</span>
+    </div>
+  </footer>
+
+  <script src="js/smooth-scroll.js?v=164"></script>
+  <script src="js/parallax.js?v=164"></script>
+  <script src="js/animations.js?v=164"></script>
+  <script src="js/menu.js?v=164"></script>
+  <script src="js/cursor.js?v=164"></script>
+  <script src="js/transitions.js?v=164"></script>
+  <script src="js/nav-active.js?v=164"></script>
+</body>
+</html>

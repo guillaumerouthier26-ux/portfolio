@@ -6,8 +6,9 @@
   <title>Guillaume Routhier, Photographe immobilier</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=161">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=164">
+  <script>(function(){try{if(!sessionStorage.getItem('curtainIn'))return;sessionStorage.removeItem('curtainIn');var d=document.createElement('div');d.style.cssText='position:fixed;inset:0;background:#fff;z-index:99999;pointer-events:none;will-change:transform';document.documentElement.appendChild(d);requestAnimationFrame(function(){requestAnimationFrame(function(){d.style.transition='transform .6s cubic-bezier(.76,0,.24,1)';d.style.transform='translateY(-100%)'})});setTimeout(function(){if(d.parentNode)d.parentNode.removeChild(d)},700)}catch(e){}})();</script>
 </head>
 
 <body>
@@ -15,18 +16,13 @@
   <div id="page-transition"></div>
 
   <div id="intro-bg"></div>
-  <div id="intro-video-wrap">
-    <video id="intro-video" autoplay muted playsinline preload="auto">
-      <source src="photos/logo-animation.webm?v=161" type="video/webm">
-    </video>
-  </div>
 
   <div class="nav-menu" id="nav-menu" aria-hidden="true">
     <nav class="nav-menu-inner">
       <a class="t-titre nav-menu-titre" href="#projets">Mes Projets</a>
       <a class="t-titre nav-menu-titre" href="tarifs.html">Tarifs</a>
       <a class="t-titre nav-menu-titre" href="contact.html">Contact</a>
-      <a class="t-titre nav-menu-titre" href="apropos.html">À&nbsp;Propos</a>
+      <a class="t-titre nav-menu-titre" href="../">Voir les volets</a>
     </nav>
   </div>
 
@@ -35,14 +31,15 @@
 
     <div class="nav-top">
       <div class="nav-logo">
-        <span class="logo-text">Guillaume</span>
+        <a class="nav-logo-arrow" href="../" aria-label="Voir les volets">&#8249;</a>
+        <a class="logo-text" href="index.html">Guillaume Routhier</a>
       </div>
 
       <nav class="nav-desktop">
         <a class="nav-desktop-link" href="#projets">Projets</a>
         <a class="nav-desktop-link" href="tarifs.html">Tarifs</a>
         <a class="nav-desktop-link" href="contact.html">Contact</a>
-        <a class="nav-desktop-link" href="apropos.html">À&nbsp;Propos</a>
+        <a class="nav-desktop-link" href="../">Voir les volets</a>
       </nav>
 
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
@@ -57,131 +54,111 @@
     <img class="hero-bg" src="photos/hero-bg.jpg" alt="" fetchpriority="high" decoding="async">
 
     <div class="hero-wordmark">
+      <a class="hero-cta hero-cta--fill" href="tarifs.html">Voir les services</a>
       <h1 class="hero-wordmark-text">
-        <span class="hw-line"><span class="hw-in">Photos livr&eacute;es</span></span>
-        <span class="hw-line"><span class="hw-in">en 24h</span></span>
+        <span class="hw-line"><span class="hw-in">Livr&eacute;es en</span></span>
+        <span class="hw-line"><span class="hw-in">moins de 24h</span></span>
       </h1>
-      <span class="hero-switch-line"><a class="hero-switch" href="../design/">Voir le design&nbsp;&rarr;</a></span>
     </div>
-
-<a class="btn-contact" href="contact.html">me&nbsp;contacter</a>
   </section>
 
-  <!-- Témoignages clients : carrousel -->
-  <section class="tmc" aria-label="T&eacute;moignages clients">
-    <div class="tmc-head">
-      <h2 class="t-titre tmc-title">T&eacute;moignages<br>clients<span class="t-parenthese tmc-count">(3)</span></h2>
-      <div class="tmc-nav">
-        <button class="tmc-arrow" type="button" data-dir="1" aria-label="T&eacute;moignage suivant">&#8594;</button>
-      </div>
+  <!-- Témoignages -->
+  <section class="tem" aria-label="T&eacute;moignages clients">
+    <div class="tem-head">
+      <h2 class="tem-title">T&eacute;moignages<br>clients</h2>
+      <p class="tem-sub">Clients r&eacute;curents satisfaits<br>au court des derniers mois</p>
     </div>
-    <div class="tmc-viewport">
-      <div class="tmc-track">
-      <article class="tmc-card">
-        <div class="tmc-attr">
-          <p class="tmc-name">Simon B&eacute;gin</p>
-          <p class="tmc-role">Courtier Re/max &agrave; L&eacute;vis</p>
-        </div>
-        <img class="tmc-bg" src="photos/tmc-simon.jpg" alt="" loading="lazy" decoding="async">
-        <p class="tmc-quote">&laquo;&nbsp;Les photos sont d'une tr&egrave;s belle qualit&eacute; !!! Je te reviens pour d'autres sous peu !&nbsp;&raquo;</p>
-      </article>
-      <article class="tmc-card">
-        <div class="tmc-attr">
-          <p class="tmc-name">V&eacute;ronique Gagn&eacute;</p>
-          <p class="tmc-role">Courti&egrave;re Re/max</p>
-        </div>
-        <img class="tmc-bg" src="photos/tmc-veronique.jpg" alt="" loading="lazy" decoding="async">
-        <p class="tmc-quote">&laquo;&nbsp;Un grand merci, les photos sont magnifiques ! Il y aura assur&eacute;ment d'autres collaborations &agrave; venir.&nbsp;&raquo;</p>
-      </article>
-      <article class="tmc-card">
-        <div class="tmc-attr">
-          <p class="tmc-name">Marie-Jo&euml;lle Boivin</p>
-          <p class="tmc-role">Courti&egrave;re dans Charlevoix</p>
-        </div>
-        <img class="tmc-bg" src="photos/tmc-mariejoelle.jpg" alt="" loading="lazy" decoding="async">
-        <p class="tmc-quote">&laquo;&nbsp;Merci beaucoup, je suis tr&egrave;s satisfaite.&nbsp;&raquo;</p>
-      </article>
-      </div>
+    <div class="tem-cards">
+    <article class="tem-card tem-card-1">
+      <span class="tem-num">01</span>
+      <p class="tem-name">Simon B&eacute;gin</p>
+      <p class="tem-role">Courtier Re/max &agrave; L&eacute;vis</p>
+      <p class="tem-quote">&laquo;&nbsp;Les photos sont d'une tr&egrave;s belle qualit&eacute; !!! Je te reviens pour d'autres sous peu !&nbsp;&raquo;</p>
+    </article>
+    <article class="tem-card tem-card-2">
+      <span class="tem-num">02</span>
+      <p class="tem-name">V&eacute;ronique Gagn&eacute;</p>
+      <p class="tem-role">Courti&egrave;re Re/max</p>
+      <p class="tem-quote">&laquo;&nbsp;Un grand merci, les photos sont magnifiques ! Il y aura assur&eacute;ment d'autres collaborations &agrave; venir.&nbsp;&raquo;</p>
+    </article>
+    <article class="tem-card tem-card-3">
+      <span class="tem-num">03</span>
+      <p class="tem-name">Marie-Jo&euml;lle Boivin</p>
+      <p class="tem-role">Courti&egrave;re dans Charlevoix</p>
+      <p class="tem-quote">&laquo;&nbsp;Merci beaucoup, je suis tr&egrave;s satisfaite.&nbsp;&raquo;</p>
+    </article>
     </div>
   </section>
 
   <section class="projets" id="projets">
     <div class="projets-header">
-      <h2 class="t-titre">Mes Projets<span class="t-parenthese">(12)</span></h2>
-      <p class="t-titre">Sélectionnés</p>
+      <h2 class="projets-title">Projets<br>S&eacute;lectionn&eacute;s</h2>
+      <a class="projets-services" href="tarifs.html">Voir mes services</a>
     </div>
 
     <div class="projets-grid">
       <div class="projets-row">
         <a class="projet-item" href="cap-sante.html">
-          <h3 class="t-courant projet-titre"><span>Maison historique</span></h3>
-          <span class="projet-tag">Photo et drone</span>
           <div class="projet-img-wrap"><img class="projet-img" src="photos/index-capsante.jpg" alt="Chambre d'une maison historique à Cap-Santé, lit en fer et courtepointe" loading="lazy" decoding="async"></div>
+          <div class="projet-overlay">
+            <div class="projet-top">
+              <span class="projet-num">01</span>
+              <h3 class="projet-name">Maison historique</h3>
+            </div>
+            <dl class="projet-meta">
+              <div class="pm-row"><dt>Client</dt><dd>V&eacute;ronique Gagn&eacute;</dd></div>
+              <div class="pm-row"><dt>Ville</dt><dd>Cap-Sant&eacute;</dd></div>
+              <div class="pm-row"><dt>Services</dt><dd>Photo, flash et drone</dd></div>
+              <div class="pm-row"><dt>Ann&eacute;e</dt><dd>2026</dd></div>
+            </dl>
+          </div>
         </a>
         <a class="projet-item" href="charles-bilodeau.html">
-          <h3 class="t-courant projet-titre"><span>Bungalow, Lévis</span></h3>
-          <span class="projet-tag">Photo et drone</span>
           <div class="projet-img-wrap"><img class="projet-img" src="photos/index-charles.jpg" alt="Vue aérienne d'un bungalow à Lévis" loading="lazy" decoding="async"></div>
+          <div class="projet-overlay">
+            <div class="projet-top">
+              <span class="projet-num">02</span>
+              <h3 class="projet-name">Bungalow, L&eacute;vis</h3>
+            </div>
+            <dl class="projet-meta">
+              <div class="pm-row"><dt>Client</dt><dd>Simon B&eacute;gin</dd></div>
+              <div class="pm-row"><dt>Ville</dt><dd>L&eacute;vis</dd></div>
+              <div class="pm-row"><dt>Services</dt><dd>Photo, flash et drone</dd></div>
+              <div class="pm-row"><dt>Ann&eacute;e</dt><dd>2026</dd></div>
+            </dl>
+          </div>
         </a>
       </div>
       <div class="projets-row">
         <a class="projet-item" href="a-lambert.html">
-          <h3 class="t-courant projet-titre"><span>Maison, Lévis</span></h3>
-          <span class="projet-tag">Photo et drone</span>
           <div class="projet-img-wrap"><img class="projet-img" src="photos/index-alambert.jpg" alt="Maison avec piscine creusée entourée d'arbres, Lévis" loading="lazy" decoding="async"></div>
+          <div class="projet-overlay">
+            <div class="projet-top">
+              <span class="projet-num">03</span>
+              <h3 class="projet-name">Maison, L&eacute;vis</h3>
+            </div>
+            <dl class="projet-meta">
+              <div class="pm-row"><dt>Client</dt><dd>Simon B&eacute;gin</dd></div>
+              <div class="pm-row"><dt>Ville</dt><dd>L&eacute;vis</dd></div>
+              <div class="pm-row"><dt>Services</dt><dd>Photo HDR et drone</dd></div>
+              <div class="pm-row"><dt>Ann&eacute;e</dt><dd>2026</dd></div>
+            </dl>
+          </div>
         </a>
         <a class="projet-item" href="charlevoix.html">
-          <h3 class="t-courant projet-titre"><span>Maison, Charlevoix</span></h3>
-          <span class="projet-tag">Photo et drone</span>
           <div class="projet-img-wrap"><img class="projet-img" src="photos/index-charlevoix.jpg" alt="Maison en pierre à Saint-Joseph-de-la-Rive, Charlevoix" loading="lazy" decoding="async"></div>
-        </a>
-      </div>
-      <div class="projets-row">
-        <a class="projet-item" href="lorraine.html">
-          <h3 class="t-courant projet-titre"><span>Maison, Lorraine</span></h3>
-          <span class="projet-tag">Photographie</span>
-          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-lorraine.jpg" alt="Coin-repas lumineux d'une maison à Lorraine, Laurentides" loading="lazy" decoding="async"></div>
-        </a>
-        <a class="projet-item" href="sainte-therese.html">
-          <h3 class="t-courant projet-titre"><span>Condo, Sainte-Thérèse</span></h3>
-          <span class="projet-tag">Photographie</span>
-          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-stherese.jpg" alt="Chambre d'un condo à Sainte-Thérèse, Laurentides" loading="lazy" decoding="async"></div>
-        </a>
-      </div>
-      <div class="projets-row">
-        <a class="projet-item" href="1583-edith.html">
-          <h3 class="t-courant projet-titre"><span>Condo, Charlesbourg</span></h3>
-          <span class="projet-tag">Photo et drone</span>
-          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-edith.jpg" alt="Chambre avec mur d'accent vert, condo à Charlesbourg, Québec" loading="lazy" decoding="async"></div>
-        </a>
-        <a class="projet-item" href="683-alsace.html">
-          <h3 class="t-courant projet-titre"><span>Bungalow, Sainte-Foy</span></h3>
-          <span class="projet-tag">Photo et drone</span>
-          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-alsace.jpg" alt="Bungalow en brique à Sainte-Foy, Québec" loading="lazy" decoding="async"></div>
-        </a>
-      </div>
-      <div class="projets-row">
-        <a class="projet-item" href="725-jean-guerin.html">
-          <h3 class="t-courant projet-titre"><span>Maison, Saint-Henri</span></h3>
-          <span class="projet-tag">Photo et drone</span>
-          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-jeanguerin.jpg" alt="Maison de campagne sur un grand terrain boisé, Saint-Henri" loading="lazy" decoding="async"></div>
-        </a>
-        <a class="projet-item" href="871-belvedere.html">
-          <h3 class="t-courant projet-titre"><span>Condo, Montcalm</span></h3>
-          <span class="projet-tag">Photographie</span>
-          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-belvedere.jpg" alt="Condo dans un immeuble de brique, Montcalm, Québec" loading="lazy" decoding="async"></div>
-        </a>
-      </div>
-      <div class="projets-row">
-        <a class="projet-item" href="tiny-house.html">
-          <h3 class="t-courant projet-titre"><span>Tiny house, Trois-Pistoles</span></h3>
-          <span class="projet-tag">Photographie</span>
-          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-tinyhouse.jpg" alt="Tiny house dans le bois, Trois-Pistoles" loading="lazy" decoding="async"></div>
-        </a>
-        <a class="projet-item" href="486-sainte-foy.html">
-          <h3 class="t-courant projet-titre"><span>Appartement, Montcalm</span></h3>
-          <span class="projet-tag">Photographie</span>
-          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-saintefoy.jpg" alt="Appartement compact sur le chemin Sainte-Foy, Montcalm" loading="lazy" decoding="async"></div>
+          <div class="projet-overlay">
+            <div class="projet-top">
+              <span class="projet-num">04</span>
+              <h3 class="projet-name">Maison, Charlevoix</h3>
+            </div>
+            <dl class="projet-meta">
+              <div class="pm-row"><dt>Client</dt><dd>MJ Boivin</dd></div>
+              <div class="pm-row"><dt>Ville</dt><dd>St-Joseph-de-la-Rive</dd></div>
+              <div class="pm-row"><dt>Services</dt><dd>Photo et drone</dd></div>
+              <div class="pm-row"><dt>Ann&eacute;e</dt><dd>2026</dd></div>
+            </dl>
+          </div>
         </a>
       </div>
     </div>
@@ -190,52 +167,29 @@
 
 
 
-  <a class="index-tarifs" href="tarifs.html">
-    <div class="it-inner">
-      <div>
-        <span class="t-courant it-eyebrow">Tarifs</span>
-        <span class="t-titre it-line">&Agrave; partir de 180&nbsp;$,<br class="br-mobile"> livr&eacute; en 24&nbsp;h.</span>
+  <footer class="ft">
+    <div class="ft-inner">
+      <h2 class="ft-big">Livr&eacute;es en<br>moins de 24h</h2>
+      <div class="ft-navcol ft-navcol--a">
+        <span class="ft-name">Guillaume Routhier</span>
+        <a href="#">Retour en&nbsp;haut</a>
+        <a href="index.html#projets">Projets</a>
       </div>
-      <span class="t-courant it-arrow">Voir&nbsp;&rarr;</span>
-    </div>
-  </a>
-
-
-  <footer class="footer">
-    <div class="footer-main">
-      <a class="footer-cta" href="mailto:guillaumerouthier26@gmail.com">
-        <span class="t-courant footer-eyebrow"><span class="footer-dot" aria-hidden="true"></span>Disponible pour vos mandats, r&eacute;gion de Qu&eacute;bec</span>
-        <span class="t-titre footer-cta-titre">Parlons-en.</span>
-        <span class="t-courant footer-cta-mail">guillaumerouthier26@gmail.com<span class="footer-cta-arrow" aria-hidden="true">&#8594;</span></span>
-      </a>
-      <div class="footer-cols">
-        <nav class="footer-col" aria-label="Menu">
-          <span class="t-courant footer-col-k">Menu</span>
-          <a class="t-courant" href="#projets">Projets</a>
-          <a class="t-courant" href="apropos.html">&Agrave;&nbsp;propos</a>
-          <a class="t-courant" href="contact.html">Contact</a>
-        </nav>
-        <nav class="footer-col" aria-label="R&eacute;seaux">
-          <span class="t-courant footer-col-k">R&eacute;seaux</span>
-          <a class="t-courant" href="https://instagram.com/peluredekiwi.reguliere" target="_blank" rel="noopener">Instagram</a>
-            <a class="t-courant" href="https://www.linkedin.com/in/guillaume-routhier-2bb03b248/" target="_blank" rel="noopener">LinkedIn</a>
-        </nav>
-      </div>
-    </div>
-    <div class="footer-meta">
-      <span class="t-courant footer-copy">&copy; 2026 Guillaume Routhier</span>
-      <div class="footer-meta-legal">
-        <a class="t-courant" href="#">Retour en&nbsp;haut &#8593;</a>
-      </div>
+      <nav class="ft-navcol ft-navcol--b" aria-label="Navigation secondaire">
+        <a href="tarifs.html">Tarifs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <span class="ft-r" aria-label="R&eacute;serv&eacute;">R</span>
     </div>
   </footer>
 
-  <script src="js/smooth-scroll.js?v=161"></script>
-  <script src="js/parallax.js?v=161"></script>
-  <script src="js/animations.js?v=161"></script>
-  <script src="js/menu.js?v=161"></script>
-  <script src="js/cursor.js?v=161"></script>
-  <script src="js/transitions.js?v=161"></script>
-  <script src="js/carousel.js?v=161"></script>
+  <script src="js/smooth-scroll.js?v=164"></script>
+  <script src="js/parallax.js?v=164"></script>
+  <script src="js/animations.js?v=164"></script>
+  <script src="js/menu.js?v=164"></script>
+  <script src="js/cursor.js?v=164"></script>
+  <script src="js/transitions.js?v=164"></script>
+  <script src="js/carousel.js?v=164"></script>
+  <script src="js/nav-active.js?v=164"></script>
 </body>
 </html>
