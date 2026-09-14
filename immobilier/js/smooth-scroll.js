@@ -16,7 +16,7 @@
   window._smoothScrollActive = true;
 
   var wrapper = document.createElement('div');
-  wrapper.style.cssText = 'position:fixed;top:0;left:0;width:100%;will-change:transform;background:#fff;';
+  wrapper.style.cssText = 'position:fixed;top:0;left:0;width:100%;will-change:transform;background:#faf8f3;';
 
   Array.from(document.body.children).forEach(function (child) {
     if (getComputedStyle(child).position !== 'fixed') {

@@ -43,7 +43,7 @@
 /* ─── Bloc générique : label de section ─── */
 .oq2-label {
   display: block;
-  color: var(--oq-navy);
+  color: #1f1f1f;
   margin-bottom: 22px;
 }
 
@@ -69,9 +69,9 @@
   display: flex;
   gap: 16px;
   padding: 13px 0;
-  border-bottom: 1px solid #d8d8d8;
+  border-bottom: 1px solid #ded7c8;
 }
-.oq2-meta-row .oq2-meta-k { flex: 0 0 90px; color: #6b6b6b; }
+.oq2-meta-row .oq2-meta-k { flex: 0 0 90px; color: #8a8175; }
 
 /* ─── VIDÉO + ENSEIGNE ( = oq-section1 ) ─── */
 .oq2-ident {
@@ -90,7 +90,7 @@
 .oq2-signature {
   margin-top: 90px;
   background: var(--oq-navy);
-  color: #fff;
+  color: #faf8f3;
   padding: 80px var(--grid-margin, 24px);
   display: flex;
   flex-direction: column;
@@ -98,12 +98,12 @@
 }
 .oq2-sig-label {
   display: block;
-  color: rgba(255,255,255,.5);
+  color: #cfc7b8;
   margin: 0 0 28px;
 }
 .oq2-sig-titre {
   margin: 0;
-  color: #fff;
+  color: #faf8f3;
   line-height: 0.98;
 }
 .oq2-sig-body {
@@ -113,7 +113,7 @@
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 1.6;
-  color: rgba(255,255,255,.82);
+  color: #faf8f3;
   max-width: 34ch;
 }
 .oq2-sig-video { width: 100%; max-width: 360px; display: block; mix-blend-mode: screen; }
@@ -181,13 +181,13 @@
   border-top: 1.5px solid #000;
   padding-top: 13px;
 }
-.oq2-credit-k { color: #6b6b6b; }
+.oq2-credit-k { color: #8a8175; }
 
 /* ─── PROJET SUIVANT ─── */
 .oq2-next {
   display: block;
   text-decoration: none;
-  color: #fff;
+  color: #faf8f3;
   background: #000;
   padding: 48px var(--grid-margin, 24px);
 }
@@ -200,12 +200,12 @@
 }
 .oq2-next-eyebrow {
   display: block;
-  color: rgba(255,255,255,.5);
+  color: #cfc7b8;
   margin-bottom: 14px;
 }
-.oq2-next-titre { margin: 0; color: #fff; line-height: 0.9; }
+.oq2-next-titre { margin: 0; color: #faf8f3; line-height: 0.9; }
 .oq2-next-arrow {
-  color: #fff;
+  color: #faf8f3;
   white-space: nowrap;
   display: inline-block;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);

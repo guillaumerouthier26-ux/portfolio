@@ -1579,18 +1579,18 @@
 .lm-sig {
   margin-top: 90px;
   background: #e98c3d;
-  color: #fff;
+  color: #faf8f3;
   padding: 60px var(--grid-margin, 24px);
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
-.lm-sig-label { display: block; color: rgba(255,255,255,.7); margin: 0 0 20px; }
-.lm-sig-titre { margin: 0 0 20px; color: #fff; line-height: 0.98; }
+.lm-sig-label { display: block; color: #cfc7b8; margin: 0 0 20px; }
+.lm-sig-titre { margin: 0 0 20px; color: #faf8f3; line-height: 0.98; }
 .lm-sig-body {
   margin: 0;
   line-height: 1.6;
-  color: #fff;
+  color: #faf8f3;
   max-width: 46ch;
   text-wrap: pretty;
 }
@@ -1649,4 +1649,37 @@ section video {
 .oq2-web-img,
 .cn-mission-video-el {
   border-radius: 0;
+}
+
+/* ─── Pages projets : encre brun foncé désaturé (lit comme un gris foncé) ─── */
+.t-courant,
+.pj-desc-body,
+.pj-meta-text {
+  color: #1f1f1f;
+}
+.t-titre,
+.pj-titre,
+.pjb-projet-lede,
+.pj-statement-titre,
+.pjb-next-titre,
+.footer-cta-titre,
+.ft-big {
+  color: #1f1f1f;
+}
+
+/* ─── Pages projet : seul le nom du projet reste en Ashcroft ─── */
+.t-titre:not(.pj-titre),
+.ft-big,
+.footer-cta-titre,
+.oq2-projet-lede,
+.oq2-sig-titre,
+.oq2-web-titre,
+.oq2-ctx-titre,
+.oq2-ident-titre {
+  font-family: var(--font) !important;   /* Montserrat */
+  font-weight: 600 !important;
+  transform: none !important;             /* largeur 100% */
+}
+.pj-titre {
+  font-family: var(--font-titre) !important;  /* Ashcroft */
 }

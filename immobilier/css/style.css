@@ -16,14 +16,14 @@
 :root {
   /* ─── Nouvelle image de marque : tout en Montserrat ─── */
   --font:  'Montserrat', system-ui, -apple-system, sans-serif;
-  --font-titre:    var(--font);
+  --font-titre:    'Ashcroft', Georgia, serif;
   --font-mono:     var(--font);
 
   /* Palette */
   --noir:  #000000;
   --brun:  #684f3a;
   --sable: #c29a76;
-  --blanc: #ffffff;
+  --blanc: #faf8f3;
 
   /* Échelle typographique */
   --t1: 125pt;
@@ -33,9 +33,10 @@
   --tx: 12pt;
 }
 
+html { background: #faf8f3; }
 body {
   font-family: var(--font-mono);
-  background: #fff;
+  background: #faf8f3;
 }
 
 body.intro-active {
@@ -59,7 +60,7 @@ html.js-spa-nav #intro-video-wrap {
 #intro-bg {
   position: fixed;
   inset: 0;
-  background: #fff;
+  background: #faf8f3;
   z-index: 998;
   pointer-events: none;
   clip-path: inset(0 0 0% 0);
@@ -89,7 +90,7 @@ html.js-spa-nav #intro-video-wrap {
 .nav-menu {
   position: fixed;
   inset: 0;
-  background: #fff;
+  background: #faf8f3;
   z-index: 90;
   display: flex;
   flex-direction: column;
@@ -220,7 +221,7 @@ body.cn-page .navbar::before {
   right: var(--grid-margin, 24px);
   width: auto;
   height: 2px;
-  background: #fff;
+  background: #faf8f3;
 }
 
 .nav-logo {
@@ -247,7 +248,7 @@ body.cn-page .navbar::before {
   font-size: var(--tx);
   letter-spacing: -0.01em;
   line-height: 1;
-  color: #fff;
+  color: #faf8f3;
   text-decoration: none;
   white-space: nowrap;
   mix-blend-mode: difference;
@@ -263,7 +264,7 @@ body.cn-page .navbar::before {
   font-weight: 600;
   font-size: var(--tx);
   line-height: 1;
-  color: #fff;
+  color: #faf8f3;
   text-decoration: none;
   mix-blend-mode: difference;
   opacity: 0;
@@ -303,7 +304,7 @@ body.cn-page .navbar::before {
   display: block;
   width: 26px;
   height: 1.5px;
-  background: #fff;
+  background: #faf8f3;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -435,9 +436,9 @@ br.br-mobile { display: none; }
   font-weight: 400;
   font-size: var(--tx);
   letter-spacing: -0.01em;
-  color: #fff;
+  color: #faf8f3;
   text-decoration: none;
-  border: 1px solid #fff;
+  border: 1px solid #faf8f3;
   border-radius: 999px;
   padding: 11px 26px;
   margin-bottom: 22px;
@@ -445,21 +446,21 @@ br.br-mobile { display: none; }
 }
 
 @media (hover: hover) {
-  .hero-cta:hover { background: #fff; color: #000; }
+  .hero-cta:hover { background: #faf8f3; color: #000; }
 }
 
 /* Bouton style 2 - case blanche pleine, texte en découpe (on voit l'image
    à travers les lettres) via mix-blend lighten : boîte blanche reste blanche,
    texte noir laisse passer l'arrière-plan. */
 .hero-cta--fill {
-  background: #fff;
-  color: var(--brun);
+  background: #faf8f3;
+  color: #1f1f1f;
   border: none;
   font-weight: 600;
 }
 
 @media (hover: hover) {
-  .hero-cta--fill:hover { background: var(--brun); color: #fff; }
+  .hero-cta--fill:hover { background: var(--brun); color: #faf8f3; }
 }
 
 /* Titre hero - Montserrat SemiBold, échelle titre 1, aligné bas-gauche */
@@ -467,9 +468,9 @@ br.br-mobile { display: none; }
   font-family: var(--font);
   font-weight: 600;
   letter-spacing: -0.03em;
-  font-size: clamp(46px, 12.5vw, var(--t1));
+  font-size: clamp(40px, 10.6vw, 108pt);
   line-height: 0.9;
-  color: #fff;
+  color: #faf8f3;
   text-align: left;
   margin: 0;
 }
@@ -507,7 +508,7 @@ br.br-mobile { display: none; }
   font-family: var(--font-mono);
   font-weight: 400;
   font-size: 12px;
-  color: #fff;
+  color: #faf8f3;
   text-transform: uppercase;
   white-space: nowrap;
   padding: 0 56px;
@@ -525,7 +526,7 @@ br.br-mobile { display: none; }
 
 .hero-filet {
   border: none;
-  border-top: 2px solid #fff;
+  border-top: 2px solid #faf8f3;
   margin: 0;
 }
 
@@ -536,7 +537,7 @@ br.br-mobile { display: none; }
   font-family: var(--font-mono);
   font-weight: 400;
   font-size: 9pt;
-  color: #fff;
+  color: #faf8f3;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: -0.02em;
@@ -568,11 +569,11 @@ br.br-mobile { display: none; }
 @media (hover: hover) {
   .btn-contact:hover {
     background: #000;
-    color: #fff;
+    color: #faf8f3;
   }
   /* Variante hero/blanc : s'inverse en blanc plein sur texte noir */
   .hero .btn-contact:hover {
-    background: #fff;
+    background: #faf8f3;
     color: #000;
   }
 }
@@ -595,8 +596,8 @@ textarea:focus-visible {
   position: absolute;
   bottom: 25px;
   right: 25px;
-  color: #fff;
-  border-color: #fff;
+  color: #faf8f3;
+  border-color: #faf8f3;
   z-index: 3;
 }
 
@@ -632,7 +633,7 @@ textarea:focus-visible {
 
 .services {
   padding-top: 230px;
-  background: #fff;
+  background: #faf8f3;
 }
 
 .services-header {
@@ -647,7 +648,7 @@ textarea:focus-visible {
 
 .services-header .t-parenthese {
   display: inline-block;
-  transform: scaleX(1.25);
+  transform: scaleX(1.15);
   transform-origin: left center;
   vertical-align: 1.6em;
   margin-left: 0.3em;
@@ -697,7 +698,7 @@ textarea:focus-visible {
   font-size: var(--t2);
   line-height: 0.9;
   letter-spacing: -0.03em;
-  color: var(--brun);
+  color: #1f1f1f;
   margin: 0;
 }
 
@@ -710,7 +711,7 @@ textarea:focus-visible {
   font-weight: 400;
   font-size: var(--tx);
   letter-spacing: -0.01em;
-  color: var(--brun);
+  color: #1f1f1f;
   text-decoration: none;
   border: 1px solid var(--brun);
   border-radius: 999px;
@@ -720,7 +721,7 @@ textarea:focus-visible {
 }
 
 @media (hover: hover) {
-  .projets-services:hover { background: var(--brun); color: #fff; }
+  .projets-services:hover { background: var(--brun); color: #faf8f3; }
 }
 
 /* Case pleine largeur, 50vh (déborde les marges de section, sans scrollbar) */
@@ -748,7 +749,7 @@ textarea:focus-visible {
 
 .projets-header .t-parenthese {
   display: inline-block;
-  transform: scaleX(1.25);
+  transform: scaleX(1.15);
   transform-origin: left center;
   vertical-align: 1.6em;
   margin-left: 0.3em;
@@ -799,7 +800,7 @@ textarea:focus-visible {
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #6b6b6b;
+  color: #8a8175;
 }
 
 .projet-img-wrap {
@@ -860,7 +861,7 @@ textarea:focus-visible {
   align-items: center;
   gap: 10px;
   margin-bottom: 22px;
-  color: #6b6b6b;
+  color: #8a8175;
 }
 
 .footer-dot {
@@ -910,7 +911,7 @@ textarea:focus-visible {
 }
 
 .footer-col-k {
-  color: #6b6b6b;
+  color: #8a8175;
   margin-bottom: 5px;
 }
 
@@ -932,11 +933,11 @@ textarea:focus-visible {
   align-items: baseline;
   justify-content: space-between;
   gap: 14px 24px;
-  border-top: 1px solid #d8d8d8;
+  border-top: 1px solid #ded7c8;
   padding-top: 20px;
 }
 
-.footer-copy { color: #6b6b6b; }
+.footer-copy { color: #8a8175; }
 
 .footer-meta-legal {
   display: flex;
@@ -946,7 +947,7 @@ textarea:focus-visible {
 
 .footer-meta-legal a {
   text-decoration: none;
-  color: #6b6b6b;
+  color: #8a8175;
   transition: color 0.2s ease-out;
 }
 
@@ -1090,7 +1091,7 @@ textarea:focus-visible {
     font-size: var(--tx);
     font-weight: 400;
     letter-spacing: -0.01em;
-    color: #fff;
+    color: #faf8f3;
     text-decoration: none;
     mix-blend-mode: difference;
     position: relative;
@@ -1312,7 +1313,7 @@ textarea:focus-visible {
     position: fixed;
     width: 64px;
     height: 64px;
-    background: #fff;
+    background: #faf8f3;
     border-radius: 50%;
     pointer-events: none;
     z-index: 99999;
@@ -1365,7 +1366,7 @@ textarea:focus-visible {
 .index-tarifs {
   display: block;
   text-decoration: none;
-  color: #fff;
+  color: #faf8f3;
   background: #000;
   padding: 48px var(--grid-margin, 24px);
   margin-top: 160px;
@@ -1381,19 +1382,19 @@ textarea:focus-visible {
 
 .it-eyebrow {
   display: block;
-  color: rgba(255, 255, 255, 0.5);
+  color: #cfc7b8;
   margin-bottom: 14px;
 }
 
 .it-line {
   display: block;
   margin: 0;
-  color: #fff;
+  color: #faf8f3;
   line-height: 0.9;
 }
 
 .it-arrow {
-  color: #fff;
+  color: #faf8f3;
   white-space: nowrap;
   display: inline-block;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1449,7 +1450,7 @@ textarea:focus-visible {
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #fff;
+  color: #faf8f3;
   text-decoration: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.45);
   padding-bottom: 4px;
@@ -1457,7 +1458,7 @@ textarea:focus-visible {
 }
 
 @media (hover: hover) {
-  .hero-switch:hover { border-bottom-color: #fff; }
+  .hero-switch:hover { border-bottom-color: #faf8f3; }
 }
 
 /* Animations réduites : pas de montée, le lien est visible d'emblée. */
@@ -1492,7 +1493,7 @@ textarea:focus-visible {
 .nsv {
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background: #faf8f3;
   margin-top: 72px;
 }
 
@@ -1524,7 +1525,7 @@ textarea:focus-visible {
   padding: 32px 24px 0;
 }
 
-.nsv-eyebrow { color: #6b6b6b; }
+.nsv-eyebrow { color: #8a8175; }
 
 .nsv-titre {
   color: #000;
@@ -1620,7 +1621,7 @@ textarea:focus-visible {
               color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 @media (hover: hover) {
-  .nsv-cta:hover { background: #000; color: #fff; }
+  .nsv-cta:hover { background: #000; color: #faf8f3; }
 }
 
 /* ══════════════════════════════════════════════
@@ -1629,7 +1630,7 @@ textarea:focus-visible {
 
 .tem {
   padding: 96px 24px 60px;
-  color: var(--brun);
+  color: #1f1f1f;
 }
 
 .tem-title {
@@ -1638,7 +1639,7 @@ textarea:focus-visible {
   font-size: var(--t3);
   line-height: 0.95;
   letter-spacing: -0.03em;
-  color: var(--brun);
+  color: #1f1f1f;
   margin: 0;
 }
 
@@ -1647,7 +1648,7 @@ textarea:focus-visible {
   font-weight: 400;
   font-size: var(--tx);
   line-height: 1.35;
-  color: var(--brun);
+  color: #1f1f1f;
   margin: 20px 0 0;
   text-align: left;
 }
@@ -1661,10 +1662,10 @@ textarea:focus-visible {
 
 /* Case beige, coins arrondis, textes blancs */
 .tem-card {
-  background: #f3f3f3;
+  background: #faf8f3;
   border-radius: 20pt;
   padding: 28px 26px;
-  color: var(--brun);
+  color: #1f1f1f;
 }
 
 .tem-num {
@@ -1674,7 +1675,7 @@ textarea:focus-visible {
   font-size: var(--t3);
   line-height: 1;
   letter-spacing: -0.03em;
-  color: var(--brun);
+  color: #1f1f1f;
   margin-bottom: 18px;
 }
 
@@ -1684,7 +1685,7 @@ textarea:focus-visible {
   font-size: var(--st);
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: var(--brun);
+  color: #1f1f1f;
   margin: 0 0 4px;
   white-space: nowrap;
 }
@@ -1694,7 +1695,7 @@ textarea:focus-visible {
   font-weight: 400;
   font-size: var(--tx);
   line-height: 1.3;
-  color: var(--brun);
+  color: #1f1f1f;
   margin: 0 0 40px;
 }
 
@@ -1703,7 +1704,7 @@ textarea:focus-visible {
   font-weight: 400;
   font-size: var(--tx);
   line-height: 1.5;
-  color: var(--brun);
+  color: #1f1f1f;
   margin: 0;
 }
 
@@ -1762,7 +1763,7 @@ textarea:focus-visible {
   height: 46px;
   flex-shrink: 0;
   border: 1.5px solid #000;
-  background: #fff;
+  background: #faf8f3;
   color: #000;
   font-size: 16px;
   line-height: 1;
@@ -1775,7 +1776,7 @@ textarea:focus-visible {
 }
 
 @media (hover: hover) {
-  .tmc-arrow:hover { background: #000; color: #fff; }
+  .tmc-arrow:hover { background: #000; color: #faf8f3; }
 }
 
 .tmc-viewport { overflow: hidden; }
@@ -1820,7 +1821,7 @@ textarea:focus-visible {
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #6b6b6b;
+  color: #8a8175;
 }
 
 .tmc-quote {
@@ -1890,7 +1891,7 @@ textarea:focus-visible {
   left: 26px;
   bottom: 44px;
   z-index: 2;
-  color: #fff;
+  color: #faf8f3;
   margin: 0;
 }
 .projet-tag {
@@ -1898,7 +1899,7 @@ textarea:focus-visible {
   left: 26px;
   bottom: 26px;
   z-index: 2;
-  color: rgba(255, 255, 255, 0.85);
+  color: #faf8f3;
   margin: 0;
 }
 
@@ -1925,7 +1926,7 @@ textarea:focus-visible {
   flex-direction: column;
   justify-content: space-between;
   padding: 34px;
-  color: #fff;
+  color: #faf8f3;
   background: rgba(0, 0, 0, 0.25);   /* voile noir 25 % */
   opacity: 1;
   transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1949,7 +1950,7 @@ textarea:focus-visible {
   font-size: var(--t3);
   line-height: 1;
   letter-spacing: -0.03em;
-  color: #fff;
+  color: #faf8f3;
 }
 
 .projet-name {
@@ -1957,7 +1958,7 @@ textarea:focus-visible {
   font-weight: 600;
   font-size: var(--st);
   letter-spacing: -0.02em;
-  color: #fff;
+  color: #faf8f3;
   margin: 0;
 }
 
@@ -1978,14 +1979,14 @@ textarea:focus-visible {
   font-family: var(--font);
   font-weight: 400;
   font-size: var(--tx);
-  color: rgba(255, 255, 255, 0.75);
+  color: #cfc7b8;
 }
 
 .pm-row dd {
   font-family: var(--font);
   font-weight: 600;
   font-size: var(--tx);
-  color: #fff;
+  color: #faf8f3;
   margin: 0;
 }
 
@@ -1993,16 +1994,17 @@ textarea:focus-visible {
    FOOTER v2
    ══════════════════════════════════════════════ */
 .ft {
-  border-top: 2px solid var(--brun);
   margin-top: 100px;
-  padding: 44px 24px 40px;
-  color: var(--brun);
+  padding: 0 24px 40px;
+  color: #1f1f1f;
 }
 
 .ft-inner {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  border-top: 2px solid var(--brun);
+  padding-top: 44px;
 }
 
 .ft-big {
@@ -2011,7 +2013,7 @@ textarea:focus-visible {
   font-size: var(--t2);
   line-height: 0.9;
   letter-spacing: -0.03em;
-  color: var(--brun);
+  color: #1f1f1f;
   margin: 0;
 }
 
@@ -2026,7 +2028,7 @@ textarea:focus-visible {
   font-weight: 400;
   font-size: var(--tx);
   letter-spacing: -0.01em;
-  color: var(--brun);
+  color: #1f1f1f;
   text-decoration: none;
 }
 
@@ -2039,7 +2041,7 @@ textarea:focus-visible {
   font-weight: 600;
   font-size: var(--tx);
   letter-spacing: -0.01em;
-  color: var(--brun);
+  color: #1f1f1f;
   margin-bottom: 28px;   /* ligne vide */
 }
 
@@ -2056,19 +2058,20 @@ textarea:focus-visible {
   font-weight: 600;
   font-size: 9pt;
   line-height: 1;
-  color: var(--brun);
+  color: #1f1f1f;
 }
 
 /* Desktop : une seule rangée, tout calé en bas */
 @media (min-width: 1024px) {
   .ft {
-    padding: 52px var(--grid-margin, 40px) 44px;
+    padding: 0 var(--grid-margin, 40px) 44px;
   }
   .ft-inner {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     column-gap: var(--grid-gutter, 24px);
     align-items: end;
+    padding-top: 52px;
   }
   .ft-big        { grid-column: 1 / 6; }
   .ft-navcol--a  { grid-column: 6 / 8; }
@@ -2091,8 +2094,8 @@ textarea:focus-visible {
    entrée en cascade, verrou de défilement, focus visible.
    ═════════════════════════════════════════════════════════ */
 .nav-menu {
-  background: #fff;
-  color: var(--brun);
+  background: #faf8f3;
+  color: #1f1f1f;
   justify-content: center;
   padding: 96px 32px calc(48px + env(safe-area-inset-bottom, 0px));
   overflow-y: auto;
@@ -2105,7 +2108,7 @@ textarea:focus-visible {
   font-weight: 600;
   font-size: 32pt;
   line-height: 1.2;
-  color: var(--brun);
+  color: #1f1f1f;
   width: fit-content;
   max-width: 100%;
   padding: 12px 0;                 /* cible tactile ≥44px */
@@ -2143,7 +2146,7 @@ body.menu-open { overflow: hidden; }
 body.menu-open .nav-toggle span { background: var(--brun); }
 body.menu-open .nav-filet { background: var(--brun); }
 body.menu-open .logo-text,
-body.menu-open .nav-logo-arrow { color: var(--brun); mix-blend-mode: normal; }
+body.menu-open .nav-logo-arrow { color: #1f1f1f; mix-blend-mode: normal; }
 
 @media (prefers-reduced-motion: reduce) {
   .nav-menu { transition: none; }
@@ -2161,11 +2164,111 @@ body.menu-open .nav-logo-arrow { color: var(--brun); mix-blend-mode: normal; }
 .footer-cta-titre,
 .tf-titre {
   font-family: var(--font-titre) !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
+  display: inline-block;
+  transform: scaleX(1.10);
+  transform-origin: left center;
 }
 /* Le menu deroulant */
 .nav-menu-titre {
   font-family: var(--font) !important;
   font-weight: 600 !important;
   letter-spacing: -0.01em !important;
+}
+
+/* TEST — Titres en Ashcroft */
+@font-face {
+  font-family: 'Ashcroft';
+  src: url('../fonts/ashcroft.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Kerning des titres à 0 */
+.t-titre,
+.hero-wordmark-text,
+.projets-title,
+.tem-title,
+.ft-big,
+.footer-cta-titre,
+.tf-titre {
+  letter-spacing: 0 !important;
+}
+
+/* Ashcroft SemiBold pour titres 2 et 3 */
+@font-face {
+  font-family: 'Ashcroft';
+  src: url('../fonts/ashcroft-sb.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+/* Titre 1 (hero principal) reste en graisse Regular */
+.hero-wordmark-text,
+.tf-titre {
+  font-family: var(--font-titre) !important;
+  font-weight: 400 !important;
+}
+
+/* Titre 1 étiré à 110% ; titres 2 et 3 à 100% */
+.hero-wordmark-text,
+.tf-titre {
+  display: inline-block;
+  transform: scaleX(1.15);
+  transform-origin: left center;
+}
+
+/* Numéros de carte en Ashcroft 115% */
+.tem-num,
+.projet-num {
+  font-family: var(--font-titre) !important;
+  display: inline-block;
+  transform: scaleX(1.15);
+  transform-origin: left center;
+}
+/* Le menu déroulant reste en Montserrat, largeur normale */
+.nav-menu-titre {
+  font-family: var(--font) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+  transform: none !important;
+}
+
+/* ─── Ombres portées sur les cartes ─── */
+.tem-card,
+.tf-comp-card,
+.projet-item {
+  box-shadow: -5px 8px 22px rgba(0, 0, 0, 0.08);
+}
+/* Carte projet cliquable : l'ombre s'éloigne au survol (la carte "se rapproche") */
+.projet-item {
+  transition: box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              flex-grow 0.55s cubic-bezier(0.76, 0, 0.24, 1),
+              flex-basis 0.55s cubic-bezier(0.76, 0, 0.24, 1);
+}
+@media (hover: hover) {
+  .projet-item:hover { box-shadow: -14px 30px 58px rgba(0, 0, 0, 0.20); }
+}
+
+/* Ashcroft Medium (titres 2 et 3) */
+@font-face {
+  font-family: 'Ashcroft';
+  src: url('../fonts/ashcroft-md.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Ombre plus marquée pour les grandes cartes projet */
+.projet-item { box-shadow: -8px 16px 38px rgba(0, 0, 0, 0.16); }
+@media (hover: hover) {
+  .projet-item:hover { box-shadow: -20px 36px 66px rgba(0, 0, 0, 0.26); }
+}
+
+/* Titre 1 conserve 115% de largeur */
+.hero-wordmark-text,
+.tf-titre {
+  transform: scaleX(1.15) !important;
+  transform-origin: left center;
 }

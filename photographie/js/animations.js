@@ -167,7 +167,7 @@ const vertCharGroups = vertEls.map(el => {
 
 // ─── IMAGES : reveal clip-path au scroll (grilles services + projets) ─────────
 
-const imgs = [...document.querySelectorAll('.service-img, .projet-img')];
+const imgs = [...document.querySelectorAll('.service-img')];
 imgs.forEach(img => {
   img.style.clipPath  = 'inset(100% 0 0 0)';
   img.style.transition = 'clip-path 0.7s ' + EASE_OUT + ', scale 0.6s ' + EASE_OUT;
@@ -404,4 +404,48 @@ function revealHeroWordmark(delay) {
   }, HOLD + WIPE);
   setTimeout(function () { introBg.remove(); }, HOLD + WIPE + 100);
 })();
+})();
+
+// ─── Reveal des cases projet : montée + fondu (via le scroll virtuel du site) ──
+(function () {
+  var cards = [].slice.call(document.querySelectorAll('.projet-item'));
+  if (!cards.length) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var EASE = 'cubic-bezier(0.16, 1, 0.3, 1)';
+  cards.forEach(function (c) {
+    var row = c.parentElement;
+    c._revcol = row ? [].indexOf.call(row.children, c) : 0;
+    if (reduce) return;
+    c.style.opacity = '0';
+    c.style.transform = 'translateY(48px)';
+    c.style.transition = 'opacity 0.8s ' + EASE + ', transform 0.8s ' + EASE;
+    c.style.willChange = 'opacity, transform';
+  });
+  if (reduce) return;
+  function reveal() {
+    var vh = window.innerHeight;
+    cards.forEach(function (c) {
+      if (c._revealed) return;
+      var r = c.getBoundingClientRect();
+      if (r.top < vh - vh * 0.10 && r.bottom > 0) {
+        c._revealed = true;
+        setTimeout(function () {
+          c.style.opacity = '1';
+          c.style.transform = 'translateY(0)';
+          setTimeout(function () {
+            c.style.transition = '';
+            c.style.transform = '';
+            c.style.willChange = '';
+            c.style.opacity = '';
+          }, 900);
+        }, c._revcol * 100);
+      }
+    });
+  }
+  window.addEventListener('scroll', reveal, { passive: true });
+  window.addEventListener('virtualscroll', reveal, { passive: true });
+  window.addEventListener('resize', reveal, { passive: true });
+  [80, 250, 600, 1200, 2500].forEach(function (t) { setTimeout(reveal, t); });
+  window.addEventListener('load', function () { setTimeout(reveal, 60); });
+  reveal();
 })();

@@ -63,6 +63,8 @@
       .then(function (html) { return new DOMParser().parseFromString(html, 'text/html'); })
       .then(function (newDoc) {
         syncCSS(newDoc);
+        var _oi=document.getElementById("pj-ink"); if(_oi)_oi.parentNode.removeChild(_oi);
+        var _ni=newDoc.getElementById("pj-ink"); if(_ni)document.head.appendChild(_ni.cloneNode(true));
 
         // Flag CSS sur <html> - masque l'intro-bg de la page cible avant rendu.
         window._spaNavigation = true;

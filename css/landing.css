@@ -1,3 +1,4 @@
+html { background: #faf8f3; }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -5,7 +6,7 @@
   --noir:  #000000;
   --brun:  #684f3a;
   --sable: #c29a76;
-  --blanc: #ffffff;
+  --blanc: #faf8f3;
   --t3: 40pt;
   --st: 18pt;
   --tx: 12pt;
@@ -13,8 +14,8 @@
 
 body.lp {
   font-family: var(--font);
-  background: #fff;
-  color: var(--brun);
+  background: #faf8f3;
+  color: #1f1f1f;
   min-height: 100vh;
   min-height: 100svh;
   display: flex;
@@ -31,7 +32,7 @@ body.lp {
   font-weight: 600;
   font-size: var(--tx);
   letter-spacing: -0.01em;
-  color: var(--brun);
+  color: #1f1f1f;
 }
 
 /* 3 cartes centrées, côte à côte */
@@ -68,18 +69,18 @@ body.lp {
 }
 
 .vt-card {
-  background: #f3f3f3;
+  background: #faf8f3;
   border-radius: 20pt;
 }
 
 /* Palette unifiée : cases gris pâle, texte brun (tout le site) */
 .vt-card--design,
 .vt-card--immobilier,
-.vt-card--photo { background: #f3f3f3; }
+.vt-card--photo { background: #faf8f3; }
 
 .vt-card {
   padding: 34px 30px 30px;
-  color: var(--brun);
+  color: #1f1f1f;
   text-decoration: none;
   width: 340px;
   max-width: 100%;
@@ -99,7 +100,7 @@ body.lp {
   font-size: 27pt;
   line-height: 1;
   letter-spacing: -0.02em;
-  color: var(--brun);
+  color: #1f1f1f;
 }
 
 .vt-desc {
@@ -107,7 +108,7 @@ body.lp {
   font-weight: 400;
   font-size: var(--tx);
   line-height: 1.4;
-  color: rgba(104, 79, 58, 0.8);
+  color: #615b52;
   margin-top: 16px;
   max-width: 26ch;
 }
@@ -117,7 +118,7 @@ body.lp {
   font-weight: 600;
   font-size: var(--tx);
   letter-spacing: -0.01em;
-  color: var(--brun);
+  color: #1f1f1f;
   margin-top: auto;
   padding-top: 44px;
 }
@@ -149,4 +150,49 @@ body.lp {
 .vt-name {
   font-family: var(--font);
   font-weight: 600;
+}
+
+/* TEST — Titres en Ashcroft */
+@font-face {
+  font-family: 'Ashcroft';
+  src: url('../fonts/ashcroft.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.vt-name { font-family: 'Ashcroft', Georgia, serif; }
+
+/* Kerning des titres de cartes à 0 */
+.vt-name { letter-spacing: 0 !important; }
+
+/* Ashcroft SemiBold + titres de cartes plus gras */
+@font-face {
+  font-family: 'Ashcroft';
+  src: url('../fonts/ashcroft-sb.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+.vt-name { font-weight: 600 !important; }
+
+/* Titres de cartes étirés à 110% */
+.vt-name { display: inline-block; transform: scaleX(1.1); transform-origin: left center; }
+
+/* Titres de cartes en Montserrat (titre 3) */
+.vt-name { font-family: var(--font) !important; }
+
+/* Titres de cartes à 100% de largeur */
+.vt-name { transform: none !important; }
+
+/* Cartes de volets : ombre portée + rapprochement au survol */
+.vt-card {
+  box-shadow: -6px 10px 26px rgba(0, 0, 0, 0.10);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (hover: hover) {
+  .vt-card:hover {
+    transform: translateY(-10px);
+    box-shadow: -16px 34px 62px rgba(0, 0, 0, 0.18);
+  }
 }

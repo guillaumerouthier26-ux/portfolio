@@ -166,7 +166,7 @@
 .ap-cta {
   display: block;
   text-decoration: none;
-  color: #fff;
+  color: #faf8f3;
   background: #000;
   padding: 48px var(--grid-margin, 24px);
   margin-top: 120px;
@@ -182,19 +182,19 @@
 
 .ap-cta-eyebrow {
   display: block;
-  color: rgba(255, 255, 255, 0.5);
+  color: #cfc7b8;
   margin-bottom: 14px;
 }
 
 .ap-cta-line {
   display: block;
   margin: 0;
-  color: #fff;
+  color: #faf8f3;
   line-height: 0.9;
 }
 
 .ap-cta-arrow {
-  color: #fff;
+  color: #faf8f3;
   white-space: nowrap;
   display: inline-block;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
