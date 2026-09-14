@@ -560,12 +560,12 @@
   .tf-comp-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 }
 
-/* Carte beige */
+/* Carte gris pale */
 .tf-comp-card {
-  background: var(--sable);
+  background: #f3f3f3;
   border-radius: 20pt;
   padding: 28px 26px 26px;
-  color: #fff;
+  color: var(--brun);
   display: flex;
   flex-direction: column;
   min-height: 240px;
@@ -575,7 +575,7 @@
   font-weight: 600;
   font-size: var(--st);
   letter-spacing: -0.01em;
-  color: #fff;
+  color: var(--brun);
   margin-bottom: 12px;
 }
 .tf-comp-desc {
@@ -583,7 +583,7 @@
   font-weight: 400;
   font-size: var(--tx);
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(104, 79, 58, 0.8);
   margin: 0;
   max-width: 34ch;
 }
@@ -593,7 +593,7 @@
   font-size: var(--t3);
   line-height: 1;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: var(--brun);
   margin-top: auto;
   padding-top: 40px;
 }

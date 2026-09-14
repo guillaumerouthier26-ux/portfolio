@@ -68,18 +68,18 @@ body.lp {
 }
 
 .vt-card {
-  background: var(--sable);
+  background: #f3f3f3;
   border-radius: 20pt;
 }
 
-/* Chaque volet prend la couleur de sa page */
-.vt-card--design      { background: #131936; }
-.vt-card--immobilier  { background: #684f3a; }
-.vt-card--photo       { background: #182D09; }
+/* Palette unifiée : cases gris pâle, texte brun (tout le site) */
+.vt-card--design,
+.vt-card--immobilier,
+.vt-card--photo { background: #f3f3f3; }
 
 .vt-card {
   padding: 34px 30px 30px;
-  color: #fff;
+  color: var(--brun);
   text-decoration: none;
   width: 340px;
   max-width: 100%;
@@ -99,7 +99,7 @@ body.lp {
   font-size: 27pt;
   line-height: 1;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: var(--brun);
 }
 
 .vt-desc {
@@ -107,7 +107,7 @@ body.lp {
   font-weight: 400;
   font-size: var(--tx);
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(104, 79, 58, 0.8);
   margin-top: 16px;
   max-width: 26ch;
 }
@@ -117,12 +117,36 @@ body.lp {
   font-weight: 600;
   font-size: var(--tx);
   letter-spacing: -0.01em;
-  color: #fff;
+  color: var(--brun);
   margin-top: auto;
   padding-top: 44px;
 }
 
 @media (max-width: 900px) {
-  .lp-cards { flex-direction: column; align-items: center; }
-  .vt-card { width: 100%; max-width: 460px; }
+  .lp-head { padding: 20px 24px 10px; }
+  .lp-cards {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+    padding: 10px 24px 24px;
+  }
+  /* Les 3 cartes se partagent la hauteur dispo : tout tient sans scroll */
+  .vt-card {
+    width: 100%;
+    max-width: 460px;
+    aspect-ratio: auto;
+    flex: 1 1 0;
+    min-height: 0;
+    padding: 22px 24px;
+  }
+  .vt-name { font-size: 24pt; }
+  .vt-desc { margin-top: 10px; }
+  .vt-go { padding-top: 0; }
+}
+
+/* Titres en Helvetica Semibold */
+.vt-name {
+  font-family: var(--font);
+  font-weight: 600;
 }
