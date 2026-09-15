@@ -29,7 +29,7 @@
 /* ─── RANGÉES (forfaits, compléments, conditions) ─── */
 
 .tf-rows {
-  border-top: 2px solid #000;
+  border-top: 2px solid #684f3a;
 }
 
 .tf-row {
@@ -48,7 +48,7 @@
 }
 
 .tf-meta {
-  color: #8a8175;
+  color: #c29a76;
   line-height: 1.5;
   max-width: 52ch;
 }
@@ -63,7 +63,7 @@
 }
 
 .tf-from {
-  color: #8a8175;
+  color: #c29a76;
 }
 
 .tf-price-num {
@@ -71,7 +71,7 @@
 }
 
 .tf-note {
-  color: #8a8175;
+  color: #c29a76;
   margin-top: 18px;
 }
 
@@ -80,7 +80,7 @@
 .tf-tiers {
   display: flex;
   flex-direction: column;
-  border-top: 2px solid #000;
+  border-top: 2px solid #684f3a;
 }
 
 .tf-tier {
@@ -106,11 +106,11 @@
   letter-spacing: -0.02em;
 }
 
-.tf-tier-tag { color: #8a8175; }
+.tf-tier-tag { color: #c29a76; }
 
 .tf-tier-desc {
   margin-top: 14px;
-  color: #8a8175;
+  color: #c29a76;
   line-height: 1.6;
   max-width: 46ch;
 }
@@ -141,20 +141,20 @@
 
 .tf-size:last-child { border-bottom: none; }
 .tf-size-nom  { flex: 0 0 auto; }
-.tf-size-meta { flex: 1; color: #8a8175; }
+.tf-size-meta { flex: 1; color: #c29a76; }
 .tf-size-prix { flex: 0 0 auto; white-space: nowrap; }
-.tf-size-prix .tf-from { color: #8a8175; }
+.tf-size-prix .tf-from { color: #c29a76; }
 
 /* Signature : offre d'ancrage, bloc noir (même motif que les autres blocs noirs du site) */
 .tf-tier--signature {
-  background: #000;
-  color: #faf8f3;
+  background: #684f3a;
+  color: #ffffff;
   padding: 28px 24px 30px;
   margin: 10px 0;
   border-bottom: none;
 }
 
-.tf-tier--signature .t-courant { color: #faf8f3; }
+.tf-tier--signature .t-courant { color: #ffffff; }
 
 .tf-tier--signature .tf-tier-tag,
 .tf-tier--signature .tf-from {
@@ -248,7 +248,7 @@
 }
 .cp-body {
   padding-top: 16px;
-  border-top: 1.5px solid #000;
+  border-top: 1.5px solid #684f3a;
   margin-top: 14px;
 }
 .cp-line {
@@ -266,11 +266,11 @@
 .cp-unit {
   display: block;
   text-align: right;
-  color: #8a8175;
+  color: #c29a76;
 }
 .cp-meta {
   margin: 9px 0 0;
-  color: #8a8175;
+  color: #c29a76;
   line-height: 1.5;
   max-width: 46ch;
 }
@@ -283,7 +283,7 @@
   background: linear-gradient(160deg, #2b3a67 0%, #7d5a8c 55%, #e0975f 100%);
 }
 .cp-soon {
-  color: #faf8f3;
+  color: #ffffff;
   letter-spacing: 0.02em;
   opacity: 0.92;
 }
@@ -328,7 +328,7 @@
   height: 40px;
   border-radius: 50%;
   background: #faf8f3;
-  color: #000;
+  color: #684f3a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -345,7 +345,7 @@
   font-size: 8.5pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #faf8f3;
+  color: #ffffff;
   background: rgba(0, 0, 0, 0.55);
   padding: 4px 8px;
   pointer-events: none;
@@ -396,7 +396,7 @@
   font-size: clamp(46px, 12.5vw, var(--t1));
   line-height: 0.9;
   letter-spacing: -0.03em;
-  color: #1f1f1f;
+  color: #684f3a;
   margin: 0;
 }
 
@@ -423,7 +423,7 @@
   font-size: var(--t3);
   line-height: 1;
   letter-spacing: -0.02em;
-  color: #1f1f1f;
+  color: #684f3a;
   margin: 0 0 18px;
 }
 
@@ -432,7 +432,7 @@
   font-weight: 400;
   font-size: var(--tx);
   line-height: 1.4;
-  color: #1f1f1f;
+  color: #684f3a;
   max-width: 32ch;
   margin: 0 0 26px;
 }
@@ -445,7 +445,7 @@
   font-weight: 400;
   font-size: var(--tx);
   letter-spacing: -0.01em;
-  color: #1f1f1f;
+  color: #684f3a;
   text-decoration: none;
   border: 1px solid var(--brun);
   border-radius: 999px;
@@ -453,7 +453,7 @@
   transition: background 0.3s ease, color 0.3s ease;
 }
 @media (hover: hover) {
-  .tf-service-btn:hover { background: var(--brun); color: #faf8f3; }
+  .tf-service-btn:hover { background: var(--brun); color: #ffffff; }
 }
 
 .tf-service-prices {
@@ -473,7 +473,7 @@
   font-weight: 600;
   font-size: var(--st);
   letter-spacing: -0.01em;
-  color: #6f695e;
+  color: #c29a76;
   margin-bottom: 10px;
 }
 
@@ -481,7 +481,7 @@
   font-family: var(--font);
   font-weight: 400;
   font-size: var(--tx);
-  color: #1f1f1f;
+  color: #684f3a;
   margin-bottom: 6px;
 }
 
@@ -491,11 +491,11 @@
   font-size: var(--t3);
   line-height: 1;
   letter-spacing: -0.02em;
-  color: #1f1f1f;
+  color: #684f3a;
 }
 
 /* Le bloc « Style Flash » : catégories en sable */
-.tf-service--flash .tf-price-cat { color: #6f695e; }
+.tf-service--flash .tf-price-cat { color: #c29a76; }
 
 @media (min-width: 1024px) {
   .tf-forfaits { gap: 90px; }
@@ -544,7 +544,7 @@
   font-size: var(--st);
   line-height: 1.2;
   letter-spacing: -0.01em;
-  color: #1f1f1f;
+  color: #684f3a;
   margin: 0;
 }
 
@@ -565,7 +565,7 @@
   background: #faf8f3;
   border-radius: 20pt;
   padding: 28px 26px 26px;
-  color: #1f1f1f;
+  color: #684f3a;
   display: flex;
   flex-direction: column;
   min-height: 240px;
@@ -575,7 +575,7 @@
   font-weight: 600;
   font-size: var(--st);
   letter-spacing: -0.01em;
-  color: #1f1f1f;
+  color: #684f3a;
   margin-bottom: 12px;
 }
 .tf-comp-desc {
@@ -583,7 +583,7 @@
   font-weight: 400;
   font-size: var(--tx);
   line-height: 1.4;
-  color: #615b52;
+  color: #c29a76;
   margin: 0;
   max-width: 34ch;
 }
@@ -593,7 +593,7 @@
   font-size: var(--t3);
   line-height: 1;
   letter-spacing: -0.02em;
-  color: #1f1f1f;
+  color: #684f3a;
   margin-top: auto;
   padding-top: 40px;
 }
@@ -618,7 +618,7 @@
   font-size: var(--st);
   line-height: 1.15;
   letter-spacing: -0.01em;
-  color: #1f1f1f;
+  color: #684f3a;
   margin: 0;
 }
 
@@ -632,13 +632,13 @@
   font-weight: 600;
   font-size: var(--st);
   line-height: 1.2;
-  color: #1f1f1f;
+  color: #684f3a;
   margin: 0 0 8px;
 }
 .tf-depl-sub {
   font-family: var(--font);
   font-weight: 400;
   font-size: var(--tx);
-  color: #615b52;
+  color: #c29a76;
   margin: 0;
 }

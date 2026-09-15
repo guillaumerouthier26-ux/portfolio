@@ -140,7 +140,16 @@ function wrapLines(el) {
 
 function setupImg(img) {
   img.style.clipPath   = 'inset(100% 0 0 0)';
-  img.style.transition = 'clip-path 0.7s ' + EASE_OUT;
+  img.style.opacity    = '0';
+  img.style.transition = 'clip-path 0.9s ' + EASE_OUT + ', opacity 0.9s ' + EASE_OUT;
+  img.style.willChange = 'clip-path, opacity';
+}
+
+// Révèle une image seulement une fois décodée (évite le pop sec des images lazy),
+// avec un fondu dopacité qui adoucit le wipe clip-path.
+function revealImg(img) {
+  img.style.clipPath = 'inset(0 0 0 0)';
+  img.style.opacity  = '1';
 }
 
 // ─── INIT ─────────────────────────────────────────────────────────────────────
@@ -192,6 +201,22 @@ Array.prototype.slice.call(document.querySelectorAll('.t-courant, .t-courant-gra
 
 // Images : toutes clippées au départ, révélées au scroll (reveal montant)
 imgs.forEach(function(img) { setupImg(img); });
+
+// Révélation fiable via IntersectionObserver (fonctionne aussi avec le
+// smooth-scroll virtuel) : garantit que chaque image apparaît en entrant
+// dans la vue, sans dépendre uniquement des events scroll.
+if ('IntersectionObserver' in window) {
+  var _io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        var img = e.target;
+        if (!img.dataset.anim && !img._noAnim) { img.dataset.anim = '1'; revealImg(img); }
+        _io.unobserve(img);
+      }
+    });
+  }, { root: null, rootMargin: '0px 0px 12% 0px', threshold: 0.01 });
+  imgs.forEach(function (img) { _io.observe(img); });
+}
 
 // ─── NAV : filet + logo + bouton menu ────────────────────────────────────────
 
@@ -277,7 +302,7 @@ function checkImgs(conditionFn) {
     var rect = img.getBoundingClientRect();
     if (conditionFn(rect, vh)) {
       img.dataset.anim = '1';
-      img.style.clipPath = 'inset(0 0 0 0)';
+      revealImg(img);
     }
   });
 }

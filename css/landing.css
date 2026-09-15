@@ -3,6 +3,7 @@ html { background: #faf8f3; }
 
 :root {
   --font:  'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-titre: 'Lora', Georgia, serif;
   --noir:  #000000;
   --brun:  #684f3a;
   --sable: #c29a76;
@@ -15,7 +16,7 @@ html { background: #faf8f3; }
 body.lp {
   font-family: var(--font);
   background: #faf8f3;
-  color: #1f1f1f;
+  color: #684f3a;
   min-height: 100vh;
   min-height: 100svh;
   display: flex;
@@ -32,7 +33,7 @@ body.lp {
   font-weight: 600;
   font-size: var(--tx);
   letter-spacing: -0.01em;
-  color: #1f1f1f;
+  color: #684f3a;
 }
 
 /* 3 cartes centrées, côte à côte */
@@ -80,7 +81,7 @@ body.lp {
 
 .vt-card {
   padding: 34px 30px 30px;
-  color: #1f1f1f;
+  color: #684f3a;
   text-decoration: none;
   width: 340px;
   max-width: 100%;
@@ -100,7 +101,7 @@ body.lp {
   font-size: 27pt;
   line-height: 1;
   letter-spacing: -0.02em;
-  color: #1f1f1f;
+  color: #684f3a;
 }
 
 .vt-desc {
@@ -118,7 +119,7 @@ body.lp {
   font-weight: 600;
   font-size: var(--tx);
   letter-spacing: -0.01em;
-  color: #1f1f1f;
+  color: #684f3a;
   margin-top: auto;
   padding-top: 44px;
 }
@@ -152,37 +153,13 @@ body.lp {
   font-weight: 600;
 }
 
-/* TEST — Titres en Ashcroft */
-@font-face {
-  font-family: 'Ashcroft';
-  src: url('../fonts/ashcroft.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+/* Index principal : noms des volets en Montserrat (comme avant) */
+.vt-name {
+  font-family: var(--font) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  transform: none !important;
 }
-.vt-name { font-family: 'Ashcroft', Georgia, serif; }
-
-/* Kerning des titres de cartes à 0 */
-.vt-name { letter-spacing: 0 !important; }
-
-/* Ashcroft SemiBold + titres de cartes plus gras */
-@font-face {
-  font-family: 'Ashcroft';
-  src: url('../fonts/ashcroft-sb.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-.vt-name { font-weight: 600 !important; }
-
-/* Titres de cartes étirés à 110% */
-.vt-name { display: inline-block; transform: scaleX(1.1); transform-origin: left center; }
-
-/* Titres de cartes en Montserrat (titre 3) */
-.vt-name { font-family: var(--font) !important; }
-
-/* Titres de cartes à 100% de largeur */
-.vt-name { transform: none !important; }
 
 /* Cartes de volets : ombre portée + rapprochement au survol */
 .vt-card {

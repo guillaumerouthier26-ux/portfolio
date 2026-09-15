@@ -38,7 +38,7 @@
   font-size: 60pt;
   letter-spacing: -0.02em;
   line-height: 1;
-  color: #000;
+  color: #684f3a;
   display: block;
   align-self: flex-start;
   transform: scaleX(0.85);
@@ -83,7 +83,7 @@
 
 /* Sections */
 .ap-sec {
-  border-top: 1px solid #000;
+  border-top: 1px solid #684f3a;
   padding-top: 28px;
   display: flex;
   flex-direction: column;
@@ -121,7 +121,7 @@
 /* Compétences */
 .ap-skills {
   margin-top: 6px;
-  border-top: 1px solid #000;
+  border-top: 1px solid #684f3a;
   display: flex;
   flex-direction: column;
 }
@@ -131,7 +131,7 @@
   flex-direction: column;
   gap: 12px;
   padding: 14px 0;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #684f3a;
 }
 
 /* Médias */
@@ -164,7 +164,7 @@
 
 /* Clôture + CTA */
 .ap-cta {
-  border-top: 2px solid #000;
+  border-top: 2px solid #684f3a;
   padding-top: 28px;
   display: flex;
   flex-direction: column;
@@ -360,7 +360,7 @@
 }
 
 .ap-cta .btn-contact:focus-visible {
-  outline: 2px solid #000;
+  outline: 2px solid #684f3a;
   outline-offset: 3px;
 }
 

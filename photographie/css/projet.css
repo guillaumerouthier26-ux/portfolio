@@ -1579,18 +1579,18 @@
 .lm-sig {
   margin-top: 90px;
   background: #e98c3d;
-  color: #faf8f3;
+  color: #ffffff;
   padding: 60px var(--grid-margin, 24px);
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
 .lm-sig-label { display: block; color: #cfc7b8; margin: 0 0 20px; }
-.lm-sig-titre { margin: 0 0 20px; color: #faf8f3; line-height: 0.98; }
+.lm-sig-titre { margin: 0 0 20px; color: #ffffff; line-height: 0.98; }
 .lm-sig-body {
   margin: 0;
   line-height: 1.6;
-  color: #faf8f3;
+  color: #ffffff;
   max-width: 46ch;
   text-wrap: pretty;
 }
@@ -1655,7 +1655,7 @@ section video {
 .t-courant,
 .pj-desc-body,
 .pj-meta-text {
-  color: #1f1f1f;
+  color: #684f3a;
 }
 .t-titre,
 .pj-titre,
@@ -1664,7 +1664,7 @@ section video {
 .pjb-next-titre,
 .footer-cta-titre,
 .ft-big {
-  color: #1f1f1f;
+  color: #684f3a;
 }
 
 /* ─── Pages projet : seul le nom du projet reste en Ashcroft ─── */
@@ -1681,5 +1681,7 @@ section video {
   transform: none !important;             /* largeur 100% */
 }
 .pj-titre {
-  font-family: var(--font-titre) !important;  /* Ashcroft */
+  font-family: var(--font) !important;   /* Montserrat */
+  font-weight: 600 !important;
+  transform: none !important;            /* largeur 100% */
 }

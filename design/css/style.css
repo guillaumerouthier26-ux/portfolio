@@ -16,12 +16,12 @@
 :root {
   /* ─── Nouvelle image de marque : tout en Montserrat ─── */
   --font:  'Montserrat', system-ui, -apple-system, sans-serif;
-  --font-titre:    'Ashcroft', Georgia, serif;
+  --font-titre:    'Lora', Georgia, serif;
   --font-mono:     var(--font);
 
   /* Palette */
   --noir:  #000000;
-  --brun:  #684f3a;
+  --brun:  #333333;
   --sable: #c29a76;
   --blanc: #faf8f3;
 
@@ -115,7 +115,7 @@ html.js-spa-nav #intro-video-wrap {
   font-size: 37pt;
   display: block;
   text-decoration: none;
-  color: #000;
+  color: #3d3d3d;
   line-height: 1;
 }
 
@@ -135,12 +135,12 @@ html.js-spa-nav #intro-video-wrap {
 
 .nav-menu-sub-link {
   text-decoration: none;
-  color: #000;
+  color: #3d3d3d;
 }
 
 /* Hamburger → X quand menu ouvert */
 body.menu-open .nav-toggle span {
-  background: #000;
+  background: #333333;
 }
 
 body.menu-open .nav-toggle span:nth-child(1) {
@@ -161,7 +161,7 @@ body.menu-open .nav-logo {
 }
 
 body.menu-open .nav-filet {
-  background: #000;
+  background: #333333;
 }
 
 /* ─── NAVBAR ─────────────────────────────────── */
@@ -248,7 +248,7 @@ body.cn-page .navbar::before {
   font-size: var(--tx);
   letter-spacing: -0.01em;
   line-height: 1;
-  color: #faf8f3;
+  color: #ffffff;
   text-decoration: none;
   white-space: nowrap;
   mix-blend-mode: difference;
@@ -264,7 +264,7 @@ body.cn-page .navbar::before {
   font-weight: 600;
   font-size: var(--tx);
   line-height: 1;
-  color: #faf8f3;
+  color: #ffffff;
   text-decoration: none;
   mix-blend-mode: difference;
   opacity: 0;
@@ -358,7 +358,7 @@ body.cn-page .navbar::before {
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #000;
+  color: #3d3d3d;
 }
 
 /* Courant Gras - même chose mais bold */
@@ -368,7 +368,7 @@ body.cn-page .navbar::before {
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #000;
+  color: #3d3d3d;
 }
 
 /* Saut de ligne mobile uniquement (ignoré par l'animation car <br> a un attribut) */
@@ -436,7 +436,7 @@ br.br-mobile { display: none; }
   font-weight: 400;
   font-size: var(--tx);
   letter-spacing: -0.01em;
-  color: #faf8f3;
+  color: #ffffff;
   text-decoration: none;
   border: 1px solid #faf8f3;
   border-radius: 999px;
@@ -446,7 +446,7 @@ br.br-mobile { display: none; }
 }
 
 @media (hover: hover) {
-  .hero-cta:hover { background: #faf8f3; color: #000; }
+  .hero-cta:hover { background: #faf8f3; color: #3d3d3d; }
 }
 
 /* Bouton style 2 - case blanche pleine, texte en découpe (on voit l'image
@@ -454,13 +454,13 @@ br.br-mobile { display: none; }
    texte noir laisse passer l'arrière-plan. */
 .hero-cta--fill {
   background: #faf8f3;
-  color: #1f1f1f;
+  color: #3d3d3d;
   border: none;
   font-weight: 600;
 }
 
 @media (hover: hover) {
-  .hero-cta--fill:hover { background: var(--brun); color: #faf8f3; }
+  .hero-cta--fill:hover { background: var(--brun); color: #ffffff; }
 }
 
 /* Titre hero - Montserrat SemiBold, échelle titre 1, aligné bas-gauche */
@@ -470,7 +470,7 @@ br.br-mobile { display: none; }
   letter-spacing: -0.03em;
   font-size: clamp(40px, 10.6vw, 108pt);
   line-height: 0.9;
-  color: #faf8f3;
+  color: #ffffff;
   text-align: left;
   margin: 0;
 }
@@ -508,7 +508,7 @@ br.br-mobile { display: none; }
   font-family: var(--font-mono);
   font-weight: 400;
   font-size: 12px;
-  color: #faf8f3;
+  color: #ffffff;
   text-transform: uppercase;
   white-space: nowrap;
   padding: 0 56px;
@@ -537,7 +537,7 @@ br.br-mobile { display: none; }
   font-family: var(--font-mono);
   font-weight: 400;
   font-size: 9pt;
-  color: #faf8f3;
+  color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: -0.02em;
@@ -551,9 +551,9 @@ br.br-mobile { display: none; }
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #000;
+  color: #3d3d3d;
   text-decoration: none;
-  border: 1.5px solid #000;
+  border: 1.5px solid #333333;
   padding: 11px 16px;
   background: transparent;
   cursor: pointer;
@@ -568,13 +568,13 @@ br.br-mobile { display: none; }
 
 @media (hover: hover) {
   .btn-contact:hover {
-    background: #000;
-    color: #faf8f3;
+    background: #333333;
+    color: #ffffff;
   }
   /* Variante hero/blanc : s'inverse en blanc plein sur texte noir */
   .hero .btn-contact:hover {
     background: #faf8f3;
-    color: #000;
+    color: #3d3d3d;
   }
 }
 
@@ -596,8 +596,8 @@ textarea:focus-visible {
   position: absolute;
   bottom: 25px;
   right: 25px;
-  color: #faf8f3;
-  border-color: #faf8f3;
+  color: #ffffff;
+  border-color: #ffffff;
   z-index: 3;
 }
 
@@ -698,7 +698,7 @@ textarea:focus-visible {
   font-size: var(--t2);
   line-height: 0.9;
   letter-spacing: -0.03em;
-  color: #1f1f1f;
+  color: #3d3d3d;
   margin: 0;
 }
 
@@ -711,7 +711,7 @@ textarea:focus-visible {
   font-weight: 400;
   font-size: var(--tx);
   letter-spacing: -0.01em;
-  color: #1f1f1f;
+  color: #3d3d3d;
   text-decoration: none;
   border: 1px solid var(--brun);
   border-radius: 999px;
@@ -721,7 +721,7 @@ textarea:focus-visible {
 }
 
 @media (hover: hover) {
-  .projets-services:hover { background: var(--brun); color: #faf8f3; }
+  .projets-services:hover { background: var(--brun); color: #ffffff; }
 }
 
 /* Case pleine largeur, 50vh (déborde les marges de section, sans scrollbar) */
@@ -833,7 +833,7 @@ textarea:focus-visible {
 /* ─── FOOTER - clôture éditoriale ─────────────── */
 
 .footer {
-  border-top: 2px solid #000;
+  border-top: 2px solid #333333;
   margin-top: 200px;
   padding: 56px 24px 22px;
   display: flex;
@@ -853,7 +853,7 @@ textarea:focus-visible {
 .footer-cta {
   display: block;
   text-decoration: none;
-  color: #000;
+  color: #3d3d3d;
 }
 
 .footer-eyebrow {
@@ -868,7 +868,7 @@ textarea:focus-visible {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #000;
+  background: #333333;
   flex: none;
 }
 
@@ -883,7 +883,7 @@ textarea:focus-visible {
   align-items: baseline;
   gap: 10px;
   margin-top: 20px;
-  color: #000;
+  color: #3d3d3d;
   transition: opacity 0.2s ease-out;
 }
 
@@ -917,7 +917,7 @@ textarea:focus-visible {
 
 .footer-col a {
   text-decoration: none;
-  color: #000;
+  color: #3d3d3d;
   width: max-content;
   transition: opacity 0.2s ease-out;
 }
@@ -952,7 +952,7 @@ textarea:focus-visible {
 }
 
 @media (hover: hover) {
-  .footer-meta-legal a:hover { color: #000; }
+  .footer-meta-legal a:hover { color: #3d3d3d; }
 }
 
 /* Logo footer « Guillaume » - texte Montserrat noir (conservé, réutilisé ailleurs) */
@@ -962,7 +962,7 @@ textarea:focus-visible {
   font-size: 30pt;
   letter-spacing: -0.02em;
   line-height: 1;
-  color: #000;
+  color: #3d3d3d;
   display: block;
   transform: scaleX(0.85);
   transform-origin: left center;
@@ -977,7 +977,7 @@ textarea:focus-visible {
   letter-spacing: 0.46em;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  color: #000;
+  color: #3d3d3d;
   white-space: nowrap;
 }
 
@@ -988,7 +988,7 @@ textarea:focus-visible {
   font-size: 30pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #000;
+  color: #3d3d3d;
   line-height: 1;
 }
 
@@ -1091,7 +1091,7 @@ textarea:focus-visible {
     font-size: var(--tx);
     font-weight: 400;
     letter-spacing: -0.01em;
-    color: #faf8f3;
+    color: #ffffff;
     text-decoration: none;
     mix-blend-mode: difference;
     position: relative;
@@ -1333,7 +1333,7 @@ textarea:focus-visible {
     font-size: 8pt;
     text-transform: uppercase;
     letter-spacing: 0.02em;
-    color: #000;
+    color: #3d3d3d;
     white-space: nowrap;
     opacity: 0;
     transition: opacity 0.22s ease-out;
@@ -1366,8 +1366,8 @@ textarea:focus-visible {
 .index-tarifs {
   display: block;
   text-decoration: none;
-  color: #faf8f3;
-  background: #000;
+  color: #ffffff;
+  background: #333333;
   padding: 48px var(--grid-margin, 24px);
   margin-top: 160px;
 }
@@ -1389,12 +1389,12 @@ textarea:focus-visible {
 .it-line {
   display: block;
   margin: 0;
-  color: #faf8f3;
+  color: #ffffff;
   line-height: 0.9;
 }
 
 .it-arrow {
-  color: #faf8f3;
+  color: #ffffff;
   white-space: nowrap;
   display: inline-block;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1450,7 +1450,7 @@ textarea:focus-visible {
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #faf8f3;
+  color: #ffffff;
   text-decoration: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.45);
   padding-bottom: 4px;
@@ -1458,7 +1458,7 @@ textarea:focus-visible {
 }
 
 @media (hover: hover) {
-  .hero-switch:hover { border-bottom-color: #faf8f3; }
+  .hero-switch:hover { border-bottom-color: #ffffff; }
 }
 
 /* Animations réduites : pas de montée, le lien est visible d'emblée. */
@@ -1528,7 +1528,7 @@ textarea:focus-visible {
 .nsv-eyebrow { color: #8a8175; }
 
 .nsv-titre {
-  color: #000;
+  color: #3d3d3d;
   font-size: clamp(34px, 9vw, 56px);
   line-height: 0.95;
   transform: scaleX(1);
@@ -1537,7 +1537,7 @@ textarea:focus-visible {
 }
 
 .nsv-sous {
-  color: #000;
+  color: #3d3d3d;
   line-height: 1.4;
   max-width: 40ch;
 }
@@ -1553,7 +1553,7 @@ textarea:focus-visible {
 .nsv-stat {
   position: relative;
   padding-left: 18px;
-  color: #000;
+  color: #3d3d3d;
   line-height: 1.55;
   letter-spacing: 0.02em;
   max-width: 52ch;
@@ -1566,7 +1566,7 @@ textarea:focus-visible {
   top: 0.5em;
   width: 6px;
   height: 6px;
-  background: #000;
+  background: #333333;
 }
 
 /* Desktop : vidéo à gauche (pleine hauteur), titre en haut à droite,
@@ -1613,15 +1613,15 @@ textarea:focus-visible {
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #000;
+  color: #3d3d3d;
   text-decoration: none;
-  border: 1.5px solid #000;
+  border: 1.5px solid #333333;
   padding: 11px 16px;
   transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
               color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 @media (hover: hover) {
-  .nsv-cta:hover { background: #000; color: #faf8f3; }
+  .nsv-cta:hover { background: #333333; color: #ffffff; }
 }
 
 /* ══════════════════════════════════════════════
@@ -1630,7 +1630,7 @@ textarea:focus-visible {
 
 .tem {
   padding: 96px 24px 60px;
-  color: #1f1f1f;
+  color: #3d3d3d;
 }
 
 .tem-title {
@@ -1639,7 +1639,7 @@ textarea:focus-visible {
   font-size: var(--t3);
   line-height: 0.95;
   letter-spacing: -0.03em;
-  color: #1f1f1f;
+  color: #3d3d3d;
   margin: 0;
 }
 
@@ -1648,7 +1648,7 @@ textarea:focus-visible {
   font-weight: 400;
   font-size: var(--tx);
   line-height: 1.35;
-  color: #1f1f1f;
+  color: #3d3d3d;
   margin: 20px 0 0;
   text-align: left;
 }
@@ -1665,7 +1665,7 @@ textarea:focus-visible {
   background: #faf8f3;
   border-radius: 20pt;
   padding: 28px 26px;
-  color: #1f1f1f;
+  color: #3d3d3d;
 }
 
 .tem-num {
@@ -1675,7 +1675,7 @@ textarea:focus-visible {
   font-size: var(--t3);
   line-height: 1;
   letter-spacing: -0.03em;
-  color: #1f1f1f;
+  color: #3d3d3d;
   margin-bottom: 18px;
 }
 
@@ -1685,7 +1685,7 @@ textarea:focus-visible {
   font-size: var(--st);
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: #1f1f1f;
+  color: #3d3d3d;
   margin: 0 0 4px;
   white-space: nowrap;
 }
@@ -1695,7 +1695,7 @@ textarea:focus-visible {
   font-weight: 400;
   font-size: var(--tx);
   line-height: 1.3;
-  color: #1f1f1f;
+  color: #3d3d3d;
   margin: 0 0 40px;
 }
 
@@ -1704,7 +1704,7 @@ textarea:focus-visible {
   font-weight: 400;
   font-size: var(--tx);
   line-height: 1.5;
-  color: #1f1f1f;
+  color: #3d3d3d;
   margin: 0;
 }
 
@@ -1762,9 +1762,9 @@ textarea:focus-visible {
   width: 46px;
   height: 46px;
   flex-shrink: 0;
-  border: 1.5px solid #000;
+  border: 1.5px solid #333333;
   background: #faf8f3;
-  color: #000;
+  color: #3d3d3d;
   font-size: 16px;
   line-height: 1;
   cursor: pointer;
@@ -1776,7 +1776,7 @@ textarea:focus-visible {
 }
 
 @media (hover: hover) {
-  .tmc-arrow:hover { background: #000; color: #faf8f3; }
+  .tmc-arrow:hover { background: #333333; color: #ffffff; }
 }
 
 .tmc-viewport { overflow: hidden; }
@@ -1794,7 +1794,7 @@ textarea:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  color: #000;
+  color: #3d3d3d;
 }
 
 .tmc-bg {
@@ -1812,7 +1812,7 @@ textarea:focus-visible {
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #000;
+  color: #3d3d3d;
 }
 
 .tmc-role {
@@ -1831,7 +1831,7 @@ textarea:focus-visible {
   font-size: 15pt;
   line-height: 1.3;
   letter-spacing: -0.02em;
-  color: #000;
+  color: #3d3d3d;
   /* Montserrat condensé comme le reste du site, largeur compensée */
   transform: scaleX(1);
   transform-origin: left top;
@@ -1891,7 +1891,7 @@ textarea:focus-visible {
   left: 26px;
   bottom: 44px;
   z-index: 2;
-  color: #faf8f3;
+  color: #ffffff;
   margin: 0;
 }
 .projet-tag {
@@ -1899,7 +1899,7 @@ textarea:focus-visible {
   left: 26px;
   bottom: 26px;
   z-index: 2;
-  color: #faf8f3;
+  color: #ffffff;
   margin: 0;
 }
 
@@ -1926,7 +1926,7 @@ textarea:focus-visible {
   flex-direction: column;
   justify-content: space-between;
   padding: 34px;
-  color: #faf8f3;
+  color: #ffffff;
   background: rgba(0, 0, 0, 0.25);   /* voile noir 25 % */
   opacity: 1;
   transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1950,7 +1950,7 @@ textarea:focus-visible {
   font-size: var(--t3);
   line-height: 1;
   letter-spacing: -0.03em;
-  color: #faf8f3;
+  color: #ffffff;
 }
 
 .projet-name {
@@ -1958,7 +1958,7 @@ textarea:focus-visible {
   font-weight: 600;
   font-size: var(--st);
   letter-spacing: -0.02em;
-  color: #faf8f3;
+  color: #ffffff;
   margin: 0;
 }
 
@@ -1986,7 +1986,7 @@ textarea:focus-visible {
   font-family: var(--font);
   font-weight: 600;
   font-size: var(--tx);
-  color: #faf8f3;
+  color: #ffffff;
   margin: 0;
 }
 
@@ -1996,7 +1996,7 @@ textarea:focus-visible {
 .ft {
   margin-top: 100px;
   padding: 0 24px 40px;
-  color: #1f1f1f;
+  color: #3d3d3d;
 }
 
 .ft-inner {
@@ -2013,7 +2013,7 @@ textarea:focus-visible {
   font-size: var(--t2);
   line-height: 0.9;
   letter-spacing: -0.03em;
-  color: #1f1f1f;
+  color: #3d3d3d;
   margin: 0;
 }
 
@@ -2028,7 +2028,7 @@ textarea:focus-visible {
   font-weight: 400;
   font-size: var(--tx);
   letter-spacing: -0.01em;
-  color: #1f1f1f;
+  color: #3d3d3d;
   text-decoration: none;
 }
 
@@ -2041,7 +2041,7 @@ textarea:focus-visible {
   font-weight: 600;
   font-size: var(--tx);
   letter-spacing: -0.01em;
-  color: #1f1f1f;
+  color: #3d3d3d;
   margin-bottom: 28px;   /* ligne vide */
 }
 
@@ -2058,7 +2058,7 @@ textarea:focus-visible {
   font-weight: 600;
   font-size: 9pt;
   line-height: 1;
-  color: #1f1f1f;
+  color: #3d3d3d;
 }
 
 /* Desktop : une seule rangée, tout calé en bas */
@@ -2126,7 +2126,7 @@ textarea:focus-visible {
    ═════════════════════════════════════════════════════════ */
 .nav-menu {
   background: #faf8f3;
-  color: #1f1f1f;
+  color: #3d3d3d;
   justify-content: center;
   padding: 96px 32px calc(48px + env(safe-area-inset-bottom, 0px));
   overflow-y: auto;
@@ -2139,7 +2139,7 @@ textarea:focus-visible {
   font-weight: 600;
   font-size: 32pt;
   line-height: 1.2;
-  color: #1f1f1f;
+  color: #3d3d3d;
   width: fit-content;
   max-width: 100%;
   padding: 12px 0;                 /* cible tactile ≥44px */
@@ -2177,7 +2177,7 @@ body.menu-open { overflow: hidden; }
 body.menu-open .nav-toggle span { background: var(--brun); }
 body.menu-open .nav-filet { background: var(--brun); }
 body.menu-open .logo-text,
-body.menu-open .nav-logo-arrow { color: #1f1f1f; mix-blend-mode: normal; }
+body.menu-open .nav-logo-arrow { color: #3d3d3d; mix-blend-mode: normal; }
 
 @media (prefers-reduced-motion: reduce) {
   .nav-menu { transition: none; }
@@ -2185,7 +2185,7 @@ body.menu-open .nav-logo-arrow { color: #1f1f1f; mix-blend-mode: normal; }
 }
 
 /* ═══════════════════════════════════════════════════════════
-   TITRES — Helvetica Semibold
+   TITRES — Lora (drapeau), largeur 80 %
    ═══════════════════════════════════════════════════════════ */
 .t-titre,
 .hero-wordmark-text,
@@ -2194,71 +2194,34 @@ body.menu-open .nav-logo-arrow { color: #1f1f1f; mix-blend-mode: normal; }
 .ft-big,
 .footer-cta-titre,
 .tf-titre {
-  font-family: var(--font-titre) !important;
+  font-family: var(--font-titre) !important;   /* Lora */
   font-weight: 500 !important;
-  display: inline-block;
-  transform: scaleX(1.10);
-  transform-origin: left center;
-}
-/* Le menu deroulant */
-.nav-menu-titre {
-  font-family: var(--font) !important;
-  font-weight: 600 !important;
-  letter-spacing: -0.01em !important;
-}
-
-/* TEST — Titres en Ashcroft */
-@font-face {
-  font-family: 'Ashcroft';
-  src: url('../fonts/ashcroft.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Kerning des titres à 0 */
-.t-titre,
-.hero-wordmark-text,
-.projets-title,
-.tem-title,
-.ft-big,
-.footer-cta-titre,
-.tf-titre {
   letter-spacing: 0 !important;
-}
-
-/* Ashcroft SemiBold pour titres 2 et 3 */
-@font-face {
-  font-family: 'Ashcroft';
-  src: url('../fonts/ashcroft-sb.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-/* Titre 1 (hero principal) reste en graisse Regular */
-.hero-wordmark-text,
-.tf-titre {
-  font-family: var(--font-titre) !important;
-  font-weight: 400 !important;
-}
-
-/* Titre 1 étiré à 110% ; titres 2 et 3 à 100% */
-.hero-wordmark-text,
-.tf-titre {
   display: inline-block;
-  transform: scaleX(1.15);
+  transform: scaleX(0.80);
   transform-origin: left center;
 }
 
-/* Numéros de carte en Ashcroft 115% */
+/* Mot / groupe important d'un titre en italique : <em> dans le titre */
+.hero-wordmark-text em,
+.t-titre em,
+.tem-title em,
+.projets-title em,
+.ft-big em,
+.footer-cta-titre em,
+.tf-titre em {
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Numéros de carte : Montserrat, largeur normale */
 .tem-num,
 .projet-num {
-  font-family: var(--font-titre) !important;
-  display: inline-block;
-  transform: scaleX(1.15);
-  transform-origin: left center;
+  font-family: var(--font) !important;
+  transform: none;
 }
-/* Le menu déroulant reste en Montserrat, largeur normale */
+
+/* Menu déroulant : Montserrat, largeur normale */
 .nav-menu-titre {
   font-family: var(--font) !important;
   font-weight: 600 !important;
@@ -2269,37 +2232,54 @@ body.menu-open .nav-logo-arrow { color: #1f1f1f; mix-blend-mode: normal; }
 /* ─── Ombres portées sur les cartes ─── */
 .tem-card,
 .tf-comp-card,
+.projet-item { box-shadow: -5px 8px 22px rgba(0, 0, 0, 0.08); }
 .projet-item {
-  box-shadow: -5px 8px 22px rgba(0, 0, 0, 0.08);
-}
-/* Carte projet cliquable : l'ombre s'éloigne au survol (la carte "se rapproche") */
-.projet-item {
+  box-shadow: -8px 16px 38px rgba(0, 0, 0, 0.16);
   transition: box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
               flex-grow 0.55s cubic-bezier(0.76, 0, 0.24, 1),
               flex-basis 0.55s cubic-bezier(0.76, 0, 0.24, 1);
 }
 @media (hover: hover) {
-  .projet-item:hover { box-shadow: -14px 30px 58px rgba(0, 0, 0, 0.20); }
-}
-
-/* Ashcroft Medium (titres 2 et 3) */
-@font-face {
-  font-family: 'Ashcroft';
-  src: url('../fonts/ashcroft-md.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Ombre plus marquée pour les grandes cartes projet */
-.projet-item { box-shadow: -8px 16px 38px rgba(0, 0, 0, 0.16); }
-@media (hover: hover) {
   .projet-item:hover { box-shadow: -20px 36px 66px rgba(0, 0, 0, 0.26); }
 }
 
-/* Titre 1 conserve 115% de largeur */
-.hero-wordmark-text,
-.tf-titre {
-  transform: scaleX(1.15) !important;
-  transform-origin: left center;
+/* ─── HERO INDEX : titre centré (drapeau), bouton sous le titre ─── */
+.hero-wordmark {
+  inset: 0;
+  padding: 0 24px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
+.dg .hero-wordmark { padding: 0 24px; }
+.hero-wordmark-text {
+  order: 1;
+  transform-origin: center center;
+  text-align: center;
+}
+.hero-wordmark .hero-cta {
+  order: 2;
+  align-self: center;
+  margin: 26px 0 0;
+}
+.hw-line { text-align: center; }
+
+/* Titres 2 et 3 un peu plus gras (SemiBold), titre 1 reste Medium */
+.projets-title,
+.tem-title,
+.ft-big,
+.footer-cta-titre,
+.tem-num,
+.projet-num { font-weight: 600 !important; }
+
+
+/* Texte blanc forcé sur toutes les surfaces colorées (ni beige pâle ni blanc) */
+.lm-sig, .lm-sig *,
+.oq2-signature, .oq2-signature *,
+.oq2-next, .oq2-next *,
+.pjb-next, .pjb-next *,
+.index-tarifs, .index-tarifs * { color: #ffffff !important; }
+
+
+/* Titre CTA du footer : reste en bloc pour que le-mail passe dessous */
+.footer-cta-titre { display: block; }
