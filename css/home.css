@@ -85,9 +85,18 @@ body.hmenu-open .hnav{background:transparent;border-bottom-color:transparent;-we
 .hsep{opacity:.5}
 .hhero-title{font-family:var(--font-titre);font-weight:500;color:#fff;font-size:clamp(44px,6.6vw,112px);line-height:.98;letter-spacing:-.015em;transform:scaleX(.9);transform-origin:left center}
 .hhero-title em{font-style:italic}
-.hw{transition:opacity .7s cubic-bezier(.16,1,.3,1)}
-.hhero[data-active="1"] .hw[data-k="2"],.hhero[data-active="2"] .hw[data-k="1"]{opacity:.48}
+.hw,.hamp{transition:opacity .7s cubic-bezier(.16,1,.3,1)}
+.hhero[data-active="1"] .hw[data-k="2"],.hhero[data-active="2"] .hw[data-k="1"],
+.hhero[data-active="1"] .hamp,.hhero[data-active="2"] .hamp{opacity:.48} /* le « & » ne reste blanc que sur la photo de Guillaume */
 .hhero-sub{max-width:46ch;margin-top:clamp(18px,2.2vw,26px);font-size:clamp(15px,1.15vw,17.5px);line-height:1.6;color:rgba(255,255,255,.86)}
+/* Description par discipline : les trois textes partagent la même case (hauteur du plus long) */
+.hhero-sub{display:grid}
+.hs{grid-area:1/1;opacity:0;translate:0 12px;pointer-events:none;
+  transition:opacity .35s ease,translate .35s ease}
+.hhero[data-active="0"] .hs[data-k="0"],
+.hhero[data-active="1"] .hs[data-k="1"],
+.hhero[data-active="2"] .hs[data-k="2"]{opacity:1;translate:0 0;pointer-events:auto;
+  transition:opacity .6s ease .28s,translate .9s cubic-bezier(.16,1,.3,1) .28s}
 .hhero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:clamp(24px,3vw,36px)}
 .hhero-cta{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;background:#fff;color:#111;
   font-weight:600;font-size:11.5pt;text-decoration:none;transition:background .3s ease}
@@ -132,12 +141,32 @@ body.hmenu-open .hnav{background:transparent;border-bottom-color:transparent;-we
   .hcap-t{font-size:15px}
   .hcap-d{display:none}
 }
-@media(prefers-reduced-motion:reduce){.hslide,.hw,.hcap-link{transition:none}.hdot{animation:none}}
+/* Menu mobile ouvert : les textes du hero sortent au seuil, puis reviennent à la fermeture */
+.hhero-eyebrow,.hhero-sub,.hhero-actions,.hcap{transition:opacity .45s ease,translate .7s cubic-bezier(.16,1,.3,1)}
+.hhero-title .lni{transition:translate .7s cubic-bezier(.76,0,.24,1)}
+/* retour (menu fermé) : en cascade, après la sortie des options */
+.hhero-eyebrow{transition-delay:.18s}
+.hhero-title .ln:nth-child(1) .lni{transition-delay:.24s}
+.hhero-title .ln:nth-child(2) .lni{transition-delay:.31s}
+.hhero-sub{transition-delay:.38s}
+.hhero-actions{transition-delay:.45s}
+.hcap{transition-delay:.3s}
+body.hmenu-open .hhero-eyebrow,body.hmenu-open .hhero-sub,
+body.hmenu-open .hhero-actions,body.hmenu-open .hcap{opacity:0;translate:0 14px;pointer-events:none}
+body.hmenu-open .hhero-title .lni{translate:0 110%}
+/* sortie (menu ouvert) : rapide, du haut vers le bas */
+body.hmenu-open .hcap,body.hmenu-open .hhero-eyebrow{transition-delay:0s}
+body.hmenu-open .hhero-title .ln:nth-child(1) .lni{transition-delay:.03s}
+body.hmenu-open .hhero-title .ln:nth-child(2) .lni{transition-delay:.07s}
+body.hmenu-open .hhero-sub{transition-delay:.1s}
+body.hmenu-open .hhero-actions{transition-delay:.13s}
+
+@media(prefers-reduced-motion:reduce){.hs,.hslide,.hw,.hcap-link,.hhero-eyebrow,.hhero-sub,.hhero-actions,.hcap,.hhero-title .lni{transition:none}.hdot{animation:none}}
 
 /* INTRO + PROJETS */
 .hwrap{padding:clamp(70px,9vw,130px) var(--mx)}
 .hhead{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(34px,5vw,56px)}
-.htitle{font-family:var(--font);font-weight:500;color:#141414;font-size:clamp(28px,4vw,46px);line-height:.98;letter-spacing:-.02em;white-space:nowrap}
+.htitle{font-family:var(--font-titre);font-weight:500;color:#141414;font-size:clamp(32px,4.2vw,54px);line-height:1;letter-spacing:-.01em;white-space:nowrap;transform:scaleX(.9);transform-origin:left center} /* Lora condensé 90 %, comme les titres de projets */
 .hsub{font-size:12pt;max-width:40ch;opacity:.8}
 
 .hgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,2.4vw,28px)}
@@ -167,15 +196,73 @@ body.hmenu-open .hnav{background:transparent;border-bottom-color:transparent;-we
 
 #projets{scroll-margin-top:72px}
 
-/* ─── CLIENTS : logos centrés, même hauteur (10vh, réduite si la ligne déborde) ─── */
-.clients{display:flex;justify-content:center;align-items:center;gap:clamp(36px,5vw,110px);
-  padding:clamp(60px,8vw,110px) var(--mx) 0}
-.clients{--ch:min(4vh,calc(2.6vw - 2px))}
-.clients img{height:var(--ch);width:auto;max-width:none;flex:none}
-.clients .cl-s45{height:calc(var(--ch)*.72)} /* logo plein et massif : réduit optiquement */
+/* ─── CLIENTS : bande délimitée, intitulé + défilement continu des logos ─── */
+.clients{--ch:30px;--cg:clamp(48px,6vw,96px);padding:clamp(56px,7vw,100px) var(--mx) 0}
+.clients-in{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;
+  border-top:1px solid rgba(0,0,0,.12);border-bottom:1px solid rgba(0,0,0,.12);padding:30px 0}
+.clients-k{margin-right:clamp(28px,4vw,56px);padding-right:clamp(28px,4vw,56px);border-right:1px solid rgba(0,0,0,.12);
+  white-space:nowrap;font-size:10pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8a8a8a}
+/* fondus aux bords : les logos apparaissent et s'effacent au lieu d'être coupés */
+.clients-marquee{overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.clients-track{display:flex;width:max-content;animation:clients-scroll 40s linear infinite}
+.clients-set{display:flex;flex:none;align-items:center;gap:var(--cg);padding-right:var(--cg)}
+.clients-set img{height:var(--ch);width:auto;max-width:none;flex:none;opacity:.55;transition:opacity .35s ease}
+.clients-set .cl-s45{height:calc(var(--ch)*.72)} /* logo plein et massif : réduit optiquement */
+@keyframes clients-scroll{to{transform:translateX(-50%)}}
+/* survol : la bande s'arrête, le logo pointé ressort */
+@media(hover:hover){
+  .clients-marquee:hover .clients-track{animation-play-state:paused}
+  .clients-marquee:hover img{opacity:.3}
+  .clients-marquee img:hover{opacity:1}
+}
 @media(max-width:760px){
-  /* une seule ligne : largeur totale des logos ≈ 12,3 × leur hauteur */
-  .clients{gap:3.5vw;--ch:calc((100vw - 2 * var(--mx) - 14vw) / 12.3)}
+  .clients{--ch:24px;--cg:40px}
+  .clients-in{grid-template-columns:1fr;row-gap:22px;padding:24px 0}
+  .clients-k{margin:0;padding:0;border:0;font-size:9pt}
+  .clients-track{animation-duration:30s}
+}
+@media(prefers-reduced-motion:reduce){
+  .clients-track{animation:none;width:auto}
+  .clients-set{flex-wrap:wrap;justify-content:center;padding:0;row-gap:20px}
+  .clients-set[aria-hidden]{display:none}
+  .clients-marquee{-webkit-mask-image:none;mask-image:none}
+}
+
+/* ─── APPEL À L'ACTION : bloc sombre entre les projets vedettes et la grille ─── */
+.hcta{padding:clamp(90px,11vw,170px) var(--mx) 0}
+.hcta-in{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(40px,6vw,110px);align-items:center;
+  max-width:1320px;margin:0 auto;padding:clamp(44px,6vw,96px);border-radius:24px;background:#141414;color:#f4efe6;
+  box-shadow:-8px 16px 38px rgba(0,0,0,.14)}
+.hcta-k{display:flex;align-items:center;gap:10px;margin-bottom:22px;font-size:9.5pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,239,230,.75)}
+.hcta-t{font-family:var(--font-titre);font-weight:500;font-size:clamp(36px,4.4vw,64px);line-height:1;letter-spacing:-.01em;color:#fff;transform:scaleX(.9);transform-origin:left center}
+.hcta-t em{font-style:italic;color:#d9cbb4}
+.hcta-sub{max-width:44ch;margin-top:24px;font-size:clamp(15px,1.15vw,17px);line-height:1.65;color:rgba(244,239,230,.8)}
+.hcta-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:34px}
+.hcta-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:999px;background:#fff;color:#111;
+  font-weight:600;font-size:11.5pt;text-decoration:none;transition:background .3s ease}
+.hcta-btn span{display:inline-block;transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.hcta-mail{padding-bottom:3px;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;font-size:11pt;font-weight:500;text-decoration:none;transition:border-color .3s ease}
+@media(hover:hover){
+  .hcta-btn:hover{background:#efe9dd}
+  .hcta-btn:hover span{transform:translateX(4px)}
+  .hcta-mail:hover{border-color:#fff}
+}
+.hcta-note{margin-top:18px;font-size:10pt;color:rgba(244,239,230,.55)}
+/* Les 3 étapes : rassurent sur ce qui suit le clic */
+.hcta-steps{list-style:none;display:flex;flex-direction:column;border-top:1px solid rgba(255,255,255,.14)}
+.hcta-steps li{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.hcta-n{padding-top:5px;font-size:9.5pt;font-weight:600;letter-spacing:.1em;color:#d9cbb4}
+.hcta-steps h3{font-family:var(--font-titre);font-weight:500;font-size:clamp(20px,1.7vw,24px);line-height:1.1;color:#fff;transform:scaleX(.9);transform-origin:left center}
+.hcta-steps p{margin-top:6px;font-size:10.5pt;line-height:1.6;color:rgba(244,239,230,.68)}
+@media(max-width:860px){
+  .hcta-in{grid-template-columns:1fr;padding:40px 26px;border-radius:20px}
+}
+@media(max-width:760px){
+  .hcta{padding-top:88px}
+  .hcta-in{margin:0 -8px}
+  .hcta-btn{padding:14px 24px;font-size:11pt}
 }
 
 /* ─── PROJETS VEDETTES ─── */
@@ -218,7 +305,7 @@ body.hmenu-open .hnav{background:transparent;border-bottom-color:transparent;-we
 .about .eyebrow{font-size:10pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8a8a8a;margin-bottom:20px}
 .about-top{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,4vw,60px);align-items:center;margin-bottom:clamp(54px,7vw,96px)}
 .about-portrait{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 22%;border-radius:16px}
-.about-txt h2{font-family:var(--font);font-weight:500;font-size:clamp(26px,3.6vw,44px);line-height:1.02;letter-spacing:-.02em;color:#141414;margin-bottom:24px}
+.about-txt h2{font-family:var(--font-titre);font-weight:500;font-size:clamp(30px,3.9vw,50px);line-height:1.04;letter-spacing:-.01em;color:#141414;margin-bottom:24px;transform:scaleX(.9);transform-origin:left center}
 .about-txt p{font-size:clamp(15px,1.2vw,17px);line-height:1.65;color:#333;max-width:54ch;margin-bottom:16px}
 .about-txt .sign{display:block;margin-top:14px;font-size:10.5pt;letter-spacing:.02em;color:#8a8a8a}
 @media(max-width:760px){.about-top{grid-template-columns:1fr}.about-portrait{max-width:300px;aspect-ratio:4/5}}

@@ -1688,3 +1688,35 @@ section video {
 
 .pj-hero{position:relative} /* parallax-anchor */
 
+
+/* ════════════════════════════════════════════════
+   TITRES : Lora condensé 90 %, comme l'accueil (remplace le bloc Montserrat ci-dessus)
+   ════════════════════════════════════════════════ */
+.t-titre:not(.nav-menu-titre),
+.pj-titre,
+.ft-big,
+.footer-cta-titre,
+.oq2-projet-lede,
+.oq2-sig-titre,
+.oq2-web-titre,
+.oq2-ctx-titre,
+.oq2-ident-titre {
+  font-family: var(--font-titre) !important;   /* Lora */
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+  transform: scaleX(0.9) !important;
+  transform-origin: left center;
+}
+/* titres centrés : condenser depuis le centre */
+.pj-statement-titre { transform-origin: center center; }
+.pj-statement--left .pj-statement-titre { transform-origin: left center; }
+
+/* Courte description sous le nom du projet : Lora, casse normale */
+.pj-intro-text .t-courant {
+  font-family: var(--font-titre) !important;
+  font-weight: 400 !important;
+  font-size: clamp(17px, 1.5vw, 22px) !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: #3d3d3d;
+}

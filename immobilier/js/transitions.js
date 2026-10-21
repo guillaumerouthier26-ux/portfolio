@@ -45,7 +45,7 @@
     //    l'écran. On part donc sur du blanc - jamais de flash de la page cible.
     var cover = document.createElement('div');
     cover.style.cssText =
-      'position:fixed;inset:0;z-index:998;background:#fff;' +
+      'position:fixed;inset:0;z-index:998;background:#faf8f3;' +
       'transform:translateY(100%);will-change:transform;pointer-events:none;';
     document.body.appendChild(cover);
 
@@ -164,14 +164,15 @@
     // relatifs et la CSS diffèrent → rideau blanc puis chargement natif.
     var base = location.pathname.split('/')[1];
     var target = url.pathname.split('/')[1];
-    if (target !== base) {
+    // contact.html est une page autonome (styles intégrés) : chargement natif sous le rideau
+    if (target !== base || /contact\.html$/.test(url.pathname)) {
       e.preventDefault();
       if (busy) return;
       busy = true;
       try { sessionStorage.setItem('curtainIn', '1'); } catch (er) {}
       var c = document.createElement('div');
       c.style.cssText =
-        'position:fixed;inset:0;z-index:3000;background:#fff;' +
+        'position:fixed;inset:0;z-index:3000;background:#faf8f3;' +
         'transform:translateY(100%);pointer-events:none;will-change:transform;';
       document.body.appendChild(c);
       requestAnimationFrame(function () {

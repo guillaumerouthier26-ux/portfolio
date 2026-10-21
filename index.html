@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/home.css?v=30">
+  <link rel="stylesheet" href="css/home.css?v=37">
   <style id="pg-bg">html,body{background:#faf8f3}</style>
   <style id="intro-css">
     body.intro-active{overflow:hidden}
@@ -48,24 +48,28 @@
   <!-- HERO -->
   <header class="hhero" data-active="0">
     <div class="hhero-slides" aria-hidden="true">
-      <img class="hslide is-active parallax-img" src="hero/hero-cafe.jpg" alt="" fetchpriority="high" decoding="async">
-      <img class="hslide parallax-img" src="hero/hero-aki.jpg" alt="" decoding="async">
-      <img class="hslide parallax-img" src="hero/hero-lhm.jpg" alt="" decoding="async">
+      <picture><source media="(max-width: 760px)" srcset="hero/hero-moi-m.jpg"><img class="hslide is-active parallax-img" src="hero/hero-cafe.jpg" alt="" fetchpriority="high" decoding="async"></picture>
+      <picture><source media="(max-width: 760px)" srcset="hero/hero-aki-m.jpg"><img class="hslide parallax-img" src="hero/hero-aki.jpg" alt="" decoding="async"></picture>
+      <picture><source media="(max-width: 760px)" srcset="hero/hero-lhm-m.jpg"><img class="hslide parallax-img" src="hero/hero-lhm.jpg" alt="" decoding="async"></picture>
     </div>
     <div class="hgrain" aria-hidden="true"></div>
     <div class="hnav">
       <a class="logo" href="index.html">Guillaume Routhier</a>
       <nav>
-        <a href="#projets">Projets</a>
+        <a href="#vedettes">Projets</a>
         <a href="#apropos">À propos</a>
         <a href="photographie/contact.html">Contact</a>
       </nav>
       <button class="hnav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="hmenu"><span></span><span></span><span></span></button>
     </div>
     <div class="hhero-in">
-      <p class="hhero-eyebrow"><span class="hdot" aria-hidden="true"></span><span>Disponible pour de nouveaux projets</span><span class="hsep" aria-hidden="true">·</span><span>Région de Québec</span></p>
-      <h1 class="hhero-title"><span class="hw" data-k="1">Photographie</span> &amp;<br><em class="hw" data-k="2">Design graphique</em></h1>
-      <p class="hhero-sub">Identité de marque, emballage et photographie pour les entreprises de la région de Québec. Pour que votre marque soit vue, comprise et choisie.</p>
+      <p class="hhero-eyebrow"><span class="hdot" aria-hidden="true"></span><span>Disponible pour de nouveaux projets</span><span class="hsep" aria-hidden="true">·</span><span>Québec et à distance</span></p>
+      <h1 class="hhero-title"><span class="hw" data-k="1">Photographie</span> <span class="hamp">&amp;</span><br><em class="hw" data-k="2">Design graphique</em></h1>
+      <p class="hhero-sub">
+        <span class="hs" data-k="0">Des images et un design qui donnent à votre entreprise l'allure qu'elle mérite, ici comme ailleurs. Pour que votre marque soit vue, comprise et choisie.</span>
+        <span class="hs" data-k="1" aria-hidden="true">Photo d'événements, culinaire, de produits et immobilière, pour des images qui donnent envie. Ouvert à bien plus&#8239;: parlez-moi de votre projet.</span>
+        <span class="hs" data-k="2" aria-hidden="true">Image de marque, sites web et publicité, pour une marque cohérente sur tous ses supports. Ouvert à tous les projets&#8239;: parlez-moi du vôtre.</span>
+      </p>
       <div class="hhero-actions">
         <a class="hhero-cta" href="photographie/contact.html">Démarrer un projet <span aria-hidden="true">&rarr;</span></a>
         <a class="hhero-link" href="#vedettes">Voir les projets</a>
@@ -91,13 +95,47 @@
     </nav>
   </div>
 
-  <!-- CLIENTS -->
-  <section class="clients" aria-label="Clients">
-    <img src="clients/agroroue.png" alt="Agro Roue" loading="lazy" decoding="async">
-    <img src="clients/aki.png" alt="Aki Sushi" loading="lazy" decoding="async">
-    <img src="clients/protheses-laurentides.png" alt="Prothèses Laurentides" loading="lazy" decoding="async">
-    <img src="clients/remax.png" alt="RE/MAX" loading="lazy" decoding="async">
-    <img class="cl-s45" src="clients/studios45.png" alt="Studios 45" loading="lazy" decoding="async">
+  <!-- CLIENTS : intitulé + défilement continu (4 groupes identiques : la piste se décale d'une moitié pour boucler sans trou) -->
+  <section class="clients" aria-labelledby="clients-k">
+    <div class="clients-in">
+      <p class="clients-k" id="clients-k">Ils m'ont fait confiance</p>
+      <div class="clients-marquee">
+        <div class="clients-track">
+          <div class="clients-set">
+          <img src="clients/agroroue.png" alt="Agro Roue" decoding="async">
+          <img src="clients/aki.png" alt="Aki Sushi" decoding="async">
+          <img src="clients/protheses-laurentides.png" alt="Prothèses Laurentides" decoding="async">
+          <img src="clients/objectif-quebec.png" alt="Objectif Québec" decoding="async">
+          <img src="clients/remax.png" alt="RE/MAX" decoding="async">
+          <img class="cl-s45" src="clients/studios45.png" alt="Studios 45" decoding="async">
+          </div>
+          <div class="clients-set" aria-hidden="true">
+          <img src="clients/agroroue.png" alt="" decoding="async">
+          <img src="clients/aki.png" alt="" decoding="async">
+          <img src="clients/protheses-laurentides.png" alt="" decoding="async">
+          <img src="clients/objectif-quebec.png" alt="" decoding="async">
+          <img src="clients/remax.png" alt="" decoding="async">
+          <img class="cl-s45" src="clients/studios45.png" alt="" decoding="async">
+          </div>
+          <div class="clients-set" aria-hidden="true">
+          <img src="clients/agroroue.png" alt="" decoding="async">
+          <img src="clients/aki.png" alt="" decoding="async">
+          <img src="clients/protheses-laurentides.png" alt="" decoding="async">
+          <img src="clients/objectif-quebec.png" alt="" decoding="async">
+          <img src="clients/remax.png" alt="" decoding="async">
+          <img class="cl-s45" src="clients/studios45.png" alt="" decoding="async">
+          </div>
+          <div class="clients-set" aria-hidden="true">
+          <img src="clients/agroroue.png" alt="" decoding="async">
+          <img src="clients/aki.png" alt="" decoding="async">
+          <img src="clients/protheses-laurentides.png" alt="" decoding="async">
+          <img src="clients/objectif-quebec.png" alt="" decoding="async">
+          <img src="clients/remax.png" alt="" decoding="async">
+          <img class="cl-s45" src="clients/studios45.png" alt="" decoding="async">
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- PROJETS VEDETTES -->
@@ -114,14 +152,14 @@
           <img class="vm-bg" src="vedette/aki/bg.jpg" alt="" loading="lazy" decoding="async">
           <div class="vm-layers">
             <!-- ordre d'empilement : 8 (bol) au fond, 1 au premier plan -->
-            <img class="vm-l" src="vedette/aki/8.webp" alt="" style="--l:28.067;--t:58.067;--w:40.133;--z:1.6" data-d="-4" data-r="0" loading="lazy" decoding="async">
-            <img class="vm-l" src="vedette/aki/7.webp" alt="" style="--l:35.1;--t:23.433;--w:25.833;--z:1" data-d="11" data-r="0" loading="lazy" decoding="async">
-            <img class="vm-l" src="vedette/aki/6.webp" alt="" style="--l:34.333;--t:19.9;--w:31.833;--z:.8" data-d="7" data-r="0" loading="lazy" decoding="async">
-            <img class="vm-l" src="vedette/aki/5.webp" alt="" style="--l:32.067;--t:36.767;--w:8.4;--z:1.8" data-d="24" data-r="16" loading="lazy" decoding="async">
-            <img class="vm-l" src="vedette/aki/4.webp" alt="" style="--l:25.567;--t:49.2;--w:19.367;--z:1.3" data-d="13" data-r="-8" loading="lazy" decoding="async">
-            <img class="vm-l" src="vedette/aki/3.webp" alt="" style="--l:28.567;--t:10.7;--w:14.633;--z:1.6" data-d="20" data-r="9" loading="lazy" decoding="async">
-            <img class="vm-l" src="vedette/aki/2.webp" alt="" style="--l:39.933;--t:29.933;--w:19.133;--z:1.2" data-d="10" data-r="-4" loading="lazy" decoding="async">
-            <img class="vm-l" src="vedette/aki/1.webp" alt="" style="--l:49.967;--t:9.133;--w:15.933;--z:1.4" data-d="16" data-r="6" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/aki/8.webp" alt="" style="--l:28.067;--t:58.067;--w:40.133;--z:1.6" data-d="-4" data-r="0" data-f="0.5" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/aki/7.webp" alt="" style="--l:35.1;--t:23.433;--w:25.833;--z:1" data-d="11" data-r="0" data-f="1.1" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/aki/6.webp" alt="" style="--l:34.333;--t:19.9;--w:31.833;--z:.8" data-d="7" data-r="0" data-f="0.9" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/aki/5.webp" alt="" style="--l:32.067;--t:36.767;--w:8.4;--z:1.8" data-d="24" data-r="16" data-f="1.6" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/aki/4.webp" alt="" style="--l:25.567;--t:49.2;--w:19.367;--z:1.3" data-d="13" data-r="-8" data-f="1.2" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/aki/3.webp" alt="" style="--l:28.567;--t:10.7;--w:14.633;--z:1.6" data-d="20" data-r="9" data-f="1.5" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/aki/2.webp" alt="" style="--l:39.933;--t:29.933;--w:19.133;--z:1.2" data-d="10" data-r="-4" data-f="1" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/aki/1.webp" alt="" style="--l:49.967;--t:9.133;--w:15.933;--z:1.4" data-d="16" data-r="6" data-f="1.3" loading="lazy" decoding="async">
           </div>
         </div>
       </a>
@@ -135,12 +173,20 @@
 
     <article class="feat-item">
       <a class="feat-media" href="design/lheure-mauve.html" aria-label="Voir le projet L'Heure Mauve">
-        <!-- Montage parallax : fond prune fixe, coffret Baies (1) derrière, coffret Agrumes (2) devant -->
+        <!-- Montage parallax : fond prune fixe ; tout monte dans le même sens, plus vite au premier plan -->
         <div class="vm" data-vm aria-hidden="true" style="--shc:rgba(25,5,18,.34)">
           <img class="vm-bg" src="vedette/lhm/bg.jpg" alt="" loading="lazy" decoding="async">
           <div class="vm-layers">
-            <img class="vm-l" src="vedette/lhm/1.webp" alt="" style="--l:23.567;--t:50.9;--w:59.4;--z:1.5" data-d="6" data-r="1.5" loading="lazy" decoding="async">
-            <img class="vm-l" src="vedette/lhm/2.webp" alt="" style="--l:14.433;--t:20.533;--w:60.467;--z:2" data-d="13" data-r="3" loading="lazy" decoding="async">
+            <!-- arrière-plan : a, b, c (lents, derrière les coffrets) -->
+            <img class="vm-l" src="vedette/lhm/a.webp" alt="" style="--l:24.8;--t:80;--w:12.2;--z:.7" data-d="9" data-r="3" data-f="1.2" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/lhm/b.webp" alt="" style="--l:34.067;--t:4.333;--w:12.367;--z:.7" data-d="8" data-r="-3" data-f="1.4" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/lhm/c.webp" alt="" style="--l:62.467;--t:16.033;--w:16.267;--z:.7" data-d="11" data-r="4" data-f="1.1" loading="lazy" decoding="async">
+            <!-- coffrets : 1 (Baies) derrière, 2 (Agrumes) devant -->
+            <img class="vm-l" src="vedette/lhm/1.webp" alt="" style="--l:23.567;--t:50.9;--w:59.4;--z:1.5" data-d="12" data-r="2" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/lhm/2.webp" alt="" style="--l:14.433;--t:20.533;--w:60.467;--z:2" data-d="19" data-r="4" loading="lazy" decoding="async">
+            <!-- premier plan : 3, 4 (rapides, devant les coffrets) -->
+            <img class="vm-l" src="vedette/lhm/3.webp" alt="" style="--l:6.033;--t:41.467;--w:25.9;--z:2.4" data-d="34" data-r="8" data-f="1.6" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/lhm/4.webp" alt="" style="--l:66.633;--t:81.667;--w:14;--z:2.4" data-d="40" data-r="10" data-f="1.5" loading="lazy" decoding="async">
           </div>
         </div>
       </a>
@@ -151,6 +197,27 @@
         <a class="feat-link" href="design/lheure-mauve.html">Voir le projet <span aria-hidden="true">&rarr;</span></a>
       </div>
     </article>
+  </section>
+
+  <!-- APPEL À L'ACTION : après les projets vedettes, au moment où le visiteur est convaincu -->
+  <section class="hcta" aria-labelledby="hcta-t">
+    <div class="hcta-in">
+      <div class="hcta-main">
+        <p class="hcta-k"><span class="hdot" aria-hidden="true"></span>Disponible pour de nouveaux projets</p>
+        <h2 class="hcta-t" id="hcta-t">Un projet en tête&#8239;?<br><em>Parlons-en.</em></h2>
+        <p class="hcta-sub">Photo, design ou les deux&#8239;: racontez-moi votre idée, je vous reviens avec une approche claire et une soumission adaptée à votre projet.</p>
+        <div class="hcta-actions">
+          <a class="hcta-btn" href="photographie/contact.html">Démarrer un projet <span aria-hidden="true">&rarr;</span></a>
+          <a class="hcta-mail" href="mailto:guillaumerouthier26@gmail.com">guillaumerouthier26@gmail.com</a>
+        </div>
+        <p class="hcta-note">Sans engagement <span aria-hidden="true">·</span> Québec et à distance</p>
+      </div>
+      <ol class="hcta-steps" aria-label="Comment ça se passe">
+        <li><span class="hcta-n">01</span><div><h3>On en parle</h3><p>Un premier échange pour comprendre votre besoin, vos objectifs et votre budget.</p></div></li>
+        <li><span class="hcta-n">02</span><div><h3>Je vous propose</h3><p>Une approche, un échéancier et une soumission claire, sans surprise.</p></div></li>
+        <li><span class="hcta-n">03</span><div><h3>On crée</h3><p>Production, ajustements et livraison de fichiers prêts à utiliser.</p></div></li>
+      </ol>
+    </div>
   </section>
 
   <!-- PROJETS -->
@@ -290,13 +357,14 @@
       var slides = Array.prototype.slice.call(hero.querySelectorAll('.hslide'));
       var bars   = Array.prototype.slice.call(hero.querySelectorAll('.hbar'));
       var cap    = hero.querySelector('.hcap-link');
+      var subs   = Array.prototype.slice.call(hero.querySelectorAll('.hs'));
       if(slides.length < 2 || !cap) return;
       var DATA = [
         { n: '01', t: 'Guillaume Routhier', d: 'Photographe et designer graphique', href: '#apropos' },
         { n: '02', t: 'Aki Sushi Studio',   d: 'Photographie culinaire',           href: 'photographie/aki-sushi-studio.html' },
         { n: '03', t: "L'Heure Mauve",      d: 'Identité et emballage',            href: 'design/lheure-mauve.html' }
       ];
-      var DUR = 6000, cur = 0, z = 1;
+      var DUR = 4500, cur = 0, z = 1;   // durée de chaque volet du hero
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       hero.style.setProperty('--dur', DUR + 'ms');
 
@@ -331,6 +399,7 @@
             if(leaving !== slides[cur]){ leaving.classList.add('is-reset'); leaving.classList.remove('is-active'); }
           }, reduce ? 0 : 1250);
           hero.setAttribute('data-active', String(i));
+          subs.forEach(function(s){ s.setAttribute('aria-hidden', s.dataset.k === String(i) ? 'false' : 'true'); });
           setCap(i);
         }
         setBars(i, !reduce);
@@ -411,6 +480,8 @@
       if(!intro || !frame || !pic) return;
 
       function removeIntro(){ if(intro && intro.parentNode) intro.parentNode.removeChild(intro); }
+      // l'accueil a son propre panneau d'ouverture : on consomme le drapeau du rideau
+      try { sessionStorage.removeItem('curtainIn'); } catch(e){}
 
       // Respect de prefers-reduced-motion : pas d'intro (textes déjà visibles)
       if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
@@ -429,14 +500,33 @@
       var EASE_EXIT  = 'cubic-bezier(.76,0,.24,1)'; // sortie / panneau (courbe de Réservé Collectif)
       var EASE_OUT   = 'cubic-bezier(.16,1,.3,1)';  // révélations : arrivée très douce
 
+      // Arrivée depuis une autre page du site (nom, « Accueil », « Projets ») : seulement le rideau.
+      // Première visite ou rechargement : intro complète avec le défilé d'images.
+      var navEntry = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0]) || {};
+      var SHORT = navEntry.type !== 'reload' && (function(){
+        try { var u = new URL(document.referrer); return u.origin === location.origin; } catch(e){ return false; }
+      })();
+
       // Timeline (ms) : les phases se chevauchent, aucune pause
       var GROW_DUR  = 1000;
       var EXIT_AT   = 1000, EXIT_DUR  = 760;   // l'image passe au-dessus du seuil
-      var PANEL_AT  = 1500, PANEL_DUR = 1100;  // le panneau monte (chevauche la fin de la sortie)
+      var PANEL_AT  = SHORT ? 120 : 1500, PANEL_DUR = 1100;  // le panneau monte (chevauche la fin de la sortie)
       var TEXT_AT   = PANEL_AT + 520;          // les textes montent pendant que le panneau finit
 
-      // Précharge
-      for(var n=1;n<=TOTAL;n++){ var im=new Image(); im.src='intro/'+n+'.jpg'; }
+      // Arrivée sur une section (ex. « Projets ») : on s'y place avant que le rideau monte
+      if(location.hash){
+        document.addEventListener('DOMContentLoaded', function(){
+          var t = document.getElementById(location.hash.slice(1));
+          if(!t) return;
+          var y = t.getBoundingClientRect().top + window.pageYOffset;
+          if(window._smoothScrollActive && window._smoothScrollSnap) window._smoothScrollSnap(y);
+          else window.scrollTo(0, y);
+        });
+      }
+
+      // Précharge (intro complète seulement)
+      if(SHORT) frame.style.display = 'none';
+      else for(var n=1;n<=TOTAL;n++){ var im=new Image(); im.src='intro/'+n+'.jpg'; }
 
       // Cadre = 15% de la largeur d'écran, ratio 16:9
       var baseW = Math.max(140, Math.round(window.innerWidth * 0.15));
@@ -486,6 +576,22 @@
       function start(){
         if(started) return; started = true;
 
+        if(!SHORT) playImages();
+
+        // (3) le panneau monte du bas vers le haut et dévoile le hero
+        intro.animate(
+          [{ transform: 'translateY(0)' }, { transform: 'translateY(-100%)' }],
+          { duration: PANEL_DUR, delay: PANEL_AT, easing: EASE_EXIT, fill: 'forwards' });
+
+        // (4) révélation du hero
+        setTimeout(reveal, PANEL_AT);
+
+        // Nettoyage
+        setTimeout(removeIntro, PANEL_AT + PANEL_DUR + 60);
+      }
+
+      // (1)(2) défilé d'images dans le cadre (intro complète)
+      function playImages(){
         // Défilé : coupes franches jusqu'à ce que l'image ait passé le seuil
         var i = 1;
         var cycle = setInterval(function(){
@@ -507,23 +613,47 @@
         pic.animate(
           [{ transform: 'translateY(0) scale(1.08)' }, { transform: 'translateY(-100%) scale(1)' }],
           { duration: EXIT_DUR, delay: EXIT_AT, easing: EASE_EXIT, fill: 'forwards' });
-
-        // (3) le panneau monte du bas vers le haut et dévoile le hero
-        intro.animate(
-          [{ transform: 'translateY(0)' }, { transform: 'translateY(-100%)' }],
-          { duration: PANEL_DUR, delay: PANEL_AT, easing: EASE_EXIT, fill: 'forwards' });
-
-        // (4) révélation du hero
-        setTimeout(reveal, PANEL_AT);
-
-        // Nettoyage
-        setTimeout(removeIntro, PANEL_AT + PANEL_DUR + 60);
       }
 
       // Démarre dès la 1re image prête (ou très vite par sécurité)
-      if(pic.complete){ start(); } else { pic.onload = start; setTimeout(start, 250); }
+      if(SHORT || pic.complete){ start(); } else { pic.onload = start; setTimeout(start, 250); }
       // Filet de sécurité
       setTimeout(function(){ document.body.classList.remove('intro-active'); removeIntro(); }, PANEL_AT + PANEL_DUR + 2500);
+    })();
+  </script>
+
+  <!-- Transition vers une autre page : un rideau crème monte du bas ; dès qu'il couvre l'écran,
+       la page suivante se charge et lève son propre rideau (drapeau « curtainIn ») -->
+  <script>
+    (function(){
+      var IN_MS = 650, EASE = 'cubic-bezier(.76,0,.24,1)', busy = false;
+      document.addEventListener('click', function(e){
+        if(e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        var a = e.target.closest('a[href]');
+        if(!a || a.target === '_blank' || a.hasAttribute('download')) return;
+        var url; try { url = new URL(a.href); } catch(er){ return; }
+        if(url.origin !== location.origin) return;
+        // ancres de la page et images de la galerie : pas de rideau
+        if(url.pathname === location.pathname || /\.(jpe?g|png|webp|pdf)$/i.test(url.pathname)) return;
+        e.preventDefault();
+        if(busy) return; busy = true;
+        try { sessionStorage.setItem('curtainIn', '1'); } catch(er){}
+        var c = document.createElement('div');
+        c.setAttribute('data-curtain', '');
+        c.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#faf8f3;transform:translateY(100%);pointer-events:none;will-change:transform';
+        document.body.appendChild(c);
+        requestAnimationFrame(function(){ requestAnimationFrame(function(){
+          c.style.transition = 'transform ' + (IN_MS / 1000) + 's ' + EASE;
+          c.style.transform  = 'translateY(0)';
+        }); });
+        setTimeout(function(){ location.href = a.href; }, IN_MS + 40);
+      });
+      // retour arrière (page restaurée du cache) : retire le rideau resté en place
+      window.addEventListener('pageshow', function(ev){
+        if(!ev.persisted) return;
+        Array.prototype.forEach.call(document.querySelectorAll('[data-curtain]'), function(n){ n.remove(); });
+        busy = false;
+      });
     })();
   </script>
 
@@ -554,7 +684,8 @@
       if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       Array.prototype.forEach.call(document.querySelectorAll('[data-vm]'), function(stage){
         var layers = Array.prototype.map.call(stage.querySelectorAll('.vm-l'), function(el){
-          return { el: el, d: +el.dataset.d || 0, r: +el.dataset.r || 0, y: 0, a: 0 };
+          // data-f : amplitude d'un léger flottement continu (pièces en suspension)
+          return { el: el, d: +el.dataset.d || 0, r: +el.dataset.r || 0, f: +el.dataset.f || 0, ph: Math.random() * 6.28, y: 0, a: 0 };
         });
         var active = false, raf = 0, first = true;
         function frame(){
@@ -562,9 +693,10 @@
           // p = 0 quand le montage est centré (composition d'origine), ±1 aux bords de l'écran
           var p = ((rect.top + rect.height / 2) - vh / 2) / vh;
           p = Math.max(-1.2, Math.min(1.2, p));
-          var unit = rect.width / 100, moving = false;
+          var unit = rect.width / 100, moving = false, now = performance.now();
           layers.forEach(function(o){
             var ty = p * o.d * unit, ta = p * o.r;
+            if(o.f){ var s = now / 1000 * 0.9 + o.ph; ty += Math.sin(s) * o.f * unit; ta += Math.cos(s * 0.8) * o.f * 1.2; }
             if(first){ o.y = ty; o.a = ta; }
             else { o.y += (ty - o.y) * .1; o.a += (ta - o.a) * .1; }   // inertie douce
             if(Math.abs(ty - o.y) > .05 || Math.abs(ta - o.a) > .01) moving = true;
