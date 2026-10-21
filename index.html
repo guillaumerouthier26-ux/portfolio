@@ -8,16 +8,45 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/home.css?v=18">
+  <link rel="stylesheet" href="css/home.css?v=25">
   <style id="pg-bg">html,body{background:#faf8f3}</style>
+  <style id="intro-css">
+    body.intro-active{overflow:hidden}
+    /* Panneau blanc plein écran ; monte du bas vers le haut (smooth-in) pour révéler le hero */
+    #intro{position:fixed;inset:0;z-index:9000;background:#faf8f3;overflow:hidden;will-change:transform}
+    /* Cadre des images : centré, grandit depuis le centre ; l'image glisse sous son bord bas (le seuil) */
+    #introFrame{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(0);transform-origin:center center;overflow:hidden;border-radius:8px;will-change:transform}
+    #introImg{width:100%;height:100%;object-fit:cover;display:block;will-change:transform;transform:scale(1.4)}
+    /* Titre du hero découpé en lignes, chacune révélée depuis son seuil */
+    .hhero-title .ln{display:block;overflow:hidden;padding:0 .08em .14em 0;margin-bottom:-.14em}
+    .hhero-title .lni{display:block;will-change:translate}
+    /* textes/objets du hero : cachés pendant l'intro, révélés ensuite par montée au seuil */
+    body.intro-active .hnav{opacity:0;pointer-events:none}
+    body.intro-active .hhero-title,
+    body.intro-active .hhero-cta,
+    body.intro-active .hscroll{opacity:0}
+    @media (prefers-reduced-motion: reduce){ #intro{display:none} }
+  </style>
 </head>
 
 <body>
 
+  <!-- INTRO cinématique -->
+  <div id="intro" aria-hidden="true"><div id="introFrame"><img id="introImg" src="intro/1.jpg" alt=""></div></div>
+  <script>
+    /* Cache immédiatement les textes du hero si l'intro va jouer (évite le flash) */
+    (function(){
+      try{
+        if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        document.body.classList.add('intro-active');
+      }catch(e){}
+    })();
+  </script>
+
   <!-- HERO -->
   <header class="hhero">
     <div class="hhero-slides" aria-hidden="true">
-      <img class="hslide is-active parallax-img" src="hero/slide1.jpg" alt="" fetchpriority="high" decoding="async">
+      <img class="hslide is-active parallax-img" src="hero/hero-cafe.jpg" alt="" fetchpriority="high" decoding="async">
     </div>
     <div class="hnav">
       <a class="logo" href="index.html">Guillaume Routhier</a>
@@ -26,13 +55,78 @@
         <a href="#apropos">À propos</a>
         <a href="photographie/contact.html">Contact</a>
       </nav>
+      <button class="hnav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="hmenu"><span></span><span></span><span></span></button>
     </div>
     <div class="hhero-in">
-      <h1 class="hhero-title">Gardez une touche<br><em>humaine et moderne</em></h1>
+      <h1 class="hhero-title">Photographie &amp;<br><em>Design graphique</em></h1>
       <a class="hhero-cta" href="photographie/contact.html">Me contacter</a>
     </div>
     <span class="hscroll">Projets &darr;</span>
   </header>
+
+  <!-- MENU MOBILE : voile noir 50 %, options blanches -->
+  <div class="hmenu" id="hmenu" aria-hidden="true" inert>
+    <nav class="hmenu-in" aria-label="Menu">
+      <a href="#vedettes">Projets</a>
+      <a href="#apropos">À propos</a>
+      <a href="photographie/contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <!-- CLIENTS -->
+  <section class="clients" aria-label="Clients">
+    <img src="clients/agroroue.png" alt="Agro Roue" loading="lazy" decoding="async">
+    <img src="clients/aki.png" alt="Aki Sushi" loading="lazy" decoding="async">
+    <img src="clients/protheses-laurentides.png" alt="Prothèses Laurentides" loading="lazy" decoding="async">
+    <img src="clients/remax.png" alt="RE/MAX" loading="lazy" decoding="async">
+    <img class="cl-s45" src="clients/studios45.png" alt="Studios 45" loading="lazy" decoding="async">
+  </section>
+
+  <!-- PROJETS VEDETTES -->
+  <section class="feat" id="vedettes">
+    <div class="feat-head">
+      <span class="feat-eyebrow">À la une</span>
+      <h2 class="htitle">Projets vedettes</h2>
+    </div>
+
+    <article class="feat-item">
+      <a class="feat-media" href="photographie/aki-sushi-studio.html" aria-label="Voir le projet Aki Sushi Studio">
+        <!-- Montage parallax : le fond reste fixe, chaque calque bouge à sa propre vitesse -->
+        <div class="vm" data-vm aria-hidden="true">
+          <img class="vm-bg" src="vedette/aki/bg.jpg" alt="" loading="lazy" decoding="async">
+          <div class="vm-layers">
+            <!-- ordre d'empilement : 8 (bol) au fond, 1 au premier plan -->
+            <img class="vm-l" src="vedette/aki/8.webp" alt="" style="--l:28.067;--t:58.067;--w:40.133;--z:1.6" data-d="-4" data-r="0" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/aki/7.webp" alt="" style="--l:35.1;--t:23.433;--w:25.833;--z:1" data-d="11" data-r="0" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/aki/6.webp" alt="" style="--l:34.333;--t:19.9;--w:31.833;--z:.8" data-d="7" data-r="0" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/aki/5.webp" alt="" style="--l:32.067;--t:36.767;--w:8.4;--z:1.8" data-d="24" data-r="16" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/aki/4.webp" alt="" style="--l:25.567;--t:49.2;--w:19.367;--z:1.3" data-d="13" data-r="-8" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/aki/3.webp" alt="" style="--l:28.567;--t:10.7;--w:14.633;--z:1.6" data-d="20" data-r="9" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/aki/2.webp" alt="" style="--l:39.933;--t:29.933;--w:19.133;--z:1.2" data-d="10" data-r="-4" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/aki/1.webp" alt="" style="--l:49.967;--t:9.133;--w:15.933;--z:1.4" data-d="16" data-r="6" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </a>
+      <div class="feat-txt">
+        <span class="feat-tag">Photographie · Culinaire</span>
+        <h3 class="feat-name">Aki Sushi Studio</h3>
+        <p class="feat-desc">Une série studio pour Aki Sushi, tout en couleurs franches et lumière nette. Poke bowls, sushis et bubble teas sur le rouge signature de la marque, chaque bouchée en vedette.</p>
+        <a class="feat-link" href="photographie/aki-sushi-studio.html">Voir le projet <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </article>
+
+    <article class="feat-item">
+      <a class="feat-media feat-photo" href="design/lheure-mauve.html" aria-label="Voir le projet L'Heure Mauve">
+        <img class="parallax-img" src="design/photos/index-lhm.jpg?v=1792542015825" alt="L'Heure Mauve" loading="lazy" decoding="async">
+      </a>
+      <div class="feat-txt">
+        <span class="feat-tag">Design · Emballage</span>
+        <h3 class="feat-name">L'Heure Mauve</h3>
+        <p class="feat-desc">Des pâtes de fruits artisanales bicolores, deux gammes réunies dans un système d'emballage franc et coloré. Identité, direction artistique et photographie.</p>
+        <a class="feat-link" href="design/lheure-mauve.html">Voir le projet <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </article>
+  </section>
 
   <!-- PROJETS -->
   <section id="projets" class="hwrap">
@@ -43,25 +137,7 @@
 
     <div class="hgrid">
 
-      <a class="pcard" href="photographie/aki-sushi-studio.html">
-        <div class="pcard-imgwrap"><img class="pcard-img" src="photographie/photos/index-akistudio.jpg" alt="Aki Sushi Studio" loading="eager" fetchpriority="high" decoding="async"></div>
-        <div class="pcard-body">
-          <span class="pcard-tag">Photographie</span>
-          <h3 class="pcard-name">Aki Sushi Studio</h3>
-          <p class="pcard-disc">Photographie culinaire, studio</p>
-        </div>
-      </a>
-
-      <a class="pcard" href="design/lheure-mauve.html">
-        <div class="pcard-imgwrap"><img class="pcard-img" src="design/photos/index-lhm.jpg?v=1792542015825" alt="L'Heure Mauve" loading="eager" fetchpriority="high" decoding="async"></div>
-        <div class="pcard-body">
-          <span class="pcard-tag">Design</span>
-          <h3 class="pcard-name">L'Heure Mauve</h3>
-          <p class="pcard-disc">Direction artistique, photographie</p>
-        </div>
-      </a>
-
-<a class="pcard" href="immobilier/cap-sante.html">
+      <a class="pcard" href="immobilier/cap-sante.html">
         <div class="pcard-imgwrap"><img class="pcard-img" src="immobilier/photos/index-capsante.jpg" alt="Maison historique" loading="lazy" decoding="async"></div>
         <div class="pcard-body">
           <span class="pcard-tag">Photographie</span>
@@ -240,6 +316,190 @@
       document.getElementById('lnext').addEventListener('click',function(e){ e.stopPropagation(); show(idx+1); });
       box.addEventListener('click',function(e){ if(e.target===box) close(); });
       document.addEventListener('keydown',function(e){ if(!box.classList.contains('open'))return; if(e.key==='Escape')close(); else if(e.key==='ArrowLeft')show(idx-1); else if(e.key==='ArrowRight')show(idx+1); });
+    })();
+  </script>
+
+  <!-- INTRO cinématique : moteur d'animation -->
+  <script>
+    (function(){
+      var intro = document.getElementById('intro');
+      var frame = document.getElementById('introFrame');
+      var pic   = document.getElementById('introImg');
+      if(!intro || !frame || !pic) return;
+
+      function removeIntro(){ if(intro && intro.parentNode) intro.parentNode.removeChild(intro); }
+
+      // Respect de prefers-reduced-motion : pas d'intro (textes déjà visibles)
+      if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.body.classList.remove('intro-active'); removeIntro(); return;
+      }
+
+      // Sans Web Animations API : on montre le site directement
+      if(!frame.animate){ document.body.classList.remove('intro-active'); removeIntro(); return; }
+
+      var TOTAL = 20;    // intro/1.jpg .. intro/20.jpg
+      var CUT   = 85;    // ms par photo (coupe franche)
+
+      // Courbes : douces, organiques (pas de linéaire ni de palier mécanique)
+      var EASE_GROW  = 'cubic-bezier(.7,0,.2,1)';   // naissance : départ retenu, longue arrivée
+      var EASE_DEPTH = 'cubic-bezier(.2,.7,.2,1)';  // dézoom interne de l'image
+      var EASE_EXIT  = 'cubic-bezier(.76,0,.24,1)'; // sortie / panneau (courbe de Réservé Collectif)
+      var EASE_OUT   = 'cubic-bezier(.16,1,.3,1)';  // révélations : arrivée très douce
+
+      // Timeline (ms) : les phases se chevauchent, aucune pause
+      var GROW_DUR  = 1000;
+      var EXIT_AT   = 1000, EXIT_DUR  = 760;   // l'image passe au-dessus du seuil
+      var PANEL_AT  = 1500, PANEL_DUR = 1100;  // le panneau monte (chevauche la fin de la sortie)
+      var TEXT_AT   = PANEL_AT + 520;          // les textes montent pendant que le panneau finit
+
+      // Précharge
+      for(var n=1;n<=TOTAL;n++){ var im=new Image(); im.src='intro/'+n+'.jpg'; }
+
+      // Cadre = 15% de la largeur d'écran, ratio 16:9
+      var baseW = Math.max(140, Math.round(window.innerWidth * 0.15));
+      var baseH = Math.round(baseW * 9 / 16);
+      frame.style.width  = baseW + 'px';
+      frame.style.height = baseH + 'px';
+
+      // ─── Préparation de la révélation : chaque élément sous son seuil ───
+      function wrapClip(el){
+        var inline = getComputedStyle(el).display.indexOf('inline') >= 0;
+        var wrap = document.createElement(inline ? 'span' : 'div');
+        wrap.style.display  = inline ? 'inline-block' : 'block';
+        wrap.style.overflow = 'hidden';
+        if(inline) wrap.style.verticalAlign = 'bottom';
+        el.parentNode.insertBefore(wrap, el);
+        wrap.appendChild(el);
+      }
+      var title  = document.querySelector('.hhero-title');
+      var cta    = document.querySelector('.hhero-cta');
+      var scroll = document.querySelector('.hscroll');
+      var nav    = document.querySelector('.hnav');
+      var slides = document.querySelector('.hhero-slides');
+      var lines  = [];
+      if(title){
+        title.innerHTML = title.innerHTML.split(/<br\s*\/?>/i).map(function(h){
+          return '<span class="ln"><span class="lni">' + h.trim() + '</span></span>';
+        }).join('');
+        lines = Array.prototype.slice.call(title.querySelectorAll('.lni'));
+      }
+      if(cta) wrapClip(cta);
+
+      function reveal(){
+        // fill 'backwards' : l'état de départ tient pendant le délai, puis le CSS reprend la main
+        function a(el, kf, delay, dur, ease){
+          if(el) el.animate(kf, { duration: dur, delay: delay, easing: ease, fill: 'backwards' });
+        }
+        // le hero se pose : léger dézoom pendant que le panneau le dévoile
+        a(slides, [{ transform: 'scale(1.14)' }, { transform: 'scale(1)' }], 0, 1900, EASE_OUT);
+        // textes : chaque ligne monte depuis son seuil, en cascade
+        var t = TEXT_AT - PANEL_AT;
+        lines.forEach(function(li, k){
+          a(li, [{ translate: '0 110%' }, { translate: '0 0' }], t + k * 110, 1150, EASE_OUT);
+        });
+        a(cta,    [{ translate: '0 120%' }, { translate: '0 0' }], t + 260, 1100, EASE_OUT);
+        a(scroll, [{ opacity: 0, translate: '0 14px' }, { opacity: .8, translate: '0 0' }], t + 480, 1000, EASE_OUT);
+        a(nav,    [{ opacity: 0, translate: '0 -14px' }, { opacity: 1, translate: '0 0' }], t + 120, 1000, EASE_OUT);
+        // les animations tiennent l'état caché : on peut lever intro-active sans flash
+        document.body.classList.remove('intro-active');
+      }
+
+      var started = false;
+      function start(){
+        if(started) return; started = true;
+
+        // Défilé : coupes franches jusqu'à ce que l'image ait passé le seuil
+        var i = 1;
+        var cycle = setInterval(function(){
+          i = (i % TOTAL) + 1;
+          pic.src = 'intro/' + i + '.jpg';
+        }, CUT);
+        setTimeout(function(){ clearInterval(cycle); }, EXIT_AT + EXIT_DUR);
+
+        // (1) naissance depuis le centre, 0 -> 15%
+        frame.animate(
+          [{ transform: 'translate(-50%,-50%) scale(0)' }, { transform: 'translate(-50%,-50%) scale(1)' }],
+          { duration: GROW_DUR, easing: EASE_GROW, fill: 'forwards' });
+        // profondeur : l'image se dézoome dans son cadre pendant qu'il grandit
+        pic.animate(
+          [{ transform: 'scale(1.4)' }, { transform: 'scale(1.08)' }],
+          { duration: GROW_DUR + 200, easing: EASE_DEPTH, fill: 'forwards' });
+
+        // (2) l'image glisse vers le haut et passe au-dessus du seuil (bord haut du cadre)
+        pic.animate(
+          [{ transform: 'translateY(0) scale(1.08)' }, { transform: 'translateY(-100%) scale(1)' }],
+          { duration: EXIT_DUR, delay: EXIT_AT, easing: EASE_EXIT, fill: 'forwards' });
+
+        // (3) le panneau monte du bas vers le haut et dévoile le hero
+        intro.animate(
+          [{ transform: 'translateY(0)' }, { transform: 'translateY(-100%)' }],
+          { duration: PANEL_DUR, delay: PANEL_AT, easing: EASE_EXIT, fill: 'forwards' });
+
+        // (4) révélation du hero
+        setTimeout(reveal, PANEL_AT);
+
+        // Nettoyage
+        setTimeout(removeIntro, PANEL_AT + PANEL_DUR + 60);
+      }
+
+      // Démarre dès la 1re image prête (ou très vite par sécurité)
+      if(pic.complete){ start(); } else { pic.onload = start; setTimeout(start, 250); }
+      // Filet de sécurité
+      setTimeout(function(){ document.body.classList.remove('intro-active'); removeIntro(); }, PANEL_AT + PANEL_DUR + 2500);
+    })();
+  </script>
+
+  <!-- Menu mobile : ouverture / fermeture, Échap, verrou de défilement -->
+  <script>
+    (function(){
+      var btn = document.querySelector('.hnav-toggle'), menu = document.getElementById('hmenu');
+      if(!btn || !menu) return;
+      function set(open, refocus){
+        btn.setAttribute('aria-expanded', String(open));
+        btn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+        menu.classList.toggle('is-open', open);
+        menu.setAttribute('aria-hidden', String(!open));
+        menu.toggleAttribute('inert', !open);
+        document.body.classList.toggle('hmenu-open', open);
+        if(open){ var a = menu.querySelector('a'); if(a) setTimeout(function(){ a.focus({ preventScroll: true }); }, 60); }
+        else if(refocus){ btn.focus(); }
+      }
+      btn.addEventListener('click', function(){ set(btn.getAttribute('aria-expanded') !== 'true', true); });
+      menu.addEventListener('click', function(e){ if(e.target === menu || e.target.closest('a')) set(false); });
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && menu.classList.contains('is-open')) set(false, true); });
+    })();
+  </script>
+
+  <!-- Montage parallax des projets vedettes : chaque calque suit le défilement à sa vitesse -->
+  <script>
+    (function(){
+      if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      Array.prototype.forEach.call(document.querySelectorAll('[data-vm]'), function(stage){
+        var layers = Array.prototype.map.call(stage.querySelectorAll('.vm-l'), function(el){
+          return { el: el, d: +el.dataset.d || 0, r: +el.dataset.r || 0, y: 0, a: 0 };
+        });
+        var active = false, raf = 0, first = true;
+        function frame(){
+          var rect = stage.getBoundingClientRect(), vh = window.innerHeight;
+          // p = 0 quand le montage est centré (composition d'origine), ±1 aux bords de l'écran
+          var p = ((rect.top + rect.height / 2) - vh / 2) / vh;
+          p = Math.max(-1.2, Math.min(1.2, p));
+          var unit = rect.width / 100, moving = false;
+          layers.forEach(function(o){
+            var ty = p * o.d * unit, ta = p * o.r;
+            if(first){ o.y = ty; o.a = ta; }
+            else { o.y += (ty - o.y) * .1; o.a += (ta - o.a) * .1; }   // inertie douce
+            if(Math.abs(ty - o.y) > .05 || Math.abs(ta - o.a) > .01) moving = true;
+            o.el.style.transform = 'translate3d(0,' + o.y.toFixed(2) + 'px,0) rotate(' + o.a.toFixed(2) + 'deg)';
+          });
+          first = false;
+          raf = (active || moving) ? requestAnimationFrame(frame) : 0;
+        }
+        new IntersectionObserver(function(entries){
+          active = entries[0].isIntersecting;
+          if(active && !raf) raf = requestAnimationFrame(frame);
+        }, { rootMargin: '200px 0px' }).observe(stage);
+      });
     })();
   </script>
 

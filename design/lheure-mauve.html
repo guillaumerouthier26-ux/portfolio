@@ -55,7 +55,7 @@
     .ed-identity .ed-eyebrow{color:var(--framboise)}
     .ed-identity h2{font-family:var(--display);font-weight:400;font-size:clamp(30px,4.6vw,60px);line-height:1;letter-spacing:-.02em;margin:16px 0 clamp(40px,6vw,66px);text-wrap:balance}
     .ed-pal-title{margin-top:clamp(52px,7vw,86px)}
-    .ed-logo-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:16px;align-items:stretch}
+    .ed-logo-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px;align-items:stretch}
     .ed-logo-tile{border-radius:16px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:17%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12)}
     .ed-logo-tile.feature{aspect-ratio:auto;padding:22%}
     .ed-logo-tile img{width:100%;height:100%;object-fit:contain;filter:brightness(0) invert(1)}
@@ -84,6 +84,36 @@
     .ed-detail .lead h2{font-family:var(--display);font-weight:400;font-size:clamp(26px,3.6vw,46px);line-height:1.04;letter-spacing:-.015em;color:var(--ink)}
     .ed-detail .lead p{font-family:var(--body);font-size:15px;line-height:1.7;color:#5a4450;margin-top:16px}
     @media(max-width:760px){.ed-fig.a,.ed-fig.b{grid-column:span 12}}
+
+    /* ─── MOBILE : rythme vertical régulier (72px), gouttière 24px, images en portrait ─── */
+    @media(max-width:760px){
+      .ed-gammes{gap:16px;margin:72px 24px}
+      .ed-gamme{aspect-ratio:4/5;min-height:0;border-radius:16px}  /* plus de min-height : il élargissait la carte (débordement horizontal) */
+      .ed-gamme .cap{padding:24px}
+      .ed-gamme .nm{font-size:34px}
+
+      .ed-quote{padding:72px 24px}
+      .ed-quote blockquote{font-size:34px;max-width:12ch;margin-bottom:36px}
+      .ed-duo{gap:16px}
+      .ed-duo .d{border-radius:16px}
+
+      .ed-identity{padding:72px 0}
+      .ed-identity h2{font-size:30px;margin:14px 0 32px}
+      .ed-logo-grid{gap:12px}
+      .ed-logo-tile{border-radius:14px}
+      .ed-logo-tile.feature{aspect-ratio:16/10;padding:12% 16%}
+      .ed-logo-note{font-size:14px;line-height:1.65;margin-top:20px}
+      .ed-pal-title{margin-top:56px}
+      .palette{grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+      .palette .c{height:112px;border-radius:12px;padding:12px}
+
+      .ed-detail{padding:72px 0}
+      .ed-detail .lead{margin-bottom:32px}
+      .ed-detail .lead h2{font-size:28px}
+      .ed-detail .lead p{font-size:15px}
+      .ed-dgrid{gap:16px}
+      .ed-fig{border-radius:14px}
+    }
 
     /* CLOSING image — encadrée, aérée */
     .ed-close{background:var(--paper);padding:0 var(--emx) clamp(72px,10vw,140px)}
@@ -178,7 +208,6 @@
         <h2>Un jardin, dessiné au trait.</h2>
         <div class="ed-logo-grid">
           <div class="ed-logo-tile feature"><img src="photos/lhm-logo-horizontal.png" alt="Logo horizontal L'Heure Mauve"></div>
-          <div class="ed-logo-tile"><img src="photos/lhm-logo-symbol.png" alt="Symbole floral L'Heure Mauve"></div>
           <div class="ed-logo-tile"><img src="photos/lhm-logo-stacked.png" alt="Logo empilé L'Heure Mauve"></div>
           <div class="ed-logo-tile"><img src="photos/lhm-logo-badge.png" alt="Sceau L'Heure Mauve, lavande québécoise depuis 2013"></div>
         </div>
