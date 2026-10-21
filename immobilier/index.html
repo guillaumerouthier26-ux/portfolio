@@ -3,194 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Guillaume Routhier, Photographe immobilier</title>
+  <title>Photographie immobilière · Guillaume Routhier</title>
+  <meta name="description" content="Les services de photographie immobilière de Guillaume Routhier sont maintenant offerts au sein du groupe Studio Astraeus.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=1790352773279">
-  <script>(function(){try{if(!sessionStorage.getItem('curtainIn'))return;sessionStorage.removeItem('curtainIn');var d=document.createElement('div');d.style.cssText='position:fixed;inset:0;background:#fff;z-index:99999;pointer-events:none;will-change:transform';document.documentElement.appendChild(d);requestAnimationFrame(function(){requestAnimationFrame(function(){d.style.transition='transform .6s cubic-bezier(.76,0,.24,1)';d.style.transform='translateY(-100%)'})});setTimeout(function(){if(d.parentNode)d.parentNode.removeChild(d)},700)}catch(e){}})();</script>
-  <style id="pg-bg">html,body{background:#faf8f3}</style>
+  <style>
+    :root{ --cream:#faf8f3; --brun:#141414; --sable:#8a8a8a; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{background:var(--cream)}
+    body{
+      font-family:'Montserrat',system-ui,sans-serif;
+      color:var(--brun);
+      min-height:100vh;min-height:100svh;
+      display:flex;flex-direction:column;
+      -webkit-font-smoothing:antialiased;
+    }
+    .wrap{
+      flex:1;
+      display:flex;flex-direction:column;justify-content:center;
+      max-width:720px;margin:0 auto;width:100%;
+      padding:40px 28px;
+    }
+    .eyebrow{
+      font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+      color:var(--sable);margin-bottom:26px;
+    }
+    h1{
+      font-family:'Lora',Georgia,serif;font-weight:500;
+      font-size:clamp(30px,5.5vw,52px);line-height:1.08;letter-spacing:-.01em;
+      margin-bottom:28px;
+      display:inline-block;transform:scaleX(.9);transform-origin:left center;
+    }
+    h1 em{font-style:italic;}
+    p{font-size:clamp(16px,1.4vw,18px);line-height:1.6;max-width:52ch;margin-bottom:38px;}
+    .cta{
+      display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
+      font-weight:600;font-size:14px;letter-spacing:-.01em;
+      color:var(--cream);background:var(--brun);
+      text-decoration:none;border-radius:999px;padding:15px 30px;
+      transition:background .25s ease, transform .25s ease;
+    }
+    .cta:hover{background:#000000;transform:translateY(-2px);}
+    .cta .arrow{transition:transform .3s cubic-bezier(.16,1,.3,1);}
+    .cta:hover .arrow{transform:translateX(5px);}
+    .back{
+      margin-top:34px;font-size:13px;letter-spacing:.02em;
+      color:var(--sable);text-decoration:none;align-self:flex-start;
+    }
+    .back:hover{color:var(--brun);}
+    .foot{
+      padding:26px 28px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+      color:var(--sable);text-align:center;
+    }
+  </style>
 </head>
-
 <body>
-
-  <div id="page-transition"></div>
-
-  <div id="intro-bg"></div>
-
-  <div class="nav-menu" id="nav-menu" aria-hidden="true">
-    <nav class="nav-menu-inner">
-      <a class="t-titre nav-menu-titre" href="#projets">Mes Projets</a>
-      <a class="t-titre nav-menu-titre" href="tarifs.html">Tarifs</a>
-      <a class="t-titre nav-menu-titre" href="contact.html">Contact</a>
-      <a class="t-titre nav-menu-titre" href="../">Voir les volets</a>
-    </nav>
-  </div>
-
-  <header class="navbar">
-    <div class="nav-filet"></div>
-
-    <div class="nav-top">
-      <div class="nav-logo">
-        <a class="nav-logo-arrow" href="../" aria-label="Voir les volets">&#8249;</a>
-        <a class="logo-text" href="index.html">Guillaume Routhier</a>
-      </div>
-
-      <nav class="nav-desktop">
-        <a class="nav-desktop-link" href="#projets">Projets</a>
-        <a class="nav-desktop-link" href="tarifs.html">Tarifs</a>
-        <a class="nav-desktop-link" href="contact.html">Contact</a>
-        <a class="nav-desktop-link" href="../">Voir les volets</a>
-      </nav>
-
-      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
-
-  <section class="hero">
-    <img class="hero-bg" src="photos/hero-bg.jpg" alt="" fetchpriority="high" decoding="async">
-
-    <div class="hero-wordmark">
-      <a class="hero-cta hero-cta--fill" href="tarifs.html">Voir les services</a>
-      <h1 class="hero-wordmark-text">
-        <span class="hw-line"><span class="hw-in">Livr&eacute;es en</span></span>
-        <span class="hw-line"><span class="hw-in"><em>moins de 24h</em></span></span>
-      </h1>
-    </div>
-  </section>
-
-  <!-- Témoignages -->
-  <section class="tem" aria-label="T&eacute;moignages clients">
-    <div class="tem-head">
-      <h2 class="tem-title">T&eacute;moignages<br>clients</h2>
-      <p class="tem-sub">Clients r&eacute;curents satisfaits<br>au court des derniers mois</p>
-    </div>
-    <div class="tem-cards">
-    <article class="tem-card tem-card-1">
-      <span class="tem-num">01</span>
-      <p class="tem-name">Simon B&eacute;gin</p>
-      <p class="tem-role">Courtier Re/max &agrave; L&eacute;vis</p>
-      <p class="tem-quote">&laquo;&nbsp;Les photos sont d'une tr&egrave;s belle qualit&eacute; !!! Je te reviens pour d'autres sous peu !&nbsp;&raquo;</p>
-    </article>
-    <article class="tem-card tem-card-2">
-      <span class="tem-num">02</span>
-      <p class="tem-name">V&eacute;ronique Gagn&eacute;</p>
-      <p class="tem-role">Courti&egrave;re Re/max</p>
-      <p class="tem-quote">&laquo;&nbsp;Un grand merci, les photos sont magnifiques ! Il y aura assur&eacute;ment d'autres collaborations &agrave; venir.&nbsp;&raquo;</p>
-    </article>
-    <article class="tem-card tem-card-3">
-      <span class="tem-num">03</span>
-      <p class="tem-name">Marie-Jo&euml;lle Boivin</p>
-      <p class="tem-role">Courti&egrave;re dans Charlevoix</p>
-      <p class="tem-quote">&laquo;&nbsp;Merci beaucoup, je suis tr&egrave;s satisfaite.&nbsp;&raquo;</p>
-    </article>
-    </div>
-  </section>
-
-  <section class="projets" id="projets">
-    <div class="projets-header">
-      <h2 class="projets-title">Projets<br>S&eacute;lectionn&eacute;s</h2>
-      <a class="projets-services" href="tarifs.html">Voir mes services</a>
-    </div>
-
-    <div class="projets-grid">
-      <div class="projets-row">
-        <a class="projet-item" href="cap-sante.html">
-          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-capsante.jpg" alt="Chambre d'une maison historique à Cap-Santé, lit en fer et courtepointe" loading="eager" fetchpriority="high" decoding="async"></div>
-          <div class="projet-overlay">
-            <div class="projet-top">
-              <span class="projet-num">01</span>
-              <h3 class="projet-name">Maison historique</h3>
-            </div>
-            <dl class="projet-meta">
-              <div class="pm-row"><dt>Client</dt><dd>V&eacute;ronique Gagn&eacute;</dd></div>
-              <div class="pm-row"><dt>Ville</dt><dd>Cap-Sant&eacute;</dd></div>
-              <div class="pm-row"><dt>Services</dt><dd>Photo, flash et drone</dd></div>
-              <div class="pm-row"><dt>Ann&eacute;e</dt><dd>2026</dd></div>
-            </dl>
-          </div>
-        </a>
-        <a class="projet-item" href="charles-bilodeau.html">
-          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-charles.jpg" alt="Vue aérienne d'un bungalow à Lévis" loading="eager" fetchpriority="high" decoding="async"></div>
-          <div class="projet-overlay">
-            <div class="projet-top">
-              <span class="projet-num">02</span>
-              <h3 class="projet-name">Bungalow, L&eacute;vis</h3>
-            </div>
-            <dl class="projet-meta">
-              <div class="pm-row"><dt>Client</dt><dd>Simon B&eacute;gin</dd></div>
-              <div class="pm-row"><dt>Ville</dt><dd>L&eacute;vis</dd></div>
-              <div class="pm-row"><dt>Services</dt><dd>Photo, flash et drone</dd></div>
-              <div class="pm-row"><dt>Ann&eacute;e</dt><dd>2026</dd></div>
-            </dl>
-          </div>
-        </a>
-      </div>
-      <div class="projets-row">
-        <a class="projet-item" href="a-lambert.html">
-          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-alambert.jpg" alt="Maison avec piscine creusée entourée d'arbres, Lévis" loading="eager" fetchpriority="high" decoding="async"></div>
-          <div class="projet-overlay">
-            <div class="projet-top">
-              <span class="projet-num">03</span>
-              <h3 class="projet-name">Maison, L&eacute;vis</h3>
-            </div>
-            <dl class="projet-meta">
-              <div class="pm-row"><dt>Client</dt><dd>Simon B&eacute;gin</dd></div>
-              <div class="pm-row"><dt>Ville</dt><dd>L&eacute;vis</dd></div>
-              <div class="pm-row"><dt>Services</dt><dd>Photo HDR et drone</dd></div>
-              <div class="pm-row"><dt>Ann&eacute;e</dt><dd>2026</dd></div>
-            </dl>
-          </div>
-        </a>
-        <a class="projet-item" href="charlevoix.html">
-          <div class="projet-img-wrap"><img class="projet-img" src="photos/index-charlevoix.jpg" alt="Maison en pierre à Saint-Joseph-de-la-Rive, Charlevoix" loading="eager" fetchpriority="high" decoding="async"></div>
-          <div class="projet-overlay">
-            <div class="projet-top">
-              <span class="projet-num">04</span>
-              <h3 class="projet-name">Maison, Charlevoix</h3>
-            </div>
-            <dl class="projet-meta">
-              <div class="pm-row"><dt>Client</dt><dd>MJ Boivin</dd></div>
-              <div class="pm-row"><dt>Ville</dt><dd>St-Joseph-de-la-Rive</dd></div>
-              <div class="pm-row"><dt>Services</dt><dd>Photo et drone</dd></div>
-              <div class="pm-row"><dt>Ann&eacute;e</dt><dd>2026</dd></div>
-            </dl>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-
-
-
-  <footer class="ft">
-    <div class="ft-inner">
-      <h2 class="ft-big">Livr&eacute;es en<br>moins de 24h</h2>
-      <div class="ft-navcol ft-navcol--a">
-        <span class="ft-name">Guillaume Routhier</span>
-        <a href="#">Retour en&nbsp;haut</a>
-        <a href="index.html#projets">Projets</a>
-      </div>
-      <nav class="ft-navcol ft-navcol--b" aria-label="Navigation secondaire">
-        <a href="tarifs.html">Tarifs</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <span class="ft-r" aria-label="R&eacute;serv&eacute;">R</span>
-    </div>
-  </footer>
-
-  <script src="js/smooth-scroll.js?v=1790352773279"></script>
-  <script src="js/parallax.js?v=1790352773279"></script>
-  <script src="js/animations.js?v=1790352773279"></script>
-  <script src="js/menu.js?v=1790352773279"></script>
-  <script src="js/cursor.js?v=1790352773279"></script>
-  <script src="js/transitions.js?v=1790352773279"></script>
-  <script src="js/carousel.js?v=1790352773279"></script>
-  <script src="js/nav-active.js?v=1790352773279"></script>
+  <main class="wrap">
+    <div class="eyebrow">Photographie immobilière</div>
+    <h1>Un nouveau chapitre,<br><em>chez Studio Astraeus.</em></h1>
+    <p>Mes services de photographie immobilière sont maintenant disponibles au sein du groupe Studio Astraeus. Vous y retrouverez la même approche, désormais portée par une équipe dédiée.</p>
+    <a class="cta" href="https://www.studioastraeus.ca/" target="_blank" rel="noopener">Visiter Studio Astraeus <span class="arrow">&rarr;</span></a>
+    <a class="back" href="../">&larr; Retour au portfolio</a>
+  </main>
+  <div class="foot">Guillaume Routhier</div>
 </body>
 </html>

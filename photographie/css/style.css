@@ -21,8 +21,8 @@
 
   /* Palette */
   --noir:  #000000;
-  --brun:  #684f3a;
-  --sable: #c29a76;
+  --brun:  #141414;
+  --sable: #8a8a8a;
   --blanc: #faf8f3;
 
   /* Échelle typographique */
@@ -115,7 +115,7 @@ html.js-spa-nav #intro-video-wrap {
   font-size: 37pt;
   display: block;
   text-decoration: none;
-  color: #684f3a;
+  color: #141414;
   line-height: 1;
 }
 
@@ -135,12 +135,12 @@ html.js-spa-nav #intro-video-wrap {
 
 .nav-menu-sub-link {
   text-decoration: none;
-  color: #684f3a;
+  color: #141414;
 }
 
 /* Hamburger → X quand menu ouvert */
 body.menu-open .nav-toggle span {
-  background: #684f3a;
+  background: #141414;
 }
 
 body.menu-open .nav-toggle span:nth-child(1) {
@@ -161,7 +161,7 @@ body.menu-open .nav-logo {
 }
 
 body.menu-open .nav-filet {
-  background: #684f3a;
+  background: #141414;
 }
 
 /* ─── NAVBAR ─────────────────────────────────── */
@@ -358,7 +358,7 @@ body.cn-page .navbar::before {
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #684f3a;
+  color: #141414;
 }
 
 /* Courant Gras - même chose mais bold */
@@ -368,7 +368,7 @@ body.cn-page .navbar::before {
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #684f3a;
+  color: #141414;
 }
 
 /* Saut de ligne mobile uniquement (ignoré par l'animation car <br> a un attribut) */
@@ -446,7 +446,7 @@ br.br-mobile { display: none; }
 }
 
 @media (hover: hover) {
-  .hero-cta:hover { background: #faf8f3; color: #684f3a; }
+  .hero-cta:hover { background: #faf8f3; color: #141414; }
 }
 
 /* Bouton style 2 - case blanche pleine, texte en découpe (on voit l'image
@@ -454,7 +454,7 @@ br.br-mobile { display: none; }
    texte noir laisse passer l'arrière-plan. */
 .hero-cta--fill {
   background: #faf8f3;
-  color: #684f3a;
+  color: #141414;
   border: none;
   font-weight: 600;
 }
@@ -551,9 +551,9 @@ br.br-mobile { display: none; }
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #684f3a;
+  color: #141414;
   text-decoration: none;
-  border: 1.5px solid #684f3a;
+  border: 1.5px solid #141414;
   padding: 11px 16px;
   background: transparent;
   cursor: pointer;
@@ -568,13 +568,13 @@ br.br-mobile { display: none; }
 
 @media (hover: hover) {
   .btn-contact:hover {
-    background: #684f3a;
+    background: #141414;
     color: #ffffff;
   }
   /* Variante hero/blanc : s'inverse en blanc plein sur texte noir */
   .hero .btn-contact:hover {
     background: #faf8f3;
-    color: #684f3a;
+    color: #141414;
   }
 }
 
@@ -698,7 +698,7 @@ textarea:focus-visible {
   font-size: var(--t2);
   line-height: 0.9;
   letter-spacing: -0.03em;
-  color: #684f3a;
+  color: #141414;
   margin: 0;
 }
 
@@ -711,7 +711,7 @@ textarea:focus-visible {
   font-weight: 400;
   font-size: var(--tx);
   letter-spacing: -0.01em;
-  color: #684f3a;
+  color: #141414;
   text-decoration: none;
   border: 1px solid var(--brun);
   border-radius: 999px;
@@ -800,7 +800,7 @@ textarea:focus-visible {
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #c29a76;
+  color: #8a8a8a;
 }
 
 .projet-img-wrap {
@@ -833,7 +833,7 @@ textarea:focus-visible {
 /* ─── FOOTER - clôture éditoriale ─────────────── */
 
 .footer {
-  border-top: 2px solid #684f3a;
+  border-top: 2px solid #141414;
   margin-top: 200px;
   padding: 56px 24px 22px;
   display: flex;
@@ -853,7 +853,7 @@ textarea:focus-visible {
 .footer-cta {
   display: block;
   text-decoration: none;
-  color: #684f3a;
+  color: #141414;
 }
 
 .footer-eyebrow {
@@ -861,14 +861,14 @@ textarea:focus-visible {
   align-items: center;
   gap: 10px;
   margin-bottom: 22px;
-  color: #c29a76;
+  color: #8a8a8a;
 }
 
 .footer-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #684f3a;
+  background: #141414;
   flex: none;
 }
 
@@ -883,7 +883,7 @@ textarea:focus-visible {
   align-items: baseline;
   gap: 10px;
   margin-top: 20px;
-  color: #684f3a;
+  color: #141414;
   transition: opacity 0.2s ease-out;
 }
 
@@ -911,13 +911,13 @@ textarea:focus-visible {
 }
 
 .footer-col-k {
-  color: #c29a76;
+  color: #8a8a8a;
   margin-bottom: 5px;
 }
 
 .footer-col a {
   text-decoration: none;
-  color: #684f3a;
+  color: #141414;
   width: max-content;
   transition: opacity 0.2s ease-out;
 }
@@ -933,11 +933,11 @@ textarea:focus-visible {
   align-items: baseline;
   justify-content: space-between;
   gap: 14px 24px;
-  border-top: 1px solid #ded7c8;
+  border-top: 1px solid #e2e2e2;
   padding-top: 20px;
 }
 
-.footer-copy { color: #c29a76; }
+.footer-copy { color: #8a8a8a; }
 
 .footer-meta-legal {
   display: flex;
@@ -947,12 +947,12 @@ textarea:focus-visible {
 
 .footer-meta-legal a {
   text-decoration: none;
-  color: #c29a76;
+  color: #8a8a8a;
   transition: color 0.2s ease-out;
 }
 
 @media (hover: hover) {
-  .footer-meta-legal a:hover { color: #684f3a; }
+  .footer-meta-legal a:hover { color: #141414; }
 }
 
 /* Logo footer « Guillaume » - texte Montserrat noir (conservé, réutilisé ailleurs) */
@@ -962,7 +962,7 @@ textarea:focus-visible {
   font-size: 30pt;
   letter-spacing: -0.02em;
   line-height: 1;
-  color: #684f3a;
+  color: #141414;
   display: block;
   transform: scaleX(0.85);
   transform-origin: left center;
@@ -977,7 +977,7 @@ textarea:focus-visible {
   letter-spacing: 0.46em;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  color: #684f3a;
+  color: #141414;
   white-space: nowrap;
 }
 
@@ -988,7 +988,7 @@ textarea:focus-visible {
   font-size: 30pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #684f3a;
+  color: #141414;
   line-height: 1;
 }
 
@@ -1333,7 +1333,7 @@ textarea:focus-visible {
     font-size: 8pt;
     text-transform: uppercase;
     letter-spacing: 0.02em;
-    color: #684f3a;
+    color: #141414;
     white-space: nowrap;
     opacity: 0;
     transition: opacity 0.22s ease-out;
@@ -1367,7 +1367,7 @@ textarea:focus-visible {
   display: block;
   text-decoration: none;
   color: #ffffff;
-  background: #684f3a;
+  background: #141414;
   padding: 48px var(--grid-margin, 24px);
   margin-top: 160px;
 }
@@ -1382,7 +1382,7 @@ textarea:focus-visible {
 
 .it-eyebrow {
   display: block;
-  color: #cfc7b8;
+  color: #c7c7c7;
   margin-bottom: 14px;
 }
 
@@ -1525,10 +1525,10 @@ textarea:focus-visible {
   padding: 32px 24px 0;
 }
 
-.nsv-eyebrow { color: #c29a76; }
+.nsv-eyebrow { color: #8a8a8a; }
 
 .nsv-titre {
-  color: #684f3a;
+  color: #141414;
   font-size: clamp(34px, 9vw, 56px);
   line-height: 0.95;
   transform: scaleX(1);
@@ -1537,7 +1537,7 @@ textarea:focus-visible {
 }
 
 .nsv-sous {
-  color: #684f3a;
+  color: #141414;
   line-height: 1.4;
   max-width: 40ch;
 }
@@ -1553,7 +1553,7 @@ textarea:focus-visible {
 .nsv-stat {
   position: relative;
   padding-left: 18px;
-  color: #684f3a;
+  color: #141414;
   line-height: 1.55;
   letter-spacing: 0.02em;
   max-width: 52ch;
@@ -1566,7 +1566,7 @@ textarea:focus-visible {
   top: 0.5em;
   width: 6px;
   height: 6px;
-  background: #684f3a;
+  background: #141414;
 }
 
 /* Desktop : vidéo à gauche (pleine hauteur), titre en haut à droite,
@@ -1613,15 +1613,15 @@ textarea:focus-visible {
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #684f3a;
+  color: #141414;
   text-decoration: none;
-  border: 1.5px solid #684f3a;
+  border: 1.5px solid #141414;
   padding: 11px 16px;
   transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
               color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 @media (hover: hover) {
-  .nsv-cta:hover { background: #684f3a; color: #ffffff; }
+  .nsv-cta:hover { background: #141414; color: #ffffff; }
 }
 
 /* ══════════════════════════════════════════════
@@ -1630,7 +1630,7 @@ textarea:focus-visible {
 
 .tem {
   padding: 96px 24px 60px;
-  color: #684f3a;
+  color: #141414;
 }
 
 .tem-title {
@@ -1639,7 +1639,7 @@ textarea:focus-visible {
   font-size: var(--t3);
   line-height: 0.95;
   letter-spacing: -0.03em;
-  color: #684f3a;
+  color: #141414;
   margin: 0;
 }
 
@@ -1648,7 +1648,7 @@ textarea:focus-visible {
   font-weight: 400;
   font-size: var(--tx);
   line-height: 1.35;
-  color: #684f3a;
+  color: #141414;
   margin: 20px 0 0;
   text-align: left;
 }
@@ -1665,7 +1665,7 @@ textarea:focus-visible {
   background: #faf8f3;
   border-radius: 20pt;
   padding: 28px 26px;
-  color: #684f3a;
+  color: #141414;
 }
 
 .tem-num {
@@ -1675,7 +1675,7 @@ textarea:focus-visible {
   font-size: var(--t3);
   line-height: 1;
   letter-spacing: -0.03em;
-  color: #684f3a;
+  color: #141414;
   margin-bottom: 18px;
 }
 
@@ -1685,7 +1685,7 @@ textarea:focus-visible {
   font-size: var(--st);
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: #684f3a;
+  color: #141414;
   margin: 0 0 4px;
   white-space: nowrap;
 }
@@ -1695,7 +1695,7 @@ textarea:focus-visible {
   font-weight: 400;
   font-size: var(--tx);
   line-height: 1.3;
-  color: #684f3a;
+  color: #141414;
   margin: 0 0 40px;
 }
 
@@ -1704,7 +1704,7 @@ textarea:focus-visible {
   font-weight: 400;
   font-size: var(--tx);
   line-height: 1.5;
-  color: #684f3a;
+  color: #141414;
   margin: 0;
 }
 
@@ -1762,9 +1762,9 @@ textarea:focus-visible {
   width: 46px;
   height: 46px;
   flex-shrink: 0;
-  border: 1.5px solid #684f3a;
+  border: 1.5px solid #141414;
   background: #faf8f3;
-  color: #684f3a;
+  color: #141414;
   font-size: 16px;
   line-height: 1;
   cursor: pointer;
@@ -1776,7 +1776,7 @@ textarea:focus-visible {
 }
 
 @media (hover: hover) {
-  .tmc-arrow:hover { background: #684f3a; color: #ffffff; }
+  .tmc-arrow:hover { background: #141414; color: #ffffff; }
 }
 
 .tmc-viewport { overflow: hidden; }
@@ -1794,7 +1794,7 @@ textarea:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  color: #684f3a;
+  color: #141414;
 }
 
 .tmc-bg {
@@ -1812,7 +1812,7 @@ textarea:focus-visible {
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #684f3a;
+  color: #141414;
 }
 
 .tmc-role {
@@ -1821,7 +1821,7 @@ textarea:focus-visible {
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #c29a76;
+  color: #8a8a8a;
 }
 
 .tmc-quote {
@@ -1831,7 +1831,7 @@ textarea:focus-visible {
   font-size: 15pt;
   line-height: 1.3;
   letter-spacing: -0.02em;
-  color: #684f3a;
+  color: #141414;
   /* Montserrat condensé comme le reste du site, largeur compensée */
   transform: scaleX(1);
   transform-origin: left top;
@@ -1979,7 +1979,7 @@ textarea:focus-visible {
   font-family: var(--font);
   font-weight: 400;
   font-size: var(--tx);
-  color: #cfc7b8;
+  color: #c7c7c7;
 }
 
 .pm-row dd {
@@ -1996,7 +1996,7 @@ textarea:focus-visible {
 .ft {
   margin-top: 100px;
   padding: 0 24px 40px;
-  color: #684f3a;
+  color: #141414;
 }
 
 .ft-inner {
@@ -2013,7 +2013,7 @@ textarea:focus-visible {
   font-size: var(--t2);
   line-height: 0.9;
   letter-spacing: -0.03em;
-  color: #684f3a;
+  color: #141414;
   margin: 0;
 }
 
@@ -2028,7 +2028,7 @@ textarea:focus-visible {
   font-weight: 400;
   font-size: var(--tx);
   letter-spacing: -0.01em;
-  color: #684f3a;
+  color: #141414;
   text-decoration: none;
 }
 
@@ -2041,7 +2041,7 @@ textarea:focus-visible {
   font-weight: 600;
   font-size: var(--tx);
   letter-spacing: -0.01em;
-  color: #684f3a;
+  color: #141414;
   margin-bottom: 28px;   /* ligne vide */
 }
 
@@ -2058,7 +2058,7 @@ textarea:focus-visible {
   font-weight: 600;
   font-size: 9pt;
   line-height: 1;
-  color: #684f3a;
+  color: #141414;
 }
 
 /* Desktop : une seule rangée, tout calé en bas */
@@ -2126,7 +2126,7 @@ textarea:focus-visible {
    ═════════════════════════════════════════════════════════ */
 .nav-menu {
   background: #faf8f3;
-  color: #684f3a;
+  color: #141414;
   justify-content: center;
   padding: 96px 32px calc(48px + env(safe-area-inset-bottom, 0px));
   overflow-y: auto;
@@ -2139,7 +2139,7 @@ textarea:focus-visible {
   font-weight: 600;
   font-size: 32pt;
   line-height: 1.2;
-  color: #684f3a;
+  color: #141414;
   width: fit-content;
   max-width: 100%;
   padding: 12px 0;                 /* cible tactile ≥44px */
@@ -2177,7 +2177,7 @@ body.menu-open { overflow: hidden; }
 body.menu-open .nav-toggle span { background: var(--brun); }
 body.menu-open .nav-filet { background: var(--brun); }
 body.menu-open .logo-text,
-body.menu-open .nav-logo-arrow { color: #684f3a; mix-blend-mode: normal; }
+body.menu-open .nav-logo-arrow { color: #141414; mix-blend-mode: normal; }
 
 @media (prefers-reduced-motion: reduce) {
   .nav-menu { transition: none; }
@@ -2198,7 +2198,7 @@ body.menu-open .nav-logo-arrow { color: #684f3a; mix-blend-mode: normal; }
   font-weight: 500 !important;
   letter-spacing: 0 !important;
   display: inline-block;
-  transform: scaleX(0.80);
+  transform: scaleX(0.90);
   transform-origin: left center;
 }
 
@@ -2283,3 +2283,35 @@ body.menu-open .nav-logo-arrow { color: #684f3a; mix-blend-mode: normal; }
 
 /* Titre CTA du footer : reste en bloc pour que le-mail passe dessous */
 .footer-cta-titre { display: block; }
+
+
+/* ════════════════════════════════════════════════
+   MISE À JOUR GLOBALE — barre de nav frosted + boutons
+   ════════════════════════════════════════════════ */
+.navbar{height:64px;background:rgba(255,255,255,.12);
+  -webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);
+  border-bottom:1px solid rgba(255,255,255,.35);pointer-events:auto}
+.navbar::before{display:none !important}
+.nav-filet{display:none !important}
+.nav-top{height:64px}
+.nav-logo{height:64px;left:var(--grid-margin,24px);transform:none}
+.nav-toggle{height:64px}
+.logo-text,.nav-logo-arrow{color:#fff !important;mix-blend-mode:normal !important}
+.nav-desktop-link{color:#fff !important;mix-blend-mode:normal !important}
+.nav-toggle span{background:#fff}
+@media(min-width:1024px){
+  .nav-top{height:64px}.nav-logo{height:64px}.nav-desktop{height:64px}.nav-toggle{height:64px}
+}
+
+/* Boutons uniformisés : pastille noire (inverse au survol) */
+.btn-contact,.projets-services,.tem-cta,.tf-service-btn,.nsv-cta{
+  font-family:var(--font) !important;font-weight:600 !important;font-size:11pt !important;
+  letter-spacing:-.01em !important;text-transform:none !important;
+  color:#fff !important;background:#111 !important;border:1.5px solid #111 !important;
+  border-radius:999px !important;padding:13px 28px !important;
+  transition:background .2s ease,color .2s ease !important}
+@media(hover:hover){
+  .btn-contact:hover,.projets-services:hover,.tem-cta:hover,.tf-service-btn:hover,.nsv-cta:hover{
+    background:transparent !important;color:#111 !important}
+  .hero .btn-contact:hover{background:#fff !important;color:#111 !important}
+}

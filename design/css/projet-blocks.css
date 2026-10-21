@@ -41,9 +41,9 @@
   display: flex;
   gap: 16px;
   padding: 13px 0;
-  border-bottom: 1px solid #ded7c8;
+  border-bottom: 1px solid #e2e2e2;
 }
-.pjb-meta-row .pjb-meta-k { flex: 0 0 90px; color: #8a8175; }
+.pjb-meta-row .pjb-meta-k { flex: 0 0 90px; color: #8a8a8a; }
 
 /* ─── CRÉDITS ─── */
 .pjb-credits {
@@ -63,7 +63,7 @@
   border-top: 1.5px solid #333333;
   padding-top: 13px;
 }
-.pjb-credit-k { color: #8a8175; }
+.pjb-credit-k { color: #8a8a8a; }
 
 /* ─── PROJET SUIVANT ─── */
 .pjb-next {
@@ -83,7 +83,7 @@
 }
 .pjb-next-eyebrow {
   display: block;
-  color: #cfc7b8;
+  color: #c7c7c7;
   margin-bottom: 14px;
 }
 .pjb-next-titre { margin: 0; color: #ffffff; line-height: 0.9; }

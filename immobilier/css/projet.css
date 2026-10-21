@@ -1592,7 +1592,7 @@
   flex-direction: column;
   gap: 32px;
 }
-.lm-sig-label { display: block; color: #cfc7b8; margin: 0 0 20px; }
+.lm-sig-label { display: block; color: #c7c7c7; margin: 0 0 20px; }
 .lm-sig-titre { margin: 0 0 20px; color: #ffffff; line-height: 0.98; }
 .lm-sig-body {
   margin: 0;
@@ -1689,7 +1689,7 @@ section video {
 .t-courant,
 .pj-desc-body,
 .pj-meta-text {
-  color: #684f3a;
+  color: #141414;
 }
 .t-titre,
 .pj-titre,
@@ -1698,7 +1698,7 @@ section video {
 .pjb-next-titre,
 .footer-cta-titre,
 .ft-big {
-  color: #684f3a;
+  color: #141414;
 }
 
 /* ─── Pages projet : seul le nom du projet reste en Ashcroft ─── */

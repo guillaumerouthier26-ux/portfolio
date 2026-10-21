@@ -3,47 +3,244 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Guillaume Routhier</title>
-  <meta name="description" content="Guillaume Routhier, région de Québec. Design graphique, photographie immobilière et photographie sur mesure.">
+  <title>Guillaume Routhier · Design & Photographie</title>
+  <meta name="description" content="Guillaume Routhier, région de Québec. Design graphique et photographie : identité de marque, direction artistique et photographie culinaire.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/landing.css?v=1790352773279">
-  <script>(function(){try{if(!sessionStorage.getItem('curtainIn'))return;sessionStorage.removeItem('curtainIn');var d=document.createElement('div');d.style.cssText='position:fixed;inset:0;background:#fff;z-index:99999;pointer-events:none;will-change:transform';document.documentElement.appendChild(d);requestAnimationFrame(function(){requestAnimationFrame(function(){d.style.transition='transform .6s cubic-bezier(.76,0,.24,1)';d.style.transform='translateY(-100%)'})});setTimeout(function(){if(d.parentNode)d.parentNode.removeChild(d)},700)}catch(e){}})();</script>
+  <link rel="stylesheet" href="css/home.css?v=18">
   <style id="pg-bg">html,body{background:#faf8f3}</style>
 </head>
 
-<body class="lp">
+<body>
 
-  <div id="page-transition"></div>
-
-  <header class="lp-head">
-    <span class="lp-name">Guillaume Routhier</span>
+  <!-- HERO -->
+  <header class="hhero">
+    <div class="hhero-slides" aria-hidden="true">
+      <img class="hslide is-active" src="hero/slide1.jpg" alt="" fetchpriority="high" decoding="async">
+    </div>
+    <div class="hnav">
+      <a class="logo" href="index.html">Guillaume Routhier</a>
+      <nav>
+        <a href="#projets">Projets</a>
+        <a href="#apropos">À propos</a>
+        <a href="photographie/contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="hhero-in">
+      <h1 class="hhero-title">Gardez une touche<br><em>humaine et moderne</em></h1>
+      <a class="hhero-cta" href="photographie/contact.html">Me contacter</a>
+    </div>
+    <span class="hscroll">Projets &darr;</span>
   </header>
 
-  <main class="lp-cards">
+  <!-- PROJETS -->
+  <section id="projets" class="hwrap">
+    <div class="hhead">
+      <h2 class="htitle">Projets sélectionnés</h2>
+      <p class="hsub">Design graphique et photographie, de l'identité de marque au contenu culinaire.</p>
+    </div>
 
-    <a class="vt-card vt-card--design" href="design/">
-      <span class="vt-name">Design</span>
-      <p class="vt-desc">Identit&eacute; de marque et direction artistique.</p>
-      <span class="vt-go">Voir&nbsp;&rarr;</span>
-    </a>
+    <div class="hgrid">
 
-    <a class="vt-card vt-card--immobilier" href="immobilier/">
-      <span class="vt-name">Immobilier</span>
-      <p class="vt-desc">Photographie immobili&egrave;re pour courtiers, livr&eacute;e en moins de 24&nbsp;h.</p>
-      <span class="vt-go">Voir&nbsp;&rarr;</span>
-    </a>
+      <a class="pcard" href="photographie/aki-sushi-studio.html">
+        <div class="pcard-imgwrap"><img class="pcard-img" src="photographie/photos/index-akistudio.jpg" alt="Aki Sushi Studio" loading="eager" fetchpriority="high" decoding="async"></div>
+        <div class="pcard-body">
+          <span class="pcard-tag">Photographie</span>
+          <h3 class="pcard-name">Aki Sushi Studio</h3>
+          <p class="pcard-disc">Photographie culinaire, studio</p>
+        </div>
+      </a>
 
-    <a class="vt-card vt-card--photo" href="photographie/">
-      <span class="vt-name">Photographie</span>
-      <p class="vt-desc">Portraits, &eacute;v&eacute;nements et projets sur mesure.</p>
-      <span class="vt-go">Voir&nbsp;&rarr;</span>
-    </a>
+      <a class="pcard" href="design/lheure-mauve.html">
+        <div class="pcard-imgwrap"><img class="pcard-img" src="design/photos/index-lhm.jpg?v=1792542015825" alt="L'Heure Mauve" loading="eager" fetchpriority="high" decoding="async"></div>
+        <div class="pcard-body">
+          <span class="pcard-tag">Design</span>
+          <h3 class="pcard-name">L'Heure Mauve</h3>
+          <p class="pcard-disc">Direction artistique, photographie</p>
+        </div>
+      </a>
 
-  </main>
+<a class="pcard" href="immobilier/cap-sante.html">
+        <div class="pcard-imgwrap"><img class="pcard-img" src="immobilier/photos/index-capsante.jpg" alt="Maison historique" loading="lazy" decoding="async"></div>
+        <div class="pcard-body">
+          <span class="pcard-tag">Photographie</span>
+          <h3 class="pcard-name">Maison historique</h3>
+          <p class="pcard-disc">Photographie immobilière</p>
+        </div>
+      </a>
 
-  <script src="js/transitions.js?v=1790352773279"></script>
+      <a class="pcard" href="photographie/le-101-restaurant.html">
+        <div class="pcard-imgwrap"><img class="pcard-img" src="photographie/photos/index-101.jpg" alt="Le 101 Restaurant" loading="lazy" decoding="async"></div>
+        <div class="pcard-body">
+          <span class="pcard-tag">Photographie</span>
+          <h3 class="pcard-name">Le 101 Restaurant</h3>
+          <p class="pcard-disc">Photographie culinaire</p>
+        </div>
+      </a>
+
+      <a class="pcard" href="design/objectif-quebec.html">
+        <div class="pcard-imgwrap"><img class="pcard-img" src="design/photos/index-oq.jpg" alt="Objectif Québec" loading="lazy" decoding="async"></div>
+        <div class="pcard-body">
+          <span class="pcard-tag">Design</span>
+          <h3 class="pcard-name">Objectif Québec</h3>
+          <p class="pcard-disc">Identité, design web</p>
+        </div>
+      </a>
+
+      <a class="pcard" href="photographie/ciao-totes.html">
+        <div class="pcard-imgwrap"><img class="pcard-img" src="photographie/photos/index-ciaototes.jpg" alt="Ciao Totes" loading="lazy" decoding="async"></div>
+        <div class="pcard-body">
+          <span class="pcard-tag">Photographie</span>
+          <h3 class="pcard-name">Ciao Totes</h3>
+          <p class="pcard-disc">Photographie, direction artistique</p>
+        </div>
+      </a>
+
+      <a class="pcard" href="design/conifere.html">
+        <div class="pcard-imgwrap"><img class="pcard-img" src="design/photos/index-conifere.jpg" alt="Conifère" loading="lazy" decoding="async"></div>
+        <div class="pcard-body">
+          <span class="pcard-tag">Design</span>
+          <h3 class="pcard-name">Conifère</h3>
+          <p class="pcard-disc">Identité, direction artistique</p>
+        </div>
+      </a>
+
+      <a class="pcard" href="photographie/aki-sushi.html">
+        <div class="pcard-imgwrap"><img class="pcard-img" src="photographie/photos/index-akisushi.jpg" alt="Aki Sushi" loading="lazy" decoding="async"></div>
+        <div class="pcard-body">
+          <span class="pcard-tag">Photographie</span>
+          <h3 class="pcard-name">Aki Sushi</h3>
+          <p class="pcard-disc">Photographie culinaire, produit</p>
+        </div>
+      </a>
+
+      <a class="pcard" href="design/aki-bobba.html">
+        <div class="pcard-imgwrap"><img class="pcard-img" src="design/photos/index-aki.jpg" alt="Aki Bobba" loading="lazy" decoding="async"></div>
+        <div class="pcard-body">
+          <span class="pcard-tag">Design</span>
+          <h3 class="pcard-name">Aki Bobba</h3>
+          <p class="pcard-disc">Publicité, 3D</p>
+        </div>
+      </a>
+
+      <a class="pcard" href="immobilier/charles-bilodeau.html">
+        <div class="pcard-imgwrap"><img class="pcard-img" src="immobilier/photos/index-charles.jpg" alt="Bungalow, Lévis" loading="lazy" decoding="async"></div>
+        <div class="pcard-body">
+          <span class="pcard-tag">Photographie</span>
+          <h3 class="pcard-name">Bungalow, Lévis</h3>
+          <p class="pcard-disc">Photographie immobilière</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section id="apropos" class="about">
+    <div class="eyebrow">À propos</div>
+    <div class="about-top">
+      <img class="about-portrait" src="photographie/photos/contact.jpg?v=1792424356383" alt="Guillaume Routhier" loading="lazy" decoding="async">
+      <div class="about-txt">
+        <h2>Design et photographie,<br>une touche humaine et moderne.</h2>
+        <p>Je suis Guillaume Routhier, designer graphique et photographe basé dans la région de Québec. Mon travail cherche un équilibre entre le humain et le moderne : des images et des identités qui restent proches des gens, tout en soignant chaque détail.</p>
+        <p>Du design de marque à la photographie culinaire, j'aime donner une direction claire à chaque projet. Et quand je sors du studio, je photographie le paysage, un terrain de jeu où j'affine mon regard.</p>
+        <span class="sign">Guillaume Routhier · Région de Québec</span>
+      </div>
+    </div>
+
+    <div class="ap-label">Paysages · recherche personnelle</div>
+    <div class="ap-gallery">
+        <a class="ap-ph" href="paysages/p1.jpg"><img src="paysages/p1.jpg" alt="Paysage 1" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p2.jpg"><img src="paysages/p2.jpg" alt="Paysage 2" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p3.jpg"><img src="paysages/p3.jpg" alt="Paysage 3" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p4.jpg"><img src="paysages/p4.jpg" alt="Paysage 4" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p5.jpg"><img src="paysages/p5.jpg" alt="Paysage 5" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p6.jpg"><img src="paysages/p6.jpg" alt="Paysage 6" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p7.jpg"><img src="paysages/p7.jpg" alt="Paysage 7" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p8.jpg"><img src="paysages/p8.jpg" alt="Paysage 8" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p9.jpg"><img src="paysages/p9.jpg" alt="Paysage 9" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p10.jpg"><img src="paysages/p10.jpg" alt="Paysage 10" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p11.jpg"><img src="paysages/p11.jpg" alt="Paysage 11" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p12.jpg"><img src="paysages/p12.jpg" alt="Paysage 12" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p13.jpg"><img src="paysages/p13.jpg" alt="Paysage 13" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p14.jpg"><img src="paysages/p14.jpg" alt="Paysage 14" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p15.jpg"><img src="paysages/p15.jpg" alt="Paysage 15" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p16.jpg"><img src="paysages/p16.jpg" alt="Paysage 16" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p17.jpg"><img src="paysages/p17.jpg" alt="Paysage 17" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p18.jpg"><img src="paysages/p18.jpg" alt="Paysage 18" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p19.jpg"><img src="paysages/p19.jpg" alt="Paysage 19" loading="lazy" decoding="async"></a>
+        <a class="ap-ph" href="paysages/p20.jpg"><img src="paysages/p20.jpg" alt="Paysage 20" loading="lazy" decoding="async"></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="hfoot">
+    <div class="hfoot-in">
+      <h2 class="hfoot-big">Gardez une touche<br><em>humaine et moderne</em></h2>
+      <div class="hfoot-row">
+        <div class="hfoot-links">
+          <a href="photographie/contact.html">Contact</a>
+          <a href="mailto:guillaumerouthier26@gmail.com">guillaumerouthier26@gmail.com</a>
+          <a href="https://instagram.com/peluredekiwi.reguliere" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.linkedin.com/in/guillaume-routhier-2bb03b248/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <span class="hfoot-copy">&copy; 2026 Guillaume Routhier</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var slides = document.querySelectorAll('.hslide');
+      if (slides.length < 2) return;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var i = 0;
+      setInterval(function(){
+        slides[i].classList.remove('is-active');
+        i = (i + 1) % slides.length;
+        slides[i].classList.add('is-active');
+      }, 4500);
+    })();
+
+    // Nav frosted : visible au sommet (sur le hero), s'anime pour partir au défilement
+    (function(){
+      var nav = document.querySelector('.hnav');
+      if (!nav) return;
+      function onScroll(){
+        var y = window.pageYOffset || document.documentElement.scrollTop;
+        nav.classList.toggle('is-hidden', y > 90);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+
+  <!-- Lightbox galerie -->
+  <div class="lbox" id="lbox" aria-hidden="true">
+    <button class="lbtn lclose" id="lclose" aria-label="Fermer">&times;</button>
+    <button class="lbtn lnav lprev" id="lprev" aria-label="Précédent">&#8249;</button>
+    <img class="lbox-img" id="lboxImg" src="" alt="">
+    <button class="lbtn lnav lnext" id="lnext" aria-label="Suivant">&#8250;</button>
+  </div>
+
+  <script>
+    (function(){
+      var links = Array.prototype.slice.call(document.querySelectorAll('.ap-ph'));
+      if(!links.length) return;
+      var box=document.getElementById('lbox'), img=document.getElementById('lboxImg');
+      var idx=0;
+      function show(i){ idx=(i+links.length)%links.length; img.src=links[idx].getAttribute('href'); }
+      function open(i){ show(i); box.classList.add('open'); box.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+      function close(){ box.classList.remove('open'); box.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+      links.forEach(function(a,i){ a.addEventListener('click',function(e){ e.preventDefault(); open(i); }); });
+      document.getElementById('lclose').addEventListener('click',close);
+      document.getElementById('lprev').addEventListener('click',function(e){ e.stopPropagation(); show(idx-1); });
+      document.getElementById('lnext').addEventListener('click',function(e){ e.stopPropagation(); show(idx+1); });
+      box.addEventListener('click',function(e){ if(e.target===box) close(); });
+      document.addEventListener('keydown',function(e){ if(!box.classList.contains('open'))return; if(e.key==='Escape')close(); else if(e.key==='ArrowLeft')show(idx-1); else if(e.key==='ArrowRight')show(idx+1); });
+    })();
+  </script>
 
 </body>
 </html>

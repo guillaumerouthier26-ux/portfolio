@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>AgroRoue · Deux directions</title>
+  <meta name="description" content="AgroRoue, présentation de marque. Deux directions d'identité visuelle pour le système de culture rotatif québécois.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --cream:#F2F0EB; --forest:#04281C; --lime:#B7E233; --ink:#141b17;
+      --terra:#DD6237; --peach:#FFE7CA; --blue:#6B8AA9; --red:#D13333; --forest2:#2C3A0D; --lime2:#E5E54A;
+      --maxw:1200px;
+      --font:'Plus Jakarta Sans',system-ui,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font);background:var(--cream);color:var(--forest);line-height:1.55;-webkit-font-smoothing:antialiased}
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+    section{padding:clamp(70px,10vw,140px) 0}
+    .eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-bottom:22px}
+    h1,h2,h3{line-height:1.02;letter-spacing:-.02em;font-weight:700}
+    h2{font-size:clamp(32px,5.5vw,64px);margin-bottom:28px}
+    h3{font-size:clamp(20px,2.4vw,30px);letter-spacing:-.01em}
+    p{font-size:clamp(15px,1.15vw,17px)}
+    .lead{font-size:clamp(17px,1.5vw,22px);line-height:1.5;max-width:60ch;opacity:.85}
+
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:50;background:rgba(242,240,235,.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(4,40,28,.1)}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px;max-width:var(--maxw);margin:0 auto;padding:0 28px}
+    .nav-logo{height:30px;width:auto}
+    .nav-links{display:flex;gap:26px;font-size:13px;font-weight:500}
+    .nav-links a{text-decoration:none;opacity:.7;transition:opacity .2s;white-space:nowrap}
+    .nav-links a:hover{opacity:1}
+    @media(max-width:860px){.nav-links{display:none}}
+
+    /* HERO */
+    .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:var(--cream);overflow:hidden}
+    .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,40,28,.45) 0%,rgba(4,40,28,.78) 62%,rgba(4,40,28,.95) 100%)}
+    .hero-in{position:relative;z-index:2;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 28px clamp(48px,7vw,96px)}
+    .hero h1{font-size:clamp(46px,9vw,118px);letter-spacing:-.03em;margin:18px 0 26px}
+    .hero h1 em{font-style:normal;color:var(--lime)}
+    .hero .lead{color:var(--cream);opacity:.9}
+    .hero-meta{margin-top:40px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.7;display:flex;gap:28px;flex-wrap:wrap}
+    .hero-logo{height:30px;width:auto}
+
+    /* STATS */
+    .promise{font-size:clamp(26px,4vw,46px);font-weight:700;letter-spacing:-.02em;line-height:1.05}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:64px;border-top:1px solid rgba(4,40,28,.15);padding-top:44px}
+    .stat .num{font-size:clamp(34px,4.5vw,56px);font-weight:700;letter-spacing:-.03em;line-height:1}
+    .stat .lbl{font-size:13px;opacity:.65;margin-top:10px;max-width:16ch}
+    @media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr);gap:32px 20px}}
+
+    /* PILLARS */
+    .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:70px}
+    .pillar{background:#fff;border:1px solid rgba(4,40,28,.08);border-radius:16px;padding:28px}
+    .pillar .n{display:inline-flex;width:30px;height:30px;border-radius:50%;background:var(--forest);color:var(--lime);align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-bottom:18px}
+    .pillar h3{font-size:18px;margin-bottom:10px}
+    .pillar p{font-size:14px;opacity:.75;line-height:1.5}
+    @media(max-width:860px){.pillars{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.pillars{grid-template-columns:1fr}}
+
+    /* OFFER */
+    .offer{background:var(--forest);color:var(--cream)}
+    .offer .eyebrow{opacity:.55}
+    .prod{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start;margin-top:56px;padding-top:40px;border-top:1px solid rgba(242,240,235,.16)}
+    .prod-tag{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:14px}
+    .formats{display:flex;flex-direction:column;gap:16px}
+    .format{background:rgba(242,240,235,.06);border:1px solid rgba(242,240,235,.14);border-radius:14px;padding:20px 22px}
+    .format b{color:var(--lime);font-weight:700}
+    .format span{display:block;opacity:.75;font-size:14px;margin-top:4px}
+    .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+    .tag{border:1px solid rgba(242,240,235,.25);border-radius:999px;padding:8px 16px;font-size:14px}
+    .twocol{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+    .mini{background:rgba(242,240,235,.06);border:1px solid rgba(242,240,235,.14);border-radius:14px;padding:24px}
+    .mini .t{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:10px}
+    .tech{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:40px}
+    .tech .ti{border-top:2px solid var(--lime);padding-top:16px}
+    .tech h4{font-size:15px;margin-bottom:8px}
+    .tech p{font-size:13px;opacity:.72}
+    @media(max-width:860px){.prod,.twocol{grid-template-columns:1fr}.tech{grid-template-columns:repeat(2,1fr)}}
+
+    /* TABLE */
+    .cmp{width:100%;border-collapse:collapse;margin-top:48px;font-size:15px}
+    .cmp th{text-align:left;font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.55;font-weight:600;padding:0 16px 16px;border-bottom:2px solid var(--forest)}
+    .cmp td{vertical-align:top;padding:22px 16px;border-bottom:1px solid rgba(4,40,28,.12)}
+    .cmp td:first-child{font-weight:700;width:24%}
+    .cmp td:nth-child(2){opacity:.75;width:38%}
+    .cmp .adv b{color:#2f6b3f}
+    .clincher{margin-top:40px;font-size:clamp(18px,2vw,24px);line-height:1.45;max-width:68ch}
+    .clincher b{background:var(--lime);padding:1px 6px;border-radius:4px}
+    @media(max-width:760px){.cmp,.cmp tbody,.cmp tr,.cmp td{display:block}.cmp thead{display:none}.cmp td{border:none;padding:4px 0}.cmp tr{padding:22px 0;border-bottom:1px solid rgba(4,40,28,.12)}.cmp td:first-child{width:auto}}
+
+    /* EXPLORE CARDS */
+    .explore{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
+    .dcard{border-radius:20px;padding:40px;text-decoration:none;min-height:260px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .3s}
+    .dcard:hover{transform:translateY(-6px)}
+    .dcard.d1{background:var(--forest);color:var(--cream)}
+    .dcard.d2{background:var(--terra);color:var(--peach)}
+    .dcard .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
+    .dcard h3{font-size:clamp(24px,3vw,36px);margin:14px 0}
+    .dcard.d1 h3 em{font-style:italic;color:var(--lime)}
+    .dcard p{font-size:15px;opacity:.85;max-width:34ch}
+    .dcard .go{margin-top:24px;font-weight:600;font-size:14px}
+    @media(max-width:760px){.explore{grid-template-columns:1fr}}
+
+    /* DIRECTION SECTIONS */
+    .dir{padding:clamp(80px,9vw,150px) 0}
+    .dir .eyebrow{opacity:.6}
+    .dir-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+    .block-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.55;margin:64px 0 20px}
+    .logo-stage{border-radius:18px;padding:60px;display:flex;align-items:center;justify-content:center;gap:50px;flex-wrap:wrap}
+    .logo-stage img{height:120px;width:auto}
+    .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .sw{border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,.08)}
+    .sw .chip{height:96px}
+    .sw .meta{padding:12px 14px;font-size:13px}
+    .sw .hex{font-weight:700;letter-spacing:.01em}
+    .sw .nm{opacity:.6}
+    .bw{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .bw .cell{border-radius:12px;height:130px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(0,0,0,.08)}
+    .bw .cell img{height:52px}
+    .type-spec{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:start}
+    .type-big{font-size:clamp(44px,7vw,90px);font-weight:700;letter-spacing:-.03em;line-height:.95}
+    .type-body{font-size:clamp(16px,1.4vw,20px);line-height:1.5;opacity:.85}
+    .glyphs{font-size:19px;letter-spacing:.02em;opacity:.7;margin-top:24px;word-break:break-word}
+    .weights{display:flex;gap:26px;flex-wrap:wrap;margin-top:22px;font-size:14px}
+    .weights span b{display:block;font-size:22px}
+    .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .pgrid img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px}
+    .pcap{font-size:13px;opacity:.6;margin-top:16px;letter-spacing:.04em}
+    .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .posts img{width:100%;aspect-ratio:1080/1560;object-fit:cover;border-radius:12px}
+    @media(max-width:860px){.swatches{grid-template-columns:repeat(3,1fr)}.bw{grid-template-columns:repeat(2,1fr)}.type-spec{grid-template-columns:1fr}.pgrid,.posts{grid-template-columns:repeat(2,1fr)}.logo-stage img{height:80px}}
+    @media(max-width:520px){.swatches{grid-template-columns:repeat(2,1fr)}}
+
+    /* dir 01 dark theme */
+    .dir1{background:var(--forest);color:var(--cream)}
+    .dir1 .logo-stage{background:#06331f}
+    .dir1 .sw{border-color:rgba(242,240,235,.14)}
+    .dir1 .bw .cell{border-color:rgba(242,240,235,.14)}
+    .dir1 .type-big,.dir1 .type-spec{font-family:'DM Sans',sans-serif}
+    /* dir 02 warm theme */
+    .dir2{background:var(--peach);color:var(--forest2)}
+    .dir2 .logo-stage{background:#fff}
+    .dir2 .type-big,.dir2 .type-spec{font-family:'Plus Jakarta Sans',sans-serif}
+
+    /* FACE TO FACE */
+    .f2f{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px}
+    .f2f .side{border-radius:20px;padding:46px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+    .f2f .s1{background:var(--forest)}
+    .f2f .s1 img{height:88px}
+    .f2f .s2{background:var(--terra)}
+    .f2f .s2 img{height:70px}
+    .f2f .k{font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+    .f2f .s1 .k,.f2f .s1 h3{color:var(--lime)}
+    .f2f .s1 p{color:var(--cream);opacity:.82}
+    .f2f .s2 .k,.f2f .s2 h3{color:var(--peach)}
+    .f2f .s2 p{color:var(--peach);opacity:.9}
+    .f2f p{font-size:15px;max-width:40ch}
+    @media(max-width:760px){.f2f{grid-template-columns:1fr}}
+
+    /* CLOSING */
+    .close{background:var(--forest);color:var(--cream);text-align:center}
+    .close h2{font-size:clamp(40px,8vw,96px)}
+    .close h2 em{font-style:italic;color:var(--lime)}
+    .close p{max-width:52ch;margin:24px auto 0;opacity:.82}
+    .foot{margin-top:60px;font-size:13px;letter-spacing:.06em;opacity:.65;display:flex;gap:22px;justify-content:center;flex-wrap:wrap}
+    .tiny{text-align:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.4;padding:30px 0}
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-in">
+      <img class="nav-logo" src="img/logo-forest.svg" alt="AgroRoue">
+      <div class="nav-links">
+        <a href="#positionnement">Positionnement</a>
+        <a href="#services">Services</a>
+        <a href="#concurrence">Concurrence</a>
+        <a href="#option1">Direction 01</a>
+        <a href="#option2">Direction 02</a>
+        <a href="#comparaison">Comparaison</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <img class="hero-bg" src="photos/hero.jpg" alt="">
+    <div class="hero-in">
+      <img class="hero-logo" src="img/logo-cream.svg" alt="AgroRoue">
+      <div class="eyebrow" style="opacity:.75;margin-top:18px">Présentation de marque · Exploration d'identité</div>
+      <h1>AgroRoue<br><em>Deux directions.</em></h1>
+      <p class="lead">Deux univers visuels pour une même promesse : cultiver plus, sur moins d'espace, toute l'année. Chaque direction est complète, cohérente et prête à être déclinée.</p>
+      <div class="hero-meta">
+        <span>Préparé par Guillaume Routhier</span><span>Octobre 2026</span><span>Confidentiel</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- L'ENTREPRISE -->
+  <section id="positionnement">
+    <div class="wrap">
+      <div class="eyebrow">L'entreprise</div>
+      <h2>Une nouvelle façon<br>de cultiver.</h2>
+      <p class="lead">AgroRoue, c'est le système de culture <b>rotatif québécois</b> conçu pour produire localement, fiablement et en environnement contrôlé. Une roue qui transforme l'espace en capacité de production : automatisée, modulaire et écoénergétique.</p>
+      <div class="promise" style="margin-top:48px">Cultivez plus.<br>Sur moins d'espace.<br>Toute l'année.</div>
+
+      <div class="stats">
+        <div class="stat"><div class="num">960</div><div class="lbl">plants par roue</div></div>
+        <div class="stat"><div class="num">365</div><div class="lbl">jours de production par année</div></div>
+        <div class="stat"><div class="num">90%</div><div class="lbl">moins d'eau en circuit fermé</div></div>
+        <div class="stat"><div class="num">1 / 45<span style="font-size:.5em"> min</span></div><div class="lbl">rotation lente, continue, silencieuse</div></div>
+      </div>
+
+      <div class="pillars">
+        <div class="pillar"><span class="n">1</span><h3>Production locale et durable</h3><p>Des aliments frais cultivés sur place, à l'abri des aléas climatiques.</p></div>
+        <div class="pillar"><span class="n">2</span><h3>Système automatisé et fiable</h3><p>Lumière, irrigation et ventilation gérées par la roue, en continu.</p></div>
+        <div class="pillar"><span class="n">3</span><h3>Modulable et rentable</h3><p>Trois formats qui s'adaptent à l'espace et aux besoins du client.</p></div>
+        <div class="pillar"><span class="n">4</span><h3>Moins de transport, moins d'émissions</h3><p>On produit ici : la distance entre le champ et l'assiette disparaît.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- L'OFFRE -->
+  <section id="services" class="offer">
+    <div class="wrap">
+      <div class="eyebrow">L'offre · B2B</div>
+      <h2>Ce qu'AgroRoue<br>met en marché</h2>
+      <p class="lead" style="color:var(--cream)">Deux sources de valeur : le système lui-même, vendu aux producteurs et aux institutions, et les pousses cultivées dans la roue.</p>
+
+      <div class="prod">
+        <div>
+          <div class="prod-tag">Produit 01</div>
+          <h3>La roue :<br>le système de culture</h3>
+        </div>
+        <div class="formats">
+          <div class="format"><b>Demi-roue</b><span>24 bacs · 480 plants · profondeur 24″</span></div>
+          <div class="format"><b>Roue régulière</b><span>48 bacs · 960 plants · profondeur 48″</span></div>
+          <div class="format"><b>Roue premium</b><span>48 bacs · 960 plants · 48″ · empilable sur 3 niveaux</span></div>
+        </div>
+      </div>
+
+      <div class="prod">
+        <div>
+          <div class="prod-tag">Produit 02</div>
+          <h3>Les pousses :<br>la récolte</h3>
+        </div>
+        <div>
+          <p style="color:var(--cream);opacity:.82;margin-bottom:18px">Une grande variété de cultures, fraîches à l'année, récoltées à même les bacs puis revalorisées (substrat et compostage des racines).</p>
+          <div class="tags">
+            <span class="tag">Basilic</span><span class="tag">Fines herbes</span><span class="tag">Laitues</span><span class="tag">Micro-pousses</span><span class="tag">Jeunes légumes</span><span class="tag">Fleurs comestibles</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="twocol">
+        <div class="mini"><div class="t">Vitrine</div><h3 style="font-size:22px;margin-bottom:10px">Grand Marché de Québec</h3><p style="opacity:.8;font-size:14px">La roue en action, visible du public : une preuve vivante du produit et un point de contact direct avec la clientèle.</p></div>
+        <div class="mini"><div class="t">Volet pédagogique</div><h3 style="font-size:22px;margin-bottom:10px">AgroRoue Campus</h3><p style="opacity:.8;font-size:14px">Une solution clé en main pour les écoles primaires, secondaires et les établissements d'enseignement.</p></div>
+      </div>
+
+      <div class="block-label" style="color:var(--lime);opacity:.9;margin-bottom:8px">Une technologie intégrée</div>
+      <div class="tech">
+        <div class="ti"><h4>Éclairage DEL horticole</h4><p>Spectre complet optimisé pour une croissance rapide.</p></div>
+        <div class="ti"><h4>Irrigation en circuit fermé</h4><p>Jusqu'à 90 % d'économie d'eau vs culture traditionnelle.</p></div>
+        <div class="ti"><h4>Moteur fiable et silencieux</h4><p>Rotation lente et continue, un tour toutes les 45 minutes.</p></div>
+        <div class="ti"><h4>Capteurs et contrôle</h4><p>Température, humidité, EC et irrigation suivis par roue.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSITIONNEMENT -->
+  <section id="concurrence">
+    <div class="wrap">
+      <div class="eyebrow">Positionnement concurrentiel</div>
+      <h2>Où se situe AgroRoue</h2>
+      <p class="lead">AgroRoue joue à la frontière de trois mondes. Son avantage : réunir le local, le contrôle et la rentabilité dans un seul système modulaire, conçu et fabriqué au Québec.</p>
+
+      <table class="cmp">
+        <thead><tr><th>Alternative</th><th>Ce qu'elle offre</th><th>L'avantage AgroRoue</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Fermes verticales industrielles</td>
+            <td>Volume élevé, mais installations lourdes, coûteuses et centralisées.</td>
+            <td class="adv">Format <b>modulaire</b> et accessible : on démarre avec une demi-roue et on empile selon la croissance.</td>
+          </tr>
+          <tr>
+            <td>Hydroponie maison / artisanale</td>
+            <td>Accessible, mais manuelle, peu fiable et à faible rendement.</td>
+            <td class="adv">Système <b>automatisé et instrumenté</b> : lumière, eau, ventilation et données gérées par la roue.</td>
+          </tr>
+          <tr>
+            <td>Agriculture traditionnelle</td>
+            <td>Saisonnière, dépendante du climat, gourmande en eau et en transport.</td>
+            <td class="adv"><b>365 jours par année</b>, jusqu'à 90 % moins d'eau, produit sur place, moins de transport.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="clincher">En clair : AgroRoue n'est pas la moins chère ni la plus grosse. C'est la plus <b>complète et la plus locale</b> pour un producteur qui veut un rendement fiable, à l'année, sans bâtir une usine.</p>
+    </div>
+  </section>
+
+  <!-- EXPLORATION -->
+  <section>
+    <div class="wrap">
+      <div class="eyebrow">L'exploration</div>
+      <h2>Deux directions,<br>une même promesse</h2>
+      <p class="lead">Même marque, même nom, même ambition : deux personnalités visuelles à choisir. L'une parle la langue de la machine et de la performance ; l'autre, celle des gens et du résultat dans l'assiette.</p>
+      <div class="explore">
+        <a class="dcard d1" href="#option1">
+          <div><div class="k">Direction 01</div><h3>Technique · Innovation · <em>Précision</em></h3><p>Dark, contrasté, performant. La technologie rendue désirable.</p></div>
+          <div class="go">Voir la direction →</div>
+        </a>
+        <a class="dcard d2" href="#option2">
+          <div><div class="k">Direction 02</div><h3>Humain · Résultat · Coloré</h3><p>Chaleureux, lumineux, vivant. Centré sur les gens et l'abondance.</p></div>
+          <div class="go">Voir la direction →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECTION 01 -->
+  <section id="option1" class="dir dir1">
+    <div class="wrap">
+      <div class="eyebrow" style="color:var(--lime)">Direction 01</div>
+      <div class="dir-head">
+        <h2 style="margin-bottom:0">Technique · Innovation · Précision</h2>
+      </div>
+      <p class="lead" style="color:var(--cream);margin-top:24px">Rigueur, contrôle et performance. Un univers sombre et contrasté où la roue devient un objet technologique désirable, proche de l'automobile et du produit haut de gamme.</p>
+
+      <div class="block-label" style="color:var(--lime)">Logo couleur</div>
+      <div class="logo-stage"><img src="img/logo-lime.svg" alt="AgroRoue"></div>
+
+      <div class="block-label" style="color:var(--lime)">Palette de couleur</div>
+      <div class="swatches">
+        <div class="sw"><div class="chip" style="background:#04281C"></div><div class="meta"><div class="hex">#04281C</div><div class="nm">Vert forêt</div></div></div>
+        <div class="sw"><div class="chip" style="background:#B7E233"></div><div class="meta"><div class="hex">#B7E233</div><div class="nm">Vert lime</div></div></div>
+        <div class="sw"><div class="chip" style="background:#F2F0EB"></div><div class="meta"><div class="hex">#F2F0EB</div><div class="nm">Crème</div></div></div>
+        <div class="sw"><div class="chip" style="background:#000000"></div><div class="meta"><div class="hex">#000000</div><div class="nm">Noir</div></div></div>
+      </div>
+
+      <div class="block-label" style="color:var(--lime)">Logo noir et blanc</div>
+      <div class="bw">
+        <div class="cell" style="background:#fff"><img src="img/logo-black.svg" alt=""></div>
+        <div class="cell" style="background:#000"><img src="img/logo-white.svg" alt=""></div>
+      </div>
+
+      <div class="block-label" style="color:var(--lime)">Typographie · DM Sans · Google Fonts</div>
+      <div class="type-spec">
+        <div class="type-big">Cultivez<br>plus.</div>
+        <div>
+          <div class="type-body">Je livre un système de culture rotatif, local et fiable, pensé pour produire des aliments frais à l'année.</div>
+          <div class="glyphs" style="font-family:'DM Sans',sans-serif">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</div>
+          <div class="weights" style="font-family:'DM Sans',sans-serif">
+            <span><b style="font-weight:400">Aa</b>Regular 400</span>
+            <span><b style="font-weight:500">Aa</b>Medium 500</span>
+            <span><b style="font-weight:700">Aa</b>Bold 700</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="block-label" style="color:var(--lime)">Direction photographique</div>
+      <div class="pgrid">
+        <img src="photos/o1-1.jpg" alt=""><img src="photos/o1-2.jpg" alt=""><img src="photos/o1-3.jpg" alt="">
+        <img src="photos/o1-4.jpg" alt=""><img src="photos/o1-5.jpg" alt=""><img src="photos/o1-6.jpg" alt="">
+      </div>
+      <div class="pcap">Ombres et lumières · Macro · Top light technique</div>
+
+      <div class="block-label" style="color:var(--lime)">Exemple · post Instagram</div>
+      <div class="posts">
+        <img src="photos/post1-1.jpg" alt=""><img src="photos/post1-2.jpg" alt=""><img src="photos/post1-3.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECTION 02 -->
+  <section id="option2" class="dir dir2">
+    <div class="wrap">
+      <div class="eyebrow" style="color:var(--terra)">Direction 02</div>
+      <h2>Humain · Résultat · Coloré</h2>
+      <p class="lead" style="color:var(--forest2)">Chaleur, abondance et proximité. Un univers lumineux et vivant, porté par une palette riche : on parle des gens qui cultivent et du résultat frais dans l'assiette.</p>
+
+      <div class="block-label" style="color:var(--terra)">Logo couleur</div>
+      <div class="logo-stage"><img src="img/logo-terracotta.svg" alt="AgroRoue"></div>
+
+      <div class="block-label" style="color:var(--terra)">Palette de couleur</div>
+      <div class="swatches">
+        <div class="sw"><div class="chip" style="background:#DD6237"></div><div class="meta"><div class="hex">#DD6237</div><div class="nm">Terracotta</div></div></div>
+        <div class="sw"><div class="chip" style="background:#FFE7CA"></div><div class="meta"><div class="hex">#FFE7CA</div><div class="nm">Crème</div></div></div>
+        <div class="sw"><div class="chip" style="background:#6B8AA9"></div><div class="meta"><div class="hex">#6B8AA9</div><div class="nm">Bleu</div></div></div>
+        <div class="sw"><div class="chip" style="background:#D13333"></div><div class="meta"><div class="hex">#D13333</div><div class="nm">Rouge</div></div></div>
+        <div class="sw"><div class="chip" style="background:#2C3A0D"></div><div class="meta"><div class="hex">#2C3A0D</div><div class="nm">Vert forêt</div></div></div>
+        <div class="sw"><div class="chip" style="background:#E5E54A"></div><div class="meta"><div class="hex">#E5E54A</div><div class="nm">Lime</div></div></div>
+      </div>
+
+      <div class="block-label" style="color:var(--terra)">Logo noir et blanc</div>
+      <div class="bw">
+        <div class="cell" style="background:#fff"><img src="img/logo-black.svg" alt=""></div>
+        <div class="cell" style="background:#000"><img src="img/logo-white.svg" alt=""></div>
+      </div>
+
+      <div class="block-label" style="color:var(--terra)">Typographie · Plus Jakarta Sans · Google Fonts</div>
+      <div class="type-spec">
+        <div class="type-big">Cultivez<br>plus.</div>
+        <div>
+          <div class="type-body">Je livre un système de culture rotatif, local et fiable, pensé pour produire des aliments frais à l'année.</div>
+          <div class="glyphs">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</div>
+          <div class="weights">
+            <span><b style="font-weight:400">Aa</b>Regular 400</span>
+            <span><b style="font-weight:500">Aa</b>Medium 500</span>
+            <span><b style="font-weight:700">Aa</b>Bold 700</span>
+            <span><b style="font-weight:800">Aa</b>ExtraBold 800</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="block-label" style="color:var(--terra)">Direction photographique</div>
+      <div class="pgrid">
+        <img src="photos/o2-1.jpg" alt=""><img src="photos/o2-2.jpg" alt=""><img src="photos/o2-3.jpg" alt="">
+        <img src="photos/o2-4.jpg" alt=""><img src="photos/o2-5.jpg" alt=""><img src="photos/o2-6.jpg" alt="">
+      </div>
+      <div class="pcap">Image d'abondance · Technologie chaleureuse · Rappel ferme / hydroponique</div>
+
+      <div class="block-label" style="color:var(--terra)">Exemple · post Instagram</div>
+      <div class="posts">
+        <img src="photos/post2-1.jpg" alt=""><img src="photos/post2-2.jpg" alt=""><img src="photos/post2-3.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- FACE A FACE -->
+  <section id="comparaison">
+    <div class="wrap">
+      <div class="eyebrow">Face à face</div>
+      <h2>Le logo principal,<br>côte à côte</h2>
+      <p class="lead">Même marque, deux lectures. À gauche, la précision technique ; à droite, la chaleur humaine.</p>
+      <div class="f2f">
+        <div class="side s1">
+          <img src="img/logo-lime.svg" alt="Direction 01">
+          <div class="k">Direction 01</div>
+          <h3 style="font-size:22px">Technique · Innovation · Précision</h3>
+          <p>Symbole astérisque-roue, vert lime sur vert forêt. Lecture premium, proche du produit technologique.</p>
+        </div>
+        <div class="side s2">
+          <img src="img/logo-cream.svg" alt="Direction 02">
+          <div class="k">Direction 02</div>
+          <h3 style="font-size:22px">Humain · Résultat · Coloré</h3>
+          <p>Mot-symbole rond « agroroue », terracotta. Lecture chaleureuse, accessible, grand public.</p>
+        </div>
+      </div>
+      <p class="clincher" style="margin-top:44px">Les deux directions sont complètes et déclinables. La décision t'appartient, et on pousse ensuite la direction choisie jusqu'au brand book complet.</p>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="close">
+    <div class="wrap">
+      <div class="eyebrow" style="opacity:.6;color:var(--lime)">Prochaine étape</div>
+      <h2>Produire ici.<br><em>Toute l'année.</em></h2>
+      <p>On choisit une direction, puis je la décline en système complet : brand book, photographie, visuels et site web.</p>
+      <div class="foot">
+        <span><b>Guillaume Routhier</b> · Design</span><span>agroroue.com</span><span>Grand Marché de Québec</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="tiny">AgroRoue · Présentation de marque · Exploration d'identité visuelle · Octobre 2026</div>
+
+</body>
+</html>

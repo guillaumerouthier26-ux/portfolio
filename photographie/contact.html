@@ -3,108 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Contact, Guillaume Routhier</title>
+  <title>Contact · Guillaume Routhier</title>
+  <meta name="description" content="Disponible pour vos projets. Écrivez à Guillaume Routhier, design graphique et photographie, région de Québec.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=1790352773279">
-  <link rel="stylesheet" href="css/contact.css?v=1790352773279">
-  <script>(function(){try{if(!sessionStorage.getItem('curtainIn'))return;sessionStorage.removeItem('curtainIn');var d=document.createElement('div');d.style.cssText='position:fixed;inset:0;background:#fff;z-index:99999;pointer-events:none;will-change:transform';document.documentElement.appendChild(d);requestAnimationFrame(function(){requestAnimationFrame(function(){d.style.transition='transform .6s cubic-bezier(.76,0,.24,1)';d.style.transform='translateY(-100%)'})});setTimeout(function(){if(d.parentNode)d.parentNode.removeChild(d)},700)}catch(e){}})();</script>
-  <style id="pg-bg">html,body{background:#faf8f3}</style>
-</head>
+  <style>
+    :root{--font:'Montserrat',system-ui,sans-serif;--font-titre:'Lora',Georgia,serif;--mx:clamp(24px,5vw,80px)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{background:#fff}
+    body{font-family:var(--font);color:#111;-webkit-font-smoothing:antialiased;line-height:1.5}
+    img{max-width:100%;display:block}
+    a{color:inherit}
 
+    .cbar{position:fixed;top:0;left:0;width:100%;z-index:20;display:flex;align-items:center;justify-content:space-between;
+      padding:16px var(--mx);
+      background:rgba(255,255,255,.55);
+      -webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);
+      border-bottom:1px solid rgba(0,0,0,.12)}
+    .cbar .logo{font-weight:600;font-size:12pt;letter-spacing:-.01em;text-decoration:none;color:#111}
+    .cbar .back{font-size:11pt;font-weight:500;text-decoration:none;color:#111;opacity:.7}
+    .cbar .back:hover{opacity:1}
+
+    .clayout{display:grid;grid-template-columns:1fr 1.1fr;height:100vh;height:100svh;overflow:hidden}
+    .cimg{position:relative;overflow:hidden;background:#111}
+    .cimg img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
+    .cform-col{display:flex;flex-direction:column;justify-content:center;padding:96px var(--mx) 48px;overflow:auto}
+    .cform-wrap{width:100%;max-width:520px}
+
+    .ceyebrow{display:inline-flex;align-items:center;gap:10px;font-size:10pt;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#111;margin-bottom:20px}
+    .ceyebrow .dot{width:8px;height:8px;border-radius:50%;background:#111;flex:none}
+    .ctitre{font-family:var(--font-titre);font-weight:500;font-size:clamp(40px,7vw,72px);line-height:1;letter-spacing:-.01em;margin-bottom:40px;display:inline-block;transform:scaleX(.9);transform-origin:left center}
+
+    .cform{display:flex;flex-direction:column;gap:26px}
+    .cfield{display:flex;flex-direction:column;gap:8px}
+    .cfield label{font-size:9.5pt;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#111}
+    .cfield input,.cfield textarea{font-family:var(--font);font-size:12pt;color:#111;background:transparent;border:none;border-bottom:1.5px solid #111;padding:10px 0;width:100%;outline:none;resize:vertical}
+    .cfield input::placeholder,.cfield textarea::placeholder{color:#999}
+    .cfield input:focus,.cfield textarea:focus{border-bottom-color:#111;box-shadow:0 1px 0 #111}
+
+    .cstatus{font-size:10.5pt;color:#555;min-height:1em;margin-top:-6px}
+    .cactions{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:6px}
+    .csubmit{font-family:var(--font);font-size:10pt;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:#111;border:1.5px solid #111;border-radius:999px;padding:14px 34px;cursor:pointer;transition:background .2s,color .2s}
+    .csubmit:hover{background:#fff;color:#111}
+    .csubmit:disabled{opacity:.5;cursor:default}
+    .cdirect{font-size:10.5pt;color:#555;text-decoration:none}
+    .cdirect:hover{color:#111;text-decoration:underline;text-underline-offset:3px}
+
+    @media(max-width:860px){
+      .clayout{grid-template-columns:1fr;grid-template-rows:1fr;height:100svh}
+      .cimg{display:none}
+      .cform-col{justify-content:center;padding:88px var(--mx) 40px}
+      .ctitre{margin-bottom:28px}
+      .cform{gap:20px}
+    }
+  </style>
+</head>
 <body>
 
-  <div id="page-transition"></div>
-
-  <div class="nav-menu" id="nav-menu" aria-hidden="true">
-    <nav class="nav-menu-inner">
-      <a class="t-titre nav-menu-titre" href="index.html#projets">Mes Projets</a>
-      <a class="t-titre nav-menu-titre" href="contact.html">Contact</a>
-      <a class="t-titre nav-menu-titre" href="../">Voir les volets</a>
-    </nav>
-  </div>
-
-  <header class="navbar">
-    <div class="nav-filet"></div>
-    <div class="nav-top">
-      <a class="nav-logo" href="index.html">
-        <span class="logo-text">Guillaume</span>
-      </a>
-      <nav class="nav-desktop">
-        <a class="nav-desktop-link" href="index.html#projets">Projets</a>
-        <a class="nav-desktop-link" href="contact.html" aria-current="page">Contact</a>
-        <a class="nav-desktop-link" href="../">Voir les volets</a>
-      </nav>
-      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
+  <header class="cbar">
+    <a class="logo" href="../">Guillaume Routhier</a>
+    <a class="back" href="../">&larr; Portfolio</a>
   </header>
 
-  <div class="contact-layout">
+  <div class="clayout">
 
-    <!-- Image -->
-    <div class="contact-img-col">
-      <img src="photos/contact.jpg" alt="Guillaume Routhier" fetchpriority="high" decoding="async">
+    <div class="cimg">
+      <img src="photos/contact.jpg?v=1792424356383" alt="Guillaume Routhier" fetchpriority="high" decoding="async">
     </div>
 
-    <!-- Formulaire -->
-    <div class="contact-form-col">
-      <div class="contact-intro">
-        <span class="t-courant contact-eyebrow"><span class="footer-dot" aria-hidden="true"></span>Disponible pour un poste en agence, Qu&eacute;bec</span>
-        <h1 class="t-titre contact-titre">Parlons-en.</h1>
+    <div class="cform-col">
+      <div class="cform-wrap">
+        <span class="ceyebrow"><span class="dot" aria-hidden="true"></span>Disponible pour vos projets</span>
+        <h1 class="ctitre">Parlons-en.</h1>
+
+        <form class="cform" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="0dc57b20-53d9-4f18-b0cf-69677f6055b7">
+          <input type="hidden" name="from_name" value="Site, Guillaume Routhier">
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+
+          <div class="cfield">
+            <label for="email">Courriel</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+
+          <div class="cfield">
+            <label for="sujet">Sujet</label>
+            <input type="text" id="sujet" name="subject" required>
+          </div>
+
+          <div class="cfield">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="3" required></textarea>
+          </div>
+
+          <p class="cstatus" role="status" aria-live="polite"></p>
+
+          <div class="cactions">
+            <button class="csubmit" type="submit">Envoyer</button>
+            <a class="cdirect" href="mailto:guillaumerouthier26@gmail.com">ou guillaumerouthier26@gmail.com</a>
+          </div>
+        </form>
       </div>
-
-      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-
-        <!-- Web3Forms : clé d'accès + nom d'expéditeur -->
-        <input type="hidden" name="access_key" value="0dc57b20-53d9-4f18-b0cf-69677f6055b7">
-        <input type="hidden" name="from_name" value="Site, Guillaume Routhier">
-        <!-- Anti-spam (honeypot) : rempli seulement par les robots -->
-        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
-
-        <div class="contact-field">
-          <label class="t-courant" for="email">Courriel</label>
-          <input type="email" id="email" name="email" autocomplete="email" required>
-        </div>
-
-        <div class="contact-field">
-          <label class="t-courant" for="sujet">Sujet</label>
-          <input type="text" id="sujet" name="subject" required>
-        </div>
-
-        <div class="contact-field">
-          <label class="t-courant" for="message">Message</label>
-          <textarea id="message" name="message" rows="2" required></textarea>
-        </div>
-
-        <p class="t-courant contact-status" role="status" aria-live="polite"></p>
-
-        <div class="contact-actions">
-          <button class="btn-contact contact-submit" type="submit">envoyer</button>
-          <a class="t-courant contact-direct" href="mailto:guillaumerouthier26@gmail.com">ou guillaumerouthier26@gmail.com</a>
-        </div>
-
-      </form>
     </div>
 
   </div>
 
-  <script src="js/smooth-scroll.js?v=1790352773279"></script>
-  <script src="js/menu.js?v=1790352773279"></script>
-  <script src="js/page-animations.js?v=1790352773279"></script>
-  <script src="js/cursor.js?v=1790352773279"></script>
-  <script src="js/transitions.js?v=1790352773279"></script>
   <script>
-    // Envoi du formulaire avec retour visuel (succès / erreur), sans quitter la page.
     (function () {
-      var form = document.querySelector('.contact-form');
+      var form = document.querySelector('.cform');
       if (!form) return;
-      var status = form.querySelector('.contact-status');
-      var btn = form.querySelector('.contact-submit');
+      var status = form.querySelector('.cstatus');
+      var btn = form.querySelector('.csubmit');
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         btn.disabled = true;
@@ -114,10 +124,10 @@
           body: new FormData(form),
           headers: { Accept: 'application/json' }
         }).then(function (r) {
-          if (r.ok) { form.reset(); status.textContent = 'Merci, ton message est parti.'; }
-          else { status.textContent = 'Une erreur est survenue. Réessaie ou écris-moi directement.'; }
+          if (r.ok) { form.reset(); status.textContent = 'Merci, votre message est parti.'; }
+          else { status.textContent = 'Une erreur est survenue. Réessayez ou écrivez-moi directement.'; }
         }).catch(function () {
-          status.textContent = 'Une erreur est survenue. Réessaie ou écris-moi directement.';
+          status.textContent = 'Une erreur est survenue. Réessayez ou écrivez-moi directement.';
         }).finally(function () { btn.disabled = false; });
       });
     })();

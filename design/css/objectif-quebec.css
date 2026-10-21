@@ -43,7 +43,7 @@
 /* ─── Bloc générique : label de section ─── */
 .oq2-label {
   display: block;
-  color: #3d3d3d;
+  color: #141414;
   margin-bottom: 22px;
 }
 
@@ -69,9 +69,9 @@
   display: flex;
   gap: 16px;
   padding: 13px 0;
-  border-bottom: 1px solid #ded7c8;
+  border-bottom: 1px solid #e2e2e2;
 }
-.oq2-meta-row .oq2-meta-k { flex: 0 0 90px; color: #8a8175; }
+.oq2-meta-row .oq2-meta-k { flex: 0 0 90px; color: #8a8a8a; }
 
 /* ─── VIDÉO + ENSEIGNE ( = oq-section1 ) ─── */
 .oq2-ident {
@@ -98,7 +98,7 @@
 }
 .oq2-sig-label {
   display: block;
-  color: #cfc7b8;
+  color: #c7c7c7;
   margin: 0 0 28px;
 }
 .oq2-sig-titre {
@@ -181,7 +181,7 @@
   border-top: 1.5px solid #333333;
   padding-top: 13px;
 }
-.oq2-credit-k { color: #8a8175; }
+.oq2-credit-k { color: #8a8a8a; }
 
 /* ─── PROJET SUIVANT ─── */
 .oq2-next {
@@ -200,7 +200,7 @@
 }
 .oq2-next-eyebrow {
   display: block;
-  color: #cfc7b8;
+  color: #c7c7c7;
   margin-bottom: 14px;
 }
 .oq2-next-titre { margin: 0; color: #ffffff; line-height: 0.9; }
