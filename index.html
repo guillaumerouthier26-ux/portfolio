@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/home.css?v=37">
+  <link rel="stylesheet" href="css/home.css?v=42">
   <style id="pg-bg">html,body{background:#faf8f3}</style>
   <style id="intro-css">
     body.intro-active{overflow:hidden}
@@ -85,6 +85,12 @@
       <a class="hcap-link" href="#apropos"><span class="hcap-n">01</span><span class="hcap-t">Guillaume Routhier</span><span class="hcap-d">Photographe et designer graphique</span></a>
     </div>
   </header>
+
+  <!-- Retour en haut : apparaît après le hero, l'anneau suit la progression dans la page -->
+  <button class="totop" type="button" aria-label="Revenir en haut de la page" tabindex="-1">
+    <svg class="totop-ring" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="26"/></svg>
+    <svg class="totop-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+  </button>
 
   <!-- MENU MOBILE : voile noir 50 %, options blanches -->
   <div class="hmenu" id="hmenu" aria-hidden="true" inert>
@@ -177,16 +183,16 @@
         <div class="vm" data-vm aria-hidden="true" style="--shc:rgba(25,5,18,.34)">
           <img class="vm-bg" src="vedette/lhm/bg.jpg" alt="" loading="lazy" decoding="async">
           <div class="vm-layers">
-            <!-- arrière-plan : a, b, c (lents, derrière les coffrets) -->
+            <!-- arrière-plan : a, b, c, derrière les coffrets (vitesses variées) -->
             <img class="vm-l" src="vedette/lhm/a.webp" alt="" style="--l:24.8;--t:80;--w:12.2;--z:.7" data-d="9" data-r="3" data-f="1.2" loading="lazy" decoding="async">
-            <img class="vm-l" src="vedette/lhm/b.webp" alt="" style="--l:34.067;--t:4.333;--w:12.367;--z:.7" data-d="8" data-r="-3" data-f="1.4" loading="lazy" decoding="async">
-            <img class="vm-l" src="vedette/lhm/c.webp" alt="" style="--l:62.467;--t:16.033;--w:16.267;--z:.7" data-d="11" data-r="4" data-f="1.1" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/lhm/b.webp" alt="" style="--l:34.067;--t:4.333;--w:12.367;--z:.7" data-d="3" data-r="-2" data-f="1.4" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/lhm/c.webp" alt="" style="--l:62.467;--t:16.033;--w:16.267;--z:.7" data-d="15" data-r="4" data-f="1.1" loading="lazy" decoding="async">
             <!-- coffrets : 1 (Baies) derrière, 2 (Agrumes) devant -->
             <img class="vm-l" src="vedette/lhm/1.webp" alt="" style="--l:23.567;--t:50.9;--w:59.4;--z:1.5" data-d="12" data-r="2" loading="lazy" decoding="async">
             <img class="vm-l" src="vedette/lhm/2.webp" alt="" style="--l:14.433;--t:20.533;--w:60.467;--z:2" data-d="19" data-r="4" loading="lazy" decoding="async">
-            <!-- premier plan : 3, 4 (rapides, devant les coffrets) -->
+            <!-- premier plan : 3 (le plus rapide) et 4 (le plus lent du montage), devant les coffrets -->
             <img class="vm-l" src="vedette/lhm/3.webp" alt="" style="--l:6.033;--t:41.467;--w:25.9;--z:2.4" data-d="34" data-r="8" data-f="1.6" loading="lazy" decoding="async">
-            <img class="vm-l" src="vedette/lhm/4.webp" alt="" style="--l:66.633;--t:81.667;--w:14;--z:2.4" data-d="40" data-r="10" data-f="1.5" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/lhm/4.webp" alt="" style="--l:66.633;--t:81.667;--w:14;--z:2.4" data-d="5" data-r="3" data-f="1.5" loading="lazy" decoding="async">
           </div>
         </div>
       </a>
@@ -226,10 +232,34 @@
       <h2 class="htitle">Projets sélectionnés</h2>
       <p class="hsub">Design graphique et photographie, de l'identité de marque au contenu culinaire.</p>
     </div>
+    <!-- Filtres par service : la photo immobilière est classée en Photographie -->
+    <div class="hfilters" role="group" aria-label="Filtrer les projets par service">
+      <button class="hfilter" type="button" data-f="all" aria-pressed="true">Tout <span class="hfilter-n"></span></button>
+      <button class="hfilter" type="button" data-f="photo" aria-pressed="false">Photographie <span class="hfilter-n"></span></button>
+      <button class="hfilter" type="button" data-f="design" aria-pressed="false">Design <span class="hfilter-n"></span></button>
+    </div>
 
     <div class="hgrid">
 
-      <a class="pcard" href="immobilier/cap-sante.html">
+      <a class="pcard" data-cat="photo" href="photographie/aki-sushi-studio.html">
+        <div class="pcard-imgwrap"><img class="pcard-img" src="photographie/photos/index-akistudio.jpg" alt="Aki Sushi Studio" loading="lazy" decoding="async"></div>
+        <div class="pcard-body">
+          <span class="pcard-tag">Photographie</span>
+          <h3 class="pcard-name">Aki Sushi Studio</h3>
+          <p class="pcard-disc">Photographie culinaire, studio</p>
+        </div>
+      </a>
+
+      <a class="pcard" data-cat="design" href="design/lheure-mauve.html">
+        <div class="pcard-imgwrap"><img class="pcard-img" src="design/photos/index-lhm.jpg?v=1792542015825" alt="L'Heure Mauve" loading="lazy" decoding="async"></div>
+        <div class="pcard-body">
+          <span class="pcard-tag">Design</span>
+          <h3 class="pcard-name">L'Heure Mauve</h3>
+          <p class="pcard-disc">Direction artistique, photographie</p>
+        </div>
+      </a>
+
+      <a class="pcard" data-cat="photo" href="immobilier/cap-sante.html">
         <div class="pcard-imgwrap"><img class="pcard-img" src="immobilier/photos/index-capsante.jpg" alt="Maison historique" loading="lazy" decoding="async"></div>
         <div class="pcard-body">
           <span class="pcard-tag">Photographie</span>
@@ -238,7 +268,7 @@
         </div>
       </a>
 
-      <a class="pcard" href="photographie/le-101-restaurant.html">
+      <a class="pcard" data-cat="photo" href="photographie/le-101-restaurant.html">
         <div class="pcard-imgwrap"><img class="pcard-img" src="photographie/photos/index-101.jpg" alt="Le 101 Restaurant" loading="lazy" decoding="async"></div>
         <div class="pcard-body">
           <span class="pcard-tag">Photographie</span>
@@ -247,7 +277,7 @@
         </div>
       </a>
 
-      <a class="pcard" href="design/objectif-quebec.html">
+      <a class="pcard" data-cat="design" href="design/objectif-quebec.html">
         <div class="pcard-imgwrap"><img class="pcard-img" src="design/photos/index-oq.jpg" alt="Objectif Québec" loading="lazy" decoding="async"></div>
         <div class="pcard-body">
           <span class="pcard-tag">Design</span>
@@ -256,7 +286,7 @@
         </div>
       </a>
 
-      <a class="pcard" href="photographie/ciao-totes.html">
+      <a class="pcard" data-cat="photo" href="photographie/ciao-totes.html">
         <div class="pcard-imgwrap"><img class="pcard-img" src="photographie/photos/index-ciaototes.jpg" alt="Ciao Totes" loading="lazy" decoding="async"></div>
         <div class="pcard-body">
           <span class="pcard-tag">Photographie</span>
@@ -265,7 +295,7 @@
         </div>
       </a>
 
-      <a class="pcard" href="photographie/aki-sushi.html">
+      <a class="pcard" data-cat="photo" href="photographie/aki-sushi.html">
         <div class="pcard-imgwrap"><img class="pcard-img" src="photographie/photos/index-akisushi.jpg" alt="Aki Sushi" loading="lazy" decoding="async"></div>
         <div class="pcard-body">
           <span class="pcard-tag">Photographie</span>
@@ -274,7 +304,7 @@
         </div>
       </a>
 
-      <a class="pcard" href="design/aki-bobba.html">
+      <a class="pcard" data-cat="design" href="design/aki-bobba.html">
         <div class="pcard-imgwrap"><img class="pcard-img" src="design/photos/index-aki.jpg" alt="Aki Bobba" loading="lazy" decoding="async"></div>
         <div class="pcard-body">
           <span class="pcard-tag">Design</span>
@@ -283,7 +313,7 @@
         </div>
       </a>
 
-      <a class="pcard" href="immobilier/charles-bilodeau.html">
+      <a class="pcard" data-cat="photo" href="immobilier/charles-bilodeau.html">
         <div class="pcard-imgwrap"><img class="pcard-img" src="immobilier/photos/index-charles.jpg" alt="Bungalow, Lévis" loading="lazy" decoding="async"></div>
         <div class="pcard-body">
           <span class="pcard-tag">Photographie</span>
@@ -657,6 +687,35 @@
     })();
   </script>
 
+  <!-- Retour en haut -->
+  <script>
+    (function(){
+      var btn = document.querySelector('.totop');
+      if(!btn) return;
+      var ring = btn.querySelector('circle'), LEN = 2 * Math.PI * 26, raf = 0;
+      ring.style.strokeDasharray = LEN;
+      function update(){
+        raf = 0;
+        var y = window.pageYOffset, max = document.documentElement.scrollHeight - window.innerHeight;
+        var on = y > window.innerHeight * 1.1;
+        btn.classList.toggle('is-on', on);
+        btn.tabIndex = on ? 0 : -1;
+        ring.style.strokeDashoffset = LEN * (1 - (max > 0 ? Math.min(1, y / max) : 0));
+      }
+      function req(){ if(!raf) raf = requestAnimationFrame(update); }
+      window.addEventListener('scroll', req, { passive: true });
+      window.addEventListener('resize', req);
+      update();
+      btn.addEventListener('click', function(){
+        // défilement doux sur bureau (smooth-scroll interpole) ; défilement natif animé sur mobile
+        if(window._smoothScrollActive) window.scrollTo(0, 0);
+        else window.scrollTo({ top: 0, behavior: 'smooth' });
+        var logo = document.querySelector('.hnav .logo');
+        if(logo) logo.focus({ preventScroll: true });
+      });
+    })();
+  </script>
+
   <!-- Menu mobile : ouverture / fermeture, Échap, verrou de défilement -->
   <script>
     (function(){
@@ -678,6 +737,47 @@
     })();
   </script>
 
+  <!-- Filtres de la grille : les cartes sortent, la grille se recompose, les cartes retenues entrent en cascade -->
+  <script>
+    (function(){
+      var grid = document.querySelector('.hgrid');
+      var btns = Array.prototype.slice.call(document.querySelectorAll('.hfilter'));
+      if(!grid || !btns.length) return;
+      var cards = Array.prototype.slice.call(grid.querySelectorAll('.pcard'));
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function match(c, f){ return f === 'all' || (c.dataset.cat || '').split(' ').indexOf(f) >= 0; }
+      btns.forEach(function(b){
+        var n = cards.filter(function(c){ return match(c, b.dataset.f); }).length;
+        b.querySelector('.hfilter-n').textContent = n;
+      });
+      var cur = 'all', timer = 0;
+      function apply(f){
+        cards.forEach(function(c){ c.classList.toggle('is-hidden', !match(c, f)); c.classList.remove('is-out'); });
+      }
+      btns.forEach(function(b){
+        b.addEventListener('click', function(){
+          var f = b.dataset.f;
+          if(f === cur) return;
+          cur = f;
+          btns.forEach(function(x){ x.setAttribute('aria-pressed', String(x === b)); });
+          if(reduce){ apply(f); return; }
+          clearTimeout(timer);
+          cards.forEach(function(c){ if(!c.classList.contains('is-hidden')) c.classList.add('is-out'); });
+          timer = setTimeout(function(){
+            var shown = [];
+            cards.forEach(function(c){
+              var ok = match(c, f);
+              c.classList.toggle('is-hidden', !ok);
+              if(ok){ c.classList.add('is-out'); shown.push(c); }
+            });
+            void grid.offsetWidth;
+            shown.forEach(function(c, i){ setTimeout(function(){ c.classList.remove('is-out'); }, i * 70); });
+          }, 280);
+        });
+      });
+    })();
+  </script>
+
   <!-- Montage parallax des projets vedettes : chaque calque suit le défilement à sa vitesse -->
   <script>
     (function(){
@@ -687,17 +787,24 @@
           // data-f : amplitude d'un léger flottement continu (pièces en suspension)
           return { el: el, d: +el.dataset.d || 0, r: +el.dataset.r || 0, f: +el.dataset.f || 0, ph: Math.random() * 6.28, y: 0, a: 0 };
         });
-        var active = false, raf = 0, first = true;
+        var active = false, raf = 0, first = true, lastP = 0;
+        // tant que tous les calques ne sont pas chargés, le montage reste masqué (pas d'apparitions une à une)
+        var imgs = Array.prototype.slice.call(stage.querySelectorAll('img'));
+        stage.classList.add('is-loading');
+        Promise.all(imgs.map(function(im){ return im.decode ? im.decode().catch(function(){}) : Promise.resolve(); }))
+          .then(function(){ stage.classList.remove('is-loading'); });
         function frame(){
           var rect = stage.getBoundingClientRect(), vh = window.innerHeight;
           // p = 0 quand le montage est centré (composition d'origine), ±1 aux bords de l'écran
           var p = ((rect.top + rect.height / 2) - vh / 2) / vh;
           p = Math.max(-1.2, Math.min(1.2, p));
           var unit = rect.width / 100, moving = false, now = performance.now();
+          var jump = first || Math.abs(p - lastP) > 0.15;
+          lastP = p;
           layers.forEach(function(o){
             var ty = p * o.d * unit, ta = p * o.r;
             if(o.f){ var s = now / 1000 * 0.9 + o.ph; ty += Math.sin(s) * o.f * unit; ta += Math.cos(s * 0.8) * o.f * 1.2; }
-            if(first){ o.y = ty; o.a = ta; }
+            if(jump){ o.y = ty; o.a = ta; }   // saut de position (ancre, rechargement) : on se place sans glisser
             else { o.y += (ty - o.y) * .1; o.a += (ta - o.a) * .1; }   // inertie douce
             if(Math.abs(ty - o.y) > .05 || Math.abs(ta - o.a) > .01) moving = true;
             o.el.style.transform = 'translate3d(0,' + o.y.toFixed(2) + 'px,0) rotate(' + o.a.toFixed(2) + 'deg)';
@@ -714,7 +821,8 @@
   </script>
 
   <script src="js/smooth-scroll.js?v=1"></script>
-  <script src="js/parallax.js?v=1"></script>
+  <script src="js/parallax.js?v=1792610988348"></script>
 
+  <script src="js/cursor-dot.js?v=1792610905338"></script>
 </body>
 </html>

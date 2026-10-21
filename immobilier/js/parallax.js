@@ -1,3 +1,5 @@
+/* portée isolée : ce script est ré-exécuté à chaque changement de page sans rechargement */
+(function () {
 var _scrollEv = window._smoothScrollActive ? 'virtualscroll' : 'scroll';
 
 document.querySelectorAll('.hero-bg, .parallax-img').forEach(img => {
@@ -50,3 +52,4 @@ if (clientsArea) {
   window.addEventListener(_scrollEv, updateTicker, { passive: true });
   updateTicker();
 }
+})();
