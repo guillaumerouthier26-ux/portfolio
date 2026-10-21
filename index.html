@@ -17,7 +17,7 @@
   <!-- HERO -->
   <header class="hhero">
     <div class="hhero-slides" aria-hidden="true">
-      <img class="hslide is-active" src="hero/slide1.jpg" alt="" fetchpriority="high" decoding="async">
+      <img class="hslide is-active parallax-img" src="hero/slide1.jpg" alt="" fetchpriority="high" decoding="async">
     </div>
     <div class="hnav">
       <a class="logo" href="index.html">Guillaume Routhier</a>
@@ -212,6 +212,7 @@
         nav.classList.toggle('is-hidden', y > 90);
       }
       window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('virtualscroll', onScroll, { passive: true });
       onScroll();
     })();
   </script>
@@ -241,6 +242,9 @@
       document.addEventListener('keydown',function(e){ if(!box.classList.contains('open'))return; if(e.key==='Escape')close(); else if(e.key==='ArrowLeft')show(idx-1); else if(e.key==='ArrowRight')show(idx+1); });
     })();
   </script>
+
+  <script src="js/smooth-scroll.js?v=1"></script>
+  <script src="js/parallax.js?v=1"></script>
 
 </body>
 </html>

@@ -1719,3 +1719,5 @@ section video {
   font-weight: 600 !important;
   transform: none !important;            /* largeur 100% */
 }
+
+.pj-hero{position:relative} /* parallax-anchor */
