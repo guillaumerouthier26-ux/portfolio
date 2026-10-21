@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/home.css?v=25">
+  <link rel="stylesheet" href="css/home.css?v=30">
   <style id="pg-bg">html,body{background:#faf8f3}</style>
   <style id="intro-css">
     body.intro-active{overflow:hidden}
@@ -22,9 +22,11 @@
     .hhero-title .lni{display:block;will-change:translate}
     /* textes/objets du hero : cachés pendant l'intro, révélés ensuite par montée au seuil */
     body.intro-active .hnav{opacity:0;pointer-events:none}
+    body.intro-active .hhero-eyebrow,
     body.intro-active .hhero-title,
-    body.intro-active .hhero-cta,
-    body.intro-active .hscroll{opacity:0}
+    body.intro-active .hhero-sub,
+    body.intro-active .hhero-actions,
+    body.intro-active .hcap{opacity:0}
     @media (prefers-reduced-motion: reduce){ #intro{display:none} }
   </style>
 </head>
@@ -44,10 +46,13 @@
   </script>
 
   <!-- HERO -->
-  <header class="hhero">
+  <header class="hhero" data-active="0">
     <div class="hhero-slides" aria-hidden="true">
       <img class="hslide is-active parallax-img" src="hero/hero-cafe.jpg" alt="" fetchpriority="high" decoding="async">
+      <img class="hslide parallax-img" src="hero/hero-aki.jpg" alt="" decoding="async">
+      <img class="hslide parallax-img" src="hero/hero-lhm.jpg" alt="" decoding="async">
     </div>
+    <div class="hgrain" aria-hidden="true"></div>
     <div class="hnav">
       <a class="logo" href="index.html">Guillaume Routhier</a>
       <nav>
@@ -58,10 +63,23 @@
       <button class="hnav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="hmenu"><span></span><span></span><span></span></button>
     </div>
     <div class="hhero-in">
-      <h1 class="hhero-title">Photographie &amp;<br><em>Design graphique</em></h1>
-      <a class="hhero-cta" href="photographie/contact.html">Me contacter</a>
+      <p class="hhero-eyebrow"><span class="hdot" aria-hidden="true"></span><span>Disponible pour de nouveaux projets</span><span class="hsep" aria-hidden="true">·</span><span>Région de Québec</span></p>
+      <h1 class="hhero-title"><span class="hw" data-k="1">Photographie</span> &amp;<br><em class="hw" data-k="2">Design graphique</em></h1>
+      <p class="hhero-sub">Identité de marque, emballage et photographie pour les entreprises de la région de Québec. Pour que votre marque soit vue, comprise et choisie.</p>
+      <div class="hhero-actions">
+        <a class="hhero-cta" href="photographie/contact.html">Démarrer un projet <span aria-hidden="true">&rarr;</span></a>
+        <a class="hhero-link" href="#vedettes">Voir les projets</a>
+      </div>
     </div>
-    <span class="hscroll">Projets &darr;</span>
+    <!-- Légende du visuel affiché : barres de progression + projet (mène au projet) -->
+    <div class="hcap">
+      <div class="hcap-bars">
+        <button class="hbar" type="button" aria-label="Afficher : Guillaume Routhier"><i><b></b></i></button>
+        <button class="hbar" type="button" aria-label="Afficher : Aki Sushi Studio"><i><b></b></i></button>
+        <button class="hbar" type="button" aria-label="Afficher : L'Heure Mauve"><i><b></b></i></button>
+      </div>
+      <a class="hcap-link" href="#apropos"><span class="hcap-n">01</span><span class="hcap-t">Guillaume Routhier</span><span class="hcap-d">Photographe et designer graphique</span></a>
+    </div>
   </header>
 
   <!-- MENU MOBILE : voile noir 50 %, options blanches -->
@@ -116,8 +134,15 @@
     </article>
 
     <article class="feat-item">
-      <a class="feat-media feat-photo" href="design/lheure-mauve.html" aria-label="Voir le projet L'Heure Mauve">
-        <img class="parallax-img" src="design/photos/index-lhm.jpg?v=1792542015825" alt="L'Heure Mauve" loading="lazy" decoding="async">
+      <a class="feat-media" href="design/lheure-mauve.html" aria-label="Voir le projet L'Heure Mauve">
+        <!-- Montage parallax : fond prune fixe, coffret Baies (1) derrière, coffret Agrumes (2) devant -->
+        <div class="vm" data-vm aria-hidden="true" style="--shc:rgba(25,5,18,.34)">
+          <img class="vm-bg" src="vedette/lhm/bg.jpg" alt="" loading="lazy" decoding="async">
+          <div class="vm-layers">
+            <img class="vm-l" src="vedette/lhm/1.webp" alt="" style="--l:23.567;--t:50.9;--w:59.4;--z:1.5" data-d="6" data-r="1.5" loading="lazy" decoding="async">
+            <img class="vm-l" src="vedette/lhm/2.webp" alt="" style="--l:14.433;--t:20.533;--w:60.467;--z:2" data-d="13" data-r="3" loading="lazy" decoding="async">
+          </div>
+        </div>
       </a>
       <div class="feat-txt">
         <span class="feat-tag">Design · Emballage</span>
@@ -170,15 +195,6 @@
           <span class="pcard-tag">Photographie</span>
           <h3 class="pcard-name">Ciao Totes</h3>
           <p class="pcard-disc">Photographie, direction artistique</p>
-        </div>
-      </a>
-
-      <a class="pcard" href="design/conifere.html">
-        <div class="pcard-imgwrap"><img class="pcard-img" src="design/photos/index-conifere.jpg" alt="Conifère" loading="lazy" decoding="async"></div>
-        <div class="pcard-body">
-          <span class="pcard-tag">Design</span>
-          <h3 class="pcard-name">Conifère</h3>
-          <p class="pcard-disc">Identité, direction artistique</p>
         </div>
       </a>
 
@@ -267,16 +283,83 @@
   </footer>
 
   <script>
+    // Hero : rotation Guillaume → photo → design, entrée au seuil, mot de la discipline mis en avant
     (function(){
-      var slides = document.querySelectorAll('.hslide');
-      if (slides.length < 2) return;
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      var i = 0;
-      setInterval(function(){
-        slides[i].classList.remove('is-active');
-        i = (i + 1) % slides.length;
-        slides[i].classList.add('is-active');
-      }, 4500);
+      var hero = document.querySelector('.hhero');
+      if(!hero) return;
+      var slides = Array.prototype.slice.call(hero.querySelectorAll('.hslide'));
+      var bars   = Array.prototype.slice.call(hero.querySelectorAll('.hbar'));
+      var cap    = hero.querySelector('.hcap-link');
+      if(slides.length < 2 || !cap) return;
+      var DATA = [
+        { n: '01', t: 'Guillaume Routhier', d: 'Photographe et designer graphique', href: '#apropos' },
+        { n: '02', t: 'Aki Sushi Studio',   d: 'Photographie culinaire',           href: 'photographie/aki-sushi-studio.html' },
+        { n: '03', t: "L'Heure Mauve",      d: 'Identité et emballage',            href: 'design/lheure-mauve.html' }
+      ];
+      var DUR = 6000, cur = 0, z = 1;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      hero.style.setProperty('--dur', DUR + 'ms');
+
+      function setCap(i){
+        var d = DATA[i];
+        cap.classList.add('is-swap');
+        setTimeout(function(){
+          cap.href = d.href;
+          cap.querySelector('.hcap-n').textContent = d.n;
+          cap.querySelector('.hcap-t').textContent = d.t;
+          cap.querySelector('.hcap-d').textContent = d.d;
+          cap.classList.remove('is-swap');
+        }, reduce ? 0 : 280);
+      }
+      function setBars(i, run){
+        bars.forEach(function(b, j){
+          b.classList.remove('is-run');
+          b.classList.toggle('is-done', j < i);
+          b.setAttribute('aria-current', j === i ? 'true' : 'false');
+        });
+        if(run && bars[i]){ void bars[i].offsetWidth; bars[i].classList.add('is-run'); }
+      }
+      function go(i){
+        if(i !== cur){
+          var leaving = slides[cur], next = slides[i];
+          next.style.zIndex = ++z;
+          next.classList.remove('is-reset');
+          next.classList.add('is-active');
+          cur = i;
+          // l'image précédente reste dessous jusqu'à ce que la nouvelle l'ait recouverte
+          setTimeout(function(){
+            if(leaving !== slides[cur]){ leaving.classList.add('is-reset'); leaving.classList.remove('is-active'); }
+          }, reduce ? 0 : 1250);
+          hero.setAttribute('data-active', String(i));
+          setCap(i);
+        }
+        setBars(i, !reduce);
+      }
+
+      // la fin d'une barre fait avancer (la pause au survol fige donc aussi la rotation)
+      bars.forEach(function(b, j){
+        b.querySelector('b').addEventListener('animationend', function(){
+          if(j === cur && b.classList.contains('is-run')) go((cur + 1) % slides.length);
+        });
+        b.addEventListener('click', function(){ go(j); });
+      });
+      // survol d'un mot : affiche un projet de cette discipline et met la rotation en pause
+      Array.prototype.forEach.call(hero.querySelectorAll('.hw, .hcap'), function(el){
+        el.addEventListener('mouseenter', function(){
+          hero.classList.add('is-paused');
+          if(el.dataset.k) go(+el.dataset.k);
+        });
+        el.addEventListener('mouseleave', function(){ hero.classList.remove('is-paused'); });
+      });
+
+      // démarre une fois l'intro terminée
+      function begin(){ setTimeout(function(){ setBars(0, !reduce); }, reduce ? 0 : 900); }
+      if(document.body.classList.contains('intro-active')){
+        var mo = new MutationObserver(function(){
+          if(!document.body.classList.contains('intro-active')){ mo.disconnect(); begin(); }
+        });
+        mo.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+      } else { begin(); }
     })();
 
     // Nav frosted : visible au sommet (sur le hero), s'anime pour partir au défilement
@@ -361,29 +444,21 @@
       frame.style.width  = baseW + 'px';
       frame.style.height = baseH + 'px';
 
-      // ─── Préparation de la révélation : chaque élément sous son seuil ───
-      function wrapClip(el){
-        var inline = getComputedStyle(el).display.indexOf('inline') >= 0;
-        var wrap = document.createElement(inline ? 'span' : 'div');
-        wrap.style.display  = inline ? 'inline-block' : 'block';
-        wrap.style.overflow = 'hidden';
-        if(inline) wrap.style.verticalAlign = 'bottom';
-        el.parentNode.insertBefore(wrap, el);
-        wrap.appendChild(el);
-      }
-      var title  = document.querySelector('.hhero-title');
-      var cta    = document.querySelector('.hhero-cta');
-      var scroll = document.querySelector('.hscroll');
-      var nav    = document.querySelector('.hnav');
-      var slides = document.querySelector('.hhero-slides');
-      var lines  = [];
+      // ─── Préparation de la révélation : chaque ligne du titre sous son seuil ───
+      var title   = document.querySelector('.hhero-title');
+      var eyebrow = document.querySelector('.hhero-eyebrow');
+      var sub     = document.querySelector('.hhero-sub');
+      var actions = document.querySelector('.hhero-actions');
+      var hcap    = document.querySelector('.hcap');
+      var nav     = document.querySelector('.hnav');
+      var slides  = document.querySelector('.hhero-slides');
+      var lines   = [];
       if(title){
         title.innerHTML = title.innerHTML.split(/<br\s*\/?>/i).map(function(h){
           return '<span class="ln"><span class="lni">' + h.trim() + '</span></span>';
         }).join('');
         lines = Array.prototype.slice.call(title.querySelectorAll('.lni'));
       }
-      if(cta) wrapClip(cta);
 
       function reveal(){
         // fill 'backwards' : l'état de départ tient pendant le délai, puis le CSS reprend la main
@@ -394,11 +469,14 @@
         a(slides, [{ transform: 'scale(1.14)' }, { transform: 'scale(1)' }], 0, 1900, EASE_OUT);
         // textes : chaque ligne monte depuis son seuil, en cascade
         var t = TEXT_AT - PANEL_AT;
+        var up = [{ opacity: 0, translate: '0 18px' }, { opacity: 1, translate: '0 0' }];
+        a(eyebrow, up, t - 60, 1000, EASE_OUT);
         lines.forEach(function(li, k){
-          a(li, [{ translate: '0 110%' }, { translate: '0 0' }], t + k * 110, 1150, EASE_OUT);
+          a(li, [{ translate: '0 110%' }, { translate: '0 0' }], t + 60 + k * 110, 1150, EASE_OUT);
         });
-        a(cta,    [{ translate: '0 120%' }, { translate: '0 0' }], t + 260, 1100, EASE_OUT);
-        a(scroll, [{ opacity: 0, translate: '0 14px' }, { opacity: .8, translate: '0 0' }], t + 480, 1000, EASE_OUT);
+        a(sub,     up, t + 340, 1100, EASE_OUT);
+        a(actions, up, t + 460, 1100, EASE_OUT);
+        a(hcap,    up, t + 600, 1100, EASE_OUT);
         a(nav,    [{ opacity: 0, translate: '0 -14px' }, { opacity: 1, translate: '0 0' }], t + 120, 1000, EASE_OUT);
         // les animations tiennent l'état caché : on peut lever intro-active sans flash
         document.body.classList.remove('intro-active');

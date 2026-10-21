@@ -58,29 +58,81 @@ body.hmenu-open .hnav{background:transparent;border-bottom-color:transparent;-we
 }
 @media(prefers-reduced-motion:reduce){.hmenu,.hmenu a{transition:none}.hmenu a{translate:none}}
 
-/* HERO — diaporama en fondu enchaîné */
-.hhero{position:relative;height:100vh;height:100svh;overflow:hidden}
-.hhero-slides{position:absolute;inset:0}
-.hslide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.3s ease-in-out;will-change:opacity}
-.hslide.is-active{opacity:1}
-.hhero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.22);z-index:1}
-.hhero-in{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;text-align:left;padding:0 var(--mx) clamp(48px,8vw,88px)}
-.hhero-title{font-family:var(--font-titre);font-weight:500;color:#fff;font-size:clamp(30px,5.4vw,66px);line-height:1;letter-spacing:-.01em;transform:scaleX(.9);transform-origin:left center}
-.hhero-title em{font-style:italic}
-.hhero-cta{order:2;align-self:flex-start;margin-top:24px;display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:12pt;color:#fff;
-  background:rgba(255,255,255,.12);
-  -webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);
-  border:1px solid rgba(255,255,255,.4);
-  text-decoration:none;border-radius:999px;padding:13px 28px;transition:background .25s,border-color .25s}
-.hhero-cta:hover{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.6)}
-.hscroll{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;color:var(--cream);font-size:10pt;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+/* HERO : vitrine éditoriale. Trois images (Guillaume, un projet photo, un projet design)
+   entrent au seuil ; le mot de la discipline affichée reste blanc, l'autre s'estompe. */
+.hhero{position:relative;height:100vh;height:100svh;min-height:560px;overflow:hidden;background:#111;color:#fff}
+.hhero-slides{position:absolute;inset:0;z-index:0} /* plan isolé : le z-index des images ne dépasse jamais le dégradé ni le texte */
+.hslide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;clip-path:inset(100% 0 0 0);scale:1.08;
+  transition:clip-path 1.15s cubic-bezier(.76,0,.24,1),scale 1.8s cubic-bezier(.16,1,.3,1)}
+.hslide.is-active{clip-path:inset(0 0 0 0);scale:1}
+.hslide.is-reset{transition:none}
+/* Dégradés directionnels : couleurs vives au centre, lisibilité en bas à gauche et sous la barre */
+.hhero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:
+  linear-gradient(180deg,rgba(0,0,0,.38) 0%,rgba(0,0,0,0) 22%),
+  linear-gradient(0deg,rgba(0,0,0,.8) 0%,rgba(0,0,0,.44) 40%,rgba(0,0,0,0) 70%),
+  linear-gradient(90deg,rgba(0,0,0,.48) 0%,rgba(0,0,0,.14) 45%,rgba(0,0,0,0) 66%)}
+/* Grain argentique très léger */
+.hgrain{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.2;mix-blend-mode:overlay;background-size:220px;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 
-/* Mobile : hero centré (vertical + horizontal), CTA plus petit */
-@media(max-width:620px){
-  .hhero-in{align-items:center;justify-content:center;text-align:center;padding:0 24px}
-  .hhero-title{transform-origin:center center}
-  .hhero-cta{align-self:center;font-size:10.5pt;padding:10px 22px;margin-top:20px}
+.hhero-in{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;text-align:left;
+  padding:0 var(--mx) clamp(44px,7vw,84px);pointer-events:none}
+.hhero-in>*{pointer-events:auto}
+.hhero-eyebrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin-bottom:clamp(18px,2.4vw,28px);
+  font-size:9.5pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.88)}
+.hdot{width:8px;height:8px;border-radius:50%;background:#5fd38d;animation:hpulse 2.4s ease-out infinite}
+@keyframes hpulse{0%{box-shadow:0 0 0 0 rgba(95,211,141,.55)}70%,100%{box-shadow:0 0 0 9px rgba(95,211,141,0)}}
+.hsep{opacity:.5}
+.hhero-title{font-family:var(--font-titre);font-weight:500;color:#fff;font-size:clamp(44px,6.6vw,112px);line-height:.98;letter-spacing:-.015em;transform:scaleX(.9);transform-origin:left center}
+.hhero-title em{font-style:italic}
+.hw{transition:opacity .7s cubic-bezier(.16,1,.3,1)}
+.hhero[data-active="1"] .hw[data-k="2"],.hhero[data-active="2"] .hw[data-k="1"]{opacity:.48}
+.hhero-sub{max-width:46ch;margin-top:clamp(18px,2.2vw,26px);font-size:clamp(15px,1.15vw,17.5px);line-height:1.6;color:rgba(255,255,255,.86)}
+.hhero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:clamp(24px,3vw,36px)}
+.hhero-cta{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;background:#fff;color:#111;
+  font-weight:600;font-size:11.5pt;text-decoration:none;transition:background .3s ease}
+.hhero-cta span{display:inline-block;transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.hhero-link{padding-bottom:3px;border-bottom:1px solid rgba(255,255,255,.55);color:#fff;font-weight:600;font-size:11.5pt;text-decoration:none;transition:border-color .3s ease}
+@media(hover:hover){
+  .hhero-cta:hover{background:#efe9dd}
+  .hhero-cta:hover span{transform:translateX(4px)}
+  .hhero-link:hover{border-color:#fff}
 }
+
+/* Légende du visuel affiché + barres de progression (cliquables) */
+.hcap{position:absolute;z-index:3;right:var(--mx);bottom:clamp(44px,7vw,84px);width:clamp(220px,20vw,290px);color:#fff}
+.hcap-bars{display:flex;gap:6px;margin-bottom:14px}
+.hbar{flex:1;padding:7px 0;border:0;background:none;cursor:pointer}
+.hbar i{display:block;height:2px;border-radius:2px;background:rgba(255,255,255,.3);overflow:hidden}
+.hbar b{display:block;width:0;height:100%;background:#fff}
+.hbar.is-done b{width:100%}
+.hbar.is-run b{animation:hbar var(--dur,6s) linear forwards}
+.hhero.is-paused .hbar.is-run b{animation-play-state:paused}
+@keyframes hbar{to{width:100%}}
+.hcap-link{display:grid;grid-template-columns:auto 1fr;column-gap:14px;color:#fff;text-decoration:none;transition:opacity .28s ease,translate .28s ease}
+.hcap-link.is-swap{opacity:0;translate:0 6px}
+.hcap-n{grid-row:span 2;padding-top:4px;font-size:9.5pt;font-weight:600;letter-spacing:.1em;opacity:.7}
+.hcap-t{font-family:var(--font-titre);font-weight:500;font-size:19px;line-height:1.15;transform:scaleX(.9);transform-origin:left center}
+.hcap-d{margin-top:6px;font-size:9pt;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.72}
+@media(min-width:1024px){.hhero-in{padding-right:calc(var(--mx) + clamp(220px,20vw,290px) + 48px)}}
+
+/* Mobile : texte aligné à gauche en bas, légende façon « stories » sous la barre */
+@media(max-width:760px){
+  .hhero-in{padding:0 24px 36px}
+  .hhero-eyebrow{font-size:8.5pt;letter-spacing:.12em}
+  .hsep{display:none}
+  .hhero-title{font-size:clamp(34px,10.4vw,52px)}
+  .hhero-sub{font-size:15px}
+  .hhero-cta{padding:13px 22px;font-size:11pt}
+  .hhero-link{font-size:11pt}
+  .hcap{top:78px;bottom:auto;left:24px;right:24px;width:auto}
+  .hcap-bars{margin-bottom:8px}
+  .hcap-link{display:flex;align-items:baseline;gap:10px}
+  .hcap-n{padding-top:0}
+  .hcap-t{font-size:15px}
+  .hcap-d{display:none}
+}
+@media(prefers-reduced-motion:reduce){.hslide,.hw,.hcap-link{transition:none}.hdot{animation:none}}
 
 /* INTRO + PROJETS */
 .hwrap{padding:clamp(70px,9vw,130px) var(--mx)}
@@ -129,7 +181,8 @@ body.hmenu-open .hnav{background:transparent;border-bottom-color:transparent;-we
 /* ─── PROJETS VEDETTES ─── */
 /* Bloc centré : visuel carré d'environ 60vh + colonne texte, marges latérales libres */
 .feat{--fm:min(60vh,44vw);--fg:clamp(48px,6vw,110px);--ft:400px;
-  padding:clamp(80px,10vw,150px) var(--mx) clamp(10px,3vw,40px)}
+  padding:clamp(80px,10vw,150px) var(--mx) clamp(10px,3vw,40px);
+  overflow-x:clip} /* les calques qui débordent du cadre ne créent pas de défilement horizontal */
 .feat-head,.feat-item{width:min(100%,calc(var(--fm) + var(--fg) + var(--ft)));margin-inline:auto}
 .feat-head{margin-bottom:clamp(60px,8vw,120px)}
 .feat-eyebrow{display:block;font-size:10pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8a8a8a;margin-bottom:14px}
@@ -142,7 +195,7 @@ body.hmenu-open .hnav{background:transparent;border-bottom-color:transparent;-we
 .vm-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:18px;box-shadow:-8px 16px 38px rgba(0,0,0,.14)}
 .vm-layers{position:absolute;inset:0;transform:scale(1.28);pointer-events:none}
 .vm-l{position:absolute;left:calc(var(--l)*1%);top:calc(var(--t)*1%);width:calc(var(--w)*1%);max-width:none;height:auto;will-change:transform;
-  filter:drop-shadow(0 calc(var(--z,1)*7px) calc(var(--z,1)*9px) rgba(60,0,0,.24))}
+  filter:drop-shadow(0 calc(var(--z,1)*7px) calc(var(--z,1)*9px) var(--shc,rgba(60,0,0,.24)))}
 
 /* Photo simple (avec parallax du site) */
 .feat-photo{aspect-ratio:1/1;border-radius:18px;overflow:hidden;box-shadow:-8px 16px 38px rgba(0,0,0,.14)}
