@@ -43,7 +43,7 @@
   padding: 13px 0;
   border-bottom: 1px solid #e2e2e2;
 }
-.pjb-meta-row .pjb-meta-k { flex: 0 0 90px; color: #8a8a8a; }
+.pjb-meta-row .pjb-meta-k { flex: 0 0 90px; color: #6b6b6b; }
 
 /* ─── CRÉDITS ─── */
 .pjb-credits {
@@ -63,7 +63,7 @@
   border-top: 1.5px solid #141414;
   padding-top: 13px;
 }
-.pjb-credit-k { color: #8a8a8a; }
+.pjb-credit-k { color: #6b6b6b; }
 
 /* ─── PROJET SUIVANT ─── */
 .pjb-next {

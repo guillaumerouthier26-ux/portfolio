@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Page introuvable · Guillaume Routhier</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#faf8f3">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,500&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{background:#faf8f3}
+    body{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+      padding:48px clamp(24px,5vw,80px);font-family:'Montserrat',system-ui,sans-serif;color:#141414;-webkit-font-smoothing:antialiased}
+    .k{font-size:10pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#6b6b6b;margin-bottom:22px}
+    h1{font-family:'Lora',Georgia,serif;font-weight:500;font-size:clamp(44px,8vw,110px);line-height:1;letter-spacing:-.01em;
+      transform:scaleX(.9);transform-origin:left center}
+    h1 em{font-style:italic}
+    p{max-width:44ch;margin-top:26px;font-size:clamp(15px,1.2vw,17px);line-height:1.6;color:#333}
+    .a{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:36px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;background:#141414;color:#fff;
+      font-weight:600;font-size:11.5pt;text-decoration:none;transition:background .3s ease}
+    .btn:hover{background:#2a2a2a}
+    .lnk{padding-bottom:3px;border-bottom:1px solid currentColor;color:#141414;font-weight:600;font-size:11.5pt;text-decoration:none}
+    a:focus-visible{outline:2px solid #141414;outline-offset:3px}
+  </style>
+</head>
+<body>
+  <main>
+    <p class="k">Erreur 404</p>
+    <h1>Cette page<br><em>s'est égarée.</em></h1>
+    <p>Le lien est peut-être ancien ou la page a été déplacée. Les projets, eux, sont toujours là.</p>
+    <div class="a">
+      <a class="btn" href="/">Retour à l'accueil <span aria-hidden="true">&rarr;</span></a>
+      <a class="lnk" href="/#vedettes">Voir les projets</a>
+    </div>
+  </main>
+  <script src="/js/cursor-dot.js"></script>
+</body>
+</html>

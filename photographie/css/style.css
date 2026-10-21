@@ -22,7 +22,7 @@
   /* Palette */
   --noir:  #000000;
   --brun:  #141414;
-  --sable: #8a8a8a;
+  --sable: #6b6b6b;
   --blanc: #faf8f3;
 
   /* Échelle typographique */
@@ -800,7 +800,7 @@ textarea:focus-visible {
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #8a8a8a;
+  color: #6b6b6b;
 }
 
 .projet-img-wrap {
@@ -861,7 +861,7 @@ textarea:focus-visible {
   align-items: center;
   gap: 10px;
   margin-bottom: 22px;
-  color: #8a8a8a;
+  color: #6b6b6b;
 }
 
 .footer-dot {
@@ -911,7 +911,7 @@ textarea:focus-visible {
 }
 
 .footer-col-k {
-  color: #8a8a8a;
+  color: #6b6b6b;
   margin-bottom: 5px;
 }
 
@@ -937,7 +937,7 @@ textarea:focus-visible {
   padding-top: 20px;
 }
 
-.footer-copy { color: #8a8a8a; }
+.footer-copy { color: #6b6b6b; }
 
 .footer-meta-legal {
   display: flex;
@@ -947,7 +947,7 @@ textarea:focus-visible {
 
 .footer-meta-legal a {
   text-decoration: none;
-  color: #8a8a8a;
+  color: #6b6b6b;
   transition: color 0.2s ease-out;
 }
 
@@ -1525,7 +1525,7 @@ textarea:focus-visible {
   padding: 32px 24px 0;
 }
 
-.nsv-eyebrow { color: #8a8a8a; }
+.nsv-eyebrow { color: #6b6b6b; }
 
 .nsv-titre {
   color: #141414;
@@ -1821,7 +1821,7 @@ textarea:focus-visible {
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #8a8a8a;
+  color: #6b6b6b;
 }
 
 .tmc-quote {
@@ -2344,3 +2344,9 @@ body.menu-open .nav-toggle span{background:#fff !important}
   .nav-menu,.nav-menu-titre{transition:none !important}
   .nav-menu-titre{translate:none}
 }
+
+/* dimensions déclarées sur les images (évite les sauts au chargement) : le CSS existant garde la main */
+:where(img[width][height]){width:auto;height:auto}
+
+/* focus clavier visible partout (les styles de focus existants restent prioritaires) */
+:where(a,button,[tabindex]):focus-visible{outline:2px solid currentColor;outline-offset:3px}

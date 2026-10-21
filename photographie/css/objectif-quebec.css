@@ -71,7 +71,7 @@
   padding: 13px 0;
   border-bottom: 1px solid #e2e2e2;
 }
-.oq2-meta-row .oq2-meta-k { flex: 0 0 90px; color: #8a8a8a; }
+.oq2-meta-row .oq2-meta-k { flex: 0 0 90px; color: #6b6b6b; }
 
 /* ─── VIDÉO + ENSEIGNE ( = oq-section1 ) ─── */
 .oq2-ident {
@@ -181,7 +181,7 @@
   border-top: 1.5px solid #141414;
   padding-top: 13px;
 }
-.oq2-credit-k { color: #8a8a8a; }
+.oq2-credit-k { color: #6b6b6b; }
 
 /* ─── PROJET SUIVANT ─── */
 .oq2-next {

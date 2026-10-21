@@ -48,7 +48,7 @@
 }
 
 .tf-meta {
-  color: #8a8a8a;
+  color: #6b6b6b;
   line-height: 1.5;
   max-width: 52ch;
 }
@@ -63,7 +63,7 @@
 }
 
 .tf-from {
-  color: #8a8a8a;
+  color: #6b6b6b;
 }
 
 .tf-price-num {
@@ -71,7 +71,7 @@
 }
 
 .tf-note {
-  color: #8a8a8a;
+  color: #6b6b6b;
   margin-top: 18px;
 }
 
@@ -106,11 +106,11 @@
   letter-spacing: -0.02em;
 }
 
-.tf-tier-tag { color: #8a8a8a; }
+.tf-tier-tag { color: #6b6b6b; }
 
 .tf-tier-desc {
   margin-top: 14px;
-  color: #8a8a8a;
+  color: #6b6b6b;
   line-height: 1.6;
   max-width: 46ch;
 }
@@ -141,9 +141,9 @@
 
 .tf-size:last-child { border-bottom: none; }
 .tf-size-nom  { flex: 0 0 auto; }
-.tf-size-meta { flex: 1; color: #8a8a8a; }
+.tf-size-meta { flex: 1; color: #6b6b6b; }
 .tf-size-prix { flex: 0 0 auto; white-space: nowrap; }
-.tf-size-prix .tf-from { color: #8a8a8a; }
+.tf-size-prix .tf-from { color: #6b6b6b; }
 
 /* Signature : offre d'ancrage, bloc noir (même motif que les autres blocs noirs du site) */
 .tf-tier--signature {
@@ -266,11 +266,11 @@
 .cp-unit {
   display: block;
   text-align: right;
-  color: #8a8a8a;
+  color: #6b6b6b;
 }
 .cp-meta {
   margin: 9px 0 0;
-  color: #8a8a8a;
+  color: #6b6b6b;
   line-height: 1.5;
   max-width: 46ch;
 }
@@ -473,7 +473,7 @@
   font-weight: 600;
   font-size: var(--st);
   letter-spacing: -0.01em;
-  color: #8a8a8a;
+  color: #6b6b6b;
   margin-bottom: 10px;
 }
 
@@ -495,7 +495,7 @@
 }
 
 /* Le bloc « Style Flash » : catégories en sable */
-.tf-service--flash .tf-price-cat { color: #8a8a8a; }
+.tf-service--flash .tf-price-cat { color: #6b6b6b; }
 
 @media (min-width: 1024px) {
   .tf-forfaits { gap: 90px; }
@@ -583,7 +583,7 @@
   font-weight: 400;
   font-size: var(--tx);
   line-height: 1.4;
-  color: #8a8a8a;
+  color: #6b6b6b;
   margin: 0;
   max-width: 34ch;
 }
@@ -639,6 +639,6 @@
   font-family: var(--font);
   font-weight: 400;
   font-size: var(--tx);
-  color: #8a8a8a;
+  color: #6b6b6b;
   margin: 0;
 }
