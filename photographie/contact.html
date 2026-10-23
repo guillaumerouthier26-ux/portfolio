@@ -27,7 +27,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#faf8f3">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ContactPage","url":"https://portfolio-henna-one-15.vercel.app/photographie/contact.html","name":"Contact · Guillaume Routhier, photographe et designer à Québec","inLanguage":"fr-CA","about":{"@id":"https://portfolio-henna-one-15.vercel.app/#service"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://portfolio-henna-one-15.vercel.app/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://portfolio-henna-one-15.vercel.app/photographie/contact.html"}]},{"@type":"Person","@id":"https://portfolio-henna-one-15.vercel.app/#guillaume","name":"Guillaume Routhier","jobTitle":"Photographe et designer graphique","url":"https://portfolio-henna-one-15.vercel.app/","email":"mailto:guillaumerouthier26@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Québec","addressRegion":"QC","addressCountry":"CA"},"workLocation":{"@type":"Place","name":"Québec","address":{"@type":"PostalAddress","addressLocality":"Québec","addressRegion":"QC","addressCountry":"CA"},"geo":{"@type":"GeoCoordinates","latitude":46.8139,"longitude":-71.208}},"sameAs":["https://instagram.com/peluredekiwi.reguliere","https://www.linkedin.com/in/guillaume-routhier-2bb03b248/"],"knowsAbout":["Photographie culinaire","Photographie de produit","Photographie immobilière","Photographie d'événements","Image de marque","Design web","Publicité"]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ContactPage","url":"https://portfolio-henna-one-15.vercel.app/photographie/contact.html","name":"Contact · Guillaume Routhier, photographe et designer à Québec","inLanguage":"fr-CA","about":{"@id":"https://portfolio-henna-one-15.vercel.app/#service"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://portfolio-henna-one-15.vercel.app/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://portfolio-henna-one-15.vercel.app/photographie/contact.html"}]},{"@type":"Person","@id":"https://portfolio-henna-one-15.vercel.app/#guillaume","name":"Guillaume Routhier","jobTitle":"Photographe et designer graphique","url":"https://portfolio-henna-one-15.vercel.app/","email":"mailto:guillaumerouthier26@gmail.com","telephone":"+1-438-499-9314","address":{"@type":"PostalAddress","addressLocality":"Québec","addressRegion":"QC","addressCountry":"CA"},"workLocation":{"@type":"Place","name":"Québec","address":{"@type":"PostalAddress","addressLocality":"Québec","addressRegion":"QC","addressCountry":"CA"},"geo":{"@type":"GeoCoordinates","latitude":46.8139,"longitude":-71.208}},"sameAs":["https://instagram.com/peluredekiwi.reguliere","https://www.linkedin.com/in/guillaume-routhier-2bb03b248/"],"knowsAbout":["Photographie culinaire","Photographie de produit","Photographie immobilière","Image de marque","Design web","Publicité"]}]}</script>
   <!-- SEO:end -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,13 +59,32 @@
     .ceyebrow .dot{width:8px;height:8px;border-radius:50%;background:#111;flex:none}
     .ctitre{font-family:var(--font-titre);font-weight:500;font-size:clamp(40px,7vw,72px);line-height:1;letter-spacing:-.01em;margin-bottom:40px;display:inline-block;transform:scaleX(.9);transform-origin:left center}
 
-    .clead{max-width:46ch;margin:-22px 0 34px;font-size:15px;line-height:1.6;color:#4a4a4a}
-    .cform{display:flex;flex-direction:column;gap:26px}
-    .cfield{display:flex;flex-direction:column;gap:8px}
+    .clead{max-width:46ch;margin:-14px 0 14px;font-size:15px;line-height:1.6;color:#4a4a4a}
+    .cquick{display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:30px;font-size:10.5pt;font-weight:500}
+    .cquick a{text-decoration:none;border-bottom:1px solid rgba(0,0,0,.3);padding-bottom:2px}
+    .cquick a:hover{border-bottom-color:#111}
+    .cform{display:flex;flex-direction:column;gap:20px}
+    .crow{display:grid;grid-template-columns:1fr 1fr;gap:20px 24px}
+    .cfield{display:flex;flex-direction:column;gap:8px;min-width:0}
     .cfield label{font-size:9.5pt;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#111}
-    .cfield input,.cfield textarea{font-family:var(--font);font-size:12pt;color:#111;background:transparent;border:none;border-bottom:1.5px solid #111;padding:10px 0;width:100%;outline:none;resize:vertical}
+    .cfield label small{font-size:inherit;font-weight:500;letter-spacing:.06em;text-transform:none;color:#6b6b6b}
+    .cfield input,.cfield textarea,.cfield select{font-family:var(--font);font-size:12pt;color:#111;background:transparent;border:none;border-bottom:1.5px solid #111;border-radius:0;padding:10px 0;width:100%;outline:none;resize:vertical}
+    .cfield select{-webkit-appearance:none;appearance:none;padding-right:22px;cursor:pointer;
+      background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1.5l5 5 5-5' fill='none' stroke='%23111' stroke-width='1.5'/></svg>") no-repeat right 2px center}
+    .cfield select:invalid{color:#999}
     .cfield input::placeholder,.cfield textarea::placeholder{color:#999}
-    .cfield input:focus,.cfield textarea:focus{border-bottom-color:#111;box-shadow:0 1px 0 #111}
+    .cfield input:focus,.cfield textarea:focus,.cfield select:focus{border-bottom-color:#111;box-shadow:0 1px 0 #111}
+    /* Service : deux cases à cocher (photo, design, ou les deux) */
+    .cfield--checks{display:block;border:0;margin:0;padding:0}
+    .cfield--checks legend{padding:0;margin-bottom:8px;font-size:9.5pt;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#111}
+    .cchecks{display:flex;flex-wrap:wrap;gap:8px 26px;padding:10px 0;border-bottom:1.5px solid #111}
+    .cfield .ccheck{display:inline-flex;align-items:center;gap:10px;font-size:12pt;font-weight:400;letter-spacing:0;text-transform:none;line-height:1.5;cursor:pointer}
+    .cfield .ccheck input{-webkit-appearance:none;appearance:none;flex:none;width:18px;height:18px;padding:0;margin:0;border:1.5px solid #111;border-radius:4px;
+      display:grid;place-content:center;cursor:pointer;transition:background .2s}
+    .cfield .ccheck input:checked{background:#111}
+    .cfield .ccheck input:checked::after{content:"";width:9px;height:5px;margin-top:-2px;border:2px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg)}
+    .cfield .ccheck input:focus{box-shadow:none}
+    .cfield .ccheck input:focus-visible{outline:2px solid #111;outline-offset:2px}
 
     .cstatus{font-size:10.5pt;color:#555;min-height:1em;margin-top:-6px}
     .cactions{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:6px}
@@ -76,12 +95,14 @@
     .cdirect:hover{color:#111;text-decoration:underline;text-underline-offset:3px}
 
     @media(max-width:860px){
-      .clayout{grid-template-columns:1fr;grid-template-rows:1fr;height:100svh}
+      /* sur mobile, la page défile normalement : le formulaire n'est jamais coupé */
+      .clayout{grid-template-columns:1fr;grid-template-rows:1fr;height:auto;min-height:100svh;overflow:visible}
       .cimg{display:none}
-      .cform-col{justify-content:center;padding:88px var(--mx) 40px}
+      .cform-col{justify-content:center;padding:88px var(--mx) 40px;overflow:visible}
       .ctitre{margin-bottom:28px}
       .cform{gap:20px}
     }
+    @media(max-width:520px){.crow{grid-template-columns:1fr}}
     :where(img[width][height]){width:auto;height:auto}
   </style>
   <script>(function(){try{if(!sessionStorage.getItem('curtainIn'))return;sessionStorage.removeItem('curtainIn');var d=document.createElement('div');d.style.cssText='position:fixed;inset:0;background:#faf8f3;z-index:99999;pointer-events:none;will-change:transform';document.documentElement.appendChild(d);requestAnimationFrame(function(){requestAnimationFrame(function(){d.style.transition='transform .6s cubic-bezier(.76,0,.24,1)';d.style.transform='translateY(-100%)'})});setTimeout(function(){if(d.parentNode)d.parentNode.removeChild(d)},700)}catch(e){}})();</script>
@@ -103,16 +124,44 @@
       <div class="cform-wrap">
         <span class="ceyebrow"><span class="dot" aria-hidden="true"></span>Disponible pour vos projets</span>
         <h1 class="ctitre">Parlons-en.</h1>
-        <p class="clead">Photographe et designer graphique basé à Québec. Prises de vue à Québec, à Lévis et dans les environs, projets de design à distance, ici comme ailleurs.</p>
+        <p class="clead">Photographe et designer graphique basé à Québec. Prises de vue à Québec, à Lévis et dans les environs, projets de design à distance, ici comme ailleurs. Je réponds en moins de 24&#8239;h ouvrables.</p>
+        <p class="cquick"><a href="sms:+14384999314">Texto 438 499-9314</a><a href="https://instagram.com/peluredekiwi.reguliere" target="_blank" rel="noopener">Instagram</a></p>
 
         <form class="cform" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="0dc57b20-53d9-4f18-b0cf-69677f6055b7">
           <input type="hidden" name="from_name" value="Site, Guillaume Routhier">
           <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
 
-          <div class="cfield">
-            <label for="email">Courriel</label>
-            <input type="email" id="email" name="email" autocomplete="email" required>
+          <div class="crow">
+            <div class="cfield">
+              <label for="email">Courriel</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+            <div class="cfield">
+              <label for="telephone">Téléphone <small>(facultatif)</small></label>
+              <input type="tel" id="telephone" name="telephone" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="crow">
+            <fieldset class="cfield cfield--checks">
+              <legend>Service</legend>
+              <div class="cchecks">
+                <label class="ccheck"><input type="checkbox" name="service_choix" value="Photo"> Photo</label>
+                <label class="ccheck"><input type="checkbox" name="service_choix" value="Design"> Design</label>
+              </div>
+            </fieldset>
+            <div class="cfield">
+              <label for="budget">Budget</label>
+              <select id="budget" name="budget" required>
+                <option value="" disabled selected>Choisir</option>
+                <option>Moins de 500 $</option>
+                <option>De 500 à 1 500 $</option>
+                <option>De 1 500 à 5 000 $</option>
+                <option>5 000 $ et plus</option>
+                <option>Je ne sais pas encore</option>
+              </select>
+            </div>
           </div>
 
           <div class="cfield">
@@ -147,9 +196,14 @@
         e.preventDefault();
         btn.disabled = true;
         status.textContent = 'Envoi…';
+        // les cases cochées deviennent un seul champ lisible dans le courriel : « Photo et Design »
+        var data = new FormData(form);
+        var choix = data.getAll('service_choix');
+        data.delete('service_choix');
+        data.set('service', choix.length ? choix.join(' et ') : 'Non précisé');
         fetch(form.action, {
           method: 'POST',
-          body: new FormData(form),
+          body: data,
           headers: { Accept: 'application/json' }
         }).then(function (r) {
           if (r.ok) { form.reset(); status.textContent = 'Merci, votre message est parti.'; }

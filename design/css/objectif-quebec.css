@@ -143,7 +143,7 @@
   gap: 24px;
   margin-bottom: 36px;
 }
-.oq2-web-titre { margin: 0; line-height: 0.95; }
+.oq2-web-titre { margin: 0; line-height: 1.08; } /* assez d'air pour que les accents (É) ne touchent pas la ligne du dessus */
 .oq2-web-body { margin: 0; line-height: 1.6; }
 .oq2-web-img { width: 100%; display: block; }
 
@@ -282,6 +282,8 @@
   }
   .oq2-web-head-titre { grid-column: 1 / 8; }
   .oq2-web-head-body  { grid-column: 8 / 13; }
+  /* Vidéo source en 1260 px : affichée plus petite pour rester nette */
+  .oq2-web-img { max-width: 860px; margin-inline: auto; }
 
   /* (03) Contexte : texte 5 col / image 7 col */
   .oq2-contexte {

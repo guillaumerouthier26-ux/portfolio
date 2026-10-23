@@ -43,7 +43,10 @@
   padding: 13px 0;
   border-bottom: 1px solid #e2e2e2;
 }
-.pjb-meta-row .pjb-meta-k { flex: 0 0 90px; color: #6b6b6b; }
+.pjb-meta-row .pjb-meta-k { flex: 0 0 110px; color: #6b6b6b; white-space: nowrap; }
+/* les animations enveloppent chaque texte dans un bloc : la colonne de l'étiquette se fixe sur cette enveloppe */
+.pjb-meta-row > div:first-child { flex: 0 0 110px; }
+.pjb-meta-row > div:last-child { flex: 1 1 auto; min-width: 0; }
 
 /* ─── CRÉDITS ─── */
 .pjb-credits {

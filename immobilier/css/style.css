@@ -1022,7 +1022,7 @@ textarea:focus-visible {
 
   :root {
     --grid-gutter: 24px;
-    --grid-margin: 40px;
+    --grid-margin: clamp(24px, 5vw, 80px); /* même marge que l'accueil et L'Heure Mauve */
   }
 
   /* ─── TYPOGRAPHIE ───────────────────────── */
