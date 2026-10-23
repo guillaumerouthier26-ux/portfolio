@@ -1,0 +1,66 @@
+/* ─── Vela One : le site en direct dans une fenêtre de navigateur ─── */
+/* Sur ordinateur, l'aperçu se charge au clic (pas de défilement piégé ni de chargement inutile) ;
+   sur mobile et tablette, une affiche et un bouton ouvrent le site en plein écran. */
+.vl-live { padding: clamp(60px, 8vw, 120px) var(--grid-margin, 24px) 0; }
+.vl-live-head {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: 10px 24px; margin-bottom: 22px;
+}
+.vl-open { font-weight: 600; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+
+.vl-frame {
+  border-radius: 14px; overflow: hidden; background: #1A1F25;
+  border: 1px solid rgba(0, 0, 0, .08); box-shadow: -10px 24px 60px rgba(0, 0, 0, .22);
+}
+.vl-bar {
+  display: flex; align-items: center; gap: 7px; height: 38px; padding: 0 14px;
+  background: #12161B; border-bottom: 1px solid rgba(255, 255, 255, .06);
+}
+.vl-bar i { width: 10px; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, .18); }
+.vl-bar span { margin-left: 10px; font-size: 11px; letter-spacing: .06em; color: rgba(244, 247, 253, .55); }
+
+.vl-screen { position: relative; height: min(78vh, 780px); background: #1A1F25; }
+.vl-screen iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+.vl-start {
+  position: absolute; inset: 0; z-index: 2; display: block; width: 100%; padding: 0; border: 0;
+  background: #1A1F25; cursor: pointer; transition: opacity .5s ease;
+}
+.vl-start img {
+  width: 100%; height: 100%; object-fit: cover; object-position: top center;
+  transition: transform .8s cubic-bezier(.16, 1, .3, 1);
+}
+/* dégradé sombre en bas de l'affiche : le bouton s'y pose sans masquer le titre du site */
+.vl-start::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 42%; pointer-events: none;
+  background: linear-gradient(to top, rgba(18, 22, 27, .92), rgba(18, 22, 27, 0));
+}
+.vl-start-btn {
+  position: absolute; z-index: 1; left: 50%; bottom: clamp(28px, 7%, 56px); translate: -50% 0;
+  padding: 16px 28px; border-radius: 999px; background: #fff; color: #111;
+  font-family: 'Montserrat', system-ui, sans-serif; font-weight: 600; font-size: 11pt; line-height: 1;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, .35); transition: transform .4s cubic-bezier(.16, 1, .3, 1);
+}
+@media (hover: hover) {
+  .vl-start:hover img { transform: scale(1.015); }
+  .vl-start:hover .vl-start-btn { transform: scale(1.05); }
+}
+.vl-screen.is-live .vl-start { opacity: 0; pointer-events: none; }
+.vl-hint { margin-top: 16px; color: #6b6b6b; }
+
+.vl-cta-m { display: none; }
+
+/* Hero (maquette d'ordinateur 16:9) : sur téléphone, cadré sur l'écran de l'ordinateur */
+@media (max-width: 760px) {
+  .vl-hero .pj-hero-img { object-position: 50% 50% !important; } /* l'ordinateur, centré, tient presque entier */
+}
+
+@media (max-width: 1023px) {
+  .vl-screen { height: min(72svh, 640px); }
+  .vl-screen iframe, .vl-start-btn, .vl-hint { display: none; }
+  .vl-start { pointer-events: none; }
+  .vl-cta-m {
+    display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%;
+    margin-top: 16px; padding: 16px 24px; border-radius: 999px; background: #141414; color: #fff;
+    font-family: 'Montserrat', system-ui, sans-serif; font-weight: 600; font-size: 11pt; text-decoration: none;
+  }
+}

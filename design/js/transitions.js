@@ -164,8 +164,8 @@
     // relatifs et la CSS diffèrent → rideau blanc puis chargement natif.
     var base = location.pathname.split('/')[1];
     var target = url.pathname.split('/')[1];
-    // contact.html est une page autonome (styles intégrés) : chargement natif sous le rideau
-    if (target !== base || /contact\.html$/.test(url.pathname)) {
+    // contact.html et les démos (design/demos/…) sont des pages autonomes : chargement natif sous le rideau
+    if (target !== base || /contact\.html$/.test(url.pathname) || /\/demos\//.test(url.pathname)) {
       e.preventDefault();
       if (busy) return;
       busy = true;

@@ -120,6 +120,13 @@
     <image:image><image:loc>https://portfolio-henna-one-15.vercel.app/photographie/photos/akisushi-11.webp</image:loc></image:image>
   </url>
   <url>
+    <loc>https://portfolio-henna-one-15.vercel.app/design/vela-one.html</loc><lastmod>2026-10-23</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
+    <image:image><image:loc>https://portfolio-henna-one-15.vercel.app/og/vela-one.jpg</image:loc></image:image>
+    <image:image><image:loc>https://portfolio-henna-one-15.vercel.app/design/photos/vela-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://portfolio-henna-one-15.vercel.app/design/photos/vela-hero-maquette.webp</image:loc></image:image>
+    <image:image><image:loc>https://portfolio-henna-one-15.vercel.app/design/photos/vela-mobile.webp</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://portfolio-henna-one-15.vercel.app/design/objectif-quebec.html</loc><lastmod>2026-10-21</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
     <image:image><image:loc>https://portfolio-henna-one-15.vercel.app/og/objectif-quebec.jpg</image:loc></image:image>
     <image:image><image:loc>https://portfolio-henna-one-15.vercel.app/design/photos/oq-hero2-event.webp</image:loc></image:image>
