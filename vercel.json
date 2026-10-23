@@ -2,6 +2,12 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "portfolio-henna-one-15.vercel.app" }],
+      "destination": "https://www.guillaumerouthier.ca/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "portfolio-henna-one-15.vercel.app" }],
       "destination": "https://www.guillaumerouthier.ca/:path*",
