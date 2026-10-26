@@ -366,6 +366,23 @@ body.hmenu-open .hhero-actions{transition-delay:.13s}
 @media(hover:hover){.ap-ph:hover img{transform:scale(1.04)}}
 @media(max-width:560px){.ap-ph{height:clamp(240px,62vw,320px)}}
 
+/* ─── QUESTIONS FRÉQUENTES : accordéon natif (details/summary), le texte reste dans le HTML ─── */
+.hfaq{padding:clamp(70px,9vw,130px) var(--mx) clamp(20px,3vw,40px)}
+.hfaq-in{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(28px,5vw,90px);align-items:start}
+.hfaq-k{margin-bottom:12px;font-size:10pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#6b6b6b}
+.hfaq-t{font-family:var(--font-titre);font-weight:500;font-size:clamp(30px,3.6vw,50px);line-height:1.06;letter-spacing:-.01em;color:#141414;transform:scaleX(.9);transform-origin:left center}
+.hfaq-list{border-top:1px solid rgba(0,0,0,.14)}
+.hfaq-list details{border-bottom:1px solid rgba(0,0,0,.14)}
+.hfaq-list summary{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 0;cursor:pointer;list-style:none;
+  font-family:var(--font-titre);font-weight:500;font-size:clamp(18px,1.6vw,22px);line-height:1.3;color:#141414}
+.hfaq-list summary::-webkit-details-marker{display:none}
+.hfaq-list summary::after{content:"+";flex:none;font-family:var(--font);font-weight:400;font-size:22px;line-height:1;color:#6b6b6b;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.hfaq-list details[open] summary::after{transform:rotate(45deg)}
+.hfaq-list summary:focus-visible{outline:2px solid #141414;outline-offset:4px}
+.hfaq-list p{max-width:62ch;padding:0 0 22px;font-size:clamp(15px,1.1vw,16.5px);line-height:1.65;color:#333}
+.hfaq-list a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:760px){.hfaq-in{grid-template-columns:1fr}}
+
 /* Lightbox */
 .lbox{position:fixed;inset:0;z-index:100;background:rgba(10,10,10,.95);display:none;align-items:center;justify-content:center;padding:28px;opacity:0;transition:opacity .3s ease}
 .lbox.open{display:flex;opacity:1}

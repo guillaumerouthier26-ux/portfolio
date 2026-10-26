@@ -1,4 +1,6 @@
+# Site ouvert aux moteurs de recherche et aux assistants IA (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, Bingbot, etc.)
 User-agent: *
 Allow: /
 
+# Fiche en texte simple pour les assistants : https://www.guillaumerouthier.ca/llms.txt
 Sitemap: https://www.guillaumerouthier.ca/sitemap.xml
