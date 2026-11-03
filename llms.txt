@@ -1,13 +1,12 @@
 # Guillaume Routhier, photographe et designer graphique à Québec
 
-> Photographe et designer graphique basé à Québec (Canada). Photo culinaire, de produits et immobilière
+> Photographe et designer graphique basé à Québec (Canada). Photo culinaire et de produits
 > pour les restaurants, cafés et commerces de Québec, de Lévis et des environs.
 > Image de marque, sites web et publicité, à Québec et à distance.
 
 ## Services et tarifs (taxes en sus)
 - Photo culinaire (restaurants, cafés) : à partir de 400 $. 1 h 30 sur place, 15 photos retouchées, livrées en 5 jours ouvrables.
 - Photo de produits : à partir de 400 $. Jusqu'à 6 produits, 12 photos retouchées, livrées en 5 jours ouvrables.
-- Photo immobilière : à partir de 180 $. Couverture complète de la propriété, photos retouchées, livrées en 24 h.
 - Image de marque (logo, identité, emballage), sites web et publicité : sur soumission. La soumission est gratuite.
 - Photo supplémentaire (culinaire, produits) : 25 $.
 - Photos culinaires et de produits en usage illimité : web, réseaux sociaux, imprimé, publicité.
@@ -30,6 +29,7 @@ Collaboration avec des agences, en sous-traitance ou en marque blanche, en suiva
 - Contact : https://www.guillaumerouthier.ca/photographie/contact.html
 
 ## Projets
+- Remedy Kombucha, photographie de produits (projet personnel) : https://www.guillaumerouthier.ca/photographie/remedy-kombucha.html
 - La Table de Jade, photographie culinaire (projet personnel) : https://www.guillaumerouthier.ca/photographie/table-de-jade.html
 - Aki Sushi, photographie culinaire en lumière naturelle : https://www.guillaumerouthier.ca/photographie/aki-sushi.html
 - Aki Sushi Studio, photographie culinaire en studio : https://www.guillaumerouthier.ca/photographie/aki-sushi-studio.html
@@ -39,11 +39,9 @@ Collaboration avec des agences, en sous-traitance ou en marque blanche, en suiva
 - Vela One, site web (projet personnel, produit fictif) : https://www.guillaumerouthier.ca/design/vela-one.html
 - Aki Bobba, publicité 3D : https://www.guillaumerouthier.ca/design/aki-bobba.html
 - Ciao Totes, direction artistique et retouche d'une campagne photo : https://www.guillaumerouthier.ca/photographie/ciao-totes.html
-- Maison historique à Cap-Santé, photographie immobilière : https://www.guillaumerouthier.ca/immobilier/cap-sante.html
-- Bungalow à Lévis, photographie immobilière : https://www.guillaumerouthier.ca/immobilier/charles-bilodeau.html
 
 ## In English
-Food, product and real estate photographer and graphic designer based in Québec City, Canada.
+Food and product photographer and graphic designer based in Québec City, Canada.
 Photo shoots in Québec City, Lévis and surrounding areas; design projects (branding, websites, advertising) remotely.
-Food photography from CAD 400, product photography from CAD 400, real estate photography from CAD 180 (taxes extra).
+Food photography from CAD 400, product photography from CAD 400 (taxes extra).
 Contact: info@guillaumerouthier.ca

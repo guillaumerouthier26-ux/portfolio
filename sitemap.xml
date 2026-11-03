@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://www.guillaumerouthier.ca/</loc><lastmod>2026-10-26</lastmod><changefreq>monthly</changefreq><priority>1.0</priority>
+    <loc>https://www.guillaumerouthier.ca/</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>1.0</priority>
     <image:image><image:loc>https://www.guillaumerouthier.ca/og/accueil.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/index-akistudio.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/index-lhm.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/immobilier/photos/index-capsante.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/index-101.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/index-oq.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/index-ciaototes.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/index-akisushi.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/index-aki.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/immobilier/photos/index-charles.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/contact.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p1-900.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p2-900.webp</image:loc></image:image>
@@ -140,28 +138,12 @@
     <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/akisushi-pf1.webp</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.guillaumerouthier.ca/immobilier/cap-sante.html</loc><lastmod>2026-10-21</lastmod><changefreq>yearly</changefreq><priority>0.6</priority>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/og/cap-sante.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/immobilier/photos/cap-sante-01.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/immobilier/photos/cap-sante-02.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/immobilier/photos/cap-sante-03.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/immobilier/photos/cap-sante-04.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/immobilier/photos/cap-sante-05.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/immobilier/photos/cap-sante-06.webp</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.guillaumerouthier.ca/immobilier/charles-bilodeau.html</loc><lastmod>2026-10-21</lastmod><changefreq>yearly</changefreq><priority>0.6</priority>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/og/bungalow-levis.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/immobilier/photos/charles-bilodeau-01.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/immobilier/photos/charles-bilodeau-02.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/immobilier/photos/charles-bilodeau-03.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/immobilier/photos/charles-bilodeau-04.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/immobilier/photos/charles-bilodeau-05.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/immobilier/photos/charles-bilodeau-06.webp</image:loc></image:image>
-  </url>
-  <url>
     <loc>https://www.guillaumerouthier.ca/photographie/contact.html</loc><lastmod>2026-10-21</lastmod><changefreq>yearly</changefreq><priority>0.6</priority>
     <image:image><image:loc>https://www.guillaumerouthier.ca/og/contact.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/contact.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.guillaumerouthier.ca/photographie/remedy-kombucha.html</loc><lastmod>2026-11-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/remedy-hero.webp</image:loc></image:image>
   </url>
 </urlset>

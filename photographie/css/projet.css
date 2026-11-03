@@ -473,6 +473,10 @@
     object-position: center top;
     display: block;
   }
+  /* Variante 3 colonnes (ex. Aki Sushi Studio, 15 photos = 5 rangées pleines) */
+  .pj-grid4--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   /* ─── Paire asymétrique ─── */
   .pj-asym {
@@ -1711,11 +1715,11 @@ section video {
 .pj-statement-titre { transform-origin: center center; }
 .pj-statement--left .pj-statement-titre { transform-origin: left center; }
 
-/* Courte description sous le nom du projet : Lora, casse normale */
+/* Courte description sous le nom du projet : Montserrat, casse normale */
 .pj-intro-text .t-courant {
-  font-family: var(--font-titre) !important;
+  font-family: var(--font) !important;
   font-weight: 400 !important;
-  font-size: clamp(17px, 1.5vw, 22px) !important;
+  font-size: clamp(15px, 1.25vw, 18px) !important;
   letter-spacing: 0 !important;
   text-transform: none !important;
   color: #3d3d3d;

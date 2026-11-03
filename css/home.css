@@ -290,7 +290,7 @@ body.hmenu-open .hhero-actions{transition-delay:.13s}
 .htarifs-k{margin-bottom:12px;font-size:9.5pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#5c5c5c}
 .htarifs-t{font-family:var(--font-titre);font-weight:500;font-size:clamp(26px,2.6vw,38px);line-height:1.1;letter-spacing:-.01em;transform:scaleX(.9);transform-origin:left center}
 .htarifs-t em{font-style:italic;color:#7d6a4f}
-.htarifs-list{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 clamp(20px,2.4vw,36px)}
+.htarifs-list{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(20px,2.4vw,36px)}
 .htarif{padding:22px 0 6px;border-top:1px solid rgba(0,0,0,.14)}
 .htarif h3{font-size:9.5pt;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
 .htarif-prix{margin-top:16px}
@@ -299,9 +299,7 @@ body.hmenu-open .hhero-actions{transition-delay:.13s}
 .htarif-prix--soum b{font-size:clamp(26px,2.3vw,34px);line-height:1.15}
 .htarif-inc{max-width:32ch;margin-top:12px;font-size:10.5pt;line-height:1.55;color:#444}
 .htarifs-note{margin-top:clamp(20px,2.2vw,28px);font-size:9.5pt;line-height:1.6;color:#5c5c5c}
-@media(max-width:1060px){.htarifs-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:760px){.htarifs-in{margin:0 -8px;padding:30px 24px 24px;border-radius:20px}}
-@media(max-width:520px){.htarifs-list{grid-template-columns:1fr}}
+@media(max-width:760px){.htarifs-in{margin:0 -8px;padding:30px 24px 24px;border-radius:20px}.htarifs-list{grid-template-columns:1fr}}
 
 /* ─── PROJETS VEDETTES ─── */
 /* Bloc centré : visuel carré d'environ 60vh + colonne texte, marges latérales libres */
