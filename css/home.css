@@ -327,7 +327,7 @@ body.hmenu-open .hhero-actions{transition-delay:.13s}
 .feat-photo img{width:100%;height:100%;object-fit:cover}
 
 .feat-tag{display:inline-block;font-size:9.5pt;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#141414;border:1px solid rgba(0,0,0,.22);border-radius:999px;padding:5px 12px;margin-bottom:20px}
-.feat-name{font-family:var(--font-titre);font-weight:500;font-size:clamp(32px,3.8vw,52px);line-height:1;letter-spacing:-.01em;color:#141414;transform:scaleX(.9);transform-origin:left center;margin-bottom:22px}
+.feat-name{font-family:var(--font-titre);font-weight:500;font-size:clamp(26px,2.5vw,36px);line-height:1;letter-spacing:-.01em;color:#141414;transform:scaleX(.9);transform-origin:left center;margin-bottom:22px}
 .feat-desc{font-size:clamp(15px,1.15vw,17px);line-height:1.65;color:#333;max-width:40ch;margin-bottom:28px}
 .feat-link{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:12pt;color:#141414;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px}
 .feat-link span{display:inline-block;transition:transform .45s cubic-bezier(.16,1,.3,1)}
