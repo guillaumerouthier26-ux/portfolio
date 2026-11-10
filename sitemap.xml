@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://www.guillaumerouthier.ca/</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>1.0</priority>
+    <loc>https://www.guillaumerouthier.ca/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>1.0</priority>
     <image:image><image:loc>https://www.guillaumerouthier.ca/og/accueil.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/index-akistudio.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/index-lhm.webp</image:loc></image:image>
@@ -145,5 +145,9 @@
   <url>
     <loc>https://www.guillaumerouthier.ca/photographie/remedy-kombucha.html</loc><lastmod>2026-11-03</lastmod><changefreq>yearly</changefreq><priority>0.8</priority>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/remedy-hero.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.guillaumerouthier.ca/photographie/rosso-domenica.html</loc><lastmod>2026-11-10</lastmod><changefreq>yearly</changefreq><priority>0.8</priority>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/rosso-hero.webp</image:loc></image:image>
   </url>
 </urlset>
