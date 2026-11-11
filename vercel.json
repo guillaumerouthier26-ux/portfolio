@@ -3,6 +3,10 @@
   "redirects": [
     { "source": "/immobilier", "destination": "/", "permanent": true },
     { "source": "/immobilier/:path*", "destination": "/", "permanent": true },
+    { "source": "/design", "destination": "/", "permanent": true },
+    { "source": "/design/:path*", "destination": "/", "permanent": true },
+    { "source": "/photographie/ciao-totes.html", "destination": "/", "permanent": true },
+    { "source": "/restos-cafes.html", "destination": "/", "permanent": true },
     {
       "source": "/",
       "has": [{ "type": "host", "value": "portfolio-henna-one-15.vercel.app" }],

@@ -1,36 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://www.guillaumerouthier.ca/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>1.0</priority>
+    <loc>https://www.guillaumerouthier.ca/</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>1.0</priority>
     <image:image><image:loc>https://www.guillaumerouthier.ca/og/accueil.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/index-akistudio.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/index-lhm.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/index-101.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/index-oq.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/index-ciaototes.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/index-akisushi.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/index-aki.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/contact.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p1-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p2-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p3-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p4-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p5-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p6-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p7-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p8-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p9-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p10-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p11-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p12-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p13-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p14-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p15-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p16-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p17-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p18-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p19-900.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/paysages/p20-900.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.guillaumerouthier.ca/photographie/aki-sushi-studio.html</loc><lastmod>2026-10-21</lastmod><changefreq>yearly</changefreq><priority>0.8</priority>
@@ -44,20 +20,6 @@
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/akistudio-3.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/akistudio-9.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/akistudio-4.webp</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.guillaumerouthier.ca/design/lheure-mauve.html</loc><lastmod>2026-10-21</lastmod><changefreq>yearly</changefreq><priority>0.8</priority>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/og/lheure-mauve.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/lhm2-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/lhm2-agrumes.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/lhm2-baies.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/lhm2-fruits.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/lhm2-handsboxes.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/lhm-logo-horizontal.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/lhm-logo-stacked.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/lhm-logo-badge.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/lhm2-flatlay.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/lhm2-stack.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.guillaumerouthier.ca/photographie/table-de-jade.html</loc><lastmod>2026-10-23</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
@@ -86,22 +48,6 @@
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/le101-9.webp</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.guillaumerouthier.ca/photographie/ciao-totes.html</loc><lastmod>2026-10-21</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/og/ciao-totes.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/ciaototes-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/ciaototes-1.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/ciaototes-4.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/ciaototes-3.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/ciaototes-2.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/ciaototes-5.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/ciaototes-6.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/ciaototes-7.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/ciaototes-8.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/ciaototes-9.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/ciaototes-10.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/ciaototes-11.webp</image:loc></image:image>
-  </url>
-  <url>
     <loc>https://www.guillaumerouthier.ca/photographie/aki-sushi.html</loc><lastmod>2026-10-21</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
     <image:image><image:loc>https://www.guillaumerouthier.ca/og/aki-sushi.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/akisushi-hero.webp</image:loc></image:image>
@@ -116,26 +62,6 @@
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/akisushi-9.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/akisushi-10.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/akisushi-11.webp</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.guillaumerouthier.ca/design/vela-one.html</loc><lastmod>2026-10-23</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/og/vela-one.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/vela-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/vela-hero-maquette.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/vela-mobile.webp</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.guillaumerouthier.ca/design/objectif-quebec.html</loc><lastmod>2026-10-21</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/og/objectif-quebec.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/oq-hero2-event.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/oq-panneaux.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/oq-enseigne.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/oq-event.webp</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.guillaumerouthier.ca/design/aki-bobba.html</loc><lastmod>2026-10-21</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/og/aki-bobba.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.guillaumerouthier.ca/design/photos/akisushi-pf1.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.guillaumerouthier.ca/photographie/contact.html</loc><lastmod>2026-10-21</lastmod><changefreq>yearly</changefreq><priority>0.6</priority>
