@@ -5,6 +5,7 @@
     <image:image><image:loc>https://www.guillaumerouthier.ca/og/accueil.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/index-akistudio.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/index-101.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/index-noctem.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/index-akisushi.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/contact.webp</image:loc></image:image>
   </url>
@@ -75,5 +76,17 @@
   <url>
     <loc>https://www.guillaumerouthier.ca/photographie/rosso-domenica.html</loc><lastmod>2026-11-10</lastmod><changefreq>yearly</changefreq><priority>0.8</priority>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/rosso-hero.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.guillaumerouthier.ca/photographie/noctem.html</loc><lastmod>2026-11-18</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/og/noctem.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/noctem-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/noctem-5.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/noctem-1.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/noctem-2.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/noctem-3.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/noctem-4.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/noctem-6.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/noctem-7.webp</image:loc></image:image>
   </url>
 </urlset>
