@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/home.css?v=1794600000000">
+  <link rel="stylesheet" href="css/home.css?v=1795288617914">
   <style id="pg-bg">html,body{background:#faf8f3}</style>
   <style id="intro-css">
     body.intro-active{overflow:hidden}
@@ -175,7 +175,7 @@
   <section id="projets" class="hwrap">
     <div class="hhead">
       <h2 class="htitle">Projets sélectionnés</h2>
-      <p class="hsub">Photographie culinaire et de produits&#8239;: mandats et projets personnels.</p>
+      <p class="hsub">Photographie culinaire&#8239;: mandats et projets personnels.</p>
       <div class="hcar-nav">
         <button class="hcar-btn" type="button" data-dir="-1" aria-label="Projets précédents">&larr;</button>
         <button class="hcar-btn" type="button" data-dir="1" aria-label="Projets suivants">&rarr;</button>
@@ -188,6 +188,14 @@
         <div class="pcard-body">
           <span class="pcard-tag">Restaurant de sushis</span>
           <h3 class="pcard-name">Aki Sushi Studio</h3>
+        </div>
+      </a>
+
+      <a class="pcard" data-cat="photo" href="photographie/siboire.html">
+        <div class="pcard-imgwrap"><img width="1400" height="1867" class="pcard-img" src="photographie/photos/index-siboire.webp" alt="Siboire" loading="lazy" decoding="async"></div>
+        <div class="pcard-body">
+          <span class="pcard-tag">Microbrasserie</span>
+          <h3 class="pcard-name">Siboire</h3>
         </div>
       </a>
 
@@ -304,6 +312,22 @@
         </div>
       </div>
       <p class="htarifs-note">Engagement de 3 mois. Photos livrées en 5 jours ouvrables, en usage illimité&#8239;: web, réseaux, imprimé, publicité. Vidéos courtes de 15 à 30 secondes en format vertical, tournées le même jour que les photos, avec une musique libre de droits et 1 ronde de corrections. Garantie&#8239;: si le premier mois ne vous plaît pas, je refais le tournage ou je vous rembourse. Je travaille seul, donc 6 places en abonnement. Taxes en sus. Déplacement inclus dans un rayon de 25&#8239;km à Québec et à Lévis.</p>
+    </div>
+  </section>
+
+  <!-- VIDÉOS COURTES : la preuve, juste après les forfaits qui en parlent -->
+  <section class="hreels" aria-labelledby="hreels-t">
+    <div class="hreels-in">
+      <div class="hreels-txt">
+        <p class="hreels-k">Vidéos courtes</p>
+        <h2 class="hreels-t" id="hreels-t">À quoi ressemble <em>une vidéo courte.</em></h2>
+        <p class="hreels-p">Deux vidéos tournées pour la microbrasserie Siboire, en format vertical, prêtes pour Instagram.</p>
+        <a class="hreels-a" href="photographie/siboire.html">Voir le projet Siboire <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="hreels-vids">
+        <div class="reel-wrap"><video class="reel" data-reel width="720" height="1280" muted loop playsinline preload="none" poster="photographie/videos/siboire-reel-1.webp" aria-label="Vidéo courte pour la microbrasserie Siboire : les bières et une salade à table"><source src="photographie/videos/siboire-reel-1.mp4" type="video/mp4"></video><button class="reel-son" type="button" aria-pressed="false" aria-label="Activer le son"><svg class="reel-son-off" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m16 9 5 6M21 9l-5 6"/></svg><svg class="reel-son-on" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></button></div>
+        <div class="reel-wrap"><video class="reel" data-reel width="720" height="1280" muted loop playsinline preload="none" poster="photographie/videos/siboire-reel-2.webp" aria-label="Vidéo courte pour la microbrasserie Siboire : le menu, puis le burger et les frites"><source src="photographie/videos/siboire-reel-2.mp4" type="video/mp4"></video><button class="reel-son" type="button" aria-pressed="false" aria-label="Activer le son"><svg class="reel-son-off" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m16 9 5 6M21 9l-5 6"/></svg><svg class="reel-son-on" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></button></div>
+      </div>
     </div>
   </section>
 
@@ -498,6 +522,40 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       window.addEventListener('virtualscroll', onScroll, { passive: true });
       onScroll();
+    })();
+  </script>
+
+  <!-- Vidéos courtes : jouent en boucle sans son quand elles sont à l'écran ; un clic sur la vidéo ou le haut-parleur
+       active le son (une seule vidéo avec son à la fois). Mouvement réduit : lecture au clic. -->
+  <script>
+    (function(){
+      var wraps = document.querySelectorAll('.reel-wrap');
+      if(!wraps.length) return;
+      var vids = [];
+      function son(v, on){
+        v.muted = !on;
+        var b = v.parentNode.querySelector('.reel-son');
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        b.setAttribute('aria-label', on ? 'Couper le son' : 'Activer le son');
+        v.parentNode.classList.toggle('is-son', on);
+      }
+      wraps.forEach(function(w){
+        var v = w.querySelector('video'); vids.push(v);
+        w.addEventListener('click', function(){
+          var on = v.muted;
+          vids.forEach(function(x){ if(x !== v) son(x, false); });
+          son(v, on);
+          if(on && v.paused){ var p = v.play(); if(p && p.catch) p.catch(function(){}); }
+        });
+      });
+      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+      var io = new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(e.isIntersecting){ var p = e.target.play(); if(p && p.catch) p.catch(function(){}); }
+          else { e.target.pause(); son(e.target, false); }
+        });
+      }, { threshold: .35 });
+      vids.forEach(function(x){ io.observe(x); });
     })();
   </script>
 

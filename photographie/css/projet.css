@@ -1724,3 +1724,22 @@ section video {
   text-transform: none !important;
   color: #3d3d3d;
 }
+
+/* ─── Vidéos courtes (format vertical, 2 côte à côte) ─── */
+.pj-reels { padding: 0 var(--grid-margin, 20px); margin: clamp(8px, 2vw, 24px) 0 clamp(40px, 6vw, 90px); }
+.pj-reels .pjb-label { display: block; margin-bottom: 18px; }
+.pj-reels-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 360px)); justify-content: center; gap: var(--grid-gutter, 12px); }
+.pj-reels .reel { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 14px; background: #111; }
+
+/* Vidéos courtes : cadre cliquable + bouton haut-parleur (son au clic) */
+.reel-wrap{position:relative;cursor:pointer;border-radius:16px;overflow:hidden;background:#111}
+.reel-wrap .reel{border-radius:0}
+.reel-son{position:absolute;right:12px;bottom:12px;display:grid;place-items:center;width:40px;height:40px;border:0;border-radius:50%;background:rgba(20,20,20,.62);color:#fff;cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:background .25s ease,transform .25s ease}
+.reel-son svg{grid-area:1/1}
+.reel-son .reel-son-on{display:none}
+.reel-wrap.is-son .reel-son{background:#fff;color:#141414}
+.reel-wrap.is-son .reel-son-on{display:block}
+.reel-wrap.is-son .reel-son-off{display:none}
+.reel-son:focus-visible{outline:2px solid #fff;outline-offset:3px}
+@media(hover:hover){.reel-wrap:hover .reel-son{transform:scale(1.08)}}
+@media(prefers-reduced-motion:reduce){.reel-son{transition:none}}
