@@ -7,6 +7,7 @@
     { "source": "/design/:path*", "destination": "/", "permanent": true },
     { "source": "/photographie/ciao-totes.html", "destination": "/", "permanent": true },
     { "source": "/restos-cafes.html", "destination": "/", "permanent": true },
+    { "source": "/photographie/remedy-kombucha.html", "destination": "/photographie/graffiti.html", "permanent": true },
     {
       "source": "/",
       "has": [{ "type": "host", "value": "portfolio-henna-one-15.vercel.app" }],
