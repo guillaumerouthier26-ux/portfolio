@@ -1725,11 +1725,21 @@ section video {
   color: #3d3d3d;
 }
 
-/* ─── Vidéos courtes (format vertical, 2 côte à côte) ─── */
-.pj-reels { padding: 0 var(--grid-margin, 20px); margin: clamp(8px, 2vw, 24px) 0 clamp(40px, 6vw, 90px); }
-.pj-reels .pjb-label { display: block; margin-bottom: 18px; }
-.pj-reels-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 360px)); justify-content: center; gap: var(--grid-gutter, 12px); }
-.pj-reels .reel { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 14px; background: #111; }
+/* ─── Vidéos courtes : même grille que « Le projet » ; les 2 vidéos tombent sur les colonnes 3 et 4 de la galerie ─── */
+.pj-reels { padding: 0 var(--grid-margin, 24px); margin: 0 0 var(--grid-gutter, 24px); display: flex; flex-direction: column; gap: 32px; }
+.pj-reels .pjb-projet-lede { margin: 0; }
+.pj-reels .pjb-projet-lede em { font-style: italic; color: #7d6a4f; } /* même accent que les titres de l'accueil */
+.pj-reels-p { margin: 22px 0 0; line-height: 1.6; max-width: 34ch; }
+.pj-reels-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.pj-reels .reel { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; background: #111; }
+.pj-reels .reel-wrap { border-radius: 20pt; }
+.pj-reels ~ .pj-stack { margin-top: 0; } /* les photos suivent les vidéos au même écart que la galerie */
+@media (min-width: 1024px) {
+  /* vidéos à gauche (colonnes 1 et 2 de la galerie), texte collé à leur droite, centré sur leur hauteur */
+  .pj-reels { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--grid-gutter, 24px); align-items: center; }
+  .pj-reels-grid { grid-column: 1 / 7; grid-row: 1; gap: var(--grid-gutter, 24px); }
+  .pj-reels-txt { grid-column: 7 / 13; grid-row: 1; padding-left: clamp(16px, 3vw, 56px); }
+}
 
 /* Vidéos courtes : cadre cliquable + bouton haut-parleur (son au clic) */
 .reel-wrap{position:relative;cursor:pointer;border-radius:16px;overflow:hidden;background:#111}

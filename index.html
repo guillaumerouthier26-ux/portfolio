@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/home.css?v=1795288617914">
+  <link rel="stylesheet" href="css/home.css?v=1795307078835">
   <style id="pg-bg">html,body{background:#faf8f3}</style>
   <style id="intro-css">
     body.intro-active{overflow:hidden}
@@ -129,6 +129,45 @@
   </div>
 
   <main id="contenu" tabindex="-1">
+
+  <!-- CLIENTS : intitulé + défilement continu (4 groupes identiques : la piste se décale d'une moitié pour boucler sans trou) -->
+  <section class="clients" aria-labelledby="clients-k">
+    <div class="clients-in">
+      <p class="clients-k" id="clients-k">Ils m'ont fait confiance</p>
+      <div class="clients-marquee">
+        <div class="clients-track">
+          <div class="clients-set">
+          <img width="289" height="240" class="cl-haut" src="clients/siboire.png" alt="Siboire" decoding="async">
+          <img width="340" height="240" class="cl-haut" src="clients/noctem.png" alt="Noctem" decoding="async">
+          <img width="339" height="240" class="cl-moy" src="clients/graffiti.png" alt="Graffiti" decoding="async">
+          <img width="192" height="240" class="cl-haut" src="clients/aki.png" alt="Aki Sushi" decoding="async">
+          <img width="712" height="240" class="cl-moy" src="clients/bosquet.png" alt="Le Bosquet" decoding="async">
+          </div>
+          <div class="clients-set" aria-hidden="true">
+          <img width="289" height="240" class="cl-haut" src="clients/siboire.png" alt="" decoding="async">
+          <img width="340" height="240" class="cl-haut" src="clients/noctem.png" alt="" decoding="async">
+          <img width="339" height="240" class="cl-moy" src="clients/graffiti.png" alt="" decoding="async">
+          <img width="192" height="240" class="cl-haut" src="clients/aki.png" alt="" decoding="async">
+          <img width="712" height="240" class="cl-moy" src="clients/bosquet.png" alt="" decoding="async">
+          </div>
+          <div class="clients-set" aria-hidden="true">
+          <img width="289" height="240" class="cl-haut" src="clients/siboire.png" alt="" decoding="async">
+          <img width="340" height="240" class="cl-haut" src="clients/noctem.png" alt="" decoding="async">
+          <img width="339" height="240" class="cl-moy" src="clients/graffiti.png" alt="" decoding="async">
+          <img width="192" height="240" class="cl-haut" src="clients/aki.png" alt="" decoding="async">
+          <img width="712" height="240" class="cl-moy" src="clients/bosquet.png" alt="" decoding="async">
+          </div>
+          <div class="clients-set" aria-hidden="true">
+          <img width="289" height="240" class="cl-haut" src="clients/siboire.png" alt="" decoding="async">
+          <img width="340" height="240" class="cl-haut" src="clients/noctem.png" alt="" decoding="async">
+          <img width="339" height="240" class="cl-moy" src="clients/graffiti.png" alt="" decoding="async">
+          <img width="192" height="240" class="cl-haut" src="clients/aki.png" alt="" decoding="async">
+          <img width="712" height="240" class="cl-moy" src="clients/bosquet.png" alt="" decoding="async">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- TÉMOIGNAGES : prêt, mais masqué tant qu'il n'y a pas de vrais témoignages.
        Pour l'activer : retirer les marques de commentaire autour de la <section> ci-dessous,

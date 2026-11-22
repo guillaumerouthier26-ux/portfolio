@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Révision · Siboire · Guillaume Routhier</title>
+  <!-- Page privée : hors des moteurs de recherche, accessible seulement par son lien -->
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../revision.css?v=5">
+
+  <!-- ══ CONTENU DE CETTE RÉVISION ══
+       Pour un nouveau client : copier ce dossier, changer "id", "projet" et la liste "medias".
+       "cle" : clé Web3Forms (envoi automatique à info@). Vide = le client envoie le résumé par courriel. -->
+  <script type="application/json" id="rev-data">
+  {
+    "id": "siboire-k7m3q9",
+    "projet": "Siboire",
+    "courriel": "info@guillaumerouthier.ca",
+    "cle": "8366173d-ddcf-43ef-92be-c5149c6f148c",
+    "medias": [
+      { "type": "video", "src": "../../photographie/videos/siboire-reel-1.mp4", "affiche": "../../photographie/videos/siboire-reel-1.webp" },
+      { "type": "video", "src": "../../photographie/videos/siboire-reel-2.mp4", "affiche": "../../photographie/videos/siboire-reel-2.webp" },
+      { "type": "photo", "src": "../../photographie/photos/siboire-1.webp", "w": 2000, "h": 2667 },
+      { "type": "photo", "src": "../../photographie/photos/siboire-2.webp", "w": 2000, "h": 2666 },
+      { "type": "photo", "src": "../../photographie/photos/siboire-3.webp", "w": 2000, "h": 2667 },
+      { "type": "photo", "src": "../../photographie/photos/siboire-4.webp", "w": 2000, "h": 2667 },
+      { "type": "photo", "src": "../../photographie/photos/siboire-5.webp", "w": 2000, "h": 2667 },
+      { "type": "photo", "src": "../../photographie/photos/siboire-6.webp", "w": 2000, "h": 2667 },
+      { "type": "photo", "src": "../../photographie/photos/siboire-7.webp", "w": 2000, "h": 2667 },
+      { "type": "photo", "src": "../../photographie/photos/siboire-8.webp", "w": 2000, "h": 2667 },
+      { "type": "photo", "src": "../../photographie/photos/siboire-9.webp", "w": 2000, "h": 2667 },
+      { "type": "photo", "src": "../../photographie/photos/siboire-10.webp", "w": 2000, "h": 2667 },
+      { "type": "photo", "src": "../../photographie/photos/siboire-11.webp", "w": 2000, "h": 2667 },
+      { "type": "photo", "src": "../../photographie/photos/siboire-12.webp", "w": 2000, "h": 2667 }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="rv-top">
+    <a class="rv-nom" href="/">Guillaume Routhier</a>
+    <span class="rv-top-k">Révision client</span>
+  </header>
+
+  <main>
+    <section class="rv-intro">
+      <p class="rv-k">À valider</p>
+      <h1 class="rv-h1"><span id="rv-projet"></span>, <em>votre contenu.</em></h1>
+      <p class="rv-lead" id="rv-lead"></p>
+      <ol class="rv-etapes">
+        <li><b>Regardez</b>Cliquez une photo pour la voir en grand.</li>
+        <li><b>Commentez</b>Seulement ce que vous aimeriez faire modifier.</li>
+        <li><b>Terminez</b>Demandez une révision, ou confirmez si tout est bon.</li>
+      </ol>
+    </section>
+
+    <div class="rv-envoye" id="rv-envoye" hidden>
+      <span id="rv-envoye-txt"></span>
+      <button class="rv-lien" id="rv-envoye-b" type="button">Revoir le contenu</button>
+    </div>
+
+    <!-- Vue de Guillaume (lien du courriel) : la liste de ce que le client demande -->
+    <section class="rv-sec" id="rv-vue" aria-labelledby="rv-vue-t" hidden>
+      <div class="rv-sec-h"><h2 class="rv-h2" id="rv-vue-t">Ce qui est demandé</h2></div>
+      <ul class="rv-vue-liste" id="rv-vue-liste"></ul>
+    </section>
+
+    <section class="rv-sec" id="rv-videos" aria-labelledby="rv-videos-t">
+      <div class="rv-sec-h"><h2 class="rv-h2" id="rv-videos-t">Vidéos</h2><span class="rv-compte"></span></div>
+      <div class="rv-grille rv-grille--video"></div>
+    </section>
+
+    <section class="rv-sec" id="rv-photos" aria-labelledby="rv-photos-t">
+      <div class="rv-sec-h"><h2 class="rv-h2" id="rv-photos-t">Photos</h2><span class="rv-compte"></span></div>
+      <div class="rv-grille"></div>
+    </section>
+
+    <section class="rv-sec" aria-labelledby="rv-general-t">
+      <div class="rv-sec-h"><h2 class="rv-h2" id="rv-general-t">Un mot sur l'ensemble</h2><span class="rv-compte">Facultatif</span></div>
+      <div class="rv-general">
+        <label for="rv-general-ta">Commentaire général</label>
+        <textarea id="rv-general-ta" placeholder="Une remarque qui touche tout le contenu, par exemple les couleurs ou le cadrage"></textarea>
+        <p class="rv-aide">Pour une image précise, écrivez plutôt sous cette image.</p>
+      </div>
+    </section>
+
+    <p class="rv-pied">Une question&#8239;? Écrivez à <a href="mailto:info@guillaumerouthier.ca">info@guillaumerouthier.ca</a> ou par texto au <a href="sms:+14384999314">438 499-9314</a>.</p>
+  </main>
+
+  <!-- Barre d'action : toujours visible -->
+  <div class="rv-barre" role="region" aria-label="Terminer la révision">
+    <div class="rv-etat"><b id="rv-nb" aria-live="polite">Aucun commentaire</b><span id="rv-brouillon"></span></div>
+    <div class="rv-actions">
+      <button class="rv-btn" id="rv-b-rev" type="button">Demander une révision</button>
+      <button class="rv-btn est-principal" id="rv-b-ok" type="button">Confirmer</button>
+    </div>
+  </div>
+  <div class="rv-info" id="rv-info" role="status" hidden></div>
+
+  <!-- Résumé avant envoi -->
+  <dialog class="rv-dlg" id="rv-dlg" aria-labelledby="rv-dlg-t">
+    <div class="rv-dlg-in">
+      <div id="rv-dlg-form">
+        <h2 id="rv-dlg-t"></h2>
+        <p id="rv-dlg-p"></p>
+        <ul class="rv-recap" id="rv-recap"></ul>
+        <div class="rv-champ">
+          <label for="rv-nom">Votre nom</label>
+          <input id="rv-nom" type="text" autocomplete="name">
+        </div>
+        <div class="rv-alerte" id="rv-alerte" role="alert" hidden>
+          L'envoi automatique n'est pas disponible. Envoyez ce résumé par courriel&#8239;: tout est déjà écrit, il ne reste qu'à appuyer sur Envoyer.
+          <div class="rv-dlg-actions">
+            <a class="rv-btn est-principal" id="rv-mailto" href="#" style="display:inline-grid;place-items:center;text-decoration:none">Ouvrir mon courriel</a>
+            <button class="rv-btn" id="rv-copier" type="button">Copier le résumé</button>
+          </div>
+        </div>
+        <div class="rv-dlg-actions">
+          <button class="rv-btn" id="rv-annuler" type="button">Retour</button>
+          <button class="rv-btn est-principal" id="rv-envoyer" type="button">Envoyer</button>
+        </div>
+      </div>
+      <div class="rv-ok" id="rv-dlg-ok" hidden>
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#7d6a4f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/></svg>
+        <h2 id="rv-ok-t"></h2>
+        <p id="rv-ok-p"></p>
+        <div class="rv-dlg-actions"><button class="rv-btn est-principal" id="rv-fermer" type="button">Fermer</button></div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Photo en grand, avec son commentaire -->
+  <dialog class="rv-zoom" id="rv-zoom" aria-label="Photo en grand">
+    <div class="rv-zoom-in">
+      <div class="rv-zoom-img"><img id="rv-zoom-img" src="" alt=""></div>
+      <button class="rv-rond g" id="rv-zoom-g" type="button" aria-label="Photo précédente">&larr;</button>
+      <button class="rv-rond d" id="rv-zoom-d" type="button" aria-label="Photo suivante">&rarr;</button>
+      <button class="rv-rond x" id="rv-zoom-x" type="button" aria-label="Fermer">&times;</button>
+      <div class="rv-zoom-bas">
+        <span class="rv-titre" id="rv-zoom-nom"></span>
+        <textarea id="rv-zoom-ta" placeholder="Ce que vous aimeriez changer sur cette photo"></textarea>
+        <button class="rv-btn est-principal" id="rv-zoom-ok" type="button">Terminé</button>
+      </div>
+    </div>
+  </dialog>
+
+  <noscript><p style="padding:24px">Cette page a besoin de JavaScript. Vous pouvez aussi envoyer vos commentaires à info@guillaumerouthier.ca.</p></noscript>
+  <script src="../revision.js?v=6"></script>
+</body>
+</html>

@@ -246,8 +246,8 @@ body.hmenu-open .hhero-actions{transition-delay:.13s}
 .clients-track{display:flex;width:max-content;animation:clients-scroll 40s linear infinite}
 .clients-set{display:flex;flex:none;align-items:center;gap:var(--cg);padding-right:var(--cg)}
 .clients-set img{height:var(--ch);width:auto;max-width:none;flex:none;opacity:.55;transition:opacity .35s ease}
-.clients-set .cl-101{height:calc(var(--ch)*1.4)} /* logo rond : agrandi pour que le texte reste lisible */
-.clients-set .cl-s45{height:calc(var(--ch)*.72)} /* logo plein et massif : réduit optiquement */
+.clients-set .cl-haut{height:calc(var(--ch)*1.9)} /* logos empilés (symbole + nom) : agrandis pour que le nom reste lisible */
+.clients-set .cl-moy{height:calc(var(--ch)*1.3)}
 @keyframes clients-scroll{to{transform:translateX(-50%)}}
 /* survol : la bande s'arrête, le logo pointé ressort */
 @media(hover:hover){
