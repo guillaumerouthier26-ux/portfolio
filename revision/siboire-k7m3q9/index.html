@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../revision.css?v=5">
+  <link rel="stylesheet" href="../revision.css?v=8">
 
   <!-- ══ CONTENU DE CETTE RÉVISION ══
        Pour un nouveau client : copier ce dossier, changer "id", "projet" et la liste "medias".
@@ -110,8 +110,9 @@
         <p id="rv-dlg-p"></p>
         <ul class="rv-recap" id="rv-recap"></ul>
         <div class="rv-champ">
-          <label for="rv-nom">Votre nom</label>
-          <input id="rv-nom" type="text" autocomplete="name">
+          <label for="rv-nom">Votre courriel</label>
+          <input id="rv-nom" type="email" inputmode="email" autocomplete="email" placeholder="nom@exemple.com" aria-describedby="rv-nom-err">
+          <p class="rv-err" id="rv-nom-err" role="alert" hidden>Entrez une adresse courriel valide pour que Guillaume puisse vous répondre.</p>
         </div>
         <div class="rv-alerte" id="rv-alerte" role="alert" hidden>
           L'envoi automatique n'est pas disponible. Envoyez ce résumé par courriel&#8239;: tout est déjà écrit, il ne reste qu'à appuyer sur Envoyer.
@@ -150,6 +151,6 @@
   </dialog>
 
   <noscript><p style="padding:24px">Cette page a besoin de JavaScript. Vous pouvez aussi envoyer vos commentaires à info@guillaumerouthier.ca.</p></noscript>
-  <script src="../revision.js?v=6"></script>
+  <script src="../revision.js?v=8"></script>
 </body>
 </html>

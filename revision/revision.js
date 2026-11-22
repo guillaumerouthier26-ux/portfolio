@@ -176,7 +176,7 @@
   // demandée ressorte avec son propre titre (« Photo 3 », « Vidéo 1 ») au lieu d'un seul bloc de texte.
   function champs() {
     var nom = (etat.nom || '').trim(), g = (etat.general || '').trim(), n = nbComm();
-    var o = { access_key: D.cle, subject: sujet(), from_name: nom || D.projet, botcheck: '' };
+    var o = { access_key: D.cle, subject: sujet(), from_name: D.projet, email: nom, botcheck: '' }; // email : adresse de réponse du courriel
     o['Réponse du client'] = mode === 'ok'
       ? 'TOUT EST CONFIRMÉ : aucune modification demandée (' + total() + ').'
       : 'RÉVISION DEMANDÉE : ' + (n ? pl(n, 'élément') + ' à modifier' : 'commentaire général seulement') + ' sur ' + total() + '.';
@@ -186,7 +186,7 @@
     }
     o['Voir les commentaires sur les images'] = location.href.split('#')[0] + '#vue=' + coder({ c: propres(), g: mode === 'rev' ? g : '', n: nom, m: mode });
     o['Projet'] = D.projet;
-    if (nom) o['Client'] = nom;
+    if (nom) o['Courriel du client'] = nom;
     return o;
   }
   function propres() { var o = {}; if (mode === 'rev') lignes().forEach(function (x) { o[x.m.i] = x.t; }); return o; }
@@ -195,7 +195,7 @@
   function ouvrirResume(m) {
     mode = m;
     var n = nbComm(), g = (etat.general || '').trim();
-    $('#rv-dlg-form').hidden = false; $('#rv-dlg-ok').hidden = true; $('#rv-alerte').hidden = true; $('#rv-envoyer').hidden = false;
+    $('#rv-dlg-form').hidden = false; $('#rv-dlg-ok').hidden = true; $('#rv-alerte').hidden = true; $('#rv-envoyer').hidden = false; $('#rv-nom-err').hidden = true;
     var liste = $('#rv-recap'); liste.textContent = '';
     if (mode === 'rev') {
       $('#rv-dlg-t').textContent = 'Votre demande de révision';
@@ -245,6 +245,10 @@
   }
   $('#rv-envoyer').addEventListener('click', function () {
     var b = this;
+    var ch = $('#rv-nom'), ok = /^[^ @]+@[^ @]+[.][^ @]+$/.test((etat.nom || '').trim());
+    $('#rv-nom-err').hidden = ok;
+    ch.setAttribute('aria-invalid', ok ? 'false' : 'true');
+    if (!ok) { ch.focus(); return; }
     if (!D.cle) { secours(); return; }
     b.disabled = true; var lib = b.textContent; b.textContent = 'Envoi en cours…';
     fetch('https://api.web3forms.com/submit', {
