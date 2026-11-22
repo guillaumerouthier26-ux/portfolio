@@ -8,7 +8,7 @@
 (function () {
   var D = JSON.parse(document.getElementById('rev-data').textContent);
   var COURRIEL = D.courriel || 'info@guillaumerouthier.ca';
-  var CLE = 'rev:' + D.id;
+  var CLE = 'rev:' + D.id + (D.v ? ':' + D.v : '');
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var el = function (tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
 
