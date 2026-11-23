@@ -62,6 +62,39 @@ button.rv-media{cursor:zoom-in}
 .rv-mini{background:none;border:0;padding:8px 0;font-size:13px;font-weight:600;color:#3a3a3a;text-decoration:underline;text-underline-offset:4px}
 .rv-mini:hover{color:var(--ink)}
 
+/* maquette de site web : aperçu ordinateur, aperçu téléphone posé dessus, lien vers la page */
+.rv-grille--page{grid-template-columns:repeat(2,minmax(0,1fr))}
+.rv-media--page{aspect-ratio:16/10;border:1px solid var(--trait);background:#fff}
+.rv-media--page .rv-ord{width:100%;height:100%;object-fit:cover;object-position:left top}
+.rv-media--page .rv-tel{position:absolute;right:4%;bottom:0;width:21%;height:auto;border:4px solid var(--ink);border-bottom:0;border-radius:14px 14px 0 0;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.rv-ligne-b{display:flex;gap:8px;flex-wrap:nowrap}
+.rv-grille--page .rv-ligne{flex-wrap:wrap}
+@media(max-width:820px){.rv-grille--page{grid-template-columns:1fr}}
+a.rv-btn-comm{display:inline-grid;place-items:center;text-decoration:none;color:var(--ink)}
+.rv-btn-ouvrir{background:var(--ink);color:#fff !important;border-color:var(--ink)}
+.rv-btn-ouvrir:hover{background:#333}
+
+/* offre : prix proposé et ce qu'il comprend */
+.rv-offre{margin:0 var(--mx);padding:clamp(22px,3vw,34px);border-radius:18px;background:var(--accent-pale);display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,5vw,72px);align-items:center;max-width:900px}
+.rv-offre-k{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);margin-bottom:6px}
+.rv-offre-prix{font-family:var(--font-titre);font-weight:500;font-size:clamp(40px,6vw,60px);line-height:1;white-space:nowrap}
+.rv-offre-note{margin-top:6px;font-size:14px;color:var(--gris)}
+.rv-offre ul{list-style:none;display:grid;gap:8px;font-size:15px}
+.rv-offre li{padding-left:26px;position:relative}
+.rv-offre li::before{content:"";position:absolute;left:2px;top:.42em;width:11px;height:6px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+.est-vue .rv-btn-ouvrir{display:inline-grid}
+
+/* intentions de la maquette + notes */
+.rv-notes-in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:start;max-width:1100px}
+.rv-notes-liste{list-style:none;counter-reset:n}
+.rv-notes-liste li{counter-increment:n;display:grid;grid-template-columns:34px minmax(0,1fr);padding:14px 0;border-bottom:1px solid var(--trait);font-size:16px}
+.rv-notes-liste li:first-child{padding-top:0}
+.rv-notes-liste li::before{content:counter(n);font-family:var(--font-titre);font-size:20px;line-height:1.2;color:var(--accent)}
+.rv-notes-a{padding:clamp(18px,2.4vw,26px);border-radius:16px;background:var(--accent-pale);font-size:14px;color:#3a3a3a}
+.rv-notes-a p + p{margin-top:10px}
+.rv-notes-a .rv-offre-k{margin-bottom:10px}
+@media(max-width:820px){.rv-notes-in{grid-template-columns:1fr}}
+
 /* commentaire général */
 .rv-general{max-width:760px}
 .rv-general label,.rv-champ label{display:block;font-size:14px;font-weight:600;margin-bottom:8px}
@@ -133,6 +166,9 @@ dialog::backdrop{background:rgba(20,20,20,.6)}
   :root{--barre:128px}
   .rv-grille{grid-template-columns:1fr}
   .rv-grille--video{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rv-grille--page{grid-template-columns:1fr}
+  .rv-offre{grid-template-columns:1fr}
+  .rv-ligne-b .rv-btn-comm{padding:0 13px}
   .rv-grille--video .rv-ligne{flex-direction:column;align-items:flex-start;gap:6px}
   .rv-etapes{grid-template-columns:1fr;gap:0}
   .rv-etapes li{padding:12px 0;display:grid;grid-template-columns:28px 1fr;column-gap:8px}

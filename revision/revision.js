@@ -13,11 +13,12 @@
   var el = function (tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
 
   // numérotation par type : « Vidéo 1 », « Photo 3 »
-  var nv = 0, np = 0;
+  var nv = 0, np = 0, npg = 0, nsc = 0;
+  var WEB = { page: 1, section: 1 }; // éléments d'une maquette de site web
   D.medias.forEach(function (m, i) {
     m.i = i;
-    m.nom = m.type === 'video' ? 'Vidéo ' + (++nv) : 'Photo ' + (++np);
-    m.vignette = m.type === 'video' ? m.affiche : m.src;
+    m.nom = m.type === 'video' ? 'Vidéo ' + (++nv) : m.type === 'page' ? (++npg, m.titre || 'Page ' + npg) : m.type === 'section' ? (++nsc, m.titre || 'Section ' + nsc) : 'Photo ' + (++np);
+    m.vignette = m.type === 'photo' ? m.src : m.affiche;
   });
   var photos = D.medias.filter(function (m) { return m.type === 'photo'; });
 
@@ -54,19 +55,39 @@
     var a = [];
     if (np) a.push(pl(np, 'photo'));
     if (nv) a.push(pl(nv, 'vidéo'));
+    if (npg) a.push(pl(npg, 'page'));
+    if (nsc) a.push(pl(nsc, 'section'));
     return a.join(' et ');
   };
 
   // ── en-tête
   $('#rv-projet').textContent = D.projet;
-  $('#rv-lead').textContent = 'Voici ' + total() + ' à valider. Prenez le temps de tout regarder : rien n\'est envoyé avant que vous cliquiez un des deux boutons au bas de la page.';
+  var SITE = npg + nsc > 0 && !np && !nv; // maquette de site web seulement
+  var fich = function (m) { return WEB[m.type] ? '' : ' (' + m.src.split('/').pop() + ')'; };
+  var prix = D.offre && D.offre.prix ? D.offre.prix + (D.offre.note ? ' ' + D.offre.note : '') : '';
+  $('#rv-lead').textContent = (SITE ? 'Voici la maquette de votre site : ' + total() + ' à valider. Chaque élément s’ouvre dans un nouvel onglet, sur ordinateur comme sur téléphone' : 'Voici ' + total() + ' à valider') + '. Prenez le temps de tout regarder : rien n\'est envoyé avant que vous cliquiez un des deux boutons au bas de la page.';
+
+  // ── offre (prix proposé et ce qu'il comprend), si la page en a une
+  var off = $('#rv-offre');
+  if (off && D.offre) {
+    $('#rv-offre-prix').textContent = D.offre.prix;
+    if (D.offre.note) $('#rv-offre-prix').parentNode.appendChild(el('p', 'rv-offre-note', D.offre.note));
+    (D.offre.inclus || []).forEach(function (t) { $('#rv-offre-liste').appendChild(el('li', null, t)); });
+    off.hidden = false;
+  }
 
   // ── cartes
   var cartes = [];
   function carte(m) {
     var c = el('article', 'rv-carte'); c.id = 'media-' + m.i;
     var media;
-    if (m.type === 'video') {
+    if (WEB[m.type]) {
+      media = el('a', 'rv-media rv-media--page'); media.href = m.src; media.target = '_blank'; media.rel = 'noopener';
+      media.setAttribute('aria-label', 'Ouvrir ' + m.nom + ' dans un nouvel onglet');
+      var ord = el('img', 'rv-ord'); ord.src = m.affiche; ord.alt = 'Aperçu sur ordinateur : ' + m.nom; ord.loading = 'lazy'; ord.decoding = 'async';
+      media.appendChild(ord);
+      if (m.mobile) { var tel = el('img', 'rv-tel'); tel.src = m.mobile; tel.alt = 'Aperçu sur téléphone'; tel.loading = 'lazy'; tel.decoding = 'async'; media.appendChild(tel); }
+    } else if (m.type === 'video') {
       media = el('div', 'rv-media');
       var v = el('video'); v.controls = true; v.playsInline = true; v.preload = 'none'; v.poster = m.affiche; v.src = m.src;
       v.setAttribute('aria-label', m.nom);
@@ -82,11 +103,15 @@
     var titre = el('span', 'rv-titre', m.nom);
     titre.appendChild(el('span', 'rv-puce', 'À modifier'));
     var b = el('button', 'rv-btn-comm', 'Commenter'); b.type = 'button';
-    ligne.appendChild(titre); ligne.appendChild(b);
+    ligne.appendChild(titre);
+    if (WEB[m.type]) {
+      var gr = el('span', 'rv-ligne-b'), ouv = el('a', 'rv-btn-comm rv-btn-ouvrir', m.type === 'section' ? 'Ouvrir la section' : 'Ouvrir la page'); ouv.href = m.src; ouv.target = '_blank'; ouv.rel = 'noopener';
+      gr.appendChild(ouv); gr.appendChild(b); ligne.appendChild(gr);
+    } else ligne.appendChild(b);
 
     var zone = el('div', 'rv-zone'); zone.hidden = true;
     var ta = el('textarea'); ta.id = 'c-' + m.i; ta.setAttribute('aria-label', 'Commentaire pour ' + m.nom);
-    ta.placeholder = m.type === 'video' ? 'Ce que vous aimeriez changer dans cette vidéo' : 'Ce que vous aimeriez changer sur cette photo';
+    ta.placeholder = m.type === 'section' ? 'Ce que vous aimeriez changer dans cette section' : m.type === 'page' ? 'Ce que vous aimeriez changer sur cette page' : m.type === 'video' ? 'Ce que vous aimeriez changer dans cette vidéo' : 'Ce que vous aimeriez changer sur cette photo';
     ta.value = etat.c[m.i] || ''; ta.readOnly = !!VUE;
     var outils = el('div', 'rv-outils');
     if (m.type === 'video') {
@@ -121,11 +146,14 @@
   function section(type, titre, id) {
     var liste = D.medias.filter(function (m) { return m.type === type; });
     var sec = $(id);
+    if (!sec) return;
     if (!liste.length) { sec.hidden = true; return; }
-    $('.rv-compte', sec).textContent = pl(liste.length, type === 'video' ? 'vidéo' : 'photo');
+    $('.rv-compte', sec).textContent = pl(liste.length, type === 'video' ? 'vidéo' : type === 'page' ? 'page' : type === 'section' ? 'section' : 'photo');
     var g = $('.rv-grille', sec);
     liste.forEach(function (m) { g.appendChild(carte(m)); });
   }
+  section('page', 'Pages', '#rv-pages');
+  section('section', 'Sections', '#rv-sections');
   section('video', 'Vidéos', '#rv-videos');
   section('photo', 'Photos', '#rv-photos');
 
@@ -164,9 +192,10 @@
     L.push('Projet : ' + D.projet);
     if (nom) L.push('De : ' + nom);
     L.push('Contenu : ' + total());
+    if (prix) L.push('Prix proposé : ' + prix);
     L.push('');
     if (mode === 'rev') {
-      lignes().forEach(function (x) { L.push(x.m.nom + ' (' + x.m.src.split('/').pop() + ') :'); L.push(x.t); L.push(''); });
+      lignes().forEach(function (x) { L.push(x.m.nom + fich(x.m) + ' :'); L.push(x.t); L.push(''); });
       if (g) { L.push('Commentaire général :'); L.push(g); L.push(''); }
     }
     L.push('Page : ' + location.href.split('#')[0]);
@@ -181,11 +210,12 @@
       ? 'TOUT EST CONFIRMÉ : aucune modification demandée (' + total() + ').'
       : 'RÉVISION DEMANDÉE : ' + (n ? pl(n, 'élément') + ' à modifier' : 'commentaire général seulement') + ' sur ' + total() + '.';
     if (mode === 'rev') {
-      lignes().forEach(function (x) { o['À modifier : ' + x.m.nom + ' (' + x.m.src.split('/').pop() + ')'] = x.t + String.fromCharCode(10) + 'Image : ' + new URL(x.m.vignette, location.href).href; });
+      lignes().forEach(function (x) { o['À modifier : ' + x.m.nom + fich(x.m)] = x.t + String.fromCharCode(10) + (WEB[x.m.type] ? 'Page : ' + new URL(x.m.src, location.href).href : 'Image : ' + new URL(x.m.vignette, location.href).href); });
       if (g) o['Commentaire général'] = g;
     }
     o['Voir les commentaires sur les images'] = location.href.split('#')[0] + '#vue=' + coder({ c: propres(), g: mode === 'rev' ? g : '', n: nom, m: mode });
     o['Projet'] = D.projet;
+    if (prix) o['Prix proposé'] = prix;
     if (nom) o['Courriel du client'] = nom;
     return o;
   }
@@ -209,7 +239,7 @@
       $('#rv-envoyer').textContent = 'Envoyer la demande';
     } else {
       $('#rv-dlg-t').textContent = 'Tout confirmer ?';
-      $('#rv-dlg-p').textContent = 'Vous approuvez tout le contenu tel quel (' + total() + '). ' +
+      $('#rv-dlg-p').textContent = (SITE ? 'Vous approuvez la maquette telle quelle (' + total() + ')' + (prix ? ', au prix proposé de ' + prix : '') : 'Vous approuvez tout le contenu tel quel (' + total() + ')') + '. ' +
         (n || g ? 'Attention : vos commentaires ne seront pas envoyés. Pour les envoyer, choisissez plutôt « Demander une révision ».' : 'Aucune modification ne sera demandée.');
       $('#rv-envoyer').textContent = 'Confirmer';
     }
@@ -219,7 +249,7 @@
   }
   bRev.addEventListener('click', function () {
     if (!nbComm() && !(etat.general || '').trim()) {
-      info('Écrivez d\'abord un commentaire sous l\'image ou la vidéo à modifier.');
+      info('Écrivez d\'abord un commentaire sous l’élément à modifier.');
       var p = $('.rv-carte'); if (p) p.scrollIntoView({ block: 'center' });
       return;
     }
