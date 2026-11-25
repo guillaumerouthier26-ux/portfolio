@@ -107,6 +107,7 @@ body.hmenu-open .hnav{background:transparent;border-bottom-color:transparent;-we
 .hhero-cta{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;background:#fff;color:#111;
   font-weight:600;font-size:11.5pt;text-decoration:none;transition:background .3s ease}
 .hhero-cta span{display:inline-block;transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.hhero-note{font-size:10.5pt;color:rgba(255,255,255,.78)}
 .hhero-link{padding-bottom:3px;border-bottom:1px solid rgba(255,255,255,.55);color:#fff;font-weight:600;font-size:11.5pt;text-decoration:none;transition:border-color .3s ease}
 @media(hover:hover){
   .hhero-cta:hover{background:#efe9dd}
@@ -378,6 +379,33 @@ body.hmenu-open .hhero-actions{transition-delay:.13s}
 .pf-pas-b:disabled{opacity:.28;cursor:default}
 .pf-pas-b:focus-visible{outline:2px solid #141414;outline-offset:3px}
 .pf-carte{margin-top:4px;font-size:9.5pt;color:#5c5c5c}
+/* réglages : une ligne par élément (titre à gauche ; moins, nombre, plus à droite) */
+.pf-eco-l{margin-top:8px;font-size:10.5pt;color:#5c5c5c}
+.pf-eco-l b{color:#141414;font-weight:600}
+.pf-ajuste{margin:28px 0 0}
+.pf-ligne{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(0,0,0,.14)}
+.pf-ligne-t b{display:block;font-size:11pt;font-weight:600;color:#141414}
+.pf-ligne-t span{display:block;margin-top:2px;font-size:9.5pt;color:#5c5c5c}
+.pf-pas{align-items:center;gap:10px}
+.pf-pas-n{min-width:2.2ch;text-align:center;font-family:var(--font-titre);font-size:22px;line-height:1;font-variant-numeric:tabular-nums;color:#141414}
+.pf-live .pf-cells{margin-top:14px}
+.pf-live .pf-reels{margin-top:14px}
+/* l'économie du forfait est dite sous le prix : la ligne de la colonne de droite ne sert que sans JS */
+.pf.is-js .pf-eco{display:none}
+/* conditions repliées */
+.htarifs-cond{margin-top:clamp(20px,2.2vw,28px);border-top:1px solid rgba(0,0,0,.14)}
+.htarifs-cond summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;font-size:9.5pt;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5c5c5c;cursor:pointer;list-style:none}
+.htarifs-cond summary::-webkit-details-marker{display:none}
+.htarifs-cond summary::after{content:"+";font-size:16px;font-weight:400;letter-spacing:0;color:#141414}
+.htarifs-cond[open] summary::after{content:"\2212"}
+.htarifs-cond summary:hover{color:#141414}
+.htarifs-cond .htarifs-note{margin-top:0;padding-bottom:6px}
+/* photos : nombre + boutons moins et plus, sur la même ligne */
+.pf-photos-l{margin-top:8px}
+.pf-photos-l .pf-cells-k{margin-top:0}
+/* sur mesure : aucun forfait sélectionné, la poignée s'efface */
+.pf.is-carte .pf-range{opacity:.35}
+.pf-panel--carte .pf-inc li{font-variant-numeric:tabular-nums}
 /* cases à cocher : photos seulement, 3 mois consécutifs */
 .pf-opts{display:grid;gap:10px;margin-top:20px;padding-top:18px;border-top:1px solid rgba(0,0,0,.14)}
 .pf-opt{display:flex;align-items:center;gap:10px;font-size:10.5pt;color:#141414;cursor:pointer}
