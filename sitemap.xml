@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://www.guillaumerouthier.ca/</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>1.0</priority>
+    <loc>https://www.guillaumerouthier.ca/</loc><lastmod>2026-11-25</lastmod><changefreq>monthly</changefreq><priority>1.0</priority>
     <image:image><image:loc>https://www.guillaumerouthier.ca/og/accueil.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/index-bosquet.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/index-akistudio.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/index-101.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/index-noctem.webp</image:loc></image:image>
@@ -119,5 +120,25 @@
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/siboire-10.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/siboire-11.webp</image:loc></image:image>
     <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/siboire-12.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.guillaumerouthier.ca/photographie/le-bosquet.html</loc><lastmod>2026-11-25</lastmod><changefreq>yearly</changefreq><priority>0.8</priority>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/og/bosquet.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/bosquet-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/bosquet-1.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/bosquet-2.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/bosquet-3.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/bosquet-4.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/bosquet-5.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/bosquet-6.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/bosquet-7.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/bosquet-8.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/bosquet-9.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/bosquet-10.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/bosquet-11.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/bosquet-12.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/bosquet-13.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/bosquet-14.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.guillaumerouthier.ca/photographie/photos/bosquet-15.webp</image:loc></image:image>
   </url>
 </urlset>
