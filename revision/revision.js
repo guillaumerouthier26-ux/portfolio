@@ -63,7 +63,7 @@
   // ── en-tête
   $('#rv-projet').textContent = D.projet;
   var SITE = npg + nsc > 0 && !np && !nv; // maquette de site web seulement
-  var fich = function (m) { return WEB[m.type] ? '' : ' (' + m.src.split('/').pop() + ')'; };
+  var fich = function (m) { return WEB[m.type] ? '' : ' (' + m.src.split('/').pop().split('?')[0] + ')'; };
   var prix = D.offre && D.offre.prix ? D.offre.prix + (D.offre.note ? ' ' + D.offre.note : '') : '';
   $('#rv-lead').textContent = (SITE ? 'Voici la maquette de votre site : ' + total() + ' à valider. Chaque élément s’ouvre dans un nouvel onglet, sur ordinateur comme sur téléphone' : 'Voici ' + total() + ' à valider') + '. Prenez le temps de tout regarder : rien n\'est envoyé avant que vous cliquiez un des deux boutons au bas de la page.';
 
