@@ -16,7 +16,8 @@ button{cursor:pointer}
 
 /* en-tête */
 .rv-top{padding:22px var(--mx);border-bottom:1px solid var(--trait);display:flex;justify-content:space-between;align-items:center;gap:16px}
-.rv-nom{font-family:var(--font-titre);font-size:17px;font-weight:500;text-decoration:none;color:var(--ink)}
+/* même écriture que le nom dans l'en-tête du portfolio : Montserrat demi-gras */
+.rv-nom{font-family:var(--font);font-size:12pt;font-weight:600;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
 .rv-top-k{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
 .rv-intro{padding:clamp(40px,7vw,90px) var(--mx) clamp(28px,4vw,48px);max-width:1100px}
 .rv-k{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);margin-bottom:14px}

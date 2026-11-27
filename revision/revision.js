@@ -346,3 +346,37 @@
     sec.hidden = !ul.children.length;
   }
 })();
+
+/* Défilement doux à la molette, comme sur le portfolio (même douceur : 0.1).
+   La page garde son défilement normal : on adoucit seulement la molette. Rien ne change sur
+   écran tactile, pour qui a demandé moins de mouvement, ni quand une fenêtre (résumé, photo en
+   grand) ou une zone de texte est sous la souris. */
+(function () {
+  if (window.innerWidth < 1024) return;
+  if (!window.matchMedia || matchMedia('(pointer: coarse)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var DOUCEUR = 0.1, cible = 0, courant = 0, actif = false;
+
+  // vrai si l'élément sous la souris défile déjà tout seul
+  function defileSeul(n) {
+    for (; n && n !== document.body && n.nodeType === 1; n = n.parentElement) {
+      if (/^(TEXTAREA|DIALOG|IFRAME|SELECT)$/.test(n.tagName)) return true;
+      var s = getComputedStyle(n);
+      if (/(auto|scroll)/.test(s.overflowY) && n.scrollHeight > n.clientHeight + 1) return true;
+    }
+    return false;
+  }
+  function pas() {
+    courant += (cible - courant) * DOUCEUR;
+    if (Math.abs(cible - courant) < 0.5) { courant = cible; actif = false; }
+    window.scrollTo({ top: courant, behavior: 'instant' });
+    if (actif) requestAnimationFrame(pas);
+  }
+  window.addEventListener('wheel', function (e) {
+    if (e.ctrlKey || e.defaultPrevented || document.querySelector('dialog[open]') || defileSeul(e.target)) return;
+    e.preventDefault();
+    var d = e.deltaMode === 1 ? e.deltaY * 32 : e.deltaMode === 2 ? e.deltaY * window.innerHeight : e.deltaY;
+    if (!actif) cible = courant = window.scrollY; // repart d'où la page est vraiment (clavier, lien, barre de défilement)
+    cible = Math.max(0, Math.min(document.documentElement.scrollHeight - window.innerHeight, cible + d));
+    if (!actif) { actif = true; requestAnimationFrame(pas); }
+  }, { passive: false });
+})();
